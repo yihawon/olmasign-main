@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>olmasign</title>
+      <link rel="stylesheet" href="./css/reset.css" />
+      <link rel="stylesheet" href="./css/common.css" />
+   </head>
+   <style>
+      .wrapper {
+         padding: 0 0 2rem;
+      }
+      a {
+         text-decoration: underline;
+      }
+      a:hover {
+         transition: 0.1s ease-out;
+         color: #aaa;
+      }
+      .comment {
+         font-size: 14px;
+         color: silver;
+         margin-bottom: 10px;
+      }
+      .heading_sub {
+         font-weight: 700;
+         color: tomato;
+         padding: 2rem 0 1rem;
+      }
+      .path {
+         margin: 1rem 0;
+      }
+      .table {
+         display: grid;
+         grid-template-columns: 1fr 1fr 1fr 240px;
+      }
+      .row {
+         border-top: 1px solid #ddd;
+         padding: 6px 10px;
+         line-height: 1.5;
+      }
+      .table:last-of-type {
+         border-bottom: 1px solid #ddd;
+      }
+   </style>
+   <body>
+      <div style="max-width: 800px; margin: 0 auto">
+         <div class="wrapper">
+            <h4 style="background-color: indigo; padding: 1rem; color: white; font-weight: 500">얼마싸인 퍼블리싱</h4>
+
+            <h4 class="heading_sub">계약관리</h4>
+            <div class="table">
+               <div class="row">1depth</div>
+               <div class="row">2depth</div>
+               <div class="row">3depth</div>
+               <div class="row">popup</div>
+
+               <div class="row">-</div>
+               <div class="row">-</div>
+               <div class="row">-</div>
+               <div class="row">-</div>
+            </div>
+
+            <h4 class="heading_sub">서식관리</h4>
+            <div class="table">
+               <div class="row">1depth</div>
+               <div class="row">2depth</div>
+               <div class="row">3depth</div>
+               <div class="row">popup</div>
+
+               <div class="row"><a href="/pages/settings_form.html">템플릿만들기</a></div>
+               <div class="row">
+                  <a href="/pages/template_write.html">파일업로드/법률양식</a><br />
+                  <a href="/pages/template_write_popup_convert.html">변환</a><br />
+                  <a href="/pages/template_write_popup_convert_done.html">완료</a><br />
+                  <a href="/pages/template_write_tool.html">직접작성</a><br />
+                  <a href="/pages/template_write_popup_template_user_set.html">서명자설정</a><br />
+                  <a href="/pages/template_write_popup_template_edit.html">템플릿편집</a><br />
+                  <a href="/pages/template_write_popup_template_save.html">저장완료</a><br />
+                  <a href="/pages/template_contract_setting.html">계약설정(탭3)</a><br />
+                  <a href="/pages/template_contract_setting.html">문서확인</a><br />
+               </div>
+               <div class="row">-</div>
+               <div class="row">
+                  계약설정→인증수단추가버튼 <br />
+                  직접작성 → 서체(종류,크기,색),이미지삽입,링크 아이콘
+               </div>
+
+               <div class="row"><a href="/pages/settings_my_template_start.html">MY템플릿 〉</a></div>
+               <div class="row">
+                  <a href="/pages/settings_my_template_start.html">초기화면</a><br />
+                  <a href="/pages/settings_my_template.html">리스트</a><br />
+               </div>
+               <div class="row"><a href="/pages/settings_my_template_detail.html">상세</a></div>
+               <div class="row">
+                  3depth : 공유버튼,<br />
+                  2depth : 이동,필터 버튼
+               </div>
+
+               <div class="row"><a href="/pages/settings_my_template_bookmark_start.html">즐겨찾기/초기화면</a><br /></div>
+               <div class="row"></div>
+               <div class="row">-</div>
+               <div class="row">-</div>
+
+               <div class="row"><a href="/pages/settings_form_law_find.html">법률양식</a></div>
+               <div class="row">-</div>
+               <div class="row">-</div>
+               <div class="row">썸네일</div>
+
+               <div class="row"><a href="/pages/settings_my_template_trash.html">휴지통</a></div>
+               <div class="row"><a href="/pages/settings_my_template_recycleBin.html">비운화면</a></div>
+               <div class="row">-</div>
+               <div class="row">복구,필터 버튼</div>
+            </div>
+
+            <h4 class="heading_sub">설정하기</h4>
+            <div class="table">
+               <div class="row">1depth</div>
+               <div class="row">2depth</div>
+               <div class="row">3depth</div>
+               <div class="row">popup</div>
+
+               <div class="row"><a href="/pages/settings_user_info.html">사용자정보</a></div>
+               <div class="row">-</div>
+               <div class="row">-</div>
+               <div class="row">프사연필아이콘, 변경하기 버튼, 회원탈퇴(4개)</div>
+
+               <div class="row"><a href="/pages/settings_sign.html">서명관리</a></div>
+               <div class="row">-</div>
+               <div class="row">-</div>
+               <div class="row">사인,도장 만들기 버튼(3탭)</div>
+
+               <div class="row"><a href="/pages/settings_address_book.html">주소록</a></div>
+               <div class="row">-</div>
+               <div class="row">-</div>
+               <div class="row">주소추가,그룹이동 버튼<br />주소추가 버튼 → 엑셀업로드 버튼</div>
+
+               <div class="row"><a href="/pages/settings_co_info.html">회사정보</a></div>
+               <div class="row">-</div>
+               <div class="row">-</div>
+               <div class="row">프사연필아이콘</div>
+
+               <div class="row">
+                  <a href="/pages/settings_team_admin.html">팀관리 <span style="color: red">(*작업중)</span></a>
+               </div>
+               <div class="row">-</div>
+               <div class="row">-</div>
+               <div class="row">팀원초대, 그룹이동 버튼</div>
+
+               <div class="row"><a href="/pages/settings_customize.html">맞춤설정</a></div>
+               <div class="row">-</div>
+               <div class="row">-</div>
+               <div class="row">버튼텍스트색상</div>
+
+               <div class="row">사용중인 요금제</div>
+               <div class="row">-</div>
+               <div class="row">-</div>
+               <div class="row">-</div>
+
+               <div class="row">사용량</div>
+               <div class="row">-</div>
+               <div class="row">-</div>
+               <div class="row">-</div>
+
+               <div class="row">결제정보</div>
+               <div class="row">-</div>
+               <div class="row">-</div>
+               <div class="row">-</div>
+            </div>
+
+            <h4 class="heading_sub">회원가입</h4>
+            <p class="path"><a href="/member/signup.html">/member/signup.html</a></p>
+            <h4 class="heading_sub">가입메일전송</h4>
+
+            <p class="path"><a href="/member/auth_num.html">/member/auth_num.html</a></p>
+
+            <h4 class="heading_sub">로그인</h4>
+            <p class="path"><a href="/member/login.html">/member/login.html</a></p>
+
+            <h4 class="heading_sub">팝업</h4>
+            <p class="path"><a href="/member/popup/id_find.html">/member/popup/id_find.html</a></p>
+            <p class="path"><a href="/member/popup/id_find_result.html">/member/popup/id_find_result.html</a></p>
+
+            <p class="path"><a href="/member/popup/send_email.html">/member/popup/send_email.html</a></p>
+
+            <p class="path"><a href="/member/popup/password_find.html">/member/popup/password_find.html</a></p>
+
+            <p class="path"><a href="/member/popup/password_find_result.html">/member/popup/password_find_result.html</a></p>
+
+            <p class="path"><a href="/member/popup/password_find_update.html">/member/popup/password_find_update.html</a></p>
+
+            <p class="path"><a href="/member/popup/password_find_update_result.html">/member/popup/password_find_update_result.html</a></p>
+
+            <p class="path"><a href="/member/popup/alert_pass.html">/member/popup/alert_pass.html</a></p>
+
+            <p class="path"><a href="/member/popup/alert_id.html">/member/popup/alert_id.html</a></p>
+
+            <p class="path"><a href="/member/popup/alert_temp_pass_update.html">/member/popup/alert_temp_pass_update.html</a></p>
+
+            <p class="path"><a href="/member/popup/alert_pass_change.html">/member/popup/alert_pass_change.html</a></p>
+
+            <h4 class="heading_sub">이메일전송</h4>
+            <p class="path"><a href="/member/popup/email_id.html">/member/popup/email_id.html</a></p>
+
+            <p class="path"><a href="/member/popup/email_pass.html">/member/popup/email_pass.html</a></p>
+
+            <p class="path"><a href="/member/popup/email_temp_pass.html">/member/popup/email_temp_pass.html</a></p>
+
+            <h4 class="heading_sub">휴면계정</h4>
+            <p class="path"><a href="/member/popup/email_id_stop_info.html">/member/popup/email_id_stop_info.html</a></p>
+
+            <p class="path"><a href="/member/popup/email_id_stop.html">/member/popup/email_id_stop.html</a></p>
+
+            <p class="path"><a href="/member/popup/alert_stop_clear.html">/member/popup/alert_stop_clear.html</a></p>
+
+            <h4 class="heading_sub">개인정보처리방침 이메일</h4>
+            <p class="path"><a href="/member/popup/email_policy.html">/member/popup/email_policy.html</a></p>
+         </div>
+      </div>
+   </body>
+</html>

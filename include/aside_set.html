@@ -1,0 +1,87 @@
+<style>
+   .lnb {
+      margin: inherit;
+   }
+   @media (max-width: 768px) {
+      .lnb {
+         padding-left: 2rem;
+      }
+   }
+   .lnb_ul {
+      padding-bottom: 10px;
+      padding: 10px 0 0;
+   }
+   .lnb_h1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 15px;
+      font-weight: 600;
+      margin: 6px 0;
+   }
+   .lnb_h1 > span {
+      display: flex;
+      align-items: center;
+   }
+   .lnb_h1 > img {
+      margin-right: 4px;
+      width: 20px;
+   }
+
+   .img_wrap {
+      display: flex;
+      align-items: center;
+   }
+   .img_wrap img {
+      margin-right: 10px;
+   }
+   .lnb_li {
+      margin-left: 24px;
+      list-style: disc;
+      line-height: 1.6;
+      font-weight: 500;
+   }
+   .lnb_li::marker {
+      color: var(--second_04);
+   }
+</style>
+<div class="lnb">
+   <ul class="lnb_ul">
+      <h1 class="lnb_h1">
+         <div class="img_wrap"><img src="../../imgs/ic_24_my_n.svg" alt="ic_24_my_n" />내 계정</div>
+      </h1>
+      <li class="lnb_li"><a href="./settings_user_info.html" class="">사용자정보</a></li>
+      <li class="lnb_li"><a href="./settings_sign.html">서명관리</a></li>
+      <li class="lnb_li"><a href="./settings_address_book.html">주소록</a></li>
+   </ul>
+   <ul class="lnb_ul">
+      <h1 class="lnb_h1">
+         <div class="img_wrap"><img src="../../imgs/ic_24_company_n.svg" alt="ic_24_company_n" />회사설정</div>
+      </h1>
+      <li class="lnb_li"><a href="settings_co_info.html">회사정보</a></li>
+      <li class="lnb_li"><a href="./settings_team_admin.html">팀 관리</a></li>
+      <li class="lnb_li"><a href="javascript:void(0)" class="customSet" onclick="window.location.href='./settings_customize.html'">맞춤설정</a></li>
+      <script>
+         if (matchMedia("screen and (max-width: 768px)").matches) {
+            let customSet = document.querySelector(".customSet")
+            customSet.setAttribute("onclick", "alert('PC에서만 가능합니다.')")
+         } else {
+            customSet.setAttribute("onclick", "window.location.href='./settings_customize.html'")
+         }
+      </script>
+   </ul>
+   <ul class="lnb_ul">
+      <h1 class="lnb_h1">
+         <div class="img_wrap"><img src="../../imgs/ic_24_cost_n.svg" alt="ic_24_cost_n" />요금제관리</div>
+      </h1>
+
+      <li class="lnb_li"><a href="settings_pay_sys.html">사용중인 요금제</a></li>
+      <li class="lnb_li"><a href="settings_pay_info.html">결제정보</a></li>
+      <hr />
+      <p>요금제관리 분기화면</p>
+      <p>(화면노출X)</p>
+      <li class="lnb_li"><a href="settings_pay_sys_start.html">요금제 초기화면</a></li>
+      <li class="lnb_li"><a href="settings_pay_sys_incase.html">요금제 구독안했을 경우</a></li>
+      <hr />
+   </ul>
+</div>

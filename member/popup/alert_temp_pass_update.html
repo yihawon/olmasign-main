@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>modal</title>
+      <link rel="stylesheet" href="../../css/common.css" />
+      <link rel="stylesheet" href="../../css/modal.css" />
+   </head>
+   <body>
+      <div class="modal_welcome on">
+         <div class="modal_welcome_contain stop_area">
+            <div class="popheading">
+               <span></span>
+               <h1>임시 비밀번호를 변경해 주세요.</h1>
+               <span></span>
+            </div>
+            <section class="stop_area">
+               <h2 style="text-align: left; line-height: 1.8">
+                  안녕하세요. 이정현 회원님. <br />
+                  임시 비밀번호을 변경하는 것을 권장드려요.
+               </h2>
+
+               <input type="password" placeholder="현재 임시 비밀번호" />
+               <input
+                  type="password"
+                  placeholder="비밀번호 (영문, 숫자, 특수문자 6~12자로 입력하세요.)"
+               />
+               <input
+                  type="password"
+                  placeholder="비밀번호 확인 (비밀번호를 다시 한번 입력해 주세요.)"
+                  style="margin-bottom: 1rem"
+               />
+            </section>
+            <section class="confirm_btn">
+               <a href="javascript:void(0)">확인</a>
+               <a href="javascript:void(0)">다음에 변경</a>
+            </section>
+         </div>
+      </div>
+   </body>
+</html>

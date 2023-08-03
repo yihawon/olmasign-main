@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>set_form</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <div class="wrapper">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function () {
+               $.ajax({
+                  url: "../include/head.html",
+                  success: function (result) {
+                     $(".header").html(result)
+                  },
+               })
+            })
+         </script>
+
+         <div class="header hd"></div>
+         <main class="main">
+            <section class="lnb_wrap lnb_wrap_temp">
+               <div class="lnb">
+                  <input class="btn_violet" type="button" value="템플릿 만들기" onclick="window.location.href='./template_write.html'" />
+                  <div class="menu_wrap">
+                     <h1 class="">
+                        <div class="img_wrap"><img src="../../imgs/ic_24_open_n.svg" alt="ic_24_open_n.svg" />My 템플릿</div>
+
+                        <div id="depth_arrow_btn">
+                           <img src="../../imgs/ic_18_more.svg" alt="ic_18_more.svg" />
+                           <div class="lnb_depth_content" style="padding-bottom: 150px">
+                              <section>
+                                 <style>
+                                    .my_templates span:hover {
+                                       font-weight: 800;
+                                       color: var(--violet_P);
+                                       position: relative;
+                                       width: 100%;
+                                    }
+
+                                    .my_templates span {
+                                       cursor: pointer;
+                                    }
+                                    .menu_pop {
+                                       display: none;
+                                    }
+                                 </style>
+
+                                 <ul class="my_templates" id="treelnb">
+                                    <li style="list-style: none">
+                                       인사/고용
+                                       <ul>
+                                          <li>
+                                             면접 평가서
+                                             <ul>
+                                                <li><a href="./settings_my_template.html">최근 열어본 파일</a></li>
+                                                <li>
+                                                   <a href="./settings_my_template.html">개발</a>
+                                                   <img id="menu_pop_btn" class="moreview" src="../../imgs/ic_18_more-1.svg" alt="ic_18_more-1.svg"">
+                                                   <div class="menu_pop" id="menu_pop">
+                                                      <p>
+                                                         <span>추가</span>
+                                                         <span>공유</span>
+                                                         <span>삭제</span>
+                                                      </p>
+                                                   </div>
+                                                </li>
+                                             </ul>
+                                          </li>
+                                          <li>
+                                             시용기간 평가서
+                                             <ul>
+                                                <li><a href="./settings_my_template.html">디자인</a></li>
+                                                <li><a href="./settings_my_template.html">개발</a></li>
+                                             </ul>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li style="list-style: none">
+                                       용역/제휴
+                                       <ul>
+                                          <li>
+                                             외주 업체관리
+                                             <ul>
+                                                <li><a href="./settings_my_template.html">디자인</a></li>
+                                                <li><a href="./settings_my_template.html">개발</a></li>
+                                             </ul>
+                                          </li>
+                                          <li>
+                                             프리랜서
+                                             <ul>
+                                                <li><a href="./settings_my_template.html">디자인</a></li>
+                                                <li><a href="./settings_my_template.html">개발</a></li>
+                                             </ul>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </section>
+
+                              <section class="add_folder_btn">
+                                 <img src="../../imgs/ic_24_add_simple.svg" alt="ic_24_add_simple.svg" />
+                                 <input class="btn_default" type="button" value="폴더추가" />
+                              </section>
+                           </div>
+                        </div>
+                     </h1>
+                     <li><a href="./settings_my_template_bookmark_start.html" class="">즐겨찾기</a></li>
+                     <li><a href="">최근 열어본 파일</a></li>
+                  </div>
+                  <div class="menu_wrap">
+                     <h1>
+                        <a class="img_wrap" href="./settings_form_law_find.html">
+                           <img src="../../imgs/ic_24_sample_n.svg" alt="ic_24_sample_n.svg" /><span class="selected" style="cursor: pointer">
+                              법률 양식 찾기
+                           </span>
+                        </a>
+                     </h1>
+                  </div>
+                  <div class="menu_wrap">
+                     <h1>
+                        <a href="./settings_my_template_trash.html" class="img_wrap"><img src="../../imgs/ic_24_del_n.svg" alt="ic_24_del_n.svg" />휴지통</a>
+                     </h1>
+                  </div>
+               </div>
+            </section>
+            <script>
+               $(document).ready(function () {
+                  $.ajax({
+                     url: "../include/lnb_m.html",
+                     success: function (result) {
+                        $(".lnb_m").html(result)
+                     },
+                  })
+               })
+            </script>
+
+            <div class="lnb_m"></div>
+            <section class="content_wrap">
+               <div class="location">
+                  <a href=""><img src="../../imgs/ic_18_home.svg" alt="ic_18_home.svg" /></a>
+                  <a href="">서식관리</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href="" class="">법률 양식 찾기</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href=""><b>인사/고용</b></a>
+               </div>
+               <div class="content_area">
+                  <div class="content_inner">
+                     <section class="form_bo">
+                        <div class="form_serch_wrap">
+                           <input type="search" name="" id="" class="form_serch" placeholder="search..." />
+                           <img class="search_icon" src="../../imgs/ic_20_search.svg" alt="ic_20_search.svg" />
+                        </div>
+                        <div class="hash_btns">
+                           <span class="hash_btn"># 인사</span>
+                           <span class="hash_btn"># 정규직</span>
+                           <span class="hash_btn"># 개인정보</span>
+                           <span class="hash_btn"># 인사</span>
+                           <span class="hash_btn"># 정규직</span>
+                           <span class="hash_btn"># 개인정보</span>
+                           <span class="hash_btn"># 개인정보</span>
+                        </div>
+                     </section>
+                     <section class="bo_wrap">
+                        <div class="bo_head">
+                           <p class="filter_all filterFocuse">전체 <span class="filter_num_all">8,369</span></p>
+                           <p class="filter_unit filterFocuse">인사/고용 <span class="filter_num">369</span></p>
+                           <p class="filter_unit filterFocuse">경영/투자 <span class="filter_num">369</span></p>
+                           <p class="filter_unit filterFocuse">금전거래 <span class="filter_num">109</span></p>
+                           <p class="filter_unit filterFocuse">용역/제휴 <span class="filter_num">109</span></p>
+                           <p class="filter_unit filterFocuse">부동산 <span class="filter_num">109</span></p>
+                           <p class="filter_unit filterFocuse">지식재산권 <span class="filter_num">109</span></p>
+                           <p class="filter_unit filterFocuse">스타트업 <span class="filter_num">109</span></p>
+                           <p class="filter_unit filterFocuse">프리랜서 <span class="filter_num">109</span></p>
+                           <p class="filter_unit filterFocuse">일반민사 <span class="filter_num">109</span></p>
+                        </div>
+                        <hr />
+                        <p class="filter_unit_tab">인사/고용 <span class="filter_num_tab">369</span></p>
+                        <section class="bo_li_wrap">
+                           <article class="bo_li_inner">
+                              <section class="mark">
+                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="ic_20_heart_w">
+                                       <path
+                                          id="Vector"
+                                          class="bookMark"
+                                          d="M13.6974 2.58594C12.1891 2.58594 10.8391 3.31927 9.9974 4.44427C9.15573 3.31927 7.80573 2.58594 6.2974 2.58594C3.73906 2.58594 1.66406 4.66927 1.66406 7.24427C1.66406 8.23594 1.8224 9.1526 2.0974 10.0026C3.41406 14.1693 7.4724 16.6609 9.48073 17.3443C9.76406 17.4443 10.2307 17.4443 10.5141 17.3443C12.5224 16.6609 16.5807 14.1693 17.8974 10.0026C18.1724 9.1526 18.3307 8.23594 18.3307 7.24427C18.3307 4.66927 16.2557 2.58594 13.6974 2.58594Z"
+                                          fill="#f7f7f7"
+                                       />
+                                    </g>
+                                 </svg>
+                              </section>
+                              <div class="bo_li popupTrigger">
+                                 <p class="bo_img_wrap"></p>
+                                 <p class="bo_title_wrap boDetailTrigger">
+                                    <span class="bo_title">단시간근로자 표준근로계약서</span>
+                                    <span class="sub_title">고용노동부가 배포한 표준근로계약서표준근로계약서</span>
+                                 </p>
+                              </div>
+                           </article>
+                           <article class="bo_li_inner">
+                              <section class="mark">
+                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="ic_20_heart_w">
+                                       <path
+                                          id="Vector"
+                                          class="bookMark"
+                                          d="M13.6974 2.58594C12.1891 2.58594 10.8391 3.31927 9.9974 4.44427C9.15573 3.31927 7.80573 2.58594 6.2974 2.58594C3.73906 2.58594 1.66406 4.66927 1.66406 7.24427C1.66406 8.23594 1.8224 9.1526 2.0974 10.0026C3.41406 14.1693 7.4724 16.6609 9.48073 17.3443C9.76406 17.4443 10.2307 17.4443 10.5141 17.3443C12.5224 16.6609 16.5807 14.1693 17.8974 10.0026C18.1724 9.1526 18.3307 8.23594 18.3307 7.24427C18.3307 4.66927 16.2557 2.58594 13.6974 2.58594Z"
+                                          fill="#f7f7f7"
+                                       />
+                                    </g>
+                                 </svg>
+                              </section>
+                              <div class="bo_li popupTrigger">
+                                 <p class="bo_img_wrap"></p>
+                                 <p class="bo_title_wrap boDetailTrigger">
+                                    <span class="bo_title">단시간근로자 표준근로계약서</span>
+                                    <span class="sub_title">고용노동부가 배포한 표준근로계약서표준근로계약서</span>
+                                 </p>
+                              </div>
+                           </article>
+                           <article class="bo_li_inner">
+                              <section class="mark">
+                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="ic_20_heart_w">
+                                       <path
+                                          id="Vector"
+                                          class="bookMark"
+                                          d="M13.6974 2.58594C12.1891 2.58594 10.8391 3.31927 9.9974 4.44427C9.15573 3.31927 7.80573 2.58594 6.2974 2.58594C3.73906 2.58594 1.66406 4.66927 1.66406 7.24427C1.66406 8.23594 1.8224 9.1526 2.0974 10.0026C3.41406 14.1693 7.4724 16.6609 9.48073 17.3443C9.76406 17.4443 10.2307 17.4443 10.5141 17.3443C12.5224 16.6609 16.5807 14.1693 17.8974 10.0026C18.1724 9.1526 18.3307 8.23594 18.3307 7.24427C18.3307 4.66927 16.2557 2.58594 13.6974 2.58594Z"
+                                          fill="#f7f7f7"
+                                       />
+                                    </g>
+                                 </svg>
+                              </section>
+                              <div class="bo_li popupTrigger">
+                                 <p class="bo_img_wrap"></p>
+                                 <p class="bo_title_wrap boDetailTrigger">
+                                    <span class="bo_title">단시간근로자 표준근로계약서</span>
+                                    <span class="sub_title">고용노동부가 배포한 표준근로계약서표준근로계약서</span>
+                                 </p>
+                              </div>
+                           </article>
+                        </section>
+                     </section>
+                  </div>
+               </div>
+            </section>
+         </main>
+      </div>
+
+      <link rel="stylesheet" href="../css/popup.css" />
+
+      <div class="popup_wrap popup_wrap_mod">
+         <div class="popup_contain law_pop">
+            <section class="popup_contain_inner">
+               <img class="popup_close_btn" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" />
+               <h1 class="popup_title">법률 양식 사용에 동의하시겠습니까?</h1>
+               <div class="popup_content">
+                  <dl class="agree_content">
+                     <dd>전자 서명, 전자 문서는 법적 효력 가지고 있습니다.</dd>
+                     <dd>(전자서명법, 전자문서 및 전자거래 기본법 등)</dd>
+                     <dd>이때 발생하는 사용자의 법적 이슈에 대해서 얼마싸인은 책임지지 않습니다.</dd>
+                  </dl>
+
+                  <div class="check_p_wrap agree_chckbox_wrap">
+                     <div class="check_p">
+                        <input type="checkbox" id="check_2" class="normal check_orign" />
+                        <label for="check_2">
+                           <div class="check_box_wrap">
+                              <span class="agree_chckbox">법률 양식 사용 동의</span>
+                           </div>
+                        </label>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section class="popup_confirm_btn">
+               <a href="javascript:void(0)">탈퇴</a>
+            </section>
+         </div>
+      </div>
+      <script src="../script/checkbox.js"></script>
+      <script>
+         $(function () {
+            $(".popupTrigger").click(function () {
+               $(".popup_wrap").fadeIn(300)
+               $(".popup_wrap").css({ opacity: 1, zIndex: 999 })
+            })
+            $(".popup_close_btn").click(function () {
+               $(".popup_wrap").not(".popup_contain").fadeOut(300)
+            })
+         })
+         //
+
+         let bookMark = document.querySelector(".bookMark")
+         bookMark.addEventListener("click", function (e) {
+            e.target.classList.toggle("on")
+         })
+
+         let filterFocuse = document.querySelectorAll(".filterFocuse")
+         console.log(filterFocuse)
+
+         for (let i = 0; i < filterFocuse.length; i++) {
+            filterFocuse[i].addEventListener("click", function () {
+               let remove = document.querySelector(".hashSpanToggle")
+               if (remove) {
+                  remove.classList.remove("hashSpanToggle")
+               }
+               console.log(this)
+               this.classList.add("hashSpanToggle")
+            })
+         }
+      </script>
+
+      <script src="../script/settingsLnb.js"></script>
+      <script src="../script/lnbTree.js"></script>
+   </body>
+</html>

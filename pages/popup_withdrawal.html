@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>modal</title>
+      <link rel="stylesheet" href="../../css/reset.css" />
+      <link rel="stylesheet" href="../../css/common.css" />
+      <link rel="stylesheet" href="../../css/withdrwal.css" />
+   </head>
+   <body>
+      <div class="modal_wrap">
+         <div class="modal_contain">
+            <section class="modal_inner" id="warning">
+               <article class="popheading">
+                  <span></span>
+                  <h1>회원탈퇴 유의사항</h1>
+                  <span></span>
+                  <img class="closeX" src="../../imgs/ic_20_close.svg" alt="ic_20_close" />
+               </article>
+               <article class="stop_area">
+                  <p style="font-size: 14px; color: black">회원탈퇴 전에 반드시 유의사항을 확인하고 진행해 주세요.</p>
+                  <div class="step_contain">
+                     <ul class="step_1">
+                        <li>개인정보 및 서비스 이용기록이 모두 삭제 되며, 삭제된 데이터는 복구 되지 않습니다. 필요한 데이터는 미리 백업해 주시기 바랍니다.</li>
+                        <li>탈퇴 처리된 이메일, 아이디는 30일동안 재가입이 불가합니다.</li>
+                     </ul>
+                  </div>
+                  <div class="check_wrap">
+                     <div class="check_p" style="padding-top: 1.5rem">
+                        <input type="checkbox" id="dont_msg" class="normal check_orign" />
+                        <label for="dont_msg" class="dont_msg"> 회원탈퇴 유의사항 동의 </label>
+                     </div>
+                  </div>
+               </article>
+
+               <article class="confirm_btn">
+                  <a href="javascript:void(0)" id="warning_btn">확인</a>
+               </article>
+            </section>
+            <section class="modal_inner" id="reason">
+               <article class="popheading">
+                  <span></span>
+                  <h1>회원탈퇴 사유</h1>
+                  <span></span>
+                  <img class="closeX" src="../../imgs/ic_20_close.svg" alt="ic_20_close" />
+               </article>
+               <article class="stop_area">
+                  <h2 style="margin-bottom: 1rem">무엇이 불편하셨나요?</h2>
+
+                  <div class="radio_container">
+                     <div class="radio">
+                        <input id="radio-1" name="radio" type="radio" />
+                        <label for="radio-1" class="radio-label">아이디 변경을 위해서</label>
+                     </div>
+
+                     <div class="radio">
+                        <input id="radio-2" name="radio" type="radio" />
+                        <label for="radio-2" class="radio-label">자주 사용하지 않아서</label>
+                     </div>
+
+                     <div class="radio">
+                        <input id="radio-3" name="radio" type="radio" />
+                        <label for="radio-3" class="radio-label">사용이 어려워서</label>
+                     </div>
+                     <div class="radio">
+                        <input id="radio-4" name="radio" type="radio" />
+                        <label for="radio-4" class="radio-label">타제품 사용</label>
+                     </div>
+                     <div class="radio">
+                        <input id="radio-5" name="radio" type="radio" checked />
+                        <label for="radio-5" class="radio-label">기타 </label>
+                     </div>
+                  </div>
+               </article>
+
+               <article class="confirm_btn">
+                  <a href="javascript:void(0)" id="reason_btn">확인</a>
+               </article>
+            </section>
+            <section class="modal_inner" id="confirm">
+               <article class="popheading">
+                  <span></span>
+                  <h1>회원탈퇴</h1>
+                  <span></span>
+                  <img class="closeX" src="../../imgs/ic_20_close.svg" alt="ic_20_close" />
+               </article>
+               <article class="stop_area">
+                  <h2 style="text-align: center">확실히 탈퇴를 결정하신게 맞나요?</h2>
+                  <p style="text-align: center; font-size: 14px; color: black">맞다면 비밀번호를 입력 후 탈퇴를 눌러주세요.</p>
+                  <input type="password" placeholder="비밀번호 입력" />
+               </article>
+
+               <article class="confirm_btn">
+                  <a href="javascript:void(0)" id="done_btn">탈퇴</a>
+               </article>
+            </section>
+            <section class="modal_inner" id="done">
+               <article class="popheading">
+                  <span></span>
+                  <h2>회원탈퇴가 완료되었습니다.</h2>
+                  <span></span>
+                  <img class="closeX" src="../../imgs/ic_20_close.svg" alt="ic_20_close" />
+               </article>
+               <article class="stop_area">
+                  <p style="color: black">지금까지 얼마싸인을 이용해 주셔서 감사합니다.</p>
+                  <p>다음 기회에 얼마싸인을 다시 찾아주시길 부탁드립니다.</p>
+                  <div class="caution_coment">
+                     <ul>
+                        <li>계정 정보는 탈퇴 신청후 24시간이 지나면 삭제되며 이후 재가입할 수 있습니다.</li>
+                     </ul>
+                  </div>
+               </article>
+
+               <article class="confirm_btn">
+                  <a href="javascript:void(0)">첫 화면으로</a>
+               </article>
+            </section>
+         </div>
+      </div>
+
+      <script src="../script/popupStepper.js"></script>
+   </body>
+</html>

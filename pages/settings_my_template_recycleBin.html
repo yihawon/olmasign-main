@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>set_form</title>
+      <link rel="stylesheet" href="../css/common.css" />
+      <link rel="stylesheet" href="../css/settings.css" />
+   </head>
+   <body class="body">
+      <div class="wrapper">
+         <header class="header">
+            <section class="gnb_wrap">
+               <div class="logo">
+                  <a href="./main.html"><img src="../../imgs/amsign_logo.svg" alt="amsign_logo.svg" /></a>
+               </div>
+               <div class="gnb_menu">
+                  <a href="javascript:void(0)" class="gnb_btn">
+                     <img src="../../imgs/ic_24_contract.svg" alt="ic_24_contract" />
+                     <b>계약관리</b>
+                  </a>
+                  <a href="./settings_form.html" class="gnb_btn gnb_btn_selected">
+                     <img src="../../imgs/ic_24_form_01_s.svg" alt="ic_24_form_01_s" />
+                     <b>서식관리</b>
+                  </a>
+                  <a href="./settings_user_info.html" class="gnb_btn">
+                     <img src="../../imgs/ic_24_setting.svg" alt="ic_24_setting_s" />
+                     <b>설정하기</b>
+                  </a>
+               </div>
+            </section>
+            <section class="icon_menu">
+               <a href="javscript:void(0)">사용중 요금제</a>
+               <a href="javscript:void(0)"><img src="../../imgs/ic_client.svg" alt="ic_client" /></a>
+               <a href="javscript:void(0)"><img src="../../imgs/ic_help.svg" alt="ic_help" /></a>
+               <a href="javscript:void(0)"><img src="../../imgs/ic_logout.svg" alt="ic_logout" /></a>
+            </section>
+         </header>
+         <main class="main">
+            <section class="lnb_wrap">
+               <div class="lnb">
+                  <input class="btn_violet" type="button" value="템플릿 만들기" onclick="window.location.href='./template_write.html'" />
+                  <div class="menu_wrap">
+                     <h1 class="">
+                        <div class="img_wrap"><img src="../../imgs/ic_24_cost.svg" alt="ic_24_cost.svg" />My 템플릿</div>
+
+                        <div id="depth_arrow_btn">
+                           <img src="../../imgs/ic_18_more.svg" alt="ic_18_more.svg" />
+                           <div class="lnb_depth_content" style="padding-bottom: 150px">
+                              <section>
+                                 <article style="margin-top: 100px">
+                                    <h2>인사/고용</h2>
+                                    <ul>
+                                       <li>
+                                          <a href="">면접평가서</a>
+                                          <ul class="depth2">
+                                             <li class="">
+                                                <a href="">최근 열어본 파일</a>
+                                                <img src="../../imgs/ic_18_more-1.svg" alt="ic_18_more-1.svg" id="menu_pop_btn" />
+                                                <div class="menu_pop" id="menu_pop">
+                                                   <ul>
+                                                      <li>추가</li>
+                                                      <li>공유</li>
+                                                      <li>삭제</li>
+                                                   </ul>
+                                                </div>
+                                             </li>
+                                             <li>
+                                                <a href="">개발</a>
+                                             </li>
+                                          </ul>
+                                       </li>
+                                       <li>
+                                          <a href="">사용기간 평가서</a>
+                                          <ul class="depth2">
+                                             <li class="">
+                                                <a href="">최근 열어본 파일</a>
+                                             </li>
+                                             <li>
+                                                <a href="">디자인</a>
+                                             </li>
+                                             <li>
+                                                <a href="">개발</a>
+                                             </li>
+                                          </ul>
+                                       </li>
+                                    </ul>
+                                 </article>
+                                 <article>
+                                    <h2>용역/제휴</h2>
+                                    <ul>
+                                       <li>
+                                          <a href="">면접평가서</a>
+                                          <ul class="depth2">
+                                             <li class="">
+                                                <a href="">최근 열어본 파일</a>
+                                             </li>
+                                             <li>
+                                                <a href="">개발</a>
+                                             </li>
+                                          </ul>
+                                       </li>
+                                       <li>
+                                          <a href="">사용기간 평가서</a>
+                                          <ul class="depth2">
+                                             <li class="">
+                                                <a href="">최근 열어본 파일</a>
+                                             </li>
+                                             <li>
+                                                <a href="">디자인</a>
+                                             </li>
+                                             <li>
+                                                <a href="">개발</a>
+                                             </li>
+                                          </ul>
+                                       </li>
+                                    </ul>
+                                 </article>
+                              </section>
+                              <section class="add_folder_btn">
+                                 <img src="../../imgs/ic_24_add_simple.svg" alt="ic_24_add_simple.svg" />
+                                 <input class="btn_default" type="button" value="폴더추가" />
+                              </section>
+                           </div>
+                        </div>
+                     </h1>
+                     <li><a href="./settings_my_template_bookmark_start.html">즐겨찾기</a></li>
+                     <li><a href="">최근 열어본 파일</a></li>
+                  </div>
+                  <div class="menu_wrap">
+                     <h1>
+                        <a href="./settings_form_law_find.html" class="img_wrap"
+                           ><img src="../../imgs/ic_24_sample.svg" alt="ic_24_sample.svg" />법률 양식 찾기</a
+                        >
+                        <span><img src="../../imgs/ic_18_more.svg" alt="" /></span>
+                     </h1>
+                  </div>
+                  <ul>
+                     <h1>
+                        <a href="./settings_my_template_trash.html" class="img_wrap selected"
+                           ><img src="../../imgs/ic_24_del_s.svg" alt="ic_24_del_s.svg" />휴지통</a
+                        >
+                     </h1>
+                  </ul>
+               </div>
+            </section>
+            <section class="content_wrap">
+               <div class="location">
+                  <a href=""><img src="../../imgs/home-2.svg" alt="home-2.svg" /></a>
+                  <a href="">서식관리</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href=""><b>휴지통</b></a>
+               </div>
+               <div class="content_area">
+                  <div class="content_inner">
+                     <div class="item_btn_setting">
+                        <div></div>
+                        <!-- <div class="create_sign">
+                           <button class="btn_default add_sign">다운로드</button>
+                           <button class="btn_default">이동</button>
+                           <button class="btn_default" disabled>복사</button>
+                           <button class="btn_default">삭제</button>
+                           <button class="btn_default">공유</button>
+                        </div> -->
+                        <div class="sign_sort_wrap">
+                           <div class="sign_sort">
+                              <input class="search_input" type="search" placeholder="search..." />
+                              <span class="search_icon"><img src="../../imgs/ic_20_search.svg" alt="ic_20_search.svg" /></span>
+                           </div>
+                           <button class="btn_default"><img src="../../imgs/ic_24_filter_search.svg" alt="ic_24_filter_search.svg" /></button>
+
+                           <article class="cont_select">
+                              <button class="btn_select">10개보기</button>
+                              <ul class="list_item">
+                                 <li><button type="button">10개보기</button></li>
+                                 <li><button type="button">Java</button></li>
+                                 <li><button type="button">JavaScript</button></li>
+                                 <li><button type="button">C#</button></li>
+                                 <li><button type="button">C/C++</button></li>
+                              </ul>
+                           </article>
+                        </div>
+                     </div>
+
+                     <table class="temp_bo_table">
+                        <tbody>
+                           <tr>
+                              <td class="td_left temp_start_view">
+                                 <img src="../../imgs/img_nocontent_02.png" alt="img_nocontent_02.png" width="250px" />
+                                 <div class="p_wrap">
+                                    <h1>휴지통이 비어있어요.</h1>
+                                 </div>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </section>
+         </main>
+      </div>
+
+      <script src="../script/settingsLnb.js"></script>
+      <script src="../script/settingsMyTemplateStart.js"></script>
+   </body>
+</html>

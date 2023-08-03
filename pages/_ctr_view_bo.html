@@ -1,0 +1,265 @@
+<div class="sec_wrap">
+   <section class="sec_wrap_l">
+      <div class="content_inner ctr_total" style="flex: inherit">
+         <div class="adress_wrap team_current_wrap">
+            <div class="team_current">
+               <div class="teamChart_wrap">
+                  <div class="usr_name_wrap">
+                     <h1>홍길동 <span>서명요청자</span></h1>
+                     <p>2022-08-28 14:30</p>
+                  </div>
+                  <div class="teamChart_desc ctr_teamChart_desc">
+                     <section class="head_desc_wrap">
+                        <h1 class="head_desc">10건</h1>
+                        <p class="sub_desc ctr_sub_desc">전체</p>
+                     </section>
+                     <span>·</span>
+                     <section class="head_desc_wrap">
+                        <h1 class="head_desc">6건</h1>
+                        <p class="sub_desc ctr_sub_desc">서명 완료</p>
+                     </section>
+                     <span>·</span>
+                     <section class="head_desc_wrap">
+                        <h1 class="head_desc">3건</h1>
+                        <p class="sub_desc ctr_sub_desc">상대 서명 대기 중</p>
+                     </section>
+                     <span>·</span>
+                     <section class="head_desc_wrap">
+                        <h1 class="head_desc">1건</h1>
+                        <p class="sub_desc ctr_sub_desc">거절</p>
+                     </section>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="content_area ctr_bo_detail">
+         <div class="content_inner" id="menu">
+            <div class="item_btn_setting">
+               <div class="create_sign flex create_sign_btns">
+                  <button data-action="trash" class="btn_reverse">서명하기</button>
+                  <button data-action="trash" class="btn_default">계약취소</button>
+                  <button data-action="restoration" class="btn_default">알림 재전송</button>
+                  <button data-action="restoration" class="btn_default" onclick="dateChange()">기간 변경</button>
+                  <button data-action="restoration" class="btn_default">문서 다운</button>
+                  <button data-action="restoration" class="btn_default">첨부파일 보기</button>
+               </div>
+            </div>
+
+            <div class="ctr_tab_btns_wrap">
+               <div class="ctr_tab_btns">
+                  <div class="ctr_tab_btn"><a href="javascript:void(0)">서명자</a></div>
+                  <div class="ctr_tab_btn"><a href="javascript:void(0)">참조자</a></div>
+                  <div class="ctr_tab_btn"><a href="javascript:void(0)">결재자</a></div>
+                  <span class="highlight"></span>
+               </div>
+            </div>
+            <section class="temp_bo_tables">
+               <table class="temp_bo_table">
+                  <tbody class="tb_wrap">
+                     <tr class="tit_bg">
+                        <td class="td_left">
+                           <div class="temp_name">
+                              <div class="checkbox_wrap">
+                                 <input type="checkbox" id="chk1" class="normal check_orign" />
+                                 <label for="chk1"> </label>
+                              </div>
+                              <p class="subject_tit">
+                                 <span class="subject_tit_p th_tit">참여자</span>
+                                 <span class="updown_sort">
+                                    <img src="../../imgs/ic_18_up_02.svg" alt="ic_18_up_02.svg" />
+                                    <img src="../../imgs/ic_18_down_02.svg" alt="ic_18_down_02.svg" />
+                                 </span>
+                              </p>
+                           </div>
+                        </td>
+                        <td class="td_right" style="flex: 0.6">
+                           <p class="th_tit">
+                              상태<span class="updown_sort">
+                                 <img src="../../imgs/ic_18_up_02.svg" alt="ic_18_up_02.svg" />
+                                 <img src="../../imgs/ic_18_down_02.svg" alt="ic_18_down_02.svg" />
+                              </span>
+                           </p>
+                           <p class="th_tit">
+                              만료일<span class="updown_sort">
+                                 <img src="../../imgs/ic_18_up_02.svg" alt="ic_18_up_02.svg" />
+                                 <img src="../../imgs/ic_18_down_02.svg" alt="ic_18_down_02.svg" />
+                              </span>
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="tit_bg">
+                        <td class="td_left">
+                           <div class="temp_name">
+                              <div class="checkbox_wrap">
+                                 <input type="checkbox" id="chk2" class="normal check_orign" />
+                                 <label for="chk2"> </label>
+                              </div>
+                              <p class="subject_tit">
+                                 <img src="../../imgs/ic_18_message.svg" alt="ic_18_message.svg" />
+                                 <span class="subject_tit_p">정지인</span>
+                              </p>
+                           </div>
+                        </td>
+                        <td class="td_right" style="flex: 0.6">
+                           <p style="color: var(--success)">상대 서명 대기 중</p>
+                           <p style="color: var(--danger)">3일남음</p>
+                        </td>
+                     </tr>
+                     <tr class="tit_bg">
+                        <td class="td_left">
+                           <div class="temp_name">
+                              <div class="checkbox_wrap">
+                                 <input type="checkbox" id="chk3" class="normal check_orign" />
+                                 <label for="chk3"> </label>
+                              </div>
+                              <p class="subject_tit">
+                                 <img src="../../imgs/ic_18_message.svg" alt="ic_18_message.svg" />
+                                 <span class="subject_tit_p">정지인</span>
+                              </p>
+                           </div>
+                        </td>
+                        <td class="td_right" style="flex: 0.6">
+                           <p style="color: var(--violet_P)">상대 서명 대기 중</p>
+                           <p style="color: var(--violet_P)">3일남음</p>
+                        </td>
+                     </tr>
+                     <tr class="tit_bg">
+                        <td class="td_left">
+                           <div class="temp_name">
+                              <div class="checkbox_wrap">
+                                 <input type="checkbox" id="chk4" class="normal check_orign" />
+                                 <label for="chk4"> </label>
+                              </div>
+                              <p class="subject_tit">
+                                 <img src="../../imgs/ic_18_message.svg" alt="ic_18_message.svg" />
+                                 <span class="subject_tit_p">정지인</span>
+                              </p>
+                           </div>
+                        </td>
+                        <td class="td_right" style="flex: 0.6">
+                           <p style="color: var(--danger)">상대 서명 대기 중</p>
+                           <p>3일남음</p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+               <div class="pagination pgn">
+                  <button>
+                     <img src="../../imgs/btn_page_numbers_left.svg" alt="btn_page_numbers_left.svg" />
+                  </button>
+                  <button active>1</button>
+                  <button>2</button>
+                  <button>3</button>
+                  <button>
+                     <img src="../../imgs/btn_page_numbers_right.svg" alt="btn_page_numbers_right.svg" />
+                  </button>
+               </div>
+            </section>
+
+            <section class="temp_bo_tables">2</section>
+            <section class="temp_bo_tables">3</section>
+         </div>
+      </div>
+
+      <script>
+         let tabBtn = document.querySelectorAll(".ctr_tab_btn")
+         let tabCont = document.querySelectorAll(".temp_bo_tables")
+
+         function tabContHandler(num) {
+            tabCont.forEach((item, idx) => {
+               item.classList.add("active")
+            })
+            tabCont[num].classList.remove("active")
+         }
+         tabBtn.forEach((item, idx) => {
+            item.addEventListener("click", () => {
+               tabContHandler(idx)
+               highLight(idx)
+               console.log(0)
+            })
+         })
+         console.log("hello")
+
+         function highLight(num) {
+            let highLight = document.querySelector(".highlight")
+            const newLeft = tabBtn[num].offsetLeft
+            const newWidth = tabBtn[num].offsetWidth
+            highLight.style.left = newLeft + "px"
+            highLight.style.width = newWidth + "px"
+         }
+
+         tabContHandler(0)
+
+         document.querySelector(".popup_wrap").style.display = "none"
+         document.querySelector(".popup_close_btn").addEventListener("click", function () {
+            document.querySelector(".popup_wrap").style.display = "none"
+         })
+         document.querySelector(".restorationBtn").addEventListener("click", function () {
+            document.querySelector(".popup_wrap").style.display = "block"
+         })
+      </script>
+
+      <script src="../script/settingsMyTemplate.js"></script>
+      <script src="../script/selectBox.js"></script>
+      <script src="../script/modal.js"></script>
+      <script src="../script/lnbTree.js"></script>
+   </section>
+   <section class="sec_wrap_r">
+      <div class="ctr_history">
+         <h2>이력</h2>
+         <p>
+            오래된 순
+            <span class="updown_sort">
+               <img src="../../imgs/ic_18_up_02.svg" alt="ic_18_up_02.svg" />
+               <img src="../../imgs/ic_18_down_02.svg" alt="ic_18_down_02.svg" />
+            </span>
+         </p>
+      </div>
+      <div class="ctr_hsty_panel_wrap">
+         <div class="ctr_hsty_panel">
+            <p><span>이정현</span> 님이 전송했어요.</p>
+            <p>2022-08-09-01 14:30</p>
+         </div>
+         <div class="ctr_hsty_panel">
+            <p><span>이소연</span> 님이 전송했어요.</p>
+            <p>2022-08-09-01 14:30</p>
+         </div>
+         <div class="ctr_hsty_panel">
+            <p><span>유미진</span> 님이 전송했어요.</p>
+            <p>2022-08-09-01 14:30</p>
+         </div>
+         <div class="ctr_hsty_panel">
+            <p style="color: var(--violet_P)">서명완료 했어요.</p>
+            <p>2022-08-09-01 14:30</p>
+         </div>
+      </div>
+   </section>
+</div>
+
+<div class="date_change_pop">
+   <div class="modal_welcome3">
+      <div class="modal_welcome_contain" style="background: linear-gradient(to top, var(--violet_P) 52px, white 5%)">
+         <section class="modal_wrap">
+            <img class="close_btn" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="dateChange()" />
+            <h1>기간 변경</h1>
+            <div class="temp_input_wrap">
+               <label for="temp_name">만료일</label>
+               <div class="date_input_wrap input_date_box1">
+                  <input id="date1" type="date" name="" id="" />
+               </div>
+            </div>
+         </section>
+         <section class="start_btn">
+            <a href="javascript:void(0)">확인</a>
+         </section>
+      </div>
+   </div>
+</div>
+<script>
+   function dateChange() {
+      let dateChangePop = document.querySelector(".date_change_pop")
+      dateChangePop.classList.toggle("on")
+   }
+</script>

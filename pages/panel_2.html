@@ -1,0 +1,96 @@
+<div class="panel_0_inn">
+   <section class="edit_subject">
+      <img src="../imgs/ic_24_text_c.svg" alt="ic_24_text_c" />
+      <h1>텍스트</h1>
+   </section>
+   <hr />
+
+   <section class="section_wrap">
+      <p class="label_tit">입력필드값</p>
+      <input type="text" placeholder="텍스트 1" />
+      <p class="ref_q">※ 대량전송 엑셀 다운로드시 제목값</p>
+   </section>
+
+   <section class="section_wrap">
+      <div class="label_tit">
+         필수 여부
+
+         <div class="toggle_area edit_toggle">
+            <section class="toggle_wrap">
+               <span class="toggle_span toggle_span_must2">
+                  <div class="flipBtn">
+                     <div class="toggle_btn"></div>
+                  </div>
+               </span>
+            </section>
+         </div>
+      </div>
+   </section>
+
+   <hr class="div_line" />
+   <section class="section_wrap">
+      <div class="label_tit sign_bold">
+         글자 크기
+         <input class="btn_num" type="number" value="16" min="6" />
+      </div>
+      <div class="label_tit sign_bold">
+         글꼴
+
+         <article class="cont_select" style="width: 104px">
+            <button class="btn_select selectBtn3">나눔고딕</button>
+            <ul class="list_item selectList3" style="height: 134px; top: 60px">
+               <li><button type="button">나눔고딕</button></li>
+               <li><button type="button">Noto sans</button></li>
+               <li><button type="button">Roboto</button></li>
+               <li><button type="button">Pretendard</button></li>
+            </ul>
+         </article>
+      </div>
+      <style>
+         .selectList3.on {
+            display: block;
+         }
+      </style>
+      <script>
+         let selectBtn3 = document.querySelector(".selectBtn3")
+         let selectList3 = document.querySelector(".selectList3")
+         let selectListLi = document.querySelectorAll(".selectList3 li button")
+         selectBtn3.addEventListener("click", (event) => {
+            event.stopPropagation()
+            selectList3.classList.add("on")
+         })
+         document.querySelector("body").addEventListener("click", () => {
+            selectList3.classList.remove("on")
+         })
+         for (let i = 0; i < selectListLi.length; i++) {
+            console.log(selectListLi[i].target)
+            selectListLi[i].addEventListener("click", (event) => {
+               console.log(event.target)
+               selectBtn3.innerText = event.target.innerText
+            })
+         }
+      </script>
+      <div class="label_tit sign_bold">
+         정렬
+         <div class="align_btns">
+            <button><img src="../../imgs/ic_24_align_left.svg" alt="ic_24_align_left.svg" /></button>
+            <button><img src="../../imgs/ic_24_align_center.svg" alt="ic_24_align_center.svg" /></button>
+            <button><img src="../../imgs/ic_24_align_right.svg" alt="ic_24_align_right.svg" /></button>
+         </div>
+      </div>
+      <div class="label_tit sign_color">
+         글자 색상
+         <input type="color" />
+      </div>
+   </section>
+   <section style="height: 200px"></section>
+</div>
+<script>
+   let toggleSpanMust2 = document.querySelectorAll(".toggle_span_must2")
+   toggleSpanMust2.forEach((elem) => {
+      elem.addEventListener("click", function () {
+         elem.firstElementChild.firstElementChild.classList.toggle("move")
+         elem.firstElementChild.classList.toggle("expand")
+      })
+   })
+</script>

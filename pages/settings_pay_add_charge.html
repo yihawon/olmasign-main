@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>sign_setting</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <div class="wrapper">
+         <main class="main">
+            <div class="paysystem_wrap">
+               <div class="pasys_tit">
+                  <h1>결제방법 선택</h1>
+                  <p><b>실시간 계좌이체 / 신용카드 / 무통장 입금을 통해 결제를 할 수 있어요.</b></p>
+                  <p>(단, 무통장 결제는 근무시간 내에만 충전이 가능해요.)</p>
+               </div>
+               <div class="profile_area paysystem">
+                  <div class="contain_docu_set">
+                     <div class="tab_wrap paysystem_tabs">
+                        <div class="tab">실시간 계좌이체</div>
+                        <div class="tab">신용카드</div>
+                        <div class="tab">무통장</div>
+                        <span class="highlight pay_select"></span>
+                     </div>
+                     <div class="pay_select_fix paysys_tabs" style="margin-top: 14px !important">
+                        <ul>
+                           <li>이용료 <span>10,000원</span></li>
+                           <li>부가세 <span>1,000원</span></li>
+                           <hr />
+                           <li>최종결제금액<b>11,000원</b></li>
+                        </ul>
+                     </div>
+
+                     <section class="pay_select_tabs">
+                        <div class="cont pay_ways">
+                           <section class="pay_way">
+                              <lable for="idnum">주민등록번호</lable>
+                              <div class="pay_way_input">
+                                 <input type="text" id="idnum" />
+                                 <ul>
+                                    <li>실시간 계좌이체를 위해서는 예금주의 주민등록번호가 꼭 필요해요.</li>
+                                    <li>-없이 입력하세요</li>
+                                 </ul>
+                              </div>
+                           </section>
+                           <section class="pay_way">
+                              <ul>
+                                 <li>고객님의 은행 계좌에서 결제 금액이 바로 인출되는 방식으로, 별도로 입금하실 필요가 없어요.</li>
+                                 <li>고객님께서 별도의 인터넷뱅킹에 가입 하지 않고도 온라인으로 결제금액을 이체할 수 있어요.</li>
+                                 <li>고객님의 정보는 암호화하여 금융서버를 경유, 은행시스템에 전달되어 처리되기 때문에 안전해요.</li>
+                                 <li>통장에는 ‘㈜아이퀘스트’ 으로 표기되요.</li>
+                                 <li>법인통장은 사용할 수 없습니다. 이점 유의하시기 바래요.</li>
+                              </ul>
+                           </section>
+                           <section class="pay_way">
+                              <button class="btn_default" onclick="location.href='settings_pay_add_charge_start.html'">이전</button>
+                              <button class="btn_reverse" onclick="Modalpop('subscription')">확인</button>
+                           </section>
+                        </div>
+
+                        <div class="cont pay_ways">
+                           <section class="pay_way">
+                              <div class="pay_way_inn">
+                                 <section class="pay_way_sel">
+                                    <p>카드 선택</p>
+                                    <div class="pay_way_input">
+                                       <article class="cont_select">
+                                          <button class="btn_select selectBtn" style="height: 42px">선택하세요</button>
+                                          <ul class="list_item selectList">
+                                             <li><button type="button">우리카드</button></li>
+                                             <li><button type="button">하나카드</button></li>
+                                          </ul>
+                                       </article>
+                                    </div>
+                                 </section>
+                              </div>
+                           </section>
+                           <section class="pay_way">
+                              <button class="btn_default" onclick="location.href='settings_pay_add_charge_start.html'">이전</button>
+                              <button class="btn_reverse" onclick="Modalpop('subscription')">확인</button>
+                           </section>
+                        </div>
+
+                        <div class="cont pay_ways">
+                           <section class="pay_way">
+                              <div class="pay_way_inn">
+                                 <section class="pay_way_sel">
+                                    <p>입금 계좌</p>
+                                    <div class="pay_way_input">
+                                       <article class="cont_select">
+                                          <button class="btn_select selectBtn2" style="height: 42px">우리은행 : 576-056397-13-101</button>
+                                          <ul class="list_item selectList2">
+                                             <li><button type="button">국민은행 : 576-056397-13-101</button></li>
+                                             <li><button type="button">하나은행 : 576-056397-13-101</button></li>
+                                          </ul>
+                                       </article>
+                                    </div>
+                                 </section>
+                                 <section class="pay_way_input_txt">
+                                    <lable for="idnum">입금자 명</lable>
+                                    <div class="pay_way_input">
+                                       <input type="text" id="idnum" />
+                                       <ul>
+                                          <li>입금확인을 위해 이곳의 입금자명과 실제 입금자명을 동일하게 입력하세요.</li>
+                                       </ul>
+                                    </div>
+                                 </section>
+                                 <section class="pay_way_txt">
+                                    <p>입금 금액<span>11,000원</span></p>
+                                 </section>
+                              </div>
+                           </section>
+                           <section class="pay_way">
+                              <button class="btn_default" onclick="location.href='settings_pay_add_charge_start.html'">이전</button>
+                              <button class="btn_reverse" onclick="Modalpop('subscription')">구독하기</button>
+                           </section>
+                        </div>
+                     </section>
+                  </div>
+               </div>
+            </div>
+         </main>
+      </div>
+
+      <div class="popup_wrap restorePop modal_welcome">
+         <div class="popup_contain">
+            <section class="kakao_pop">
+               <img class="popup_close_btn" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal()" />
+
+               <h1 class="popup_title">카카오톡 채널 연동</h1>
+
+               <div class="ctn_wrap">
+                  <p class="ka_pop_hd_tit">카카오톡 채널 (플러스친구) 안내</p>
+                  <ul class="ka_pop_desc">
+                     <li>카카오톡 맞춤설정을 하기 위해서는 카카오톡 채널이 개설이 필요해요.( 관리자센터 바로가기 ) 카카오톡 채널을 만드신 후, 카카오톡 채널</li>
+                     <li>관리자센터에서 비즈니스 채널로 전환 신청해 주세요.</li>
+                  </ul>
+                  <div class="ka_pop_seletes">
+                     <section class="ka_pop_selete">
+                        <p>카카오톡 채널(플러스 친구) 안내</p>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">@hkd3334</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                     </section>
+                     <section class="ka_pop_selete">
+                        <p>관리자 연락처</p>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">010553132</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                     </section>
+                     <section class="ka_pop_selete">
+                        <p>사업 카테고리</p>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">전문서비스</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">법률서비스</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">법률서비스</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                     </section>
+                  </div>
+                  <a href="" class="ka_pop_more">카카오톡 비즈니스 채널 자세히 보기</a>
+               </div>
+            </section>
+            <section class="popup_confirm_btn">
+               <a href="javascript:void(0)" onclick="popPlus()">연동하기</a>
+            </section>
+         </div>
+      </div>
+      <div class="modalplus">
+         <div class="modalplus_contain">
+            <img class="modalplus_close" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal()" />
+            <h1 class="modalplus_tit">카카오톡 채널 연동</h1>
+            <div class="modalplus_body">
+               <h2>관리자 연락처로 전송된 인정번호를 입력해 주세요.</h2>
+
+               <section class="dropboxbtn">
+                  <span>인증번호</span>
+                  <input type="text" placeholder="1111" />
+               </section>
+
+               <p>인증번호를 받지 못하셨나요? <a href="">재전송</a></p>
+            </div>
+            <section class="confirm_btn">
+               <a href="#" onclick="closeModal()">연동하기</a>
+            </section>
+         </div>
+      </div>
+
+      <div class="subscription_done_wrap">
+         <div class="modal_welcome_contain">
+            <section class="subscription_done">
+               <h1>충전이 완료되었습니다.</h1>
+               <img src="../imgs/ic_img_done.svg" alt="ic_img_done.svg" />
+            </section>
+            <section class="start_btn">
+               <a href="javascript:void(0)" onclick="closeModal('subscription')">시작하기</a>
+            </section>
+         </div>
+      </div>
+      <script>
+         function popPlus() {
+            closeModal()
+            const modalplus = document.querySelector(".modalplus")
+            modalplus.classList.add("on")
+         }
+         let tab = document.querySelectorAll(".tab")
+         let cont = document.querySelectorAll(".cont")
+         console.log(tab)
+
+         function contentShow(num) {
+            cont.forEach((item, idx) => {
+               item.classList.add("active_tab")
+            })
+            cont[num].classList.remove("active_tab")
+         }
+         function highLight(num) {
+            let highLight = document.querySelector(".highlight")
+            const newLeft = tab[num].offsetLeft
+            const newWidth = tab[num].offsetWidth
+            highLight.style.left = newLeft + "px"
+            highLight.style.width = newWidth + "px"
+         }
+
+         contentShow(0)
+
+         tab.forEach((item, idx) => {
+            item.addEventListener("click", () => {
+               contentShow(idx)
+               highLight(idx)
+            })
+         })
+         console.log(tab)
+      </script>
+      <script src="../script/settingCustom.js"></script>
+      <script src="../script/modal.js"></script>
+      <script src="../script/selectBox.js"></script>
+   </body>
+</html>

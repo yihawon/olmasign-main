@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>modal</title>
+      <link rel="stylesheet" href="../../css/common.css" />
+      <link rel="stylesheet" href="../../css/modal.css" />
+   </head>
+   <body>
+      <style>
+         .reject_txt {
+            border: 1px solid #ddd;
+            border-radius: 3px;
+         }
+         .stop_area_wrap p:first-child {
+            text-align: right;
+            font-size: 12px;
+            color: #ddd;
+            margin-bottom: 10px !important;
+         }
+      </style>
+
+      <div class="modal_welcome on">
+         <div class="modal_welcome_contain">
+            <div class="popheading">
+               <span></span>
+               <h1>결재 반려</h1>
+               <span></span>
+               <img class="closeX" src="../../imgs/ic_20_close.svg" alt="ic_20_close" />
+            </div>
+            <section class="stop_area">
+               <h2 class="">
+                  <p>결재 반려 사유를 적어 주세요.</p>
+                  <span>아이퀘스트 근로계약서</span>
+               </h2>
+               <div class="stop_area_wrap">
+                  <p><span>0</span>/<span>1000</span></p>
+                  <textarea
+                     autofocus
+                     class="reject_txt"
+                     name=""
+                     id=""
+                     cols="20"
+                     rows="5"
+                     placeholder="결재 반려 사유 입력"
+                  >
+                  </textarea>
+               </div>
+            </section>
+            <section class="confirm_btn">
+               <a href="javascript:void(0)">결재반려</a>
+            </section>
+         </div>
+      </div>
+   </body>
+</html>

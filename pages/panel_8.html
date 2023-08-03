@@ -1,0 +1,59 @@
+<div class="panel_0_inn">
+   <section class="edit_subject">
+      <img src="../imgs/ic_24_dropdown_s.svg" alt="ic_24_dropdown_s" />
+      <h1>드롭다운</h1>
+   </section>
+   <hr />
+
+   <section class="section_wrap">
+      <p class="label_tit">입력필드값</p>
+      <input type="text" placeholder="드롭박스 1" />
+      <p class="ref_q">※ 대량전송 엑셀 다운로드시 제목값</p>
+   </section>
+
+   <section class="section_wrap">
+      <div class="label_tit">
+         필수 여부
+
+         <div class="toggle_area edit_toggle">
+            <section class="toggle_wrap">
+               <span class="toggle_span toggle_span_must9">
+                  <div class="flipBtn">
+                     <div class="toggle_btn"></div>
+                  </div>
+               </span>
+            </section>
+         </div>
+      </div>
+   </section>
+
+   <hr class="div_line" />
+   <section class="section_wrap">
+      <p class="label_tit">드롭다운 타이틀</p>
+      <input type="text" placeholder="제목" />
+      <p class="ref_q">※ 대량전송 엑셀 다운로드시 제목값</p>
+   </section>
+   <section class="section_wrap">
+      <p class="label_tit">드롭다운 항목</p>
+      <div class="flx fldc gap10">
+         <input type="text" placeholder="항목1" />
+         <input type="text" placeholder="항목2" />
+         <button class="category_add">+ 항목 추가</button>
+      </div>
+      <p class="ref_q">※ 최대 항목개수 10개</p>
+   </section>
+
+   <script>
+      const today = new Date().toISOString().substr(0, 10)
+      document.getElementById("today_date").value = today
+   </script>
+</div>
+<script>
+   let toggleSpanMust9 = document.querySelectorAll(".toggle_span_must9")
+   toggleSpanMust9.forEach((elem) => {
+      elem.addEventListener("click", function () {
+         elem.firstElementChild.firstElementChild.classList.toggle("move")
+         elem.firstElementChild.classList.toggle("expand")
+      })
+   })
+</script>

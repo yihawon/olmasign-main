@@ -1,0 +1,255 @@
+$tan: 1px solid tan;
+.lnb_m {
+   display: none;
+   padding: 1rem 1.5rem;
+   font-size: 16px;
+   width: 100%;
+   @media (max-width: 768px) {
+      display: flex;
+      position: fixed;
+      z-index: 500;
+      height: 54px;
+
+      background-color: var(--violet_K);
+      color: white;
+   }
+   .lnb_m_inn {
+      display: flex;
+      width: 100%;
+      display: flex;
+
+      justify-content: space-between;
+      height: 20px;
+      .m_logo_wrap {
+         background: center/contain url("../../imgs/amsign_logo.svg") no-repeat;
+
+         width: 70px;
+         height: 20px;
+      }
+      .m_menu_wrap {
+         .menu_trigger {
+         }
+      }
+   }
+}
+
+.menu_trigger:hover span:nth-of-type(1) {
+   background-color: white;
+}
+
+.menu_trigger:hover span:nth-of-type(2) {
+   background-color: white;
+}
+
+.menu_trigger:hover span:nth-of-type(3) {
+   background-color: white;
+}
+
+.menu_trigger,
+.menu_trigger span {
+   display: inline-block;
+   transition: all 0.3s;
+   box-sizing: border-box;
+}
+
+.menu_trigger {
+   position: relative;
+   width: 30px;
+   height: 18px;
+}
+
+.menu_trigger span {
+   position: absolute;
+   left: 0;
+   width: 100%;
+   height: 2px;
+   background-color: white;
+   border-radius: 1px;
+}
+
+.menu_trigger span:nth-of-type(1) {
+   top: 0;
+}
+
+.menu_trigger span:nth-of-type(2) {
+   top: 8px;
+}
+
+.menu_trigger span:nth-of-type(3) {
+   bottom: 0;
+}
+
+.menu_trigger.active-1 span:nth-of-type(1) {
+   -webkit-transform: translateY (8px) rotate (-45deg);
+   transform: translateY(8px) rotate(-45deg);
+}
+
+.menu_trigger.active-1 span:nth-of-type(2) {
+   opacity: 0;
+}
+
+.menu_trigger.active-1 span:nth-of-type(3) {
+   -webkit-transform: translateY(-8px) rotate(45deg);
+   transform: translateY(-8px) rotate(45deg);
+}
+
+.ham-con {
+   width: 30%;
+
+   background-color: rgba(224, 224, 224, 0.8);
+   position: fixed;
+   top: 70px;
+   right: -20%;
+   color: #505050;
+   z-index: 99;
+   opacity: 0;
+}
+
+.search-con {
+   width: 50%;
+   height: 50px;
+   position: relative;
+   top: 50px;
+   margin-bottom: 80px;
+   overflow: hidden;
+}
+
+.search-con input {
+   width: 70%;
+   height: 100%;
+   float: left;
+   line-height: 50px;
+   border: 1px solid black;
+}
+
+.ham-menu ul {
+   width: 100%;
+   margin: 0;
+   padding: 0;
+}
+
+.ham-menu ul.ham-top-menu li {
+   position: relative;
+   float: left;
+   width: 100%;
+   list-style-type: none;
+   font-size: 18px;
+}
+
+.ham-menu ul.ham-top-menu li a {
+   display: block;
+   width: 100%;
+   height: 100%;
+   line-height: 50px;
+   text-indent: 20px;
+   color: #000;
+   background-color: #fff;
+   text-decoration: none;
+}
+
+.ham-menu ul.ham-top-menu li a:hover {
+   background: #eee;
+}
+
+.ham-menu ul.ham-top-menu li .ham-sub-menu a {
+   position: relative;
+   float: left;
+   display: block;
+   width: 100%;
+   z-index: 99;
+   background: #f7f7f7;
+}
+
+.ham-menu ul.ham-top-menu li .ham-sub-menu a:hover {
+   background: #444;
+   color: #fff;
+}
+
+.all_menu {
+   position: fixed;
+   color: black;
+   z-index: 999;
+   top: 54px;
+   left: 0;
+   width: 100%;
+   background-color: white;
+   max-height: 0;
+   transition: all 0.3s ease-in;
+   overflow: hidden;
+   box-shadow: 0 0 14px rgba($color: #000000, $alpha: 0.1);
+   .gnb_m {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+         width: 2px;
+      }
+      &::-webkit-scrollbar-thumb {
+         background-color: var(--second_04);
+         border-radius: 5px;
+      }
+      &::-webkit-scrollbar-track {
+         background-color: var(--second_03);
+         border-radius: 5px;
+      }
+      padding-bottom: 2rem;
+      .contM_wrap {
+         flex: 1;
+      }
+   }
+}
+.all_menu.on {
+   max-height: 100%;
+}
+
+.gnb_m {
+   margin: 0 auto;
+   max-width: 480px;
+}
+.active {
+   display: none;
+}
+.tapBtnM_wrap {
+   display: flex;
+   justify-content: space-between;
+   position: relative;
+   margin: 1rem;
+   padding-bottom: 10px;
+}
+.tapBtnM {
+   word-break: keep-all;
+   padding: 8px 0;
+   background: transparent;
+   width: 100%;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 10px;
+
+   > img {
+      margin-right: 10px;
+      @media (max-width: 360px) {
+         display: none;
+      }
+   }
+   > b {
+      color: var(--second_05);
+      &:hover {
+         color: var(--violet_P);
+      }
+   }
+}
+
+.highlightM {
+   position: absolute;
+   background: var(--violet_P);
+   z-index: -1;
+   width: 20%;
+   height: 2px;
+   left: 0;
+   bottom: 0;
+   transition: all 0.3s ease-in;
+}

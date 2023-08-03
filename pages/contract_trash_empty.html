@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>얼마싸인</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <div class="wrapper">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function () {
+               $.ajax({
+                  url: "../include/head.html",
+                  success: function (result) {
+                     $(".header").html(result)
+                  },
+               })
+            })
+         </script>
+
+         <div class="header hd"></div>
+         <main class="main">
+            <script>
+               $(document).ready(function () {
+                  $.ajax({
+                     url: "../include/aside_contract.html",
+                     success: function (result) {
+                        $(".lnb_wrap").html(result)
+                     },
+                  })
+               })
+               $(document).ready(function () {
+                  $.ajax({
+                     url: "../include/lnb_m.html",
+                     success: function (result) {
+                        $(".lnb_m").html(result)
+                     },
+                  })
+               })
+            </script>
+
+            <section class="lnb_wrap"></section>
+
+            <div class="lnb_m"></div>
+
+            <section class="content_wrap">
+               <div class="location lo_wrap">
+                  <a href=""><img src="../../imgs/home-2.svg" alt="home-2.svg" /></a>
+                  <a href="">계약관리</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href="">전자 계약</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href="javascript:void(0)" id="menu_pop_btn" class="more_btn">&ctdot;</a>
+                  <div class="location_pop_wrap" id="menu_pop">
+                     <p class="location_pop">
+                        <span>Text..</span>
+                        <span>Text..</span>
+                        <span>Text..</span>
+                     </p>
+                  </div>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href=""><b>보낸 계약</b></a>
+               </div>
+
+               <div class="content_area">
+                  <div class="content_inner" id="menu">
+                     <div class="item_btn_setting">
+                        <div class="create_sign">
+                           <!-- <button data-action="" class="btn_default add_sign">다운로드</button>
+                           <button data-action="moveFolder" class="btn_default">이동</button>
+                           <button data-action="" class="btn_default">공유</button>
+                           <button data-action="" class="btn_default">수정후 다시 전송</button>
+                           <button data-tooltip10="기존에 사용했던 계약 양식과 참여자 그대로 새로운 서명을 진행할 수 있습니다." class="btn_reverse">
+                              계약복사
+                           </button> -->
+                        </div>
+
+                        <div class="sign_sort_wrap">
+                           <div class="sign_sort">
+                              <input class="search_input" type="search" placeholder="search..." />
+                              <span class="search_icon"><img src="../../imgs/ic_20_search.svg" alt="ic_20_search.svg" /></span>
+                           </div>
+                           <button class="btn_default filterSearch" data-action="filterSearch"></button>
+
+                           <article class="cont_select">
+                              <button class="btn_select" style="height: 38px">10개보기</button>
+                              <ul class="list_item">
+                                 <li><button type="button">10개보기</button></li>
+                                 <li><button type="button">Java</button></li>
+                                 <li><button type="button">JavaScript</button></li>
+                                 <li><button type="button">C#</button></li>
+                                 <li><button type="button">C/C++</button></li>
+                              </ul>
+                           </article>
+                        </div>
+                     </div>
+
+                     <table class="temp_bo_table">
+                        <tbody>
+                           <tr>
+                              <td class="flex" style="justify-content: center; flex-direction: column; align-items: center">
+                                 <img src="../../imgs/img_nocontent_01.png" alt="img_nocontent_01.png" width="270" height="270" style="margin-top: 5rem" />
+                                 <h1 style="font-weight: 600; font-size: 25px; margin: 2rem 0 6rem">임시 저장이 비어있어요.</h1>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </section>
+         </main>
+      </div>
+      <div class="ctr_view"></div>
+
+      <script>
+         let ctrView = document.querySelector(".ctr_view")
+         function ctrDetail() {
+            console.log(0)
+            ctrView.classList.toggle("on")
+         }
+         function ctrDetailClose() {
+            console.log(0)
+            ctrView.classList.toggle("on")
+         }
+
+         $(document).ready(function () {
+            $.ajax({
+               url: "./_ctr_view.html",
+               success: function (result) {
+                  $(".ctr_view").html(result)
+               },
+            })
+         })
+      </script>
+
+      <script>
+         let $body = document.querySelector("body"),
+            menuPopBtn = document.querySelector("#menu_pop_btn"),
+            menuPop = document.querySelector("#menu_pop")
+
+         $body.addEventListener("click", function () {
+            menuPop.style.display = "none"
+         })
+
+         menuPopBtn.addEventListener("click", function (e) {
+            e.stopPropagation()
+            menuPop.style.display = "block"
+         })
+         menuPop.addEventListener("click", function () {
+            menuPop.style.display = "none"
+         })
+      </script>
+      <script>
+         const btn = document.querySelector(".btn_select")
+         const list = document.querySelector(".list_item")
+         btn.addEventListener("click", () => {
+            btn.classList.toggle("on")
+         })
+         list.addEventListener("click", (event) => {
+            if (event.target.nodeName === "BUTTON") {
+               btn.innerText = event.target.innerText
+               btn.classList.remove("on")
+            }
+         })
+      </script>
+   </body>
+</html>

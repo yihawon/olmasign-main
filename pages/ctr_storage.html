@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>얼마싸인</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <div class="wrapper">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function () {
+               $.ajax({
+                  url: "../include/head.html",
+                  success: function (result) {
+                     $(".header").html(result)
+                  },
+               })
+            })
+         </script>
+
+         <div class="header hd"></div>
+         <main class="main">
+            <script>
+               $(document).ready(function () {
+                  if (matchMedia("screen and (max-width: 768px)").matches) {
+                     $.ajax({
+                        url: "../include/lnb_m.html",
+                        success: function (result) {
+                           $(".lnb_m").html(result)
+                        },
+                     })
+                  } else {
+                     $.ajax({
+                        url: "../include/aside_contract.html",
+                        success: function (result) {
+                           $(".lnb_wrap").html(result)
+                        },
+                     })
+                  }
+               })
+            </script>
+
+            <section class="lnb_wrap"></section>
+
+            <div class="lnb_m"></div>
+
+            <section class="content_wrap">
+               <div class="location lo_wrap">
+                  <a href=""><img src="../../imgs/home-2.svg" alt="home-2.svg" /></a>
+                  <a href="">계약관리</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href="">전자 계약</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href="javascript:void(0)" id="menu_pop_btn" class="more_btn">&ctdot;</a>
+                  <div class="location_pop_wrap" id="menu_pop">
+                     <p class="location_pop">
+                        <span>Text..</span>
+                        <span>Text..</span>
+                        <span>Text..</span>
+                     </p>
+                  </div>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href=""><b>노무/근로계약</b></a>
+               </div>
+
+               <div class="content_area">
+                  <div class="content_inner" id="menu">
+                     <div class="item_btn_setting">
+                        <style>
+                           [data-tooltip10]:hover:before {
+                              position: absolute;
+                              z-index: 999;
+                              left: 86px;
+                              top: 0;
+                              border: 1px solid #eee;
+                              background-color: white;
+                              color: var(--second_08);
+                              padding: 10px;
+                              width: 210px;
+                              border-radius: 5px;
+                              font-size: 12px;
+                              text-align: left;
+                              line-height: 1.5;
+                              content: attr(data-tooltip10);
+                              box-shadow: 0 0 14px rgba(100, 100, 100, 0.1);
+                           }
+                           @media (max-width: 768px) {
+                              [data-tooltip10]:hover:before {
+                                 display: none;
+                              }
+                           }
+                        </style>
+
+                        <div class="create_sign">
+                           <button data-action="" class="btn_default add_sign">다운로드</button>
+                           <button data-action="moveFolder" class="btn_default">이동</button>
+                           <button data-action="" class="btn_default">공유</button>
+                           <!-- <button data-action="" class="btn_default">수정후 다시 전송</button>
+                           <button data-tooltip10="기존에 사용했던 계약 양식과 참여자 그대로 새로운 서명을 진행할 수 있습니다." class="btn_reverse">
+                              계약복사
+                           </button> -->
+                        </div>
+
+                        <div class="sign_sort_wrap">
+                           <div class="sign_sort">
+                              <input class="search_input" type="search" placeholder="search..." />
+                              <span class="search_icon"><img src="../../imgs/ic_20_search.svg" alt="ic_20_search.svg" /></span>
+                           </div>
+                           <button class="btn_default filterSearch" data-action="filterSearch"></button>
+
+                           <article class="cont_select">
+                              <button class="btn_select" style="height: 38px">10개보기</button>
+                              <ul class="list_item">
+                                 <li><button type="button">10개보기</button></li>
+                                 <li><button type="button">Java</button></li>
+                                 <li><button type="button">JavaScript</button></li>
+                                 <li><button type="button">C#</button></li>
+                                 <li><button type="button">C/C++</button></li>
+                              </ul>
+                           </article>
+                        </div>
+                     </div>
+
+                     <table class="temp_bo_table">
+                        <tbody>
+                           <tr>
+                              <td class="td_left" style="flex: 0.6">
+                                 <div class="temp_name">
+                                    <div class="checkbox_wrap">
+                                       <input type="checkbox" id="check_0" class="normal check_orign" />
+                                       <label for="check_0" onclick="toggleIcon1()"> </label>
+                                    </div>
+                                    <p class="subject_tit">
+                                       <span class="subject_tit_p th_tit">계약명</span>
+                                       <span class="updown_sort">
+                                          <img src="../../imgs/ic_18_up_02.svg" alt="ic_18_up_02.svg" />
+                                          <img src="../../imgs/ic_18_down_02.svg" alt="ic_18_down_02.svg" />
+                                       </span>
+                                    </p>
+                                 </div>
+                              </td>
+                              <td class="td_right">
+                                 <p class="th_tit">
+                                    참여자<span class="updown_sort">
+                                       <img src="../../imgs/ic_18_up_02.svg" alt="ic_18_up_02.svg" />
+                                       <img src="../../imgs/ic_18_down_02.svg" alt="ic_18_down_02.svg" />
+                                    </span>
+                                 </p>
+                                 <p class="th_tit">
+                                    상태
+                                    <span class="updown_sort">
+                                       <img src="../../imgs/ic_18_up_02.svg" alt="ic_18_up_02.svg" />
+                                       <img src="../../imgs/ic_18_down_02.svg" alt="ic_18_down_02.svg" />
+                                    </span>
+                                 </p>
+                                 <p class="th_tit" style="flex: 1.8; display: flex; justify-content: flex-start">
+                                    마지막 활동 시간
+                                    <span class="updown_sort">
+                                       <img src="../../imgs/ic_18_up_02.svg" alt="ic_18_up_02.svg" />
+                                       <img src="../../imgs/ic_18_down_02.svg" alt="ic_18_down_02.svg" />
+                                    </span>
+                                 </p>
+                                 <p class="" style="flex: 1.9; display: flex; justify-content: flex-start">
+                                    폴더
+                                    <span class="updown_sort">
+                                       <img src="../../imgs/ic_18_up_02.svg" alt="ic_18_up_02.svg" />
+                                       <img src="../../imgs/ic_18_down_02.svg" alt="ic_18_down_02.svg" />
+                                    </span>
+                                 </p>
+                                 <p class="th_tit"></p>
+                                 <p class="th_tit"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="td_left" style="flex: 0.6">
+                                 <div class="temp_name">
+                                    <div class="checkbox_wrap">
+                                       <input type="checkbox" id="check_1" class="normal check_orign" />
+                                       <label for="check_1" onclick="toggleIcon1()"> </label>
+                                    </div>
+                                    <a class="subject_tit ctrLi" href="javscript:void(0)" onclick="ctrDetail(); return false; ">
+                                       <img src="../../imgs/ic_18_message.svg" alt="ic_18_message.svg" />
+                                       <span class="subject_tit_p">아이퀘스트 근로계약서_정지인</span>
+                                    </a>
+                                 </div>
+                              </td>
+
+                              <td class="td_right">
+                                 <p>이정현외 4명</p>
+                                 <p style="color: var(--success)">진행중</p>
+                                 <p style="flex: 1.5">2022-08-28- 14:30</p>
+                                 <p style="flex: 2"><img src="../../imgs/ic_18_folder.svg" alt="ic_18_folder.svg" /> 아이퀘스트_근로계약</p>
+
+                                 <p class="btn_wrap">
+                                    <button class="btn_table" onclick="window.location.href='./ctr_preview.html'">미리보기</button>
+                                 </p>
+
+                                 <div class="th_tit ctr_selec">
+                                    <button class="ctr_btn_sel">서명하기</button>
+                                    <ul class="list_item">
+                                       <li><button type="button">10개보기</button></li>
+                                       <li><button type="button">Java</button></li>
+                                       <li><button type="button">JavaScript</button></li>
+                                       <li><button type="button">C#</button></li>
+                                       <li><button type="button">C/C++</button></li>
+                                    </ul>
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="td_left" style="flex: 0.6">
+                                 <div class="temp_name">
+                                    <div class="checkbox_wrap">
+                                       <input type="checkbox" id="check_1" class="normal check_orign" />
+                                       <label for="check_1" onclick="toggleIcon1()"> </label>
+                                    </div>
+                                    <a class="subject_tit ctrLi" href="javscript:void(0)" onclick="ctrDetail(); return false; ">
+                                       <img src="../../imgs/ic_18_message.svg" alt="ic_18_message.svg" />
+                                       <span class="subject_tit_p">아이퀘스트 근로계약서_정지인</span>
+                                    </a>
+                                 </div>
+                              </td>
+
+                              <td class="td_right">
+                                 <p>이정현외 4명</p>
+                                 <p style="color: var(--success)">진행중</p>
+                                 <p style="flex: 1.5">2022-08-28- 14:30</p>
+                                 <p style="flex: 2"><img src="../../imgs/ic_18_folder.svg" alt="ic_18_folder.svg" /> 아이퀘스트_근로계약</p>
+
+                                 <p class="btn_wrap">
+                                    <button class="btn_table" onclick="window.location.href='./ctr_preview.html'">미리보기</button>
+                                 </p>
+
+                                 <div class="th_tit ctr_selec ctr_selec_disabled">
+                                    <button class="ctr_btn_sel">서명하기</button>
+                                    <ul class="list_item">
+                                       <li><button type="button">서명하기</button></li>
+                                       <li><button type="button">Java</button></li>
+                                       <li><button type="button">JavaScript</button></li>
+                                       <li><button type="button">C#</button></li>
+                                       <li><button type="button">C/C++</button></li>
+                                    </ul>
+                                 </div>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <div class="pagination">
+                     <button>
+                        <img src="../../imgs/btn_page_numbers_left.svg" alt="btn_page_numbers_left.svg" />
+                     </button>
+                     <button active>1</button>
+                     <button>2</button>
+                     <button>3</button>
+
+                     <button>
+                        <img src="../../imgs/btn_page_numbers_right.svg" alt="btn_page_numbers_right.svg" />
+                     </button>
+                  </div>
+               </div>
+            </section>
+         </main>
+      </div>
+      <div class="ctr_view"></div>
+
+      <script>
+         let ctrView = document.querySelector(".ctr_view")
+         function ctrDetail() {
+            console.log(0)
+            ctrView.classList.toggle("on")
+         }
+         function ctrDetailClose() {
+            console.log(0)
+            ctrView.classList.toggle("on")
+         }
+
+         $(document).ready(function () {
+            $.ajax({
+               url: "./_ctr_view.html",
+               success: function (result) {
+                  $(".ctr_view").html(result)
+               },
+            })
+         })
+      </script>
+
+      <script>
+         let $body = document.querySelector("body"),
+            menuPopBtn = document.querySelector("#menu_pop_btn"),
+            menuPop = document.querySelector("#menu_pop")
+
+         $body.addEventListener("click", function () {
+            menuPop.style.display = "none"
+         })
+
+         menuPopBtn.addEventListener("click", function (e) {
+            e.stopPropagation()
+            menuPop.style.display = "block"
+         })
+         menuPop.addEventListener("click", function () {
+            menuPop.style.display = "none"
+         })
+      </script>
+      <script>
+         const btn = document.querySelector(".btn_select")
+         const list = document.querySelector(".list_item")
+         btn.addEventListener("click", () => {
+            btn.classList.toggle("on")
+         })
+         list.addEventListener("click", (event) => {
+            if (event.target.nodeName === "BUTTON") {
+               btn.innerText = event.target.innerText
+               btn.classList.remove("on")
+            }
+         })
+      </script>
+   </body>
+</html>

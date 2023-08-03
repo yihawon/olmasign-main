@@ -1,0 +1,179 @@
+.my_templates span:hover {
+   font-weight: 800;
+   color: var(--violet_P);
+   position: relative;
+   width: 100%;
+}
+
+.my_templates span {
+   cursor: pointer;
+}
+.menu_pop {
+   display: none;
+}
+
+.caret {
+   cursor: pointer;
+   user-select: none;
+}
+
+.caret::before {
+   content: "\276F";
+   color: #bbb;
+   display: inline-block;
+   margin-right: 6px;
+}
+
+.caret-down::before {
+   transition: all 0.3s ease;
+   transform: rotate(90deg);
+}
+
+.nested {
+   display: none;
+}
+
+.activeTree {
+   display: block;
+}
+
+.nameAdd {
+   height: 28px !important;
+}
+#result {
+   span {
+      position: absolute;
+      right: 0;
+   }
+}
+@mixin treeMoreBtn {
+   .pop_sm_wrap {
+      opacity: 0;
+      position: absolute;
+      z-index: 11;
+      right: -10px;
+      display: flex;
+      word-break: break-all;
+      flex-direction: column;
+      width: 60px;
+      gap: 4px;
+      top: 20px;
+      padding: 4px;
+      border-radius: 4px;
+      background-color: white;
+      border: 1px solid #ddd;
+      display: none;
+      text-align: center;
+      box-shadow: 0 0 14px rgba($color: #000000, $alpha: 0.1);
+      > span {
+         display: inline-block;
+         padding: 4px;
+         width: 100%;
+         &:hover {
+            transition: 0.3s ease;
+            background-color: var(--violet_bg);
+         }
+      }
+   }
+   .pop_sm_wrap.on {
+      transition: opacity 0.3s ease;
+      opacity: 1;
+      display: block;
+   }
+}
+
+@mixin treeMenuSpace {
+   margin-top: 10px;
+}
+.treeMenu {
+   position: relative;
+   width: 100%;
+   font-size: 14px;
+   color: #000000;
+   &:focus {
+      outline: none;
+   }
+   li:nth-of-type(1) {
+      color: var(--violet_P);
+      font-size: 16px;
+   }
+
+   li {
+      margin-left: inherit !important;
+      list-style: none !important;
+      color: #000000;
+      font-size: 15px;
+      position: relative;
+      @include treeMenuSpace;
+
+      .tr_txt {
+      }
+      input {
+         display: inline-block;
+         max-width: 84px;
+      }
+      p {
+         position: relative;
+         @include treeMenuSpace;
+         .treeMoreBtn {
+            @include treeMoreBtn;
+            cursor: pointer;
+         }
+      }
+      ul {
+         padding-left: 14px;
+         li:nth-of-type(1) {
+            color: #000;
+            font-size: 15px;
+         }
+
+         li {
+            .treeMoreBtn {
+               @include treeMoreBtn;
+               cursor: pointer;
+               ul {
+                  li {
+                     ul {
+                        li {
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+   .treeMoreBtn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: white;
+   }
+}
+
+.moreview {
+   display: none;
+}
+.moreview.toggle {
+   display: block;
+}
+.menu_pop {
+   position: absolute;
+   z-index: 500;
+   top: 20px;
+   right: -10px;
+   background-color: white;
+   border: 1px solid #ddd;
+   box-shadow: 0 0 14px rgba($color: #000000, $alpha: 0.1);
+   border-radius: 5px;
+   p {
+      padding: 4px;
+      span {
+         padding: 2px 14px;
+         &:hover {
+            background-color: var(--violet_bg);
+            border-radius: 3px;
+         }
+      }
+   }
+}

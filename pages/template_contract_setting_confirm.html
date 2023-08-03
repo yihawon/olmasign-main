@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>template_write</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <div class="modal_welcome">
+         <div class="modal_welcome_contain">
+            <section class="sign_req_done">
+               <img class="pop_close_btn" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal()" />
+               <img class="done_icon" src="../imgs/ic_img_done.svg" alt="ic_img_done.svg" />
+               <h1>서명요청 완료</h1>
+               <p>계약이 전송되었습니다.</p>
+               <p>아래 버튼을 눌러 계약 진행상황을 확인할 수 있습니다.</p>
+               <button>계약 정보 보기</button>
+            </section>
+            <section class="confirm_btn">
+               <a href="javascript:void(0)">확인</a>
+            </section>
+         </div>
+      </div>
+
+      <script></script>
+      <header class="header">
+         <input type="button" value="나가기" class="btn_exit" onclick="window.location.href='./settings_my_template.html'" />
+
+         <div class="stepper_contain">
+            <!-- <div class="stepper_tit">
+               <img src="../../imgs/stepper_icon_on.svg" alt="stepper_icon_on.svg" />
+               내 파일 업로드
+            </div>
+            <span class="line_el line_el_select"></span> -->
+            <div class="stepper_tit_wrap">
+               <div class="stepper_tit">
+                  <img src="../../imgs/ic_img_done.svg" alt="ic_img_done.svg" />
+                  계약설정
+               </div>
+               <span class="line_el line_el_select_solid"></span>
+               <div class="stepper_tit">
+                  <img src="../../imgs/ic_img_done.svg" alt="ic_img_done.svg" />
+                  템플릿 편집
+               </div>
+               <span class="line_el line_el_select_solid"></span>
+               <div class="stepper_tit">
+                  <img src="../../imgs/stepper_icon_on.svg" alt="stepper_icon_on.svg" />
+                  문서 확인
+               </div>
+            </div>
+         </div>
+
+         <div class="right_btns">
+            <input type="button" value="임시저장" class="btn_violet" id="btn_link_pop" />
+            <a href="javascript:void(0)" class="help_ic_wrap"><img src="../../imgs/ic_help.svg" alt="ic_help.svg" /></a>
+         </div>
+      </header>
+      <div style="height: 60px"></div>
+      <main class="main docu_set_wrap docu_confirm">
+         <div class="docu_set docu_header">
+            <div class="docu_lock">문서 잠김 <img src="../../imgs/ic_24_lock.svg" alt="ic_24_lock.svg" /></div>
+            <div class="docu_input_wrap">
+               <div class="docu_tit col">
+                  <label for="docu_tit"><h2>문서명</h2></label>
+                  <h1>단시간 근로자 표준근로계약서(파트타임, 아르바이트)</h1>
+               </div>
+               <div class="docu_p">
+                  총 서명 유효기간
+                  <p>2022.12.20 <span>(D-20일)</span></p>
+               </div>
+            </div>
+         </div>
+
+         <div class="contain_docu_set">
+            <div class="tab_wrap">
+               <div class="tab">서명자</div>
+               <div class="tab">참조자</div>
+               <div class="tab">결재자</div>
+               <span class="highlight"></span>
+            </div>
+
+            <section class="cont_section">
+               <div class="cont">
+                  <div class="cont_inner signer_info_wrap">
+                     <p>첫번째 서명자</p>
+                     <h2>홍길동 <span>01012345678 / hgd@email.com</span></h2>
+                     <hr />
+                     <div class="signer_info">
+                        <p class="signer_info_tit">본인인증</p>
+                        <p>접근 암호 / 법인 공동인증서 인증</p>
+                        <p class="signer_info_tit">서명 유효기간</p>
+                        <p>2022. 12. 20 (D-10일)</p>
+                        <p class="signer_info_tit">메세지</p>
+                        <p>날짜와 내용 꼼꼼히 확인 후 서명해주세요.</p>
+                     </div>
+                  </div>
+                  <div class="cont_inner signer_info_wrap">
+                     <p>두번째 서명자</p>
+                     <h2>홍길자 <span>01012345678 / hgd@email.com</span></h2>
+                     <hr />
+                     <div class="signer_info">
+                        <p class="signer_info_tit">본인인증</p>
+                        <p>접근 암호 / 법인 공동인증서 인증</p>
+                        <p class="signer_info_tit">서명 유효기간</p>
+                        <p>2022. 12. 20 (D-10일)</p>
+                        <p class="signer_info_tit">메세지</p>
+                        <p>날짜와 내용 꼼꼼히 확인 후 서명해주세요.</p>
+                     </div>
+                  </div>
+                  <div class="cont_inner signer_info_wrap signer_folder">
+                     <p class="default_folder_p">서명 요청 시 기본 폴더로 전송합니다. <span>폴더변경</span></p>
+                     <div class="check_p_wrap">
+                        <div class="check_p">
+                           <input type="checkbox" id="chk1" class="check_orign" />
+                           <label for="chk1" onclick="toggleIcon()" class="label_p">
+                              <div class="check_box_wrap check_icon_1">
+                                 <span class="auth_span"> 전자서명 개인정보 수집 및 이용에 동의합니다.</span>
+                              </div>
+                           </label>
+                        </div>
+                        <div class="check_p">
+                           <input type="checkbox" id="chk2" class="check_orign" />
+                           <label for="chk2" onclick="toggleIcon()" class="label_p">
+                              <div class="check_box_wrap check_icon_1">
+                                 <span class="auth_span"> 서명 요청 시 이용 중인 요금제에 포함된 제공 횟수가 차감됩니다.</span>
+                              </div>
+                           </label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="cont">
+                  <div class="cont_inner">
+                     <div class="signer col_cont">
+                        <div class="heading_wrap">
+                           <h1>참조자</h1>
+                        </div>
+                        <div class="cont_input_wrap">
+                           <input type="text" placeholder="이름" />
+                           <input type="text" placeholder="휴대폰번호" />
+                           <input type="text" placeholder="이메일" />
+                        </div>
+                     </div>
+
+                     <div class="option_select_wrap col_cont">
+                        <div class="cont_input_wrap" style="gap: 30px 40px">
+                           <section class="option_select">
+                              <h3>전송방식</h3>
+                              <div class="check_p_wrap option_select_input_wrap">
+                                 <div class="check_p option_select_input">
+                                    <input type="checkbox" id="chk11" class="check_orign" />
+                                    <label for="chk11" class="label_p">
+                                       <div class="check_box_wrap check_icon_1">
+                                          <span>이메일</span>
+                                       </div>
+                                    </label>
+                                 </div>
+                                 <div class="check_p option_select_input">
+                                    <input type="checkbox" id="chk12" class="check_orign" />
+                                    <label for="chk12" class="label_p">
+                                       <div class="check_box_wrap check_icon_1">
+                                          <span>카카오톡</span>
+                                       </div>
+                                    </label>
+                                 </div>
+                              </div>
+                           </section>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="cont">
+                  <div class="cont_inner signer_info_wrap">
+                     <p>첫번째 서명자</p>
+                     <h2>홍길동 <span>01012345678 / hgd@email.com</span></h2>
+                     <hr />
+                     <div class="signer_info">
+                        <p class="signer_info_tit">메시지</p>
+                        <p>날짜와 내용 꼼꼼히 확인 후 서명해주세요.</p>
+                     </div>
+                  </div>
+                  <div class="cont_inner signer_info_wrap">
+                     <p>두번째 서명자</p>
+                     <h2>홍길자 <span>01012345678 / hgd@email.com</span></h2>
+                     <hr />
+                     <div class="signer_info">
+                        <p class="signer_info_tit">메시지</p>
+                        <p>날짜와 내용 꼼꼼히 확인 후 서명해주세요.</p>
+                     </div>
+                  </div>
+                  <div class="cont_inner signer_info_wrap signer_folder">
+                     <p class="default_folder_p">서명 요청 시 기본 폴더로 전송합니다. <span>폴더변경</span></p>
+                     <div class="check_p_wrap">
+                        <div class="check_p">
+                           <input type="checkbox" id="chk1" class="check_orign" />
+                           <label for="chk1" onclick="toggleIcon()" class="label_p">
+                              <div class="check_box_wrap check_icon_1">
+                                 <span class="auth_span"> 전자서명 개인정보 수집 및 이용에 동의합니다.</span>
+                              </div>
+                           </label>
+                        </div>
+                        <div class="check_p">
+                           <input type="checkbox" id="chk2" class="check_orign" />
+                           <label for="chk2" onclick="toggleIcon()" class="label_p">
+                              <div class="check_box_wrap check_icon_1">
+                                 <span class="auth_span"> 서명 요청 시 이용 중인 요금제에 포함된 제공 횟수가 차감됩니다.</span>
+                              </div>
+                           </label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+
+            <div style="height: 200px"></div>
+         </div>
+      </main>
+      <script>
+         let tabWrap = document.querySelector(".tab_wrap")
+         window.addEventListener("scroll", () => {
+            let yOffset = window.pageYOffset
+            if (yOffset > 300) {
+               tabWrap.style.animation = "slide 1s ease forwards"
+            } else if (yOffset < 300) {
+               tabWrap.style.animation = "slideOut 1s eas e forwards"
+            }
+         })
+      </script>
+      <footer class="footer">
+         <div class="btn_wrap">
+            <input
+               class="btn_default"
+               type="button"
+               value="이전"
+               style="color: var(--violet_P)"
+               onclick="window.location.href='./template_contract_setting.html'"
+            />
+            <input class="btn_violet" type="button" value="서명 요청하기" onclick="Modalpop()" />
+         </div>
+      </footer>
+      <script src="../script/templateContractSettingConfirm.js"></script>
+   </body>
+</html>

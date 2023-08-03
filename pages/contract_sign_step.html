@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>template_write</title>
+      <link rel="shortcut icon" href="#" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <div class="sign_draw_wrap sign_add_pop">
+         <div class="sign_draw_contain_tab" style="flex-direction: column">
+            <div class="sign_draw_menu posr">
+               <div class="tab_btn tab_btn1 tabBtn__1"><span>그리기</span></div>
+               <div class="tab_btn tab_btn1 tabBtn__2"><span>만들기</span></div>
+               <div class="tab_btn tab_btn1 tabBtn__3"><span>업로드</span></div>
+               <div class="tab_btn tab_btn1 tabBtn__4"><span>내 사인</span></div>
+               <span class="signMade" style="width: 25%"></span>
+            </div>
+            <div class="sign_draw_content_wrap">
+               <div class="cotent_wrap">
+                  <section class="sign_draw_content sign_draw_content1">
+                     <h1>사인만들기</h1>
+                     <div class="add_sign_step1">이곳에 사인을 그려주세요.</div>
+                     <p class="sign_draw_del_btn">모두 지우기</p>
+                     <div class="submit_btn_wrap">
+                        <input class="submit_btn" type="submit" value="입력하기" />
+                        <input class="submit_btn btn_close" type="submit" value="취소" />
+                     </div>
+                  </section>
+                  <section class="sign_draw_content sign_draw_content1">
+                     <h1>사인만들기</h1>
+                     <div class="add_sign_step2">
+                        <input type="text" placeholder="이름을 입력하고 하단에 입력하기 버튼을 눌러주세요." />
+                        <div class="content_list_wrap">
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                        </div>
+                     </div>
+                     <div class="submit_btn_wrap">
+                        <input class="submit_btn" type="submit" value="입력하기" />
+                        <input class="submit_btn btn_close" type="submit" value="취소" />
+                     </div>
+                  </section>
+
+                  <section class="sign_draw_content sign_draw_content1">
+                     <h1>사인만들기</h1>
+
+                     <div class="add_sign_step3">
+                        <div class="my_file_box">
+                           <div class="my_com">
+                              <h2 class="file_title">내 컴퓨터</h2>
+                              <div class="drop_file_wrap">
+                                 <div class="my_com_file_drop drop-zone">
+                                    <img src="../../imgs/ic_24_form_02.svg" alt="ic_24_form_02.svg" />
+                                    <p class="">이곳에 파일을 놓아 주세요.</p>
+                                    <div class="or_comment">
+                                       <hr />
+                                       <span>또는</span>
+                                    </div>
+                                 </div>
+                                 <form class="drop_file">
+                                    <label for="file" class="file_upload">파일찾기</label>
+                                    <input type="file" id="file" multiple />
+                                 </form>
+                              </div>
+                           </div>
+
+                           <script></script>
+                        </div>
+                        <div class="file_desc">
+                           <p>지원 파일 : PNG, JPG, ...</p>
+                           <p>업로드 가능 용량 : 최대 2MB</p>
+                        </div>
+                     </div>
+
+                     <div class="submit_btn_wrap">
+                        <input class="submit_btn" type="submit" value="입력하기" />
+                        <input class="submit_btn btn_close" type="submit" value="취소" />
+                     </div>
+                  </section>
+
+                  <section class="sign_draw_content sign_draw_content1">
+                     <h1>사인만들기</h1>
+                     <div class="add_sign_step2">
+                        <input type="text" placeholder="이름을 입력하고 하단에 입력하기 버튼을 눌러주세요." />
+                        <div class="content_list_wrap">
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                        </div>
+                     </div>
+                     <div class="submit_btn_wrap">
+                        <input class="submit_btn" type="submit" value="입력하기" />
+                        <input class="submit_btn btn_close" type="submit" value="취소" />
+                     </div>
+                  </section>
+               </div>
+            </div>
+            <div class="btn_close">
+               <img src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" />
+            </div>
+         </div>
+         <div style="height: 100px"></div>
+      </div>
+
+      <div class="sign_draw_wrap stamp_add_pop">
+         <div class="sign_draw_contain_tab" style="flex-direction: column">
+            <div class="sign_draw_menu">
+               <div class="tab_btn tab_btn2 tabBtn__1"><span>일반도장</span></div>
+               <div class="tab_btn tab_btn2 tabBtn__2"><span>회사도장</span></div>
+               <div class="tab_btn tab_btn2 tabBtn__3"><span>업로드</span></div>
+               <div class="tab_btn tab_btn2 tabBtn__4"><span>내 도장</span></div>
+               <span class="signMade2" style="width: 25%"></span>
+            </div>
+            <div class="sign_draw_content_wrap">
+               <div class="cotent_wrap">
+                  <section class="sign_draw_content sign_draw_content2">
+                     <h1>도장만들기</h1>
+                     <div class="add_stamp_step1">
+                        <input type="text" placeholder="이름을 입력하고 하단에 입력하기 버튼을 눌러주세요." />
+                        <div class="content_list_wrap">
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                        </div>
+                     </div>
+                     <div class="submit_btn_wrap">
+                        <input class="submit_btn" type="submit" value="입력하기" />
+                        <input class="submit_btn btn_close2" type="submit" value="취소" />
+                     </div>
+                  </section>
+                  <section class="sign_draw_content sign_draw_content2">
+                     <h1>도장만들기</h1>
+                     <div class="add_stamp_step2">
+                        <input type="text" placeholder="이름을 입력하고 하단에 입력하기 버튼을 눌러주세요." />
+                        <div class="content_list_wrap">
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                        </div>
+                     </div>
+                     <div class="submit_btn_wrap">
+                        <input class="submit_btn" type="submit" value="입력하기" />
+                        <input class="submit_btn btn_close2" type="submit" value="취소" />
+                     </div>
+                  </section>
+
+                  <section class="sign_draw_content sign_draw_content2">
+                     <h1>도장만들기</h1>
+
+                     <div class="add_sign_step3">
+                        <div class="my_file_box">
+                           <div class="my_com">
+                              <h2 class="file_title">내 컴퓨터</h2>
+                              <div class="drop_file_wrap">
+                                 <div class="my_com_file_drop drop-zone1">
+                                    <img src="../../imgs/ic_24_form_02.svg" alt="ic_24_form_02.svg" />
+                                    <p class="">이곳에 파일을 놓아 주세요.</p>
+                                    <div class="or_comment">
+                                       <hr />
+                                       <span>또는</span>
+                                    </div>
+                                 </div>
+                                 <form class="drop_file">
+                                    <label for="file1" class="file_upload">파일찾기</label>
+                                    <input type="file" id="file1" multiple />
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="file_desc">
+                           <p>지원 파일 : PNG, JPG</p>
+                           <p>업로드 가능 용량 : 최대 5MB</p>
+                        </div>
+                        <div class="img_edit_area">
+                           <div class="img_canvas">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_edit_btn">
+                              <input type="button" value="－대비약하게" />
+                              <input type="button" value="＋대비강하게" />
+                              <input type="button" value="이미지 회전" />
+                              <input type="button" value="배경제거" />
+                           </div>
+                        </div>
+                     </div>
+                     <div class="submit_btn_wrap">
+                        <input class="submit_btn" type="submit" value="입력하기" />
+                        <input class="submit_btn btn_close2" type="submit" value="취소" />
+                     </div>
+                  </section>
+
+                  <section class="sign_draw_content sign_draw_content2">
+                     <h1>도장만들기</h1>
+                     <div class="add_stamp_step2">
+                        <input type="text" placeholder="이름을 입력하고 하단에 입력하기 버튼을 눌러주세요." />
+                        <div class="content_list_wrap">
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                           <div class="img_wrap">
+                              <img src="../../imgs/ic_24_noimg.png" alt="ic_24_noimg.png" />
+                           </div>
+                        </div>
+                     </div>
+                     <div class="submit_btn_wrap">
+                        <input class="submit_btn" type="submit" value="입력하기" />
+                        <input class="submit_btn btn_close2" type="submit" value="취소" />
+                     </div>
+                  </section>
+               </div>
+            </div>
+            <div class="btn_close btn_close2">
+               <img src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" />
+            </div>
+         </div>
+      </div>
+
+      <header class="header ctr_header">
+         <input type="button" value="나가기" class="btn_exit" onclick="history.back()" />
+
+         <div class="stepper_contain">
+            <div class="stepper_tit" style="font-weight: 500; font-size: 20px; color: black">서명하기</div>
+         </div>
+         <div class="right_btns">
+            <img src="../../imgs/ic_help.svg" alt="ic_help.svg" />
+         </div>
+      </header>
+      <div style="height: 60px"></div>
+      <main class="main">
+         <section class="docu_wrap">
+            <article class="docu_area">
+               <div class="tool_bar temp_detail_page">
+                  <div class="dropdown_wrap" style="margin-right: 2rem">
+                     <div class="dropdown">
+                        <div class="dropdown-btn">
+                           <p>100%</p>
+                           <i class="bi bi-caret-down-fill"></i>
+                        </div>
+                        <div class="dropdown-content" style="border: 1px solid #eee">
+                           <div class="dropdown-item" data-value="1">85%</div>
+                           <div class="dropdown-item" data-value="2">50%</div>
+                           <div class="dropdown-item" data-value="3">25%</div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="icons_btns">
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_plus.svg" alt="ic_24_plus.svg" />
+                     </a>
+                     <button class="">
+                        <img src="../../imgs/ic_24_minus.svg" alt="ic_24_minus.svg" />
+                     </button>
+                  </div>
+                  <div class="ctr_sign_m_bar">1 / 4</div>
+               </div>
+            </article>
+            <div class="docu_bg">
+               <div class="docu_board_wrap">
+                  <p>단시간 근로자 표준근로계약서 (파트타임, 아르바이트)</p>
+                  <div class="docu_board">
+                     <section style="padding: 1rem">
+                        <button class="toast__trigger">토스트 팝업 띄우기</button>
+                        <br />
+                        <hr />
+                        <button class="ctr_btn">사인/도장</button>
+                        <hr />
+                        <div class="ctr_btn_selects">
+                           <button class="ctr_btn_select add_sign" onclick="signPop()">사인</button>
+                           <button class="ctr_btn_select add_stamp">도장</button>
+                        </div>
+                        <hr />
+                     </section>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="docu_page_area_mod">
+            <p>Pages : 3</p>
+            <article class="slide_thum_wrap">
+               <div class="slide_thum">
+                  <div class="thum_view"></div>
+                  <div class="thum_foot">
+                     <div class="num">1</div>
+                  </div>
+               </div>
+            </article>
+            <article class="slide_thum_wrap">
+               <div class="slide_thum">
+                  <div class="thum_view"></div>
+                  <div class="thum_foot">
+                     <div class="num">2</div>
+                  </div>
+               </div>
+            </article>
+            <input type="button" value="+ 페이지 추가" class="btn_add_page" />
+         </section>
+      </main>
+
+      <section class="toast__container">
+         <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast__content">
+               <div class="toast_pop">
+                  <p>필수 입력란이 2개 남았습니다. <span>(5초후 사라짐)</span></p>
+                  <span> <img src="../../imgs/ic_18_close_white.svg" alt="ic_18_close_white.svg" /> </span>
+               </div>
+            </div>
+         </div>
+      </section>
+      <script>
+         const toasts = document.querySelectorAll(".toast")
+         const toastTriggers = document.querySelectorAll(".toast__trigger")
+
+         toastTriggers.forEach((trigger, index) => {
+            let toastTimeout
+
+            trigger.addEventListener("click", () => {
+               console.log(0)
+               toasts[index].classList.add("toast--active")
+               toastTimeout = setTimeout(() => {
+                  toasts[index].classList.remove("toast--active")
+               }, 5000)
+            })
+
+            toasts[index].addEventListener("click", () => {
+               toasts[index].classList.remove("toast--active")
+               clearTimeout(toastTimeout)
+            })
+         })
+      </script>
+
+      <section class="modal_welcome ctrModal">
+         <div>
+            <article class="modal_welcome_contain none_gradient">
+               <div class="popheading">
+                  <span></span>
+                  <h1 class="popheading_tit">전자 서명 계약 동의</h1>
+                  <span></span>
+                  <img class="img_wrap_close" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="popCancel()" />
+               </div>
+               <section class="stop_area sign_ctr_agree">
+                  <div class="alert_txt" style="line-height: 1.5">
+                     <ul>
+                        <li>
+                           <b>전자문서 및 전자서명의 법적 효력에 대해 동의합니다. </b>
+                        </li>
+                        <li>
+                           <b> 서명 완료 후 전송되는 전자문서를 원본으로 인정합니다. </b>
+                        </li>
+                     </ul>
+                  </div>
+
+                  <article class="check_wrap">
+                     <div class="check_p">
+                        <input type="checkbox" id="dont_msg" class="normal check_orign" />
+                        <label for="dont_msg" class="dont_msg">
+                           <span style="font-weight: 500"> 이용약관 및 개인정보 수집 및 이용에 동의합니다. </span>
+                        </label>
+                     </div>
+                  </article>
+               </section>
+               <section class="sign_ctr_done">
+                  <img src="../../imgs/ic_20_check.svg" alt="ic_20_check.svg" />
+                  <h1>서명요청 완료</h1>
+                  <p>
+                     계약이 전송되었어요. <br />
+                     아래 버튼을 눌러 계약 진행상황을 확인할 수 있어요.
+                  </p>
+                  <div class="ctr_btns">
+                     <button onclick="ctrDetail()">계약 정보 보기</button>
+                     <button>계약서 다운</button>
+                     <button>감사추적인증서</button>
+                     <button>블록체인(TXID)</button>
+                  </div>
+               </section>
+               <section class="confirm_btn">
+                  <a href="javascript:void(0)" class="sign_result_btn" onclick="ctrDon('ctrResult')">서명완료</a>
+               </section>
+            </article>
+         </div>
+      </section>
+      <script>
+         function popCancel() {
+            let popx = document.querySelector(".ctrModal")
+            popx.classList.add("off")
+         }
+         function ctrDon(elem) {
+            console.log(this)
+            let signCtrAgree = document.querySelector(".sign_ctr_agree")
+            let signCtrDone = document.querySelector(".sign_ctr_done")
+            let popheadingTit = document.querySelector(".popheading_tit")
+            let signResultBtn = document.querySelector(".sign_result_btn")
+            if (elem == "ctrResult") {
+               signCtrAgree.classList.add("off")
+               signCtrDone.classList.add("on")
+               popheadingTit.style.display = "none"
+               signResultBtn.innerHTML = "확인"
+               signResultBtn.setAttribute("onclick", "ctrDon('confirm')")
+            } else if (elem == "confirm") {
+               alert("완료")
+            }
+         }
+      </script>
+
+      <div class="ctr_view"></div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script>
+         let ctrView = document.querySelector(".ctr_view")
+         function ctrDetail() {
+            console.log(0)
+            ctrView.classList.toggle("on")
+         }
+         function ctrDetailClose() {
+            console.log(0)
+            ctrView.classList.toggle("on")
+         }
+
+         $(document).ready(function () {
+            $.ajax({
+               url: "./_ctr_view.html",
+               success: function (result) {
+                  $(".ctr_view").html(result)
+               },
+            })
+         })
+      </script>
+
+      <footer class="footer">
+         <div class="btn_wrap">
+            <input class="btn_default_mod" type="button" value="일괄서명" style="color: var(--violet_P)" />
+            <input class="btn_violet_mod" type="button" value="서명 완료하기" onclick="ctrDetail()" />
+         </div>
+      </footer>
+      <script src="../script/setting.js"></script>
+      <script src="../script/fileDrop.js"></script>
+      <script>
+         ;(function () {
+            var $file1 = document.getElementById("file1")
+            var dropZone1 = document.querySelector(".drop-zone1")
+
+            var toggleClass = function (className) {
+               console.log("current event: " + className)
+
+               var list = ["dragenter", "dragleave", "dragover", "drop"]
+
+               for (var i = 0; i < list.length; i++) {
+                  if (className === list[i]) {
+                     dropZone1.classList.add("drop-zone-" + list[i])
+                  } else {
+                     dropZone1.classList.remove("drop-zone-" + list[i])
+                  }
+               }
+            }
+
+            var showFiles = function (files) {
+               dropZone1.innerHTML = ""
+               for (var i = 0, len = files.length; i < len; i++) {
+                  dropZone1.innerHTML += "<p>" + files[i].name + "</p>"
+               }
+            }
+
+            var selectFile = function (files) {
+               $file1.files = files
+               showFiles($file1.files)
+            }
+
+            $file1.addEventListener("change", function (e) {
+               showFiles(e.target.files)
+            })
+
+            dropZone1.addEventListener("dragenter", function (e) {
+               e.stopPropagation()
+               e.preventDefault()
+
+               toggleClass("dragenter")
+            })
+
+            dropZone1.addEventListener("dragleave", function (e) {
+               e.stopPropagation()
+               e.preventDefault()
+
+               toggleClass("dragleave")
+            })
+
+            dropZone1.addEventListener("dragover", function (e) {
+               e.stopPropagation()
+               e.preventDefault()
+
+               toggleClass("dragover")
+            })
+
+            dropZone1.addEventListener("drop", function (e) {
+               e.preventDefault()
+
+               toggleClass("drop")
+
+               var files = e.dataTransfer && e.dataTransfer.files
+               console.log(files)
+
+               if (files != null) {
+                  if (files.length < 1) {
+                     alert("폴더 업로드 불가")
+                     return
+                  }
+                  selectFile(files)
+               } else {
+                  alert("ERROR")
+               }
+            })
+         })()
+      </script>
+   </body>
+</html>

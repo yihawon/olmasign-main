@@ -1,0 +1,102 @@
+<section class="gnb_wrap">
+   <div class="logo">
+      <a href="./main.html"><img src="../../imgs/amsign_logo.svg" alt="amsign_logo.svg" /></a>
+   </div>
+
+   <div class="gnb_menu">
+      <a href="./contract_main.html" class="gnb_btn lava_1" onclick="gnbSelect('Contract')">
+         <img src="../../imgs/ic_24_contract_n.svg" alt="ic_24_contract" />
+         <b>계약관리</b>
+      </a>
+      <a href="./settings_my_template.html" class="gnb_btn lava_2" onclick="gnbSelect('form')">
+         <img src="../../imgs/ic_24_form_01_n.svg" alt="ic_24_form_01" />
+         <b>서식관리</b>
+      </a>
+      <a href="./settings_user_info.html" class="gnb_btn lava_3" onclick="gnbSelect('set')">
+         <img src="../../imgs/ic_24_setting_n.svg" alt="ic_24_setting" />
+         <b>설정하기</b>
+      </a>
+      <a href="./transaction.html" class="gnb_btn lava_4" onclick="gnbSelect('set')">
+         <img src="../../imgs/ic_24_send_w.svg" alt="ic_24_send_w.svg" />
+         <b>거래증빙</b>
+      </a>
+      <a href="./settings_user_info.html" class="gnb_btn lava_5" onclick="gnbSelect('set')">
+         <img src="../../imgs/ic_24_approval_n.svg" alt="ic_24_approval_n" />
+         <b>전자결재</b>
+      </a>
+
+      <div class="lava"></div>
+   </div>
+</section>
+<section class="icon_menu">
+   <div class="pay_sys">
+      <p>Premium 요금제</p>
+      <div class="paySys_wrap">
+         <span>잔여 10건</span>
+         <div class="svg_wrap">
+            <svg>
+               <rect class="paySysChart" width="0%" height="6px" fill="var(--violet_P)" />
+            </svg>
+         </div>
+      </div>
+   </div>
+   <script>
+      function paySys() {
+         setTimeout(() => {
+            let paySysChart = document.querySelector(".paySysChart")
+            paySysChart.setAttribute("width", "30%")
+         }, 1000)
+      }
+      paySys()
+   </script>
+
+   <div class="anchors">
+      <a href="javscript:void(0)">결제하기<img src="../../imgs/ic_plus_non.svg" alt="ic_plus_non.svg" /></a>
+      <a href="javscript:void(0)">도움말<img src="../../imgs/ic_help.svg" alt="ic_help" /></a>
+      <a href="javscript:void(0)">문의하기<img src="../../imgs/ic_24_forum.svg" alt="ic_24_forum.svg" /></a>
+      <a href="javscript:void(0)" class="usr_ic_btn" onclick="userPopHandler(event)">J</a>
+      <div class="userPop">
+         <div class="usrbox">
+            <img src="../../imgs/user_profile.png" alt="user_profile.png" />
+            <ul>
+               <li>홍길동</li>
+               <li>가가상사</li>
+            </ul>
+         </div>
+         <ul class="usrBody">
+            <li>
+               <p>
+                  <img src="../../imgs/ic_24_support_n.svg" alt="ic_24_support_n.svg" />
+                  고객센터
+               </p>
+               <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+            </li>
+            <li>
+               <p>
+                  <img src="../../imgs/ic_24_logout_n.svg" alt="ic_24_logout_n.svg" />
+                  로그아웃
+               </p>
+            </li>
+         </ul>
+      </div>
+   </div>
+</section>
+<script>
+   const userPop = document.querySelector(".userPop")
+   const usrIcBtn = document.querySelector(".usr_ic_btn")
+   userPop.onclick = function (event) {
+      event.stopPropagation()
+   }
+
+   function userPopHandler(event) {
+      const userPop = document.querySelector(".userPop")
+      event.preventDefault()
+      event.stopPropagation()
+      userPop.classList.add("on")
+      console.log(0)
+      const $body = document.querySelector("body")
+      $body.addEventListener("click", function () {
+         userPop.classList.remove("on")
+      })
+   }
+</script>

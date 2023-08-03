@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html class="-ms-" lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>sign_setting</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+         $.ajax({
+            url: "../include/head.html",
+            success: function (result) {
+               $(".header").html(result)
+            },
+         })
+         $.ajax({
+            url: "../include/aside_set.html",
+            success: function (result) {
+               $(".lnb_wrap").html(result)
+            },
+         })
+         $.ajax({
+            url: "../include/lnb_m.html",
+            success: function (result) {
+               $(".lnb_m").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <div class="sign_draw_wrap">
+         <div class="sign_draw_contain">
+            <div class="sign_draw_contain_inner">
+               <section class="sign_draw_content">
+                  <h1 style="text-align: center; padding: 10px 0 1rem">엑셀 업로드</h1>
+                  <div class="add_sign_step3">
+                     <div class="my_file_box">
+                        <div class="my_com">
+                           <h2 class="file_title">내 컴퓨터</h2>
+                           <div class="drop_file_wrap">
+                              <div class="my_com_file_drop drop-zone">
+                                 <img src="../../imgs/ic_24_form_02.svg" alt="ic_24_form_02.svg" />
+                                 <p class="">이곳에 파일을 놓아 주세요.</p>
+                                 <div class="or_comment">
+                                    <hr />
+                                    <span>또는</span>
+                                 </div>
+                              </div>
+                              <form class="drop_file">
+                                 <label for="file" class="file_upload">파일찾기</label>
+                                 <input type="file" id="file" multiple />
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="file_desc">
+                        <p>지원 파일 : DOCX, PDF, HWP, ...</p>
+                        <p>업로드 가능 용량 : 최대 5MB</p>
+                     </div>
+                  </div>
+               </section>
+            </div>
+            <div class="btn_close">
+               <img src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" />
+            </div>
+         </div>
+      </div>
+
+      <div class="wrapper">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+         <div class="header hd"></div>
+         <main class="main">
+            <section class="lnb_wrap"></section>
+
+            <div class="lnb_m"></div>
+            <section class="content_wrap">
+               <div class="location">
+                  <a href=""><img src="../../imgs/home-2.svg" alt="home-2.svg" /></a>
+                  <a href="">설정하기</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href="">회사설정</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href=""><b>팀관리</b></a>
+               </div>
+               <div class="content_area">
+                  <div class="content_inner" style="flex: inherit">
+                     <div class="adress_wrap team_current_wrap">
+                        <h1>팀 현황</h1>
+                        <div class="team_current">
+                           <div class="teamChart_wrap">
+                              <div class="chart_wrap">
+                                 <div class="chart_desc">
+                                    <p>15명 <span>현재</span></p>
+                                    <p>150명 <span>최대</span></p>
+                                 </div>
+                                 <div class="teamCart_outer">
+                                    <div class="teamChart">
+                                       <svg>
+                                          <rect class="recGuage" width="0%" height="20px" fill="var(--violet_P)" />
+                                       </svg>
+                                    </div>
+                                 </div>
+                                 <script>
+                                    var loaded = false
+                                    window.addEventListener("load", function () {
+                                       if (!loaded) {
+                                          loaded = true
+                                          let recGuage = document.querySelector(".recGuage")
+                                          recGuage.setAttribute("width", "40%")
+                                       }
+                                    })
+                                 </script>
+                              </div>
+                              <div class="teamChart_desc">
+                                 <section class="head_desc_wrap">
+                                    <h1 class="head_desc">15명</h1>
+                                    <p class="sub_desc">현재인원</p>
+                                 </section>
+                                 <span>·</span>
+                                 <section class="head_desc_wrap">
+                                    <h1 class="head_desc">50명</h1>
+                                    <p class="sub_desc">최대인원</p>
+                                 </section>
+                                 <span>·</span>
+                                 <section class="head_desc_wrap">
+                                    <h1 class="head_desc">45명</h1>
+                                    <p class="sub_desc">추가가능인원</p>
+                                 </section>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="content_inner">
+                     <div class="adress_wrap">
+                        <div class="whole_group">
+                           <div class="whole_group_title">
+                              <h1>팀 구성</h1>
+                              <input type="button" value="팀 추가" class="btn_violet" />
+                           </div>
+                           <div class="table">
+                              <section class="lis_wrap" style="width: 404px">
+                                 <!-- <div class="tr_left">
+                                    <div class="th">팀이름</div>
+                                    <div class="th">인원</div>
+                                    <div class="th"></div>
+                                 </div> -->
+                              </section>
+
+                              <section class="treeMenu_wrap">
+                                 <ul class="treeMenu_mod">
+                                    <li class="treeMenu_li">
+                                       <p class="caret caret-down">
+                                          가가상사 <span>(100)</span><img src="../../imgs/ic_18_group.svg" alt="ic_18_group.svg" />
+
+                                          <span class="treeMoreBtn">
+                                             &ctdot;
+                                             <span class="pop_sm_wrap">
+                                                <span>수정</span>
+                                                <span>삭제</span>
+                                             </span>
+                                          </span>
+                                       </p>
+                                       <ul class="nested activeTree">
+                                          <li>
+                                             가가본부 <span>(50)</span><img src="../../imgs/ic_18_group.svg" alt="ic_18_group.svg" />
+
+                                             <span class="treeMoreBtn">
+                                                &ctdot;
+                                                <span class="pop_sm_wrap">
+                                                   <span>수정</span>
+                                                   <span>삭제</span>
+                                                </span>
+                                             </span>
+                                          </li>
+                                          <li>
+                                             나나본부 <span>(50)</span><img src="../../imgs/ic_18_group.svg" alt="ic_18_group.svg" />
+
+                                             <span class="treeMoreBtn">
+                                                &ctdot;
+                                                <span class="pop_sm_wrap">
+                                                   <span>수정</span>
+                                                   <span>삭제</span>
+                                                </span>
+                                             </span>
+                                          </li>
+                                          <li>
+                                             <p class="caret caret-down">
+                                                다다본부 <span>(40)</span><img src="../../imgs/ic_18_group.svg" alt="ic_18_group.svg" />
+
+                                                <span class="treeMoreBtn">
+                                                   &ctdot;
+                                                   <span class="pop_sm_wrap">
+                                                      <span>수정</span>
+                                                      <span>삭제</span>
+                                                   </span>
+                                                </span>
+                                             </p>
+                                             <ul class="nested activeTree">
+                                                <li>
+                                                   1팀 <span>(10)</span><img src="../../imgs/ic_18_group.svg" alt="ic_18_group.svg" />
+
+                                                   <span class="treeMoreBtn">
+                                                      &ctdot;
+                                                      <span class="pop_sm_wrap">
+                                                         <span>수정</span>
+                                                         <span>삭제</span>
+                                                      </span>
+                                                   </span>
+                                                </li>
+                                                <li>
+                                                   2팀
+
+                                                   <span class="treeMoreBtn">
+                                                      &ctdot;
+                                                      <span class="pop_sm_wrap">
+                                                         <span>수정</span>
+                                                         <span>삭제</span>
+                                                      </span>
+                                                   </span>
+                                                </li>
+                                                <li>
+                                                   <p class="caret caret-down">
+                                                      Green Tea
+
+                                                      <span class="treeMoreBtn">
+                                                         &ctdot;
+                                                         <span class="pop_sm_wrap">
+                                                            <span>수정</span>
+                                                            <span>삭제</span>
+                                                         </span>
+                                                      </span>
+                                                   </p>
+
+                                                   <ul class="nested activeTree">
+                                                      <li>
+                                                         Sencha
+
+                                                         <span class="treeMoreBtn">
+                                                            &ctdot;
+                                                            <span class="pop_sm_wrap">
+                                                               <span>수정</span>
+                                                               <span>삭제</span>
+                                                            </span>
+                                                         </span>
+                                                      </li>
+                                                      <li>
+                                                         Gyokuro
+
+                                                         <span class="treeMoreBtn">
+                                                            &ctdot;
+                                                            <span class="pop_sm_wrap">
+                                                               <span>수정</span>
+                                                               <span>삭제</span>
+                                                            </span>
+                                                         </span>
+                                                      </li>
+                                                      <li>
+                                                         Matcha
+
+                                                         <span class="treeMoreBtn">
+                                                            &ctdot;
+                                                            <span class="pop_sm_wrap">
+                                                               <span>수정</span>
+                                                               <span>삭제</span>
+                                                            </span>
+                                                         </span>
+                                                      </li>
+                                                      <li>
+                                                         Pi Lo Chun
+
+                                                         <span class="treeMoreBtn">
+                                                            &ctdot;
+                                                            <span class="pop_sm_wrap">
+                                                               <span>수정</span>
+                                                               <span>삭제</span>
+                                                            </span>
+                                                         </span>
+                                                      </li>
+                                                      <li id="result"></li>
+                                                      <li>
+                                                         <input
+                                                            type="text"
+                                                            class="nameAdd"
+                                                            maxlength="5"
+                                                            onkeyup="if(window.event.keyCode==13){newName(event)}"
+                                                            value=""
+                                                         />
+                                                         <span class="treeMoreBtn">&ctdot;</span>
+                                                      </li>
+                                                   </ul>
+                                                </li>
+                                             </ul>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </section>
+                              <script>
+                                 let toggler = document.getElementsByClassName("caret")
+                                 for (let i = 0; i < toggler.length; i++) {
+                                    toggler[i].addEventListener("click", function () {
+                                       this.parentElement.querySelector(".nested").classList.toggle("activeTree")
+                                       this.classList.toggle("caret-down")
+                                    })
+                                 }
+
+                                 const nameInput = document.querySelector(".nameAdd")
+
+                                 nameInput.addEventListener("focus", function () {
+                                    nameInput.value = ""
+                                 })
+
+                                 function newName(event) {
+                                    const name = document.querySelector(".nameAdd").value
+
+                                    const newDiv = document.createElement("li")
+                                    const newSpan = document.createElement("span")
+
+                                    const newText = document.createTextNode(name)
+                                    const newspanText = document.createTextNode("⋯")
+
+                                    newDiv.appendChild(newText)
+                                    newSpan.appendChild(newspanText)
+
+                                    document.querySelector("#result").appendChild(newDiv)
+                                    document.querySelector("#result").appendChild(newSpan)
+
+                                    nameInput.value = ""
+                                 }
+
+                                 let treeMoreBtn = document.querySelectorAll(".treeMoreBtn")
+
+                                 for (let i = 0; i < treeMoreBtn.length; i++) {
+                                    treeMoreBtn[i].addEventListener("click", function (e) {
+                                       e.stopPropagation()
+
+                                       let popSmWrap = document.querySelectorAll(".pop_sm_wrap")
+                                       for (let i = 0; i < popSmWrap.length; i++) {
+                                          popSmWrap[i].classList.remove("on")
+
+                                          const smPopDel = popSmWrap[i].firstElementChild.nextElementSibling
+                                          smPopDel.addEventListener("click", function () {
+                                             this.parentElement.parentElement.parentElement.remove()
+                                          })
+                                       }
+                                       this.firstElementChild.classList.add("on")
+                                    })
+                                 }
+
+                                 let bgCancel = document.querySelectorAll("body")
+
+                                 for (let i = 0; i < bgCancel.length; i++) {
+                                    let popSmWrap = document.querySelectorAll(".pop_sm_wrap")
+                                    bgCancel[i].onclick = function () {
+                                       for (let i = 0; i < popSmWrap.length; i++) {
+                                          popSmWrap[i].classList.remove("on")
+                                       }
+                                    }
+                                 }
+
+                                 let popSmWrap = document.querySelector(".pop_sm_wrap")
+                                 popSmWrap.addEventListener("click", function (e) {
+                                    e.stopPropagation()
+                                 })
+
+                                 document.querySelector(".lnb_depth_content").addEventListener("click", function () {
+                                    for (let i = 0; i < bgCancel.length; i++) {
+                                       let popSmWrap = document.querySelectorAll(".pop_sm_wrap")
+                                       document.querySelector(".lnb_depth_content").onclick = function () {
+                                          for (let i = 0; i < popSmWrap.length; i++) {
+                                             popSmWrap[i].classList.remove("on")
+                                          }
+                                       }
+                                    }
+                                 })
+                              </script>
+                           </div>
+                        </div>
+                        <div class="whole_address">
+                           <div class="whole_address_title">
+                              <h1>팀원 리스트<span>: 50</span></h1>
+                              <div class="item_btn_setting">
+                                 <div class="btns_wrap">
+                                    <input type="button" value="팀원추가" class="btn_violet addBtn" />
+                                    <button class="btn_default" onclick="Modalpop()">이동</button>
+                                    <button class="btn_default">삭제</button>
+                                 </div>
+                                 <div class="sign_sort_wrap">
+                                    <div class="sign_sort">
+                                       <input class="search_input" type="search" placeholder="팀, 팀원 검색" />
+                                       <span class="search_icon"><img src="../../imgs/ic_20_search.svg" alt="ic_20_search.svg" /></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div class="">
+                              <div class="table tabs_team_wrap">
+                                 <div class="tabs_team">
+                                    <div class="tabs_team_inner">
+                                       <a href="javascirpt:void(0)" onclick="tabBtnTeam('member');return false;" class="tab_team">
+                                          <span class="teammember" style="color: #000">팀원</span>
+                                       </a>
+                                       <!-- <a href="javascirpt:void(0)" onclick="tabBtnTeam('invite');return false;" class="tab_team">
+                                          <span class="teamIvate">초대중</span>
+                                       </a> -->
+                                    </div>
+                                 </div>
+                                 <section class="lis_wrap tab_content_team">
+                                    <div class="desc_pop">
+                                       <img class="dp_close" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" />
+                                       <div class="dp_heading">
+                                          <div class="dp_head_tabs">
+                                             <p class="dp_right dp_head_tab" onclick="dbTab('admin')">관리</p>
+                                             <p class="dp_right dp_head_tab" onclick="dbTab('right')">권한</p>
+                                          </div>
+                                          <a href="javascript:void(0)">변경하기</a>
+                                       </div>
+                                       <article class="dp_body dp_tab_content_1">
+                                          <input type="text" id="dp_id" placeholder="아이디" />
+
+                                          <input type="text" id="dp_id" placeholder="이름" />
+
+                                          <input type="text" id="dp_id" placeholder="이메일" />
+
+                                          <input type="text" id="dp_id" placeholder="전화번호" />
+                                       </article>
+                                       <article class="dp_body dp_tab_content_2">
+                                          <p class="dp_body_tit">계약관리</p>
+                                          <section class="dp_li">
+                                             <p class="dp_li_tit">서명요청하기</p>
+                                             <div class="dp_li_elem_wrap">
+                                                <p class="dp_li_elem">
+                                                   <input type="checkbox" name="" id="chk0" />
+                                                   <label for="chk0">법률양식으로 서명 요청</label>
+                                                </p>
+                                                <p class="dp_li_elem">
+                                                   <input type="checkbox" name="" id="chk1" />
+                                                   <label for="chk1">템플릿으로 서명 요청</label>
+                                                </p>
+                                             </div>
+                                          </section>
+                                          <section class="dp_li">
+                                             <p class="dp_li_tit">계약관리</p>
+                                             <div class="dp_li_elem_wrap">
+                                                <p class="dp_li_elem">
+                                                   <input type="checkbox" name="" id="chk2" />
+                                                   <label for="chk2">폴더 관리 : 삭제/편집</label>
+                                                </p>
+                                             </div>
+                                          </section>
+                                          <section class="dp_li">
+                                             <p class="dp_li_tit">서명요청하기</p>
+                                             <div class="dp_li_elem_wrap">
+                                                <p class="dp_li_elem">
+                                                   <input type="checkbox" name="" id="chk3" />
+                                                   <label for="chk3">대량전송 사용 및 관리</label>
+                                                </p>
+                                                <p class="dp_li_elem">
+                                                   <input type="checkbox" name="" id="chk4" />
+                                                   <label for="chk4">링크계약 사용 및 관리</label>
+                                                </p>
+                                                <p class="dp_li_elem">
+                                                   <input type="checkbox" name="" id="chk5" />
+                                                   <label for="chk5">대면계약 사용 및 관리</label>
+                                                </p>
+                                             </div>
+                                          </section>
+                                       </article>
+                                    </div>
+
+                                    <script>
+                                       function dbTab(elem) {
+                                          let dpHeadTabs = document.querySelector(".dp_head_tabs")
+                                          let dpTabContent_1 = document.querySelector(".dp_tab_content_1")
+                                          let dpTabContent_2 = document.querySelector(".dp_tab_content_2")
+                                          let dpHeadTabFirst = document.querySelector(".dp_head_tab:first-child")
+                                          let dpHeadTabLast = document.querySelector(".dp_head_tab:last-child")
+
+                                          if (elem == "admin") {
+                                             dpTabContent_1.style.display = "flex"
+                                             dpTabContent_2.style.display = "none"
+                                             dpHeadTabs.style.flexDirection = "row"
+                                             dpHeadTabFirst.style.color = "#000"
+                                             dpHeadTabLast.style.color = "#aaa"
+                                          } else if (elem == "right") {
+                                             dpTabContent_1.style.display = "none"
+                                             dpTabContent_2.style.display = "block"
+                                             dpHeadTabs.style.flexDirection = "row-reverse"
+                                             dpHeadTabFirst.style.color = "#aaa"
+                                             dpHeadTabLast.style.color = "#000"
+                                          }
+                                       }
+                                    </script>
+
+                                    <style>
+                                       .desc_pop {
+                                          display: none;
+                                       }
+                                       .desc_pop.on {
+                                          display: block;
+                                       }
+                                    </style>
+
+                                    <div class="tr_right">
+                                       <div class="th">
+                                          <input type="checkbox" name="" id="chk00" />
+                                          <label for="chk00">이름</label>
+                                          <img class="updown_icon" src="../../imgs/ic_18_updown.svg" alt="ic_18_updown.svg" />
+                                       </div>
+                                       <div class="th">이메일</div>
+                                       <div class="th">전화번호</div>
+                                       <img class="th_move" src="../../imgs/" alt="" />
+                                    </div>
+                                    <div class="dd_contain dd_contain_right">
+                                       <div class="draggable" draggable="true">
+                                          <section class="el el2">
+                                             <div class="th">
+                                                <input type="checkbox" name="" id="chk10" />
+                                                <label for="chk10"><img src="../../imgs/ic_18_my.svg" alt="ic_18_my.svg" /></label
+                                                ><span class="expantion_btn">정지인</span>
+                                             </div>
+                                             <div class="th th_m">ljh@naver.com</div>
+                                             <div class="th th_m">010-8765-4321</div>
+                                             <span class="th_move adrs_drag_ico"></span>
+                                          </section>
+                                       </div>
+                                       <div class="draggable" draggable="true">
+                                          <section class="el el2">
+                                             <div class="th">
+                                                <input type="checkbox" name="" id="chk20" />
+                                                <label for="chk20"><img src="../../imgs/ic_18_my.svg" alt="ic_18_my.svg" /></label>
+                                                <span class="expantion_btn">이정현</span>
+                                             </div>
+                                             <div class="th th_m">ljh@naver.com</div>
+                                             <div class="th th_m">010-8765-4321</div>
+                                             <span class="th_move adrs_drag_ico"> </span>
+                                          </section>
+                                       </div>
+                                       <div class="draggable" draggable="true">
+                                          <section class="el el2">
+                                             <div class="th">
+                                                <input type="checkbox" name="" id="chk30" />
+                                                <label for="chk30"><img src="../../imgs/ic_18_my.svg" alt="ic_18_my.svg" /></label>
+                                                <span class="expantion_btn">이정현</span>
+                                             </div>
+                                             <div class="th th_m">ljh@naver.com</div>
+                                             <div class="th th_m">010-8765-4321</div>
+                                             <span class="th_move adrs_drag_ico"> </span>
+                                          </section>
+                                       </div>
+                                       <div class="draggable" draggable="true">
+                                          <section class="el el2">
+                                             <div class="th">
+                                                <input type="checkbox" name="" id="chk40" />
+                                                <label for="chk40"><img src="../../imgs/ic_18_my.svg" alt="ic_18_my.svg" /></label>
+                                                <span class="expantion_btn">이정현</span>
+                                             </div>
+                                             <div class="th th_m">ljh@naver.com</div>
+                                             <div class="th th_m">010-8765-4321</div>
+                                             <span class="th_move"> </span>
+                                          </section>
+                                       </div>
+                                       <div class="draggable" draggable="true">
+                                          <section class="el el2">
+                                             <div class="th">
+                                                <input type="checkbox" name="" id="chk50" />
+                                                <label for="chk50"><img src="../../imgs/ic_18_my.svg" alt="ic_18_my.svg" /></label>
+                                                <span class="expantion_btn">이정현</span>
+                                             </div>
+                                             <div class="th th_m">ljh@naver.com</div>
+                                             <div class="th th_m">010-8765-4321</div>
+                                             <span class="th_move"> </span>
+                                          </section>
+                                       </div>
+                                       <div class="draggable" draggable="true">
+                                          <section class="el el2">
+                                             <div class="th">
+                                                <input type="checkbox" name="" id="chk60" />
+                                                <label for="chk60"><img src="../../imgs/ic_18_my.svg" alt="ic_18_my.svg" /></label>
+                                                <span class="expantion_btn">이정현</span>
+                                             </div>
+                                             <div class="th th_m">ljh@naver.com</div>
+                                             <div class="th th_m">010-8765-4321</div>
+                                             <span class="th_move"> </span>
+                                          </section>
+                                       </div>
+                                       <div class="draggable" draggable="true">
+                                          <section class="el el2">
+                                             <div class="th">
+                                                <input type="checkbox" name="" id="chk70" />
+                                                <label for="chk70"><img src="../../imgs/ic_18_my.svg" alt="ic_18_my.svg" /></label>
+                                                <span class="expantion_btn">이정현</span>
+                                             </div>
+                                             <div class="th th_m">ljh@naver.com</div>
+                                             <div class="th th_m">010-8765-4321</div>
+                                             <span class="th_move"> </span>
+                                          </section>
+                                       </div>
+                                    </div>
+                                 </section>
+                                 <script>
+                                    let descPop = document.querySelector(".desc_pop")
+                                    let expantionBtn = document.querySelector(".expantion_btn")
+                                    let dpClose = document.querySelector(".dp_close")
+                                    expantionBtn.addEventListener("click", function () {
+                                       descPop.classList.toggle("on")
+                                    })
+                                    dpClose.addEventListener("click", function () {
+                                       descPop.classList.toggle("on")
+                                    })
+                                 </script>
+                                 <section class="lis_wrap tab_content_team_invite">
+                                    <div class="tr_right">
+                                       <div class="th">
+                                          <input type="checkbox" name="" id="chk000" />
+                                          <label for="chk000">이름</label>
+                                          <img class="updown_icon" src="../../imgs/ic_18_updown.svg" alt="ic_18_updown.svg" />
+                                       </div>
+                                       <div class="th">이메일</div>
+                                       <div class="th">전화번호</div>
+                                       <img class="th_move" src="../../imgs/" alt="" />
+                                    </div>
+                                    <div class="dd_contain dd_contain_right">
+                                       <div class="draggable" draggable="true">
+                                          <section class="el el2">
+                                             <div class="th">
+                                                <input type="checkbox" name="" id="chk100" />
+                                                <label for="chk100"><img src="../../imgs/ic_18_my.svg" alt="ic_18_my.svg" />초대자</label>
+                                             </div>
+                                             <div class="th th_m">jji@naver.com</div>
+                                             <div class="th th_m">010-1234-5678</div>
+                                             <span class="th_move"> </span>
+                                          </section>
+                                       </div>
+                                       <div class="draggable" draggable="true">
+                                          <section class="el el2">
+                                             <div class="th">
+                                                <input type="checkbox" name="" id="chk200" />
+                                                <label for="chk200"><img src="../../imgs/ic_18_my.svg" alt="ic_18_my.svg" />초대자</label>
+                                             </div>
+                                             <div class="th th_m">ljh@naver.com</div>
+                                             <div class="th th_m">010-8765-4321</div>
+                                             <span class="th_move"> </span>
+                                          </section>
+                                       </div>
+                                    </div>
+                                 </section>
+
+                                 <div class="pagination">
+                                    <button>
+                                       <img src="../../imgs/btn_page_numbers_left.svg" alt="btn_page_numbers_left.svg" />
+                                    </button>
+                                    <button>1</button>
+                                    <button>2</button>
+                                    <button>3</button>
+
+                                    <button>
+                                       <img src="../../imgs/btn_page_numbers_right.svg" alt="btn_page_numbers_right.svg" />
+                                    </button>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </main>
+      </div>
+
+      <div class="popup_wrap">
+         <div class="popup_contain team_invit_pop">
+            <section class="popup_contain_inner">
+               <img class="popup_close_btn" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" />
+               <h1 class="popup_title">팀원 추가</h1>
+               <div class="popup_content">
+                  <div class="popup_content_inner">
+                     <div class="input_create" id="input_create">
+                        <section class="addinput">
+                           <div class="flex adrs_m_inp">
+                              <input type="text" placeholder="홍길동" />
+                              <input type="text" placeholder="ex@mail.com" />
+                           </div>
+                           <div class="flex adrs_m_inp">
+                              <input type="text" placeholder="010-" />
+                              <article class="cont_select" style="width: 100%">
+                                 <button class="btn_select">1팀</button>
+                                 <ul class="list_item" style="margin-top: 14px">
+                                    <li><button type="button">1팀</button></li>
+                                    <li><button type="button">Java</button></li>
+                                    <li><button type="button">JavaScript</button></li>
+                                    <li><button type="button">C#</button></li>
+                                    <li><button type="button">C/C++</button></li>
+                                 </ul>
+                              </article>
+                           </div>
+                           <div class="close_icon">
+                              <img src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" />
+                           </div>
+                        </section>
+
+                        <div class="create_div"></div>
+                     </div>
+                     <section class="attachfile">
+                        <img onclick="createDIV()" src="../../imgs/ic_plus.svg" alt="ic_plus.svg" class="ic_plus" />
+
+                        <div class="excel_btns">
+                           <button>엑셀 다운로드</button>
+                           <button class="add_sign">엑셀 업로드</button>
+                        </div>
+                        <!-- <div class="invit_link_copy">
+                           <img src="../../imgs/copy_icon.svg" alt="copy_icon.svg" />
+                           링크초대 복사
+                        </div> -->
+                     </section>
+                  </div>
+               </div>
+            </section>
+            <section class="popup_confirm_btn">
+               <a href="javascript:void(0)">확인</a>
+            </section>
+         </div>
+      </div>
+
+      <div class="modal_welcome">
+         <div class="modal_welcome_contain">
+            <section class="modal_wrap">
+               <img class="close_btn" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal()" />
+               <h1>팀 이동</h1>
+               <div class="input_wrap"><input type="text" placeholder="새 그룹명" /><input class="folder_add" type="button" value="추가" /></div>
+               <div class="tree_wrap">
+                  <ul class="tree" id="tree">
+                     <li>
+                        <span> 가가상사 </span>
+                     </li>
+
+                     <li class="folder_tree_li">
+                        <span> 근로계약 </span>
+                     </li>
+                     <!-- <li class="folder_tree_li new_create_folder_wrap">
+                           <span class="new_create_folder" style="margin: 10px 0 10px 1.8rem"> 새 그룹 </span>
+                        </li> -->
+                  </ul>
+               </div>
+            </section>
+            <section class="start_btn">
+               <a href="javascript:void(0)">이동</a>
+            </section>
+         </div>
+      </div>
+
+      <script src="../script/popupAddressCreate.js"></script>
+      <script src="../script/dragendrop.js"></script>
+      <script src="../script/fileDrop.js"></script>
+      <script src="../script/modal.js"></script>
+      <script src="../script/lnbTree.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+      <script src="../script/chart.js"></script>
+      <script src="../script/tab_teamlist.js"></script>
+   </body>
+</html>

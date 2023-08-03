@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>template_write</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <header class="header">
+         <input type="button" value="나가기" class="btn_exit" onclick="window.location.href='./ctr_transfer.html'" />
+
+         <div class="stepper_contain">
+            <div class="stepper_tit">
+               <img src="../../imgs/ic_img_done.svg" alt="ic_img_done.svg" style="width: 20px" />
+               리스트 선택
+            </div>
+            <span class="line_el line_el_select_solid"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/ic_img_done.svg" alt="ic_img_done.svg" style="width: 20px" />
+               문서확인
+            </div>
+            <span class="line_el line_el_select_solid"></span>
+            <div class="stepper_tit"><img src="../../imgs/stepper_icon_on.svg" alt="stepper_icon_on.svg" style="width: 20px" /> 참여자 작성</div>
+            <span class="line_el line_el_select"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/stepper_icon_off.svg" alt="stepper_icon_off.svg" />
+               정보 확인
+            </div>
+         </div>
+
+         <style>
+            .right_btns > a {
+               background-color: var(--violet_K);
+               border-radius: 3px;
+               padding: 10px 8px 6px 8px;
+            }
+         </style>
+         <div class="right_btns">
+            <a href="javscript:void(0)"><img src="../imgs/ic_help.svg" alt="ic_help" /></a>
+         </div>
+      </header>
+
+      <main class="main">
+         <section class="docu_wrap">
+            <article class="docu_area tmp_sel_step_wrap">
+               <div class="tmp_sel_step">
+                  <div class="hd_box">
+                     <p>현재 템플릿</p>
+                     <h1>표준 근로 계약서</h1>
+                  </div>
+                  <div class="selboxes">
+                     <section>
+                        <div class="imgNtxt">
+                           <img src="../../imgs/img_download.png" alt="img_download.png" />
+                           <h2><span class="selbox_hd1">01.</span>다운로드</h2>
+                           <p>
+                              현재 템플릿을 다운로드하여 <br />
+                              엑셀에서 참여자를 작성해요.
+                           </p>
+                        </div>
+                        <a href="javascript:void(0)">Start</a>
+                     </section>
+                     <section>
+                        <div class="imgNtxt">
+                           <img src="../../imgs/img_upload.png" alt="img_upload.png" />
+                           <h2><span class="selbox_hd2">02.</span>다운로드</h2>
+                           <p>
+                              다운로드후 엑셀로 작성하여 <br />
+                              업로드 해주세요.
+                           </p>
+                        </div>
+                        <a href="./bulk_transfer_up.html">Start</a>
+                     </section>
+                  </div>
+               </div>
+            </article>
+         </section>
+      </main>
+
+      <footer class="footer">
+         <div class="btn_wrap">
+            <input class="btn_default" type="button" value="이전" style="color: var(--violet_P)" onclick="history.back()" />
+         </div>
+      </footer>
+      <script src="../script/settingsMyTemplateDetail.js"></script>
+   </body>
+</html>

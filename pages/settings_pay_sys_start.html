@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>sign_setting</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <div class="wrapper">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function () {
+               $.ajax({
+                  url: "../include/head.html",
+                  success: function (result) {
+                     $(".header").html(result)
+                  },
+               })
+            })
+         </script>
+
+         <div class="header hd"></div>
+         <main class="main">
+            <script>
+               $(document).ready(function () {
+                  $.ajax({
+                     url: "../include/aside_set.html",
+                     success: function (result) {
+                        $(".lnb_wrap").html(result)
+                     },
+                  })
+               })
+               $(document).ready(function () {
+                  $.ajax({
+                     url: "../include/lnb_m.html",
+                     success: function (result) {
+                        $(".lnb_m").html(result)
+                     },
+                  })
+               })
+            </script>
+
+            <section class="lnb_wrap"></section>
+
+            <div class="lnb_m"></div>
+
+            <section class="content_wrap">
+               <div class="location">
+                  <a href=""><img src="../../imgs/home-2.svg" alt="home-2.svg" /></a>
+                  <a href="">설정하기</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href="">요금제관리</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href=""><b>사용량</b></a>
+               </div>
+
+               <div class="paysystem_wrap">
+                  <div class="pasys_tit paysystem_help_wrap">
+                     <img src="../../imgs/img_nocontent_04.png" alt="img_nocontent_04" width="250px" />
+                     <p>
+                        얼마싸인을 통해 종이계약의 디지털화, <br />
+                        업무효율의 극대화를 경험해보세요.
+                     </p>
+                     <a class="paysystem_help_link" href="./settings_pay_charge.html">요금제 알아보기</a>
+                  </div>
+               </div>
+            </section>
+         </main>
+      </div>
+   </body>
+</html>

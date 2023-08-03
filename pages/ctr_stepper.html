@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>template_write</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body>
+      <header class="header bulk_tf_up_hd">
+         <div class="stepper_contain">
+            <div class="stepper_tit">
+               <img src="../../imgs/stepper_icon_on.svg" alt="stepper_icon_on.svg" />
+               내 파일 업로드
+            </div>
+            <span class="line_el line_el_select"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/stepper_icon_off.svg" alt="stepper_icon_off.svg" />
+               계약설정
+            </div>
+            <span class="line_el"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/stepper_icon_off.svg" alt="stepper_icon_off.svg" />
+               템플릿 편집
+            </div>
+            <span class="line_el"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/stepper_icon_off.svg" alt="stepper_icon_off.svg" />
+               저장
+            </div>
+         </div>
+      </header>
+
+      <div class="lawform_wrap">
+         <div class="lawform_contain">
+            <div class="lawform_menu">
+               <div class="tab_btn tabBtn__1"><span>내 파일 업로드</span></div>
+               <div class="tab_btn tabBtn__2"><span>MY템플릿</span></div>
+               <div class="tab_btn tabBtn__3"><span>법률양식</span></div>
+               <a class="tab_btn tabBtn__4" href="./template_write_tool.html"><span>직접작성</span></a>
+            </div>
+            <div>
+               <section class="lawform_content">
+                  <div class="lawform_step3">
+                     <div class="my_file_box">
+                        <div class="my_com">
+                           <h2 class="file_title">내 컴퓨터</h2>
+                           <div class="drop_file_wrap">
+                              <div class="my_com_file_drop drop-zone">
+                                 <img src="../../imgs/ic_24_form_02.svg" alt="ic_24_form_02.svg" />
+                                 <p class="">이곳에 파일을 놓아 주세요.</p>
+                                 <div class="or_comment">
+                                    <hr />
+                                    <span>또는</span>
+                                 </div>
+                              </div>
+                              <form class="drop_file">
+                                 <label for="file" class="file_upload">파일찾기</label>
+                                 <input type="file" id="file" multiple />
+                              </form>
+                           </div>
+                        </div>
+
+                        <script></script>
+                     </div>
+                     <div class="file_desc">
+                        <p>지원 파일 : DOCX, PDF, HWP, ....</p>
+                        <p>업로드 가능 용량 : 최대 2MB</p>
+                     </div>
+                  </div>
+               </section>
+
+               <section class="lawform_content">
+                  <div class="lawform_content_inner">
+                     <div class="lawform_step2">
+                        <div class="lawform_section_wrap">
+                           <section class="treeMenu_wrap">
+                              <ul class="treeMenu_temp">
+                                 <li class="treeMenu_li">
+                                    <p class="caret caret-down">가가상사</p>
+                                    <ul class="nested activeTree">
+                                       <li>가가본부</li>
+                                       <li>나나본부</li>
+                                       <li>
+                                          <p class="caret caret-down">다다본부</p>
+                                          <ul class="nested activeTree">
+                                             <li>1팀</li>
+                                             <li>2팀</li>
+                                             <li>
+                                                <p class="caret caret-down">Green Tea</p>
+
+                                                <ul class="nested activeTree">
+                                                   <li>Sencha</li>
+                                                   <li>Gyokuro</li>
+                                                   <li>Matcha</li>
+                                                   <li>Pi Lo Chun</li>
+                                                </ul>
+                                             </li>
+                                          </ul>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </section>
+
+                           <script>
+                              let toggler = document.getElementsByClassName("caret")
+                              for (let i = 0; i < toggler.length; i++) {
+                                 toggler[i].addEventListener("click", function () {
+                                    this.parentElement.querySelector(".nested").classList.toggle("activeTree")
+                                    this.classList.toggle("caret-down")
+                                 })
+                              }
+                           </script>
+                           <section class="lawform_section_list ctr_mytemp_wrap">
+                              <ul class="law_sec_ul ctr_mytemp">
+                                 <li>
+                                    <a>
+                                       <div class="radio_container">
+                                          <div class="radio">
+                                             <input id="radio-1" name="radio" type="radio" checked />
+                                             <label for="radio-1" class="radio-label">
+                                                <img src="../../imgs/ic_18_message.svg" alt="ic_18_message.svg" />서명요청 체험문서
+                                             </label>
+                                          </div>
+                                          <div class="review_link">미리보기</div>
+                                       </div>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a>
+                                       <div class="radio_container">
+                                          <div class="radio">
+                                             <input id="radio-2" name="radio" type="radio" />
+                                             <label for="radio-2" class="radio-label">
+                                                <img src="../../imgs/ic_18_message.svg" alt="ic_18_message.svg" />표준 근로 계약서
+                                             </label>
+                                          </div>
+                                          <div class="review_link">미리보기</div>
+                                       </div>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a>
+                                       <div class="radio_container">
+                                          <div class="radio">
+                                             <input id="radio-3" name="radio" type="radio" />
+                                             <label for="radio-3" class="radio-label">
+                                                <img src="../../imgs/ic_18_message.svg" alt="ic_18_message.svg" />개인정보 수집 이용 동의서
+                                             </label>
+                                          </div>
+                                          <div class="review_link">미리보기</div>
+                                       </div>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a>
+                                       <div class="radio_container">
+                                          <div class="radio">
+                                             <input id="radio-4" name="radio" type="radio" />
+                                             <label for="radio-4" class="radio-label">
+                                                <img src="../../imgs/ic_18_message.svg" alt="ic_18_message.svg" />물품 공급 계약서
+                                             </label>
+                                          </div>
+                                          <div class="review_link">미리보기</div>
+                                       </div>
+                                    </a>
+                                 </li>
+                              </ul>
+                              <footer class="new_cre_temp">
+                                 <p>새로운 템플릿을 추가하여 간편하게 이용해 보세요!</p>
+                                 <a href="./settings_my_template_start.html">템플릿 만들기</a>
+                              </footer>
+                           </section>
+                           <section style="display: none"></section>
+                        </div>
+                     </div>
+                  </div>
+               </section>
+
+               <section class="lawform_content">
+                  <div class="lawform_step3"></div>
+               </section>
+               <section class="lawform_content">
+                  <div class="lawform_step4"></div>
+               </section>
+            </div>
+         </div>
+      </div>
+
+      <div class="add_sign"></div>
+      <div class="item_list_wrap"></div>
+
+      <footer class="footer">
+         <div class="btn_wrap">
+            <input onclick="history.back()" class="btn_default" type="button" value="나가기" style="color: var(--violet_P)" />
+            <input class="btn_violet" type="button" value="다음" onclick="window.location.href='template_write_popup_convert.html'" />
+         </div>
+      </footer>
+
+      <script src="../script/templateWrite.js"></script>
+      <script src="../script/fileDrop.js"></script>
+   </body>
+</html>

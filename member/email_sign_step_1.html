@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>template_write</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: '../include/csslink.html',
+            success: function (result) {
+               $('.csslink').html(result);
+            },
+         });
+      });
+   </script>
+   <div class="csslink"></div>
+
+   <body>
+      <header class="header ctr_header">
+         <div class="stepper_contain" style="display: flex; align-items: center">
+            <input type="button" value="나가기" class="btn_exit" onclick="history.back()" />
+            <b style="font-size: 20px; font-weight: 500; color: black">본인인증</b>
+         </div>
+      </header>
+
+      <div class="popup_Progress_module">
+         <div class="accordion step_1_certifi actv">접근 암호 인증 <span class=""></span></div>
+         <div class="panelacc" style="max-height: 108px">
+            <p class="onfocu_wrap">
+               <input type="text" placeholder="접근 암호를 입력해 주세요." class="onfocu" />
+               <input type="submit" value="확인" class="btn_inact" />
+            </p>
+         </div>
+
+         <div class="accordion actv">이메일 인증</div>
+         <div class="panelacc" style="max-height: 108px">
+            <p class="onfocu_wrap">
+               <input type="email" placeholder="hgd@email.com" />
+               <input type="submit" value="인증번호 전송" />
+            </p>
+            <p class="onfocu_wrap">
+               <input type="text" placeholder="인증번호를 입력해 주세요." class="onfocu" />
+               <input type="submit" value="확인" class="btn_inact" />
+            </p>
+         </div>
+
+         <div class="accordion actv">SMS 인증</div>
+         <div class="panelacc" style="max-height: 108px">
+            <p class="onfocu_wrap">
+               <input type="text" placeholder="010-1234-5678" />
+               <input type="submit" value="인증번호 전송" />
+            </p>
+            <p class="onfocu_wrap">
+               <input type="text" placeholder="인증번호를 입력해주세요." class="onfocu" />
+               <input type="submit" value="확인" class="btn_inact" />
+            </p>
+         </div>
+         <div class="accordion actv">PASS 인증</div>
+         <div class="panelacc" style="max-height: 108px">
+            <p class="onfocu_wrap">
+               <input type="text" placeholder="홍길동 010-1234-5678" />
+               <input type="submit" value="인증" />
+            </p>
+         </div>
+         <div class="accordion actv">법인 공동 인증서 인증</div>
+         <div class="panelacc" style="max-height: 108px">
+            <p class="onfocu_wrap">
+               <input type="text" placeholder="아이퀘스트 101-81-42433" />
+               <input
+                  type="submit"
+                  value="인증"
+                  onclick="window.location.href='../pages/contract_sign_step.html'"
+               />
+            </p>
+         </div>
+
+         <script>
+            let onfocu = document.querySelectorAll('.onfocu');
+            let btnInact = document.querySelector('.btn_inact');
+
+            for (let i = 0; i < onfocu.length; i++) {
+               onfocu[i].addEventListener('keyup', function () {
+                  console.log(this.nextElementSibling);
+                  this.nextElementSibling.classList.add('on');
+               });
+               onfocu[i].addEventListener('blur', function () {
+                  this.nextElementSibling.classList.remove('on');
+                  console.log(1);
+               });
+            }
+
+            let acc = document.getElementsByClassName('accordion');
+
+            for (let i = 0; i < acc.length; i++) {
+               acc[i].addEventListener('click', function () {
+                  this.classList.toggle('actv');
+                  let panel = this.nextElementSibling;
+                  if (panel.style.maxHeight) {
+                     panel.style.maxHeight = null;
+                  } else {
+                     panel.style.maxHeight = panel.scrollHeight + 'px';
+                  }
+               });
+            }
+         </script>
+      </div>
+      <footer class="ft_certified"></footer>
+      <div class="add_sign"></div>
+      <div class="item_list_wrap"></div>
+   </body>
+</html>

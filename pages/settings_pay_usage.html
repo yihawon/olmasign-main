@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>sign_setting</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <div class="wrapper">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function () {
+               $.ajax({
+                  url: "../include/head.html",
+                  success: function (result) {
+                     $(".header").html(result)
+                  },
+               })
+            })
+         </script>
+
+         <div class="header hd"></div>
+         <main class="main">
+            <script>
+               $(document).ready(function () {
+                  $.ajax({
+                     url: "../include/aside_set.html",
+                     success: function (result) {
+                        $(".lnb_wrap").html(result)
+                     },
+                  })
+               })
+               $(document).ready(function () {
+                  $.ajax({
+                     url: "../include/lnb_m.html",
+                     success: function (result) {
+                        $(".lnb_m").html(result)
+                     },
+                  })
+               })
+            </script>
+
+            <section class="lnb_wrap"></section>
+
+            <div class="lnb_m"></div>
+
+            <section class="content_wrap">
+               <div class="location">
+                  <a href=""><img src="../../imgs/home-2.svg" alt="home-2.svg" /></a>
+                  <a href="">설정하기</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href="">요금제관리</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href=""><b>사용량</b></a>
+               </div>
+
+               <div class="paysystem_wrap">
+                  <div class="pasys_tit">
+                     <h1>Starter</h1>
+                     <p>구독중인 요금제</p>
+                  </div>
+                  <div class="profile_area paysystem">
+                     <div class="contain_docu_set">
+                        <div class="tab_wrap paysystem_tabs">
+                           <div class="tab">구독</div>
+                           <div class="tab">건별</div>
+                           <span class="highlight emailcustom_tabs_HL"></span>
+                        </div>
+
+                        <section class="paysys_tabs">
+                           <div class="cont paysys_tab">
+                              <h2>
+                                 잔여 <span><b>8</b>건</span>
+                              </h2>
+                              <hr />
+                              <ul>
+                                 <li>구매 건수 <span>10건</span></li>
+                                 <li>사용 건수 <span>2건</span></li>
+                                 <li>만료일<span>2023-03-30</span></li>
+                              </ul>
+                           </div>
+                           <div class="cont paysys_tab">
+                              <h2>
+                                 잔여 <span><b>30</b>건</span>
+                              </h2>
+                              <hr />
+                              <ul>
+                                 <li>구매 건수 <span>10건</span></li>
+                                 <li>사용 건수 <span>2건</span></li>
+                                 <li>만료일 <span>2023-03-30</span></li>
+                              </ul>
+                           </div>
+                        </section>
+                     </div>
+
+                     <div class="paysys_ft">
+                        <div class="paysys_ft_inn">
+                           <p>더많은 전자계약이 필요하시면 클랙해 주세요.</p>
+                           <div class="paysys_btns">
+                              <button class="btn_default" onclick="window.location.href='./settings_pay_add_charge_start.html'">요금제 변경하기</button>
+                              <button class="btn_reverse" onclick="window.location.href='./settings_pay_charge.html'">추가 충전</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </main>
+      </div>
+
+      <div class="popup_wrap restorePop modal_welcome">
+         <div class="popup_contain">
+            <section class="kakao_pop">
+               <img class="popup_close_btn" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal()" />
+
+               <h1 class="popup_title">카카오톡 채널 연동</h1>
+
+               <div class="ctn_wrap">
+                  <p class="ka_pop_hd_tit">카카오톡 채널 (플러스친구) 안내</p>
+                  <ul class="ka_pop_desc">
+                     <li>카카오톡 맞춤설정을 하기 위해서는 카카오톡 채널이 개설이 필요해요.( 관리자센터 바로가기 ) 카카오톡 채널을 만드신 후, 카카오톡 채널</li>
+                     <li>관리자센터에서 비즈니스 채널로 전환 신청해 주세요.</li>
+                  </ul>
+                  <div class="ka_pop_seletes">
+                     <section class="ka_pop_selete">
+                        <p>카카오톡 채널(플러스 친구) 안내</p>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">@hkd3334</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                     </section>
+                     <section class="ka_pop_selete">
+                        <p>관리자 연락처</p>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">010553132</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                     </section>
+                     <section class="ka_pop_selete">
+                        <p>사업 카테고리</p>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">전문서비스</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">법률서비스</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">법률서비스</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                     </section>
+                  </div>
+                  <a href="" class="ka_pop_more">카카오톡 비즈니스 채널 자세히 보기</a>
+               </div>
+            </section>
+            <section class="popup_confirm_btn">
+               <a href="javascript:void(0)" onclick="popPlus()">연동하기</a>
+            </section>
+         </div>
+      </div>
+      <div class="modalplus">
+         <div class="modalplus_contain">
+            <img class="modalplus_close" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal()" />
+            <h1 class="modalplus_tit">카카오톡 채널 연동</h1>
+            <div class="modalplus_body">
+               <h2>관리자 연락처로 전송된 인정번호를 입력해 주세요.</h2>
+
+               <section class="dropboxbtn">
+                  <span>인증번호</span>
+                  <input type="text" placeholder="1111" />
+               </section>
+
+               <p>인증번호를 받지 못하셨나요? <a href="">재전송</a></p>
+            </div>
+            <section class="confirm_btn">
+               <a href="#" onclick="closeModal()">연동하기</a>
+            </section>
+         </div>
+      </div>
+
+      <script>
+         function popPlus() {
+            closeModal()
+            const modalplus = document.querySelector(".modalplus")
+            modalplus.classList.add("on")
+         }
+         let tab = document.querySelectorAll(".tab")
+         let cont = document.querySelectorAll(".cont")
+         console.log(tab)
+
+         function contentShow(num) {
+            cont.forEach((item, idx) => {
+               item.classList.add("active_tab")
+            })
+            cont[num].classList.remove("active_tab")
+         }
+         function highLight(num) {
+            let highLight = document.querySelector(".highlight")
+            const newLeft = tab[num].offsetLeft
+            const newWidth = tab[num].offsetWidth
+            highLight.style.left = newLeft + "px"
+            highLight.style.width = newWidth + "px"
+         }
+
+         contentShow(0)
+
+         tab.forEach((item, idx) => {
+            item.addEventListener("click", () => {
+               contentShow(idx)
+               highLight(idx)
+            })
+         })
+         console.log(tab)
+      </script>
+      <script src="../script/settingCustom.js"></script>
+      <script src="../script/modal.js"></script>
+      <script src="../script/selectBox.js"></script>
+   </body>
+</html>

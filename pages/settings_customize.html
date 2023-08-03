@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>sign_setting</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <div class="wrapper">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function () {
+               $.ajax({
+                  url: "../include/head.html",
+                  success: function (result) {
+                     $(".header").html(result)
+                  },
+               })
+            })
+         </script>
+
+         <div class="header hd"></div>
+         <main class="main">
+            <script>
+               $(document).ready(function () {
+                  $.ajax({
+                     url: "../include/aside_set.html",
+                     success: function (result) {
+                        $(".lnb_wrap").html(result)
+                     },
+                  })
+               })
+               $(document).ready(function () {
+                  $.ajax({
+                     url: "../include/lnb_m.html",
+                     success: function (result) {
+                        $(".lnb_m").html(result)
+                     },
+                  })
+               })
+            </script>
+
+            <section class="lnb_wrap"></section>
+
+            <div class="lnb_m"></div>
+
+            <section class="content_wrap">
+               <div class="location">
+                  <a href=""><img src="../../imgs/home-2.svg" alt="home-2.svg" /></a>
+                  <a href="">설정하기</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href="">회사설정</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href=""><b>맞춤설정</b></a>
+               </div>
+
+               <div class="content_area">
+                  <div class="profile_area emailcustom">
+                     <div class="contain_docu_set">
+                        <div class="tab_wrap emailcustom_tabs">
+                           <div class="tab">이메일</div>
+                           <div class="tab">카카오</div>
+                           <span class="highlight emailcustom_tabs_HL"></span>
+                        </div>
+
+                        <section class="cont_section cont_sec_emailcustom">
+                           <div class="cont">
+                              <div class="set_custormize_contain">
+                                 <h1>이메일 맞춤설정</h1>
+                                 <h2>서명 요청자, 서명자에게 발송되는 이메일 스타일을 변경할 수 있어요.</h2>
+                                 <div class="content_inner">
+                                    <div class="content_inner_wrap">
+                                       <div class="lnb_menu">
+                                          <section class="logo_set">
+                                             <p class="logo_set_title">로고 이미지</p>
+                                             <img src="../../imgs/customize_logo_set_img.png" alt="customize_logo_set_img.png" />
+                                             <p class="logo_set_caution">
+                                                이미지 형식은 JPG 또는 PNG 파일만 가능해요. <br />
+                                                파일의 크기는 최대 2MB까지 지원해요.
+                                             </p>
+                                             <label class="logofile" for="logofile">로고 파일 찾기</label>
+                                             <input type="file" id="logofile" value="로고 파일 찾기" />
+                                          </section>
+                                          <section class="input_set">
+                                             <div class="input_el">
+                                                <label for="logolink" class="btn_label">로고 링크</label>
+                                                <input id="logolink" type="text" value="" />
+                                             </div>
+                                             <div class="input_el">
+                                                <div class="btn_label">버튼 색상</div>
+                                                <div class="color_pick_wrap">
+                                                   <div class="color_box_wrap">
+                                                      <span class="box_select"></span>
+                                                      <span class="hex_select">#099a96</span>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="input_el btn_txt_color">
+                                                <div class="btn_label">버튼 텍스트 색상</div>
+                                                <div class="color_pick_wrap">
+                                                   <div class="color_box_wrap">
+                                                      <span class="box"></span>
+                                                      <span class="hex">#FFFFFF</span>
+                                                   </div>
+                                                </div>
+                                                <div class="color_palette">
+                                                   <div class="color_wrap">
+                                                      <span class="color red"></span>
+                                                      <span class="color orange"></span>
+                                                      <span class="color yellow"></span>
+                                                      <span class="color green"></span>
+                                                      <span class="color dodgerblue"></span>
+                                                      <span class="color blue"></span>
+                                                      <span class="color purple"></span>
+
+                                                      <span class="color mint"></span>
+                                                      <span class="color purple_blue"></span>
+                                                      <span class="color light_green"></span>
+                                                      <span class="color blue_light"></span>
+                                                      <span class="color pink_dark"></span>
+                                                      <span class="color black"></span>
+                                                      <span class="color white"></span>
+                                                      <div class="pick_wrap">
+                                                         <label class="pick" for="pick">
+                                                            <img src="../../imgs/ic_24_plus-1.svg" alt="ic_24_plus-1.svg" />
+                                                            <span href="" id="hex_code">#000000</span>
+                                                         </label>
+                                                         <input id="pick" type="color" name="" />
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="input_el">
+                                                <label for="logolink" class="btn_label">발신자 명</label>
+                                                <input id="logolink" type="text" value="" />
+                                             </div>
+                                             <div class="input_el">
+                                                <label for="logolink" class="btn_label">브랜딩 메시지 1</label>
+                                                <input id="logolink" type="text" value="" />
+                                             </div>
+                                             <div class="input_el">
+                                                <label for="logolink" class="btn_label">브랜딩 메시지 2</label>
+                                                <input id="logolink" type="text" value="" />
+                                             </div>
+                                          </section>
+                                       </div>
+                                       <div class="main_content">
+                                          <div class="main_content_inner">
+                                             <div class="heading_title">
+                                                <img src="../../imgs/amsign_logo.svg" alt="amsign_logo.svg" />
+                                                디지털 계약 & 증빙관리
+                                             </div>
+                                             <hr />
+                                             <div class="head_copy">
+                                                <h1>서명해주세요.</h1>
+                                                <h2>
+                                                   서명 정보를 확인해 주세요. <br />
+                                                   아래 버튼을 누르면 서명할 수 있는 페이지로 해요.
+                                                </h2>
+                                                <h3>전자계약과 거래증빙관리의 결합 서비스</h3>
+                                             </div>
+                                             <table class="table">
+                                                <tr style="width: 638px">
+                                                   <th style="width: 146px">메시지</th>
+                                                   <td>지급으로 요청드려요~</td>
+                                                </tr>
+                                                <tr>
+                                                   <th style="width: 146px">문서명</th>
+                                                   <td>코로나19 입원·격리자 생활지원비 지원 동의서</td>
+                                                </tr>
+                                                <tr>
+                                                   <th style="width: 146px">서명초청자</th>
+                                                   <td>홍길순 (hgs@mail.com)</td>
+                                                </tr>
+                                                <tr>
+                                                   <th style="width: 146px">서명자</th>
+                                                   <td>홍길순 (hgs@mail.com)</td>
+                                                </tr>
+                                             </table>
+                                             <div class="btn_sign">
+                                                <input class="btn_violet" type="button" value="서명하기" />
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="btn_save">
+                                       <span>초기화</span>
+                                       <input class="btn_violet" type="button" value="저장" />
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="cont kakaoInterlock">
+                              <h1>카카오톡채널</h1>
+                              <div class="sections">
+                                 <section>
+                                    <p>
+                                       서명요청자, 서명자에게 발송되는 카카오톡 디자인을 <br />
+                                       원하는 스타일로 변경할 수 있어요.
+                                    </p>
+                                    <a href="">자세히 알아보기</a>
+                                    <button class="btn_violet" onclick="Modalpop()">연동하기</button>
+                                 </section>
+                                 <section><img src="../../imgs/ic_24_noimg.svg" alt="ic_24_noimg.svg" /></section>
+                              </div>
+                           </div>
+                        </section>
+
+                        <div style="height: 200px"></div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </main>
+      </div>
+
+      <div class="popup_wrap restorePop modal_welcome">
+         <div class="popup_contain">
+            <section class="kakao_pop">
+               <img class="popup_close_btn" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal()" />
+
+               <h1 class="popup_title">카카오톡 채널 연동</h1>
+
+               <div class="ctn_wrap">
+                  <p class="ka_pop_hd_tit">카카오톡 채널 (플러스친구) 안내</p>
+                  <ul class="ka_pop_desc">
+                     <li>카카오톡 맞춤설정을 하기 위해서는 카카오톡 채널이 개설이 필요해요.( 관리자센터 바로가기 ) 카카오톡 채널을 만드신 후, 카카오톡 채널</li>
+                     <li>관리자센터에서 비즈니스 채널로 전환 신청해 주세요.</li>
+                  </ul>
+                  <div class="ka_pop_seletes">
+                     <section class="ka_pop_selete">
+                        <p>카카오톡 채널(플러스 친구) 안내</p>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">@hkd3334</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                     </section>
+                     <section class="ka_pop_selete">
+                        <p>관리자 연락처</p>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">010553132</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                     </section>
+                     <section class="ka_pop_selete">
+                        <p>사업 카테고리</p>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">전문서비스</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">법률서비스</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">법률서비스</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                     </section>
+                  </div>
+                  <a href="" class="ka_pop_more">카카오톡 비즈니스 채널 자세히 보기</a>
+               </div>
+            </section>
+            <section class="popup_confirm_btn">
+               <a href="javascript:void(0)" onclick="popPlus()">연동하기</a>
+            </section>
+         </div>
+      </div>
+      <div class="modalplus">
+         <div class="modalplus_contain">
+            <img class="modalplus_close" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal()" />
+            <h1 class="modalplus_tit">카카오톡 채널 연동</h1>
+            <div class="modalplus_body">
+               <h2>관리자 연락처로 전송된 인정번호를 입력해 주세요.</h2>
+
+               <section class="dropboxbtn">
+                  <span>인증번호</span>
+                  <input type="text" placeholder="1111" />
+               </section>
+
+               <p>인증번호를 받지 못하셨나요? <a href="">재전송</a></p>
+            </div>
+            <section class="confirm_btn">
+               <a href="#" onclick="closeModal()">연동하기</a>
+            </section>
+         </div>
+      </div>
+
+      <script>
+         function popPlus() {
+            closeModal()
+            const modalplus = document.querySelector(".modalplus")
+            modalplus.classList.add("on")
+         }
+         let tab = document.querySelectorAll(".tab")
+         let cont = document.querySelectorAll(".cont")
+         console.log(tab)
+
+         function contentShow(num) {
+            cont.forEach((item, idx) => {
+               item.classList.add("active_tab")
+            })
+            cont[num].classList.remove("active_tab")
+         }
+         function highLight(num) {
+            let highLight = document.querySelector(".highlight")
+            const newLeft = tab[num].offsetLeft
+            const newWidth = tab[num].offsetWidth
+            highLight.style.left = newLeft + "px"
+            highLight.style.width = newWidth + "px"
+         }
+
+         contentShow(0)
+
+         tab.forEach((item, idx) => {
+            item.addEventListener("click", () => {
+               contentShow(idx)
+               highLight(idx)
+            })
+         })
+         console.log(tab)
+      </script>
+      <script src="../script/settingCustom.js"></script>
+      <script src="../script/modal.js"></script>
+      <script src="../script/selectBox.js"></script>
+   </body>
+</html>

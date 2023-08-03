@@ -1,0 +1,148 @@
+<style>
+   .sign_draw_content > h1 {
+      padding: inherit;
+   }
+</style>
+<div class="sign_draw_wrap">
+   <div class="sign_draw_contain_tab" style="max-height: 550px">
+      <div class="sign_draw_content_wrap" style="height: 100%; padding-bottom: inherit">
+         <div class="cotent_wrap">
+            <section class="sign_draw_content" style="height: 100%">
+               <h1 class="flx jusc py48">
+                  이미지 업로드<span><img src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" class="btn_close posa t0 pt10" /></span>
+               </h1>
+
+               <div class="add_sign_step3">
+                  <div class="my_file_box">
+                     <div class="my_com">
+                        <div class="drop_file_wrap">
+                           <div class="my_com_file_drop drop-zone1">
+                              <img src="../../imgs/ic_24_form_02.svg" alt="ic_24_form_02.svg" />
+                              <p class="">이곳에 파일을 놓아 주세요.</p>
+                              <div class="or_comment">
+                                 <hr />
+                                 <span>또는</span>
+                              </div>
+                           </div>
+                           <form class="drop_file">
+                              <label for="file1" class="file_upload">파일찾기</label>
+                              <input type="file" id="file1" class="uploadlayerpop" multiple />
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="file_desc">
+                     <p>지원 파일 : DOCX, PDF, HWP…</p>
+                     <p>업로드 가능 용량 : 최대 5MB</p>
+                  </div>
+               </div>
+            </section>
+         </div>
+      </div>
+   </div>
+</div>
+<script>
+   const imgupload = () => {
+      document.querySelector(".sign_draw_wrap").classList.add("on")
+   }
+   document.querySelector(".sign_draw_wrap").addEventListener("click", (event) => {
+      event.stopPropagation()
+   })
+   document.querySelector(".btn_close").addEventListener("click", (event) => {
+      event.stopPropagation()
+      document.querySelector(".sign_draw_wrap").classList.remove("on")
+   })
+
+   function loadImgGetFileName() {
+      document.querySelector("#file1").addEventListener("change", () => {
+         document.querySelector(".sign_draw_wrap").classList.remove("on")
+         let getfilename = document.querySelector("#getfilename")
+         console.log(getfilename)
+         let fileName = document.querySelector('#file1[type="file"]')
+         console.log(fileName.files[0].name)
+         getfilename.setAttribute("placeholder", fileName.files[0].name)
+      })
+   }
+   loadImgGetFileName()
+   ;(function () {
+      var $file1 = document.getElementById("file1")
+      var dropZone1 = document.querySelector(".drop-zone1")
+
+      var toggleClass = function (className) {
+         console.log("current event: " + className)
+
+         var list = ["dragenter", "dragleave", "dragover", "drop"]
+
+         for (var i = 0; i < list.length; i++) {
+            if (className === list[i]) {
+               dropZone1.classList.add("drop-zone-" + list[i])
+            } else {
+               dropZone1.classList.remove("drop-zone-" + list[i])
+            }
+         }
+      }
+
+      var showFiles = function (files) {
+         dropZone1.innerHTML = ""
+         for (var i = 0, len = files.length; i < len; i++) {
+            dropZone1.innerHTML += "<p>" + files[i].name + "</p>"
+         }
+      }
+
+      var selectFile = function (files) {
+         $file1.files = files
+         showFiles($file1.files)
+      }
+
+      $file1.addEventListener("change", function (e) {
+         showFiles(e.target.files)
+      })
+
+      dropZone1.addEventListener("dragenter", function (e) {
+         e.stopPropagation()
+         e.preventDefault()
+
+         toggleClass("dragenter")
+      })
+
+      dropZone1.addEventListener("dragleave", function (e) {
+         e.stopPropagation()
+         e.preventDefault()
+
+         toggleClass("dragleave")
+      })
+
+      dropZone1.addEventListener("dragover", function (e) {
+         e.stopPropagation()
+         e.preventDefault()
+
+         toggleClass("dragover")
+      })
+
+      dropZone1.addEventListener("drop", function (e) {
+         e.preventDefault()
+
+         toggleClass("drop")
+
+         var files = e.dataTransfer && e.dataTransfer.files
+         console.log(files)
+
+         if (files != null) {
+            if (files.length < 1) {
+               alert("폴더 업로드 불가")
+               return
+            }
+            selectFile(files)
+         } else {
+            alert("ERROR")
+         }
+
+         document.querySelector(".sign_draw_wrap").classList.remove("on")
+         let getfilename = document.querySelector("#getfilename")
+         console.log(getfilename)
+         let fileName = document.querySelector('#file1[type="file"]')
+         console.log(fileName.files[0].name)
+         getfilename.setAttribute("placeholder", fileName.files[0].name)
+      })
+   })()
+</script>

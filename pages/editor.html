@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>template_write</title>
+   </head>
+
+   <body class="body">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script>
+         $(document).ready(function () {
+            $.ajax({
+               url: "../include/csslink.html",
+               success: function (result) {
+                  $(".csslink").html(result)
+               },
+            })
+
+            $.ajax({
+               url: "./_toast_pop.html",
+               success: function (result) {
+                  $(".toastpop").html(result)
+               },
+            })
+
+            $.ajax({
+               url: "./_imgupload.html",
+               success: function (result) {
+                  $(".imgupload").html(result)
+               },
+            })
+         })
+      </script>
+
+      <div class="csslink"></div>
+      <div class="toastpop"></div>
+
+      <div class="imgupload"></div>
+
+      <header class="header">
+         <input type="button" value="나가기" class="btn_exit" onclick="window.location.href='./settings_my_template.html'" />
+
+         <div class="stepper_contain">
+            <div class="stepper_contain">
+               <div class="stepper_tit_wrap">
+                  <div class="stepper_tit">
+                     <img src="../../imgs/ic_img_done.svg" alt="ic_img_done.svg" />
+                     문서업로드
+                  </div>
+                  <span class="line_el line_el_select_solid"></span>
+                  <div class="stepper_tit">
+                     <img src="../../imgs/ic_img_done.svg" alt="ic_img_done.svg" />
+
+                     계약 설정
+                  </div>
+                  <span class="line_el line_el_select_solid"></span>
+                  <div class="stepper_tit">
+                     <img src="../../imgs/stepper_icon_on.svg" alt="stepper_icon_on.svg" />
+
+                     템플릿 편집
+                  </div>
+                  <span class="line_el line_el_select_dashed"></span>
+                  <div class="stepper_tit">
+                     <img src="../../imgs/stepper_icon_off.svg" alt="stepper_icon_off.svg" />
+                     문서 확인
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="right_btns">
+            <input type="button" value="편집" class="btn_violet_edit" id="" />
+            <input type="button" value="공유" class="btn_violet" id="btn_link_pop" />
+            <a href="javascript:void(0)" class="help_ic_wrap">도움말<img src="../../imgs/ic_help.svg" alt="ic_help.svg" /></a>
+         </div>
+      </header>
+      <div style="height: 60px"></div>
+      <main class="main">
+         <div class="tool_bar temp_detail_page">
+            <div class="dropdown_wrap" style="margin-right: 2rem">
+               <div class="dropdown">
+                  <div class="dropdown-btn">
+                     <p>100%</p>
+                     <i class="bi bi-caret-down-fill"></i>
+                  </div>
+                  <div class="dropdown-content" style="border: 1px solid #eee">
+                     <div class="dropdown-item" data-value="1">85%</div>
+                     <div class="dropdown-item" data-value="2">50%</div>
+                     <div class="dropdown-item" data-value="3">25%</div>
+                  </div>
+               </div>
+            </div>
+            <div class="icons_btns foo">
+               <a href="javascript:void(0)">
+                  <img src="../../imgs/ic_24_plus.svg" alt="ic_24_plus.svg" />
+               </a>
+               <button class="add_sign">
+                  <img src="../../imgs/ic_24_minus.svg" alt="ic_24_minus.svg" />
+               </button>
+            </div>
+         </div>
+         <section class="docu_wrap">
+            <article class="docu_area"></article>
+            <div class="docu_bg">
+               <div class="docu_board_wrap remote_wrap">
+                  <div class="remote">
+                     <img src="../../imgs/ic_18_up_white.svg" alt="ic_18_up_white.svg" />
+                     <span>12 / 14</span>
+                     <img src="../../imgs/ic_18_up_white.svg" alt="ic_18_up_white.svg" />
+                  </div>
+                  <p>표준근로계약서<img src="../../imgs/ic_20_edit.svg" alt="ic_20_edit.svg" /></p>
+                  <div class="docu_board">
+                     <hr />
+                     <button class="toast__trigger r">토스트 팝업 띄우기</button>
+                     <hr />
+
+                     <section class="txtareawrap">
+                        <p class="speechBubble">
+                           <img src="../../imgs/bubble_speech.svg" alt="bubble_speech" />
+                           <span class="txt_option">
+                              <a href="javascript:void(0)">복사</a>
+                              <a href="javascript:void(0)">삭제</a>
+                           </span>
+                        </p>
+
+                        <div class="stamp_ic editElem" onclick="panelHandler(0)">
+                           <img src="../../imgs/svg/ic_24_sign_g_white.svg" alt="ic_24_sign_g_white.svg" />
+                        </div>
+                     </section>
+                     <hr />
+
+                     <section class="txtareawrap">
+                        <p class="speechBubble">
+                           <img src="../../imgs/bubble_speech.svg" alt="bubble_speech" />
+                           <span class="txt_option">
+                              <a href="javascript:void(0)">복사</a>
+                              <a href="javascript:void(0)">삭제</a>
+                           </span>
+                        </p>
+
+                        <div class="sign_ic editElem" onclick="panelHandler(1)">
+                           <img src="../../imgs/svg/ic_24_stamp_g_white.svg" alt="ic_24_stamp_g_white.svg" />
+                        </div>
+                     </section>
+
+                     <hr />
+                     <section class="txtareawrap">
+                        <p class="speechBubble">
+                           <img src="../../imgs/bubble_speech.svg" alt="bubble_speech" />
+                           <span class="txt_option">
+                              <a href="javascript:void(0)">복사</a>
+                              <a href="javascript:void(0)">삭제</a>
+                           </span>
+                        </p>
+                        <textarea name="" id="" class="txtarea editElem" placeholder="텍스트 입력" onclick="panelHandler(2)"></textarea>
+                     </section>
+
+                     <hr />
+                     <section class="flx">
+                        <p class="px10">
+                           <span class="" onclick="panelHandler(0)">click-0-사인</span>
+                        </p>
+                        <p class="px10">
+                           <span class="" onclick="panelHandler(1)">click-1-도장</span>
+                        </p>
+                        <p class="px10">
+                           <span class="" onclick="panelHandler(2)">click-2-텍스트</span>
+                        </p>
+                        <p class="px10">
+                           <span class="" onclick="panelHandler(3)">click-3-날짜</span>
+                        </p>
+                        <p class="px10">
+                           <span class="" onclick="panelHandler(4)">click-4-숫자</span>
+                        </p>
+                     </section>
+                     <section class="flx">
+                        <p class="px10">
+                           <span class="" onclick="panelHandler(5)">click-5-이미지</span>
+                        </p>
+                        <p class="px10">
+                           <span class="" onclick="panelHandler(6)">click-6-체크박스</span>
+                        </p>
+                        <p class="px10">
+                           <span class="" onclick="panelHandler(7)">click-7-라디오</span>
+                        </p>
+                        <p class="px10">
+                           <span class="" onclick="panelHandler(8)">click-8-드랍</span>
+                        </p>
+                        <p class="px10">
+                           <span class="" onclick="panelHandler(9)">click-9-첨부파일</span>
+                        </p>
+                        <p class="px10">
+                           <span class="" onclick="panelHandler(10)">click-10-고정참여자 설정(대량전송)</span>
+                        </p>
+                     </section>
+                     <hr />
+                     <section class="txtareawrap">
+                        <p class="speechBubble" style="left: 40px">
+                           <img src="../../imgs/bubble_speech.svg" alt="bubble_speech" />
+                           <span class="txt_option">
+                              <a href="javascript:void(0)">복사</a>
+                              <a href="javascript:void(0)">삭제</a>
+                           </span>
+                        </p>
+                        <textarea
+                           name=""
+                           id="getfilename"
+                           class="txtarea editElem"
+                           placeholder="여기를 클릭하여 이미지를 넣어주세요."
+                           onclick="panelHandler(5), imgupload()"
+                           style="width: 180px; height: 55px"
+                        ></textarea>
+                     </section>
+                     <hr />
+                     <section class="txtareawrap">
+                        <p class="speechBubble" style="left: 40px">
+                           <img src="../../imgs/bubble_speech.svg" alt="bubble_speech" />
+                           <span class="txt_option">
+                              <a href="javascript:void(0)">복사</a>
+                              <a href="javascript:void(0)">삭제</a>
+                           </span>
+                        </p>
+                        <div class="check_area editElem" onclick="panelHandler(6)">
+                           <div class="checkbox_wrap" data-value="1">
+                              <input type="checkbox" name="groupChk" id="gChck1" />
+                              <label for="gChck1"> </label>
+                           </div>
+                           <div class="checkbox_wrap" data-value="2">
+                              <input type="checkbox" name="groupChk" id="gChck2" />
+                              <label for="gChck2"> </label>
+                           </div>
+                           <div class="checkbox_wrap" data-value="3">
+                              <input type="checkbox" name="groupChk" id="gChck3" />
+                              <label for="gChck3"> </label>
+                           </div>
+                           <div class="checkbox_wrap" data-value="4">
+                              <input type="checkbox" name="groupChk" id="gChck4" />
+                              <label for="gChck4"> </label>
+                           </div>
+                           <div class="checkbox_wrap" data-value="5">
+                              <input type="checkbox" name="groupChk" id="gChck5" />
+                              <label for="gChck5"> </label>
+                           </div>
+                           <div class="checkbox_wrap" data-value="6">
+                              <input type="checkbox" name="groupChk" id="gChck6" />
+                              <label for="gChck6"> </label>
+                           </div>
+                           <div class="checkbox_wrap" data-value="7">
+                              <input type="checkbox" name="groupChk" id="gChck7" />
+                              <label for="gChck7"> </label>
+                           </div>
+                           <div class="checkbox_wrap" data-value="8">
+                              <input type="checkbox" name="groupChk" id="gChck8" />
+                              <label for="gChck8"> </label>
+                           </div>
+                           <div class="checkbox_wrap" data-value="9">
+                              <input type="checkbox" name="groupChk" id="gChck9" />
+                              <label for="gChck9"> </label>
+                           </div>
+                           <div class="checkbox_wrap" data-value="10">
+                              <input type="checkbox" name="groupChk" id="gChck10" />
+                              <label for="gChck10"> </label>
+                           </div>
+                        </div>
+                     </section>
+                     <hr />
+                     <section class="txtareawrap">
+                        <p class="speechBubble" style="left: 40px">
+                           <img src="../../imgs/bubble_speech.svg" alt="bubble_speech" />
+                           <span class="txt_option">
+                              <a href="javascript:void(0)">복사</a>
+                              <a href="javascript:void(0)">삭제</a>
+                           </span>
+                        </p>
+
+                        <div class="radio_area editElem" onclick="panelHandler(7)">
+                           <div class="radio" data-value="1">
+                              <input type="radio" name="groupRdo" id="Rdo1" />
+                              <label for="Rdo1" class="radio-label"> </label>
+                           </div>
+                           <div class="radio" data-value="2">
+                              <input type="radio" name="groupRdo" id="Rdo2" />
+                              <label for="Rdo2" class="radio-label"> </label>
+                           </div>
+                           <div class="radio" data-value="3">
+                              <input type="radio" name="groupRdo" id="Rdo3" />
+                              <label for="Rdo3" class="radio-label"> </label>
+                           </div>
+                           <div class="radio" data-value="4">
+                              <input type="radio" name="groupRdo" id="Rdo4" />
+                              <label for="Rdo4" class="radio-label"> </label>
+                           </div>
+                           <div class="radio" data-value="5">
+                              <input type="radio" name="groupRdo" id="Rdo5" />
+                              <label for="Rdo5" class="radio-label"> </label>
+                           </div>
+                           <div class="radio" data-value="6">
+                              <input type="radio" name="groupRdo" id="Rdo6" />
+                              <label for="Rdo6" class="radio-label"> </label>
+                           </div>
+                           <div class="radio" data-value="7">
+                              <input type="radio" name="groupRdo" id="Rdo7" />
+                              <label for="Rdo7" class="radio-label"> </label>
+                           </div>
+                           <div class="radio" data-value="8">
+                              <input type="radio" name="groupRdo" id="Rdo8" />
+                              <label for="Rdo8" class="radio-label"> </label>
+                           </div>
+                           <div class="radio" data-value="9">
+                              <input type="radio" name="groupRdo" id="Rdo9" />
+                              <label for="Rdo9" class="radio-label"> </label>
+                           </div>
+                           <div class="radio" data-value="10">
+                              <input type="radio" name="groupRdo" id="Rdo10" />
+                              <label for="Rdo10" class="radio-label"> </label>
+                           </div>
+                        </div>
+                     </section>
+                     <hr />
+
+                     <section class="txtareawrap">
+                        <p class="speechBubble" style="left: 40px">
+                           <img src="../../imgs/bubble_speech.svg" alt="bubble_speech" />
+                           <span class="txt_option">
+                              <a href="javascript:void(0)">복사</a>
+                              <a href="javascript:void(0)">삭제</a>
+                           </span>
+                        </p>
+                        <div class="editElem selectBoxWrapper">
+                           <div onclick="panelHandler(8)" class="selectBoxObj">
+                              <select name="items" id="items" placeholder="select">
+                                 <option value="item1">item1</option>
+                                 <option value="item2">item2</option>
+                              </select>
+                           </div>
+                        </div>
+                     </section>
+                     <hr />
+                     <section>
+                        <div onclick="panelHandler(3)" class="selectBoxObj">
+                           <input type="date" class="txtarea" style="width: 125px; height: 36px !important" />
+                        </div>
+                     </section>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="tool_panels">
+            <div class="usr_select">
+               <p>서명자 설정</p>
+               <article class="usr_select_wrap">
+                  <button class="btn_select selectBtn2 name_selected">서명자 선택</button>
+                  <div class="list_item selectList2">
+                     <ul class="name_lists">
+                        <li class="writer">
+                           <button style="color: #9539ed"><span>&bull;</span> 작성자</button>
+                        </li>
+                        <li class="signatory">
+                           <button style="color: #d93838"><span>&bull;</span>서명자</button>
+                           <button style="color: #d93838"><span>&bull;</span>이정현</button>
+                        </li>
+                        <li class="fixparticipant">
+                           <button style="color: #2fcc68"><span>&bull;</span>고정참여자</button>
+                           <button style="color: #2fcc68"><span>&bull;</span>정지인</button>
+                        </li>
+                     </ul>
+                  </div>
+               </article>
+               <p class="mt14">역할</p>
+               <article>
+                  <input type="text" />
+               </article>
+               <div class="beforeSign mt14">
+                  미리서명(나)
+
+                  <div class="toggle_area edit_toggle">
+                     <section class="toggle_wrap">
+                        <span class="toggle_span">
+                           <div class="flipBtn">
+                              <div class="toggle_btn"></div>
+                           </div>
+                        </span>
+                     </section>
+                  </div>
+               </div>
+            </div>
+
+            <hr />
+
+            <div class="editor_input_lis">
+               <p>입력항목</p>
+               <ul>
+                  <li class="onPress" onmousedown="panelHandler(0)">
+                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="ic_24_sign_g">
+                           <path
+                              id="edit_square"
+                              d="M3.75 22.2672C3.2 22.2672 2.72917 22.0714 2.3375 21.6797C1.94583 21.288 1.75 20.8172 1.75 20.2672V6.26719C1.75 5.71719 1.94583 5.24635 2.3375 4.85469C2.72917 4.46302 3.2 4.26719 3.75 4.26719H12.675L10.675 6.26719H3.75V20.2672H17.75V13.3172L19.75 11.3172V20.2672C19.75 20.8172 19.5542 21.288 19.1625 21.6797C18.7708 22.0714 18.3 22.2672 17.75 22.2672H3.75ZM14.925 4.84219L16.35 6.24219L9.75 12.8422V14.2672H11.15L17.775 7.64219L19.2 9.04219L12 16.2672H7.75V12.0172L14.925 4.84219ZM19.2 9.04219L14.925 4.84219L17.425 2.34219C17.825 1.94219 18.3042 1.74219 18.8625 1.74219C19.4208 1.74219 19.8917 1.94219 20.275 2.34219L21.675 3.76719C22.0583 4.15052 22.25 4.61719 22.25 5.16719C22.25 5.71719 22.0583 6.18385 21.675 6.56719L19.2 9.04219Z"
+                              fill="#BDBDBD"
+                           />
+                        </g>
+                     </svg>
+                     사인
+                  </li>
+                  <li class="onPress" onmousedown="panelHandler(1)">
+                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="ic_24_stamp_g">
+                           <path
+                              id="Vector (Stroke)"
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M19 16.9044L18.9958 16.9002C18.9943 16.8987 18.9915 16.8959 18.9915 16.8959H15.11C14.0054 16.8959 13.11 16.0005 13.11 14.8959C13.11 14.116 13.2467 13.4743 13.4502 12.8912C13.6005 12.4541 13.7938 12.0392 13.9691 11.6628C13.9759 11.6482 13.9827 11.6337 13.9895 11.6192C14.0283 11.5281 14.0697 11.4437 14.1148 11.3617C14.2878 10.9965 14.4645 10.6223 14.6406 10.1944L14.6413 10.1929C15.3739 8.41806 15.0493 7.17533 14.4573 6.38232L14.4543 6.37837C13.8246 5.53039 12.8021 5.08594 12.01 5.08594C11.2245 5.08594 10.104 5.56673 9.42367 6.44741C8.80643 7.24845 8.48966 8.45066 9.34644 10.1071L9.3501 10.1142C10.2863 11.942 10.6525 13.3443 10.7842 14.3848L10.7878 14.4151C10.7961 14.4896 10.8044 14.5568 10.8146 14.6379C10.8857 15.2071 10.709 15.7795 10.3294 16.2095C9.94971 16.6396 9.40366 16.8859 8.83 16.8859H5.0085C5.0085 16.8859 5.00571 16.8887 5.00421 16.8902C5.00272 16.8916 5 16.8944 5 16.8944V18.9126C5 18.9126 5.00272 18.9153 5.00421 18.9168C5.00571 18.9183 5.0085 18.9211 5.0085 18.9211H18.9915C18.9915 18.9211 18.9943 18.9183 18.9958 18.9168C18.9973 18.9153 19 18.9126 19 18.9126V16.9044ZM21 18.9211C21 19.4711 20.8 19.9411 20.41 20.3311C20.02 20.7211 19.55 20.9211 19 20.9211H5C4.45 20.9211 3.98 20.7211 3.59 20.3311C3.2 19.9411 3 19.4711 3 18.9211V16.8859C3 16.3359 3.2 15.8659 3.59 15.4759C3.98 15.0859 4.45 14.8859 5 14.8859H8.83C8.82 14.8059 8.81 14.7259 8.8 14.6359C8.74284 14.1844 8.62361 13.6054 8.37507 12.8859C8.18878 12.3467 7.92986 11.7285 7.57 11.0259C6.37 8.70594 6.73 6.66594 7.84 5.22594C8.89 3.86594 10.59 3.08594 12.01 3.08594C13.43 3.08594 15.05 3.82594 16.06 5.18594C17.12 6.60594 17.46 8.60594 16.49 10.9559C16.2895 11.4429 16.0889 11.8661 15.9145 12.2342C15.9063 12.2515 15.8981 12.2688 15.89 12.2859C15.86 12.3359 15.84 12.3759 15.82 12.4259C15.8119 12.4433 15.8039 12.4605 15.796 12.4775C15.7268 12.6262 15.6626 12.7642 15.6033 12.8959C15.5008 13.1239 15.413 13.3331 15.34 13.5459C15.2 13.9459 15.11 14.3659 15.11 14.8959H19C19.5453 14.8959 20.0119 15.0925 20.3999 15.4759C20.4016 15.4776 20.4033 15.4793 20.405 15.4809C20.4067 15.4826 20.4083 15.4843 20.41 15.4859V15.4759C20.4117 15.4776 20.4133 15.4793 20.415 15.4809C20.4166 15.4826 20.4183 15.4843 20.4199 15.4859C20.8034 15.874 21 16.3406 21 16.8859V18.9211Z"
+                              fill="#BDBDBD"
+                           />
+                        </g>
+                     </svg>
+                     도장
+                  </li>
+
+                  <hr />
+
+                  <li class="onPress" onmousedown="panelHandler(2)">
+                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="ic_24_text_g">
+                           <path id="title" d="M10.5 20V7H5V4H19V7H13.5V20H10.5Z" fill="#BDBDBD" />
+                        </g>
+                     </svg>
+                     텍스트
+                  </li>
+                  <li class="onPress" onmousedown="panelHandler(3)">
+                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="ic_24_calender_g">
+                           <path
+                              id="calendar_month"
+                              d="M5 22C4.45 22 3.979 21.8043 3.587 21.413C3.19567 21.021 3 20.55 3 20V6C3 5.45 3.19567 4.97933 3.587 4.588C3.979 4.196 4.45 4 5 4H6V2H8V4H16V2H18V4H19C19.55 4 20.021 4.196 20.413 4.588C20.8043 4.97933 21 5.45 21 6V20C21 20.55 20.8043 21.021 20.413 21.413C20.021 21.8043 19.55 22 19 22H5ZM5 20H19V10H5V20ZM5 8H19V6H5V8ZM12 14C11.7167 14 11.4793 13.904 11.288 13.712C11.096 13.5207 11 13.2833 11 13C11 12.7167 11.096 12.479 11.288 12.287C11.4793 12.0957 11.7167 12 12 12C12.2833 12 12.521 12.0957 12.713 12.287C12.9043 12.479 13 12.7167 13 13C13 13.2833 12.9043 13.5207 12.713 13.712C12.521 13.904 12.2833 14 12 14ZM8 14C7.71667 14 7.479 13.904 7.287 13.712C7.09567 13.5207 7 13.2833 7 13C7 12.7167 7.09567 12.479 7.287 12.287C7.479 12.0957 7.71667 12 8 12C8.28333 12 8.521 12.0957 8.713 12.287C8.90433 12.479 9 12.7167 9 13C9 13.2833 8.90433 13.5207 8.713 13.712C8.521 13.904 8.28333 14 8 14ZM16 14C15.7167 14 15.4793 13.904 15.288 13.712C15.096 13.5207 15 13.2833 15 13C15 12.7167 15.096 12.479 15.288 12.287C15.4793 12.0957 15.7167 12 16 12C16.2833 12 16.5207 12.0957 16.712 12.287C16.904 12.479 17 12.7167 17 13C17 13.2833 16.904 13.5207 16.712 13.712C16.5207 13.904 16.2833 14 16 14ZM12 18C11.7167 18 11.4793 17.904 11.288 17.712C11.096 17.5207 11 17.2833 11 17C11 16.7167 11.096 16.4793 11.288 16.288C11.4793 16.096 11.7167 16 12 16C12.2833 16 12.521 16.096 12.713 16.288C12.9043 16.4793 13 16.7167 13 17C13 17.2833 12.9043 17.5207 12.713 17.712C12.521 17.904 12.2833 18 12 18ZM8 18C7.71667 18 7.479 17.904 7.287 17.712C7.09567 17.5207 7 17.2833 7 17C7 16.7167 7.09567 16.4793 7.287 16.288C7.479 16.096 7.71667 16 8 16C8.28333 16 8.521 16.096 8.713 16.288C8.90433 16.4793 9 16.7167 9 17C9 17.2833 8.90433 17.5207 8.713 17.712C8.521 17.904 8.28333 18 8 18ZM16 18C15.7167 18 15.4793 17.904 15.288 17.712C15.096 17.5207 15 17.2833 15 17C15 16.7167 15.096 16.4793 15.288 16.288C15.4793 16.096 15.7167 16 16 16C16.2833 16 16.5207 16.096 16.712 16.288C16.904 16.4793 17 16.7167 17 17C17 17.2833 16.904 17.5207 16.712 17.712C16.5207 17.904 16.2833 18 16 18Z"
+                              fill="#BDBDBD"
+                           />
+                        </g>
+                     </svg>
+                     날짜
+                  </li>
+                  <li class="onPress" onmousedown="panelHandler(4)">
+                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="ic_24_number_g">
+                           <path
+                              id="pin"
+                              d="M4 20C3.45 20 2.97933 19.8043 2.588 19.413C2.196 19.021 2 18.55 2 18V6C2 5.45 2.196 4.97933 2.588 4.588C2.97933 4.196 3.45 4 4 4H20C20.55 4 21.021 4.196 21.413 4.588C21.8043 4.97933 22 5.45 22 6V18C22 18.55 21.8043 19.021 21.413 19.413C21.021 19.8043 20.55 20 20 20H4ZM6.5 15H7.65V9H6.75L5 10.25L5.6 11.15L6.5 10.5V15ZM9.6 15H13.5V14H11.15L11.1 13.95C11.45 13.6167 11.7377 13.3333 11.963 13.1C12.1877 12.8667 12.3667 12.6833 12.5 12.55C12.8 12.25 13.025 11.95 13.175 11.65C13.325 11.35 13.4 11.0333 13.4 10.7C13.4 10.2167 13.2167 9.81267 12.85 9.488C12.4833 9.16267 12.0167 9 11.45 9C11.0167 9 10.625 9.125 10.275 9.375C9.925 9.625 9.68333 9.95 9.55 10.35L10.55 10.75C10.6333 10.5333 10.7543 10.3623 10.913 10.237C11.071 10.1123 11.25 10.05 11.45 10.05C11.7 10.05 11.904 10.1167 12.062 10.25C12.2207 10.3833 12.3 10.55 12.3 10.75C12.3 10.9333 12.2667 11.104 12.2 11.262C12.1333 11.4207 11.9833 11.6167 11.75 11.85L9.6 14V15ZM17 15C17.6 15 18.0833 14.8333 18.45 14.5C18.8167 14.1667 19 13.7333 19 13.2C19 12.9 18.9167 12.6333 18.75 12.4C18.5833 12.1667 18.35 11.9833 18.05 11.85V11.8C18.2833 11.6667 18.4667 11.4957 18.6 11.287C18.7333 11.079 18.8 10.8333 18.8 10.55C18.8 10.1 18.625 9.72933 18.275 9.438C17.925 9.146 17.4833 9 16.95 9C16.5333 9 16.1457 9.121 15.787 9.363C15.429 9.60433 15.2 9.9 15.1 10.25L16.1 10.65C16.1667 10.45 16.275 10.2917 16.425 10.175C16.575 10.0583 16.75 10 16.95 10C17.1667 10 17.346 10.0627 17.488 10.188C17.6293 10.3127 17.7 10.4667 17.7 10.65C17.7 10.8833 17.6167 11.0667 17.45 11.2C17.2833 11.3333 17.0667 11.4 16.8 11.4H16.35V12.4H16.85C17.1833 12.4 17.4417 12.4667 17.625 12.6C17.8083 12.7333 17.9 12.9167 17.9 13.15C17.9 13.3667 17.8083 13.554 17.625 13.712C17.4417 13.8707 17.2333 13.95 17 13.95C16.7167 13.95 16.5 13.8873 16.35 13.762C16.2 13.6373 16.0667 13.4167 15.95 13.1L14.95 13.5C15.0667 13.9833 15.304 14.3543 15.662 14.613C16.0207 14.871 16.4667 15 17 15ZM4 18H20V6H4V18Z"
+                              fill="#BDBDBD"
+                           />
+                        </g>
+                     </svg>
+                     숫자
+                  </li>
+                  <li class="onPress" onmousedown="panelHandler(5)">
+                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="ic_24_img_g">
+                           <path
+                              id="add_photo_alternate"
+                              d="M5 21C4.45 21 3.979 20.8043 3.587 20.413C3.19567 20.021 3 19.55 3 19V5C3 4.45 3.19567 3.979 3.587 3.587C3.979 3.19567 4.45 3 5 3H14V5H5V19H19V10H21V19C21 19.55 20.8043 20.021 20.413 20.413C20.021 20.8043 19.55 21 19 21H5ZM17 9V7H15V5H17V3H19V5H21V7H19V9H17ZM6 17H18L14.25 12L11.25 16L9 13L6 17Z"
+                              fill="#BDBDBD"
+                           />
+                        </g>
+                     </svg>
+                     이미지
+                  </li>
+
+                  <hr />
+
+                  <li class="onPress" onmousedown="panelHandler(6)">
+                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="ic_24_checkbox_g_02">
+                           <g id="Vector">
+                              <path
+                                 fill-rule="evenodd"
+                                 clip-rule="evenodd"
+                                 d="M6 2C3.79086 2 2 3.79086 2 6V18C2 20.2091 3.79086 22 6 22H18C20.2091 22 22 20.2091 22 18V6C22 3.79086 20.2091 2 18 2H6ZM6 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4Z"
+                                 fill="#BDBDBD"
+                              />
+                              <path
+                                 d="M10.0148 15.1019C10.1181 15.2061 10.241 15.2887 10.3764 15.3452C10.5118 15.4016 10.657 15.4306 10.8037 15.4306C10.9504 15.4306 11.0956 15.4016 11.231 15.3452C11.3664 15.2887 11.4893 15.2061 11.5926 15.1019L16.1259 10.5686C16.3351 10.3594 16.4527 10.0756 16.4527 9.77972C16.4527 9.48383 16.3351 9.20006 16.1259 8.99083C15.9167 8.7816 15.6329 8.66406 15.337 8.66406C15.0411 8.66406 14.7573 8.7816 14.5481 8.99083L10.8037 12.7464L9.45923 11.3908C9.25001 11.1816 8.96624 11.0641 8.67034 11.0641C8.37445 11.0641 8.09068 11.1816 7.88146 11.3908C7.67223 11.6001 7.55469 11.8838 7.55469 12.1797C7.55469 12.4756 7.67223 12.7594 7.88146 12.9686L10.0148 15.1019Z"
+                                 fill="#BDBDBD"
+                              />
+                           </g>
+                        </g>
+                     </svg>
+                     체크박스
+                  </li>
+                  <li class="onPress" onmousedown="panelHandler(7)">
+                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="ic_24_radio_g_02">
+                           <g id="Vector">
+                              <path
+                                 d="M17.5 12C17.5 15.0376 15.0376 17.5 12 17.5C8.96243 17.5 6.5 15.0376 6.5 12C6.5 8.96243 8.96243 6.5 12 6.5C15.0376 6.5 17.5 8.96243 17.5 12Z"
+                                 fill="#BDBDBD"
+                              />
+                              <path
+                                 fill-rule="evenodd"
+                                 clip-rule="evenodd"
+                                 d="M12 21.625C17.3157 21.625 21.625 17.3157 21.625 12C21.625 6.68426 17.3157 2.375 12 2.375C6.68426 2.375 2.375 6.68426 2.375 12C2.375 17.3157 6.68426 21.625 12 21.625ZM12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+                                 fill="#BDBDBD"
+                              />
+                           </g>
+                        </g>
+                     </svg>
+                     라디오버튼
+                  </li>
+                  <li class="onPress" onmousedown="panelHandler(8)">
+                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="ic_24_dropdown_g">
+                           <path
+                              id="arrow_drop_down_circle"
+                              d="M12 15L16 11H8L12 15ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22ZM12 20C14.2333 20 16.125 19.225 17.675 17.675C19.225 16.125 20 14.2333 20 12C20 9.76667 19.225 7.875 17.675 6.325C16.125 4.775 14.2333 4 12 4C9.76667 4 7.875 4.775 6.325 6.325C4.775 7.875 4 9.76667 4 12C4 14.2333 4.775 16.125 6.325 17.675C7.875 19.225 9.76667 20 12 20Z"
+                              fill="#BDBDBD"
+                           />
+                        </g>
+                     </svg>
+                     드롭다운
+                  </li>
+
+                  <hr />
+
+                  <li class="onPress" onmousedown="panelHandler(9)" onclick="attachpop()">
+                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="ic_24_file_g">
+                           <path
+                              id="attachment"
+                              d="M12.7063 19.0688C11.6221 20.153 10.3257 20.6951 8.81724 20.6951C7.30874 20.6951 6.01238 20.153 4.92815 19.0688C3.84392 17.9845 3.3018 16.6882 3.3018 15.1797C3.3018 13.6712 3.84392 12.3748 4.92815 11.2906L12.3528 3.86598C13.1306 3.08816 14.0734 2.69925 15.1812 2.69925C16.289 2.69925 17.2318 3.08816 18.0096 3.86598C18.7874 4.6438 19.1764 5.58661 19.1764 6.69441C19.1764 7.80221 18.7874 8.74502 18.0096 9.52283L11.2921 16.2403C10.7971 16.7353 10.2079 16.9828 9.52434 16.9828C8.84081 16.9828 8.25155 16.7353 7.75658 16.2403C7.2616 15.7454 7.01411 15.1561 7.01411 14.4726C7.01411 13.789 7.2616 13.1998 7.75658 12.7048L14.4741 5.9873L15.5348 7.04796L8.81724 13.7655C8.61689 13.9658 8.51672 14.2015 8.51672 14.4726C8.51672 14.7436 8.61689 14.9793 8.81724 15.1797C9.01758 15.38 9.25329 15.4802 9.52434 15.4802C9.7954 15.4802 10.0311 15.38 10.2315 15.1797L16.949 8.46217C17.4439 7.9672 17.6914 7.37794 17.6914 6.69441C17.6914 6.01087 17.4439 5.42161 16.949 4.92664C16.454 4.43166 15.8647 4.18418 15.1812 4.18418C14.4977 4.18418 13.9084 4.43166 13.4134 4.92664L5.98881 12.3513C5.21099 13.1291 4.82208 14.0719 4.82208 15.1797C4.82208 16.2875 5.21099 17.2303 5.98881 18.0081C6.76663 18.7859 7.70944 19.1748 8.81724 19.1748C9.92504 19.1748 10.8678 18.7859 11.6457 18.0081L19.0703 10.5835L20.1309 11.6442L12.7063 19.0688Z"
+                              fill="#BDBDBD"
+                           />
+                        </g>
+                     </svg>
+                     첨부파일
+                  </li>
+                  <li class="onPress" onclick="participantspop()"><u>고정 참여자 설정(대량전송)</u></li>
+               </ul>
+               <hr />
+            </div>
+
+            <script>
+               let editorInputLis = document.querySelector(".editor_input_lis")
+               let editorInputLisSvg = document.querySelector(".editor_input_lis ul li a svg g path")
+               let editorInputLisLi = document.querySelectorAll(".editor_input_lis ul li")
+
+               let onPress = document.querySelectorAll(".onPress")
+               for (let i = 0; i < onPress.length; i++) {
+                  onPress[i].addEventListener("mousedown", function (e) {
+                     e.preventDefault()
+                     let remove = document.querySelector(".onAct")
+                     if (remove) {
+                        remove.classList.remove("onAct")
+                     }
+                     this.classList.add("onAct")
+                  })
+               }
+            </script>
+         </section>
+
+         <script>
+            $(document).ready(function () {
+               $.ajax({
+                  url: "./panel_0.html",
+                  success: function (result) {
+                     $(".panel_0").html(result)
+                  },
+               })
+               $.ajax({
+                  url: "./panel_1.html",
+                  success: function (result) {
+                     $(".panel_1").html(result)
+                  },
+               })
+               $.ajax({
+                  url: "./panel_2.html",
+                  success: function (result) {
+                     $(".panel_2").html(result)
+                  },
+               })
+               $.ajax({
+                  url: "./panel_3.html",
+                  success: function (result) {
+                     $(".panel_3").html(result)
+                  },
+               })
+               $.ajax({
+                  url: "./panel_4.html",
+                  success: function (result) {
+                     $(".panel_4").html(result)
+                  },
+               })
+               $.ajax({
+                  url: "./panel_5.html",
+                  success: function (result) {
+                     $(".panel_5").html(result)
+                  },
+               })
+               $.ajax({
+                  url: "./panel_6.html",
+                  success: function (result) {
+                     $(".panel_6").html(result)
+                  },
+               })
+               $.ajax({
+                  url: "./panel_7.html",
+                  success: function (result) {
+                     $(".panel_7").html(result)
+                  },
+               })
+               $.ajax({
+                  url: "./panel_8.html",
+                  success: function (result) {
+                     $(".panel_8").html(result)
+                  },
+               })
+               $.ajax({
+                  url: "./panel_9.html",
+                  success: function (result) {
+                     $(".panel_9").html(result)
+                  },
+               })
+            })
+         </script>
+
+         <section class="palette_panels">
+            <article class="panels panel_0"></article>
+            <article class="panels panel_1"></article>
+            <article class="panels panel_2"></article>
+            <article class="panels panel_3"></article>
+            <article class="panels panel_4"></article>
+            <article class="panels panel_5"></article>
+            <article class="panels panel_6" style="overflow-y: scroll"></article>
+            <article class="panels panel_7"></article>
+            <article class="panels panel_8" style="overflow-y: scroll"></article>
+            <article class="panels panel_9"></article>
+         </section>
+      </main>
+      <script>
+         let panels = document.getElementsByClassName("panels")
+         let panel = ["panel_0", "panel_1", "panel_2", "panel_3", "panel_4", "panel_5", "panel_6", "panel_7", "panel_8", "panel_9"]
+         document.querySelector(".panels").style.display = "block"
+         function panelHandler(num) {
+            for (let i = 0; i < panels.length; i++) {
+               panels[i].style.display = "none"
+            }
+
+            let panelCls = document.getElementsByClassName(panel[num])
+
+            function onPanel() {
+               for (let i = 0; i < panelCls.length; i++) {
+                  panelCls[i].style.display = "block"
+               }
+            }
+            switch (num) {
+               case 0:
+                  onPanel()
+                  break
+               case 1:
+                  onPanel()
+                  break
+               case 2:
+                  onPanel()
+                  break
+               case 3:
+                  onPanel()
+                  break
+               case 4:
+                  onPanel()
+                  break
+               case 5:
+                  onPanel()
+                  break
+               case 6:
+                  onPanel()
+                  break
+               case 7:
+                  onPanel()
+                  break
+               case 8:
+                  onPanel()
+                  break
+               case 9:
+                  onPanel()
+                  break
+            }
+         }
+      </script>
+
+      <div id="img_link_pop" class="img_link_pop">
+         <div class="img_link_pop_contain pop_sharing_contain">
+            <h1>공유</h1>
+            <div class="pop_body pop_sharing_wrap">
+               <div class="pop_sharing">
+                  <div class="selectBox_wrap">
+                     <article class="cont_select_1" style="width: 104px">
+                        <button class="" id="selec_1">사용자추가</button>
+                        <ul class="list_item_doble" id="selec_1_li">
+                           <li>
+                              <button type="button" class="user_list_add">홍길동(1팀) hgd@naver.com</button>
+                           </li>
+                           <li>
+                              <button type="button" class="user_list_add">홍길동(1팀) hgd@naver.com</button>
+                           </li>
+                        </ul>
+                     </article>
+
+                     <article class="cont_select_2" style="width: 104px">
+                        <button class="" id="selec_2">편집</button>
+                        <ul class="list_item_doble" id="selec_2_li">
+                           <li><button type="button">편집</button></li>
+                           <li><button type="button">열람</button></li>
+                           <li><button type="button">권한삭제</button></li>
+                        </ul>
+                     </article>
+                  </div>
+                  <button class="pop_sharing_add_btn">추가</button>
+               </div>
+
+               <input type="button" class="btn_confirm btn_violet" value="확인" />
+               <div class="btn_close_pop"><img src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" /></div>
+
+               <h2 class="tit_authority">권한이 있는 사용자</h2>
+               <table class="tit_authority_table">
+                  <tr class="authority_table_tr">
+                     <td>홍길동</td>
+                     <td>
+                        <span>1팀</span>
+                        <span>hgd@naver.com</span>
+                        <div class="select_auth_wrap">
+                           <article class="cont_select" style="width: 104px">
+                              <button class="btn_select selectBtn">편집</button>
+                              <ul class="list_item selectList" style="height: 134px; top: 60px">
+                                 <li><button type="button">편집</button></li>
+                                 <li><button type="button">열람</button></li>
+                                 <li><button type="button">권한삭제</button></li>
+                              </ul>
+                           </article>
+                        </div>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+      </div>
+
+      <footer class="footer">
+         <div class="btn_wrap">
+            <input class="btn_violet" type="button" value="다음" onclick="window.location.href='./template_write_popup_template_edit.html'" />
+         </div>
+      </footer>
+
+      <div class="pay_method_pop attachpop">
+         <div class="modal_welcome_contain pay_method_pop_contain">
+            <img class="closebtn" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal()" />
+            <h1 class="pay_method_tit">첨부파일</h1>
+            <section class="pay_method_pop_body" style="position: relative">
+               <ul class="input_li">
+                  <li>홍길동님에게 요청할 파일 정보를 입력해 주세요.</li>
+                  <li>
+                     <h1 class="mb10 flx jussb alc">파일요청 1 <u style="font-size: 14px">삭제</u></h1>
+                     파일종류
+                     <input type="text" name="" id="" placeholder="평가 보고서 요청" />
+                  </li>
+                  <li>
+                     <div class="flx jussb alc">메시지 <span style="font-size: 12px">0/100</span></div>
+                     <input type="text" name="" id="" placeholder="보고서 첨부해 주세요." />
+                  </li>
+
+                  <li class="flx alc jussb">
+                     필수여부
+                     <div class="toggle_area edit_toggle">
+                        <section class="toggle_wrap">
+                           <span class="toggle_span">
+                              <div class="flipBtn">
+                                 <div class="toggle_btn"></div>
+                              </div>
+                           </span>
+                        </section>
+                     </div>
+                  </li>
+               </ul>
+               <div class="addsection" style="background-color: #f7f7f7">
+                  <ul class="">
+                     <li>
+                        <h1 class="mb10 flx jussb alc">파일요청 2 <u style="font-size: 14px">삭제</u></h1>
+                        파일종류
+                        <input type="text" name="" id="" placeholder="평가 보고서 요청" />
+                     </li>
+                     <li>
+                        <div class="flx jussb alc">메시지 <span style="font-size: 12px">0/100</span></div>
+                        <input type="text" name="" id="" placeholder="보고서 첨부해 주세요." />
+                     </li>
+
+                     <li class="flx alc jussb">
+                        필수여부
+                        <div class="toggle_area edit_toggle">
+                           <section class="toggle_wrap">
+                              <span class="toggle_span">
+                                 <div class="flipBtn">
+                                    <div class="toggle_btn"></div>
+                                 </div>
+                              </span>
+                           </section>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </section>
+            <section class="confirm_btn" style="position: absolute; z-index: 20">
+               <a href="#" onclick="closeModal()">확인</a>
+            </section>
+         </div>
+      </div>
+
+      <div class="pay_method_pop participantspop">
+         <div class="modal_welcome_contain pay_method_pop_contain">
+            <img class="closebtn" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal()" />
+            <h1 class="pay_method_tit">고정 참여자 설정</h1>
+            <section class="pay_method_pop_body" style="position: relative">
+               <ul class="input_li">
+                  <li class="">
+                     <h1 class="flx jussb alc regular_participant_tit" style="font-size: 18px">고정참여자 1<u style="font-size: 14px">삭제</u></h1>
+                     <div class="participant_input_wrap">
+                        <p class="flex participant_input">
+                           <input type="text" name="" id="" placeholder="이름" />
+                           <input type="text" name="" id="" placeholder="역할" />
+                        </p>
+                        <span data-hover="사업주/근로자, 갑/을 등과 같이 고정참여자의 역할을 입력할 수 있어요."></span>
+                     </div>
+                     <input type="text" name="" id="" placeholder="이메일" />
+                     <input type="text" name="" id="" placeholder="휴대폰 번호" />
+                  </li>
+                  <li>
+                     <div class="flex participant_chck">
+                        <div class="checkbox_wrap participant_outline">
+                           <input type="checkbox" name="groupChk" id="chk01" />
+                           <label for="chk01">이메일</label>
+                        </div>
+                        <div class="checkbox_wrap participant_outline">
+                           <input type="checkbox" name="groupChk" id="chk02" />
+                           <label for="chk02">카카오톡</label>
+                        </div>
+                     </div>
+                  </li>
+
+                  <li class="flx alc jussb tog_btn_wrap">
+                     고정참여자 일괄서명
+                     <div class="toggle_area edit_toggle" id="tog_btn">
+                        <section class="toggle_wrap">
+                           <span class="toggle_span">
+                              <div class="flipBtn">
+                                 <div class="toggle_btn"></div>
+                              </div>
+                           </span>
+                        </section>
+                     </div>
+                     <span id="tooltip" data-hover="대량전송 시 한번만 서명해도 전송건에 대해 모두 서명이 되는 옵션이에요."></span>
+                  </li>
+               </ul>
+               <div class="" style="background-color: #f7f7f7">
+                  <ul class="input_li">
+                     <li class="">
+                        <h1 class="flx jussb alc regular_participant_tit" style="font-size: 18px">고정참여자 2<u style="font-size: 14px">삭제</u></h1>
+                        <div class="participant_input_wrap">
+                           <p class="flex participant_input">
+                              <input type="text" name="" id="" placeholder="이름" />
+                              <input type="text" name="" id="" placeholder="역할" />
+                           </p>
+                           <span data-hover="사업주/근로자, 갑/을 등과 같이 고정참여자의 역할을 입력할 수 있어요."></span>
+                        </div>
+                        <input type="text" name="" id="" placeholder="이메일" />
+                        <input type="text" name="" id="" placeholder="휴대폰 번호" />
+                     </li>
+                     <li>
+                        <div class="flex participant_chck">
+                           <div class="checkbox_wrap participant_outline">
+                              <input type="checkbox" name="groupChk" id="chk03" />
+                              <label for="chk03">이메일</label>
+                           </div>
+                           <div class="checkbox_wrap participant_outline">
+                              <input type="checkbox" name="groupChk" id="chk04" />
+                              <label for="chk04">카카오톡</label>
+                           </div>
+                        </div>
+                     </li>
+
+                     <li class="flx alc jussb tog_btn_wrap">
+                        고정참여자 일괄서명
+                        <div class="toggle_area edit_toggle" id="tog_btn">
+                           <section class="toggle_wrap">
+                              <span class="toggle_span">
+                                 <div class="flipBtn">
+                                    <div class="toggle_btn"></div>
+                                 </div>
+                              </span>
+                           </section>
+                        </div>
+                        <span id="tooltip" data-hover="대량전송 시 한번만 서명해도 전송건에 대해 모두 서명이 되는 옵션이에요."></span>
+                     </li>
+                  </ul>
+               </div>
+
+               <div class="add_plus">
+                  <a href="javascript:void(0)"></a>
+                  <i><img src="../imgs/ic_plus_02.svg" alt="ic_plus_02" /></i>
+                  <p>주소록에서 여러명 불러오기</p>
+               </div>
+            </section>
+            <section class="confirm_btn" style="position: absolute; z-index: 20"><a href="#" onclick="closeModal()">확인</a></section>
+         </div>
+      </div>
+
+      <style>
+         .attachpop.on {
+            display: block;
+         }
+         .participantspop.on {
+            display: block;
+         }
+      </style>
+
+      <script>
+         function closeModal() {
+            const attachpop = document.querySelector(".attachpop")
+            const participantspop = document.querySelector(".participantspop")
+            attachpop.classList.remove("on")
+            participantspop.classList.remove("on")
+         }
+         function attachpop() {
+            const attachpop = document.querySelector(".attachpop")
+            attachpop.classList.add("on")
+         }
+         function participantspop() {
+            const participantspop = document.querySelector(".participantspop")
+            participantspop.classList.add("on")
+         }
+
+         let photoimgsWrap = document.querySelectorAll(".photoimgs_wrap")
+
+         for (var i = 0; i < photoimgsWrap.length; i++) {
+            photoimgsWrap[i].addEventListener("click", clickHandler)
+         }
+         let toggleSpan = document.querySelectorAll(".toggle_span")
+         toggleSpan.forEach((elem) => {
+            console.log(toggleSpan)
+            elem.addEventListener("click", function () {
+               elem.firstElementChild.firstElementChild.classList.toggle("move")
+               elem.firstElementChild.classList.toggle("expand")
+            })
+         })
+
+         const bubbleFunc = () => {
+            const speechBubble = document.querySelectorAll(".speechBubble")
+            const editElem = document.querySelectorAll(".editElem")
+            for (let i = 0; i < editElem.length; i++) {
+               editElem[i].addEventListener("click", (event) => {
+                  event.stopPropagation()
+                  event.target.previousElementSibling.classList.add("on")
+               })
+            }
+            document.querySelector("body").addEventListener("click", () => {
+               for (let i = 0; i < speechBubble.length; i++) {
+                  speechBubble[i].classList.remove("on")
+               }
+            })
+            for (let i = 0; i < speechBubble.length; i++) {
+               speechBubble[i].addEventListener("click", (event) => {
+                  event.stopPropagation()
+               })
+            }
+         }
+         bubbleFunc()
+      </script>
+
+      <script src="../script/settingsMyTemplateDetail.js"></script>
+      <script src="../script/selectBox.js"></script>
+   </body>
+</html>

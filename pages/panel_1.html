@@ -1,0 +1,57 @@
+<div class="panel_0_inn">
+   <section class="edit_subject">
+      <img src="../imgs/ic_24_stamp_c_pk.svg" alt="ic_24_stamp_c_pk.svg" />
+      <h1>도장</h1>
+   </section>
+   <hr />
+
+   <section class="section_wrap">
+      <p class="label_tit">입력필드값</p>
+      <input type="text" placeholder="도장 1" />
+      <p class="ref_q">※ 대량전송 엑셀 다운로드시 제목값</p>
+   </section>
+
+   <section class="section_wrap">
+      <div class="label_tit">
+         필수 여부
+
+         <div class="toggle_area edit_toggle">
+            <section class="toggle_wrap">
+               <span class="toggle_span toggle_span_must1">
+                  <div class="flipBtn">
+                     <div class="toggle_btn"></div>
+                  </div>
+               </span>
+            </section>
+         </div>
+      </div>
+   </section>
+   <section class="section_wrap editor_sign_msg_wrap">
+      <div class="editor_sign_msg">
+         <p class="label_tit">메시지 <span>0 / 100</span></p>
+         <textarea name="" id="" cols="30" rows="10" placeholder="필수사항은 아니예요~&#13;&#10;확인 부탁드려요."></textarea>
+      </div>
+   </section>
+   <hr class="div_line" />
+   <!-- <section class="section_wrap">
+      <div class="label_tit sign_bold">
+         사인 두께
+         <input class="btn_num" type="number" placeholder="1" />
+      </div>
+      <div class="label_tit sign_color">
+         사인 색
+         <input type="color" />
+      </div>
+   </section> -->
+   <section style="height: 200px"></section>
+</div>
+
+<script>
+   let toggleSpanMust1 = document.querySelectorAll(".toggle_span_must1")
+   toggleSpanMust1.forEach((elem) => {
+      elem.addEventListener("click", function () {
+         elem.firstElementChild.firstElementChild.classList.toggle("move")
+         elem.firstElementChild.classList.toggle("expand")
+      })
+   })
+</script>

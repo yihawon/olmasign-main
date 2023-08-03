@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>template_write</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <div class="sign_draw_wrap">
+         <div class="sign_draw_contain" style="height: 580px">
+            <div>
+               <section class="sign_draw_content">
+                  <h1 style="text-align: center">이미지 삽입</h1>
+
+                  <div class="add_sign_step3">
+                     <div class="my_file_box">
+                        <div class="my_com">
+                           <h2 class="file_title">내 컴퓨터</h2>
+                           <div class="drop_file_wrap">
+                              <div class="my_com_file_drop drop-zone">
+                                 <img src="../../imgs/ic_24_form_02.svg" alt="ic_24_form_02.svg" />
+                                 <p class="">이곳에 파일을 놓아 주세요.</p>
+                                 <div class="or_comment">
+                                    <hr />
+                                    <span>또는</span>
+                                 </div>
+                              </div>
+                              <form class="drop_file">
+                                 <label for="file" class="file_upload">파일찾기</label>
+                                 <input type="file" id="file" multiple />
+                              </form>
+                           </div>
+                        </div>
+
+                        <script></script>
+                     </div>
+                     <div class="file_desc" style="padding-bottom: 600px">
+                        <p>지원 파일 : PNG, JPG, ...</p>
+                        <p>업로드 가능 용량 : 최대 2MB</p>
+                     </div>
+                  </div>
+
+                  <div class="submit_btn_wrap"><input class="submit_btn" type="submit" value="입력하기" /></div>
+               </section>
+            </div>
+            <input type="button" value="삽입" class="btn_violet bottom_btn" />
+            <div class="btn_close">
+               <img src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" />
+            </div>
+         </div>
+      </div>
+
+      <header class="header hd_bar">
+         <input type="button" value="나가기" class="btn_exit" onclick="history.back()" />
+         <span></span>
+         <div class="template_subject_wrap">
+            <h1 class="template_subject">계약서</h1>
+         </div>
+         <div class="right_btns">
+            <input type="button" value="임시저장" class="btn_violet" />
+            <img src="../../imgs/ic_help.svg" alt="ic_help.svg" />
+         </div>
+      </header>
+      <div style="height: 60px"></div>
+      <main class="main">
+         <section class="docu_wrap">
+            <article class="docu_area">
+               <div class="tool_bar">
+                  <section class="prev_next_btn_wrap">
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_back.svg" alt="ic_24_back.svg" />
+                     </a>
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_next.svg" alt="ic_24_next.svg" />
+                     </a>
+                  </section>
+                  <span class="div_line">|</span>
+                  <article class="cont_select">
+                     <button class="btn_select" style="height: 32px; display: flex; align-items: center">나눔고딕</button>
+                     <ul class="list_item">
+                        <li><button type="button">나눔고딕</button></li>
+                        <li><button type="button">본고딕</button></li>
+                        <li><button type="button">돋움체</button></li>
+                     </ul>
+                  </article>
+
+                  <div class="dropdown_wrap">
+                     <div class="dropdown">
+                        <div class="dropdown-btn">
+                           <p>12</p>
+                           <i class="bi bi-caret-down-fill"></i>
+                        </div>
+                        <div class="dropdown-content">
+                           <div class="dropdown-item" data-value="1">10</div>
+                           <div class="dropdown-item" data-value="2">12</div>
+                           <div class="dropdown-item" data-value="3">13</div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <a href="javascript:void(0)">
+                     <img src="../../imgs/ic_24_bold.svg" alt="ic_24_bold.svg" />
+                  </a>
+                  <a href="javascript:void(0)">
+                     <img src="../../imgs/italic.svg" alt="italic.svg" />
+                  </a>
+                  <a href="javascript:void(0)">
+                     <img src="../../imgs/ic_24_underline.svg" alt="ic_24_underline.svg" />
+                  </a>
+
+                  <div class="input_el">
+                     <a href="javascript:void(0)" class="btn_txt_color">
+                        <img src="../../imgs/ic_24_textcolor.svg" alt="ic_24_textcolor.svg" />
+                     </a>
+                     <div class="color_palette">
+                        <div class="color_wrap">
+                           <span class="color red"></span>
+                           <span class="color orange"></span>
+                           <span class="color yellow"></span>
+                           <span class="color green"></span>
+                           <span class="color dodgerblue"></span>
+                           <span class="color blue"></span>
+                           <span class="color purple"></span>
+
+                           <span class="color mint"></span>
+                           <span class="color purple_blue"></span>
+                           <span class="color light_green"></span>
+                           <span class="color blue_light"></span>
+                           <span class="color pink_dark"></span>
+                           <span class="color black"></span>
+                           <span class="color white"></span>
+                           <div class="pick_wrap">
+                              <label class="pick" for="pick">
+                                 <img src="../../imgs/ic_24_plus-1.svg" alt="ic_24_plus-1.svg" />
+                                 <span href="" id="hex_code">#000000</span>
+                              </label>
+                              <input id="pick" type="color" name="" />
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <a href="javascript:void(0)">
+                     <img src="../../imgs/ic_24_backgroundcolor.svg" alt="ic_24_backgroundcolor.svg" />
+                  </a>
+                  <a href="javascript:void(0)">
+                     <img src="../../imgs/ic_24_subscriptsbelow.svg" alt="ic_24_subscriptsbelow.svg" />
+                  </a>
+
+                  <a href="javascript:void(0)">
+                     <img src="../../imgs/ic_24_subscriptsbelow.svg" alt="ic_24_subscriptsbelow.svg" />
+                  </a>
+                  <span class="div_line">|</span>
+                  <div class="icons_btns">
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_table.svg" alt="ic_24_table.svg" />
+                     </a>
+                     <button class="add_sign">
+                        <img src="../../imgs/ic_24_img_02.svg" alt="ic_24_img_02.svg" />
+                     </button>
+                  </div>
+                  <span class="div_line">|</span>
+                  <div class="icons_btns">
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_align_left.svg" alt="ic_24_align_left.svg" />
+                     </a>
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_align_center.svg" alt="ic_24_align_center.svg" />
+                     </a>
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_align_right.svg" alt="ic_24_align_right.svg" />
+                     </a>
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_align_justify.svg" alt="ic_24_align_justify.svg" />
+                     </a>
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_linespacing.svg" alt="ic_24_linespacing.svg" />
+                     </a>
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_listnumber.svg" alt="ic_24_listnumber.svg" />
+                     </a>
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_listul.svg" alt="ic_24_listul.svg" />
+                     </a>
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_indent.svg" alt="ic_24_indent.svg" />
+                     </a>
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_internalwriting.svg" alt="ic_24_internalwriting.svg" />
+                     </a>
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_formremoval.svg" alt="ic_24_formremoval.svg" />
+                     </a>
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_specialcharacters.svg" alt="ic_24_specialcharacters.svg" />
+                     </a>
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_minus.svg" alt="ic_24_minus.svg" />
+                     </a>
+                     <a href="javascript:void(0)" id="btn_link_pop" onclick="modal('on')">
+                        <img src="../../imgs/ic_24_link.svg" alt="ic_24_link.svg" />
+                     </a>
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_source.svg" alt="ic_24_source.svg" />
+                     </a>
+                  </div>
+                  <span class="div_line">|</span>
+                  <!-- <div>
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_refresh.svg" alt="ic_24_refresh.svg" />
+                     </a>
+                  </div> -->
+               </div>
+            </article>
+            <div class="docu_bg">
+               <div class="docu_board_wrap">
+                  <p>단시간 근로자 표준근로계약서 (파트타임, 아르바이트) <img src="../../imgs/ic_20_edit.svg" alt="ic_20_edit.svg" /></p>
+                  <div class="docu_board"></div>
+               </div>
+            </div>
+         </section>
+         <section class="docu_page_area">
+            <p>Pages : 3</p>
+            <article class="slide_thum_wrap">
+               <div class="slide_thum">
+                  <div class="thum_view"></div>
+                  <div class="thum_foot">
+                     <div class="num">1</div>
+                     <div class="icons_wrap">
+                        <img src="../../imgs/ic_18_rotation.svg" alt="ic_18_rotation.svg" />
+                        <img src="../../imgs/ic_18_delete.svg" alt="ic_18_delete.svg" />
+                     </div>
+                  </div>
+               </div>
+            </article>
+            <article class="slide_thum_wrap">
+               <div class="slide_thum">
+                  <div class="thum_view"></div>
+                  <div class="thum_foot">
+                     <div class="num">2</div>
+                     <div class="icons_wrap">
+                        <img src="../../imgs/ic_18_rotation.svg" alt="ic_18_rotation.svg" />
+                        <img src="../../imgs/ic_18_delete.svg" alt="ic_18_delete.svg" />
+                     </div>
+                  </div>
+               </div>
+            </article>
+            <input type="button" value="+ 페이지 추가" class="btn_add_page" />
+         </section>
+      </main>
+
+      <div id="img_link_pop" class="img_link_pop">
+         <div class="img_link_pop_contain">
+            <h1>링크 삽입 /변경</h1>
+            <div class="pop_body">
+               <label for="url" class="url_label">URL</label>
+               <input type="url" name="" id="url" placeholder="https://" />
+               <div class="btn_close_pop" onclick="modal('off')"><img src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" /></div>
+               <input class="btn_confirm btn_violet" type="button" value="확인" />
+            </div>
+         </div>
+      </div>
+
+      <footer class="footer">
+         <div class="btn_wrap">
+            <input class="btn_default" type="button" value="이전" style="color: var(--violet_P)" />
+            <input class="btn_violet" type="button" value="다음" />
+         </div>
+      </footer>
+      <script src="../script/templateWriteTool.js"></script>
+      <script src="../script/fileDrop.js"></script>
+   </body>
+</html>

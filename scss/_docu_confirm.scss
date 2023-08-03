@@ -1,0 +1,124 @@
+.docu_confirm {
+   .docu_header {
+      position: relative;
+      .docu_lock {
+         cursor: pointer;
+         position: absolute;
+         right: 0;
+         top: 0;
+         padding: 1rem;
+         display: flex;
+         align-items: center;
+         color: var(--violet_P);
+      }
+      .docu_input_wrap {
+         .docu_tit {
+            > h1 {
+               padding: 0;
+               font-weight: 600;
+               font-size: 25px;
+               font-weight: 500;
+            }
+         }
+         .docu_p {
+            display: flex;
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--second_10);
+            margin-bottom: 1rem;
+            > p {
+               font-weight: 500;
+               padding-left: 1rem;
+               > span {
+                  color: var(--violet_P);
+               }
+            }
+         }
+      }
+   }
+}
+
+.signer_info_wrap {
+   padding: 32px 40px;
+   > h2 {
+      font-weight: 400;
+      font-size: 20px;
+      color: var(--second_10);
+      padding: 1rem 0;
+      > span {
+         font-weight: 500;
+         font-size: 16px;
+         padding-left: 1rem;
+         color: var(--second_06);
+      }
+   }
+   .signer_info {
+      margin: 1.5rem 0;
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 1rem 1rem;
+   }
+   .signer_info_tit {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--second_05);
+   }
+}
+.signer_folder {
+   padding: 0;
+   .default_folder_p {
+      background-color: var(--second_01);
+      padding: 32px 40px;
+      color: var(--second_10);
+      font-weight: 500;
+      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span {
+         cursor: pointer;
+         font-weight: 600;
+         color: var(--violet_P);
+         text-decoration: underline;
+      }
+   }
+   .check_p_wrap {
+      padding: 32px 40px;
+      display: flex;
+      flex-direction: column;
+   }
+}
+
+.sign_req_done {
+   border: 1px solid tan;
+   position: relative;
+   .done_icon {
+      margin-top: 1.4rem;
+   }
+   .pop_close_btn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 1rem;
+      cursor: pointer;
+   }
+   > h1 {
+      font-weight: 400;
+      font-size: 24px;
+      color: var(--second_10);
+      margin-bottom: 1.4rem;
+   }
+   > p {
+      font-weight: 400;
+      font-size: 15px;
+      color: var(--black);
+   }
+   > button {
+      height: 35px;
+      width: 170px;
+      border: 1px solid var(--second_03);
+      margin-top: 1.8rem;
+      margin-bottom: 0.8rem;
+      border-radius: 4px;
+   }
+}

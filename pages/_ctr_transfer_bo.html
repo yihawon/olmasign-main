@@ -1,0 +1,340 @@
+<div class="sec_wrap">
+   <section class="sec_wrap_l">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <style>
+         .ctrcharts {
+            width: 100%;
+            margin: 3rem auto;
+            display: flex;
+            justify-content: center;
+         }
+
+         .ctrcharts .ctrchart {
+            margin: 0 20px;
+            position: relative;
+         }
+
+         .ctrcharts .ctrchart h2 {
+            font-size: 40px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+         }
+
+         .ctrcharts .ctrchart svg {
+            width: 220px;
+            height: 220px;
+            /* width: 220px;
+                        height: 220px; */
+         }
+
+         circle {
+            fill: #ebebeb;
+            stroke-width: 20;
+            stroke-dasharray: 628;
+            stroke-dashoffset: 628;
+
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+            stroke-linecap: round;
+         }
+
+         @keyframes line {
+            from {
+               stroke-dashoffset: 628;
+            }
+            to {
+               stroke-dashoffset: 0;
+            }
+         }
+         .ctrcharts .ctrchart circle {
+            stroke: var(--violet_P);
+         }
+         .ctrcharts {
+            transform: scale(50%);
+         }
+      </style>
+      <div class="content_inner ctr_total">
+         <div class="adress_wrap team_current_wrap team_current_wrap_mod">
+            <div class="team_current team_current_mod">
+               <div class="teamChart_wrap">
+                  <div class="usr_name_wrap">
+                     <h1>홍길동 <span>서명요청자</span></h1>
+                     <p>2022-08-28 14:30</p>
+                     <p class="file_clip">
+                        <i><img src="../imgs/ic_24_file_g.svg" alt="ic_24_file_g" /></i> 평가보고서샘플
+                     </p>
+                  </div>
+
+                  <section class="ctrcharts">
+                     <div class="ctrchart">
+                        <h2 data-num="85">0</h2>
+                        <svg>
+                           <circle cx="110" cy="110" r="100"></circle>
+                        </svg>
+                     </div>
+                  </section>
+
+                  <script>
+                     let chartTrigger = document.querySelector(".chart_trigger")
+
+                     $(function () {
+                        let ctrcharts = $(".ctrcharts")
+                        let ctrchart = $(".ctrchart")
+                        let ctrchartOST = ctrchart.offset().top - 700
+
+                        let ctrTransfer = document.querySelector(".ctr_transfer")
+                        function ctrDetail() {
+                           console.log(1)
+                           ctrTransfer.classList.add("on")
+                           animatectrChart()
+                        }
+                        function ctrDetailClose() {
+                           console.log(1)
+                           ctrTransfer.classList.remove("on")
+                        }
+
+                        chartTrigger.addEventListener("click", function () {
+                           ctrcharts.addClass("active")
+                           ctrDetail()
+                        })
+
+                        function animatectrChart() {
+                           ctrchart.each(function () {
+                              let item = $(this)
+                              let title = item.find("h2")
+                              let targetNum = title.attr("data-num")
+                              let circle = item.find("circle")
+
+                              $({ rate: 0 }).animate(
+                                 { rate: targetNum },
+                                 {
+                                    duration: 1500,
+                                    progress: function () {
+                                       let now = this.rate
+
+                                       console.log(now)
+                                       let amout = 630 - (630 * now) / 100
+                                       title.text(Math.floor(now))
+                                       circle.css({ strokeDashoffset: amout })
+                                    },
+                                 }
+                              )
+                           })
+                        }
+                     })
+                  </script>
+
+                  <div class="teamChart_desc ctr_teamChart_desc">
+                     <section class="head_desc_wrap">
+                        <h1 class="head_desc">10건</h1>
+                        <p class="sub_desc ctr_sub_desc">전체</p>
+                     </section>
+                     <span>·</span>
+                     <section class="head_desc_wrap">
+                        <h1 class="head_desc">6건</h1>
+                        <p class="sub_desc ctr_sub_desc">서명 완료</p>
+                     </section>
+                     <span>·</span>
+                     <section class="head_desc_wrap">
+                        <h1 class="head_desc">3건</h1>
+                        <p class="sub_desc ctr_sub_desc">상대 서명 대기 중</p>
+                     </section>
+                     <span>·</span>
+                     <section class="head_desc_wrap">
+                        <h1 class="head_desc">1건</h1>
+                        <p class="sub_desc ctr_sub_desc">거절</p>
+                     </section>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="content_area ctr_bo_detail">
+         <div class="content_inner" id="menu">
+            <div class="item_btn_setting">
+               <div class="create_sign flex">
+                  <button data-action="trash" class="btn_default">저장</button>
+                  <button data-action="restoration" class="btn_default">재전송</button>
+                  <button data-action="restoration" class="btn_default" onclick="dateChange()">기간 변경</button>
+               </div>
+               <div class="sign_sort_wrap flex">
+                  <div class="sign_sort posr">
+                     <input class="search_input" type="search" placeholder="search..." / style="height: 38px;">
+                     <span class="search_icon posa"><img src="../../imgs/ic_20_search.svg" alt="ic_20_search.svg" /></span>
+                  </div>
+                  <button class="btn_default filterSearch" data-action="filterSearch" onclick="Modalpop()"></button>
+
+                  <article class="cont_select">
+                     <button class="btn_select" style="height: 38px">10개보기</button>
+                     <ul class="list_item" style="top: 60px">
+                        <li><button type="button">10개보기</button></li>
+                        <li><button type="button">Java</button></li>
+                        <li><button type="button">JavaScript</button></li>
+                     </ul>
+                  </article>
+                  <article class="cont_select">
+                     <button class="btn_select" style="height: 38px">상대 서명 대기중</button>
+                     <ul class="list_item" style="top: 60px">
+                        <li><button type="button">Java</button></li>
+                        <li><button type="button">JavaScript</button></li>
+                     </ul>
+                  </article>
+               </div>
+            </div>
+
+            <div class="row_bar_contain">
+               <section class="row_bar">
+                  <div class="columns">
+                     <div class="checkbox_wrap">
+                        <input type="checkbox" id="check_4" class="normal check_orign" name="checkName" />
+                        <label for="check_4"></label>
+                     </div>
+
+                     <p>서명자</p>
+                     <i class="imageWrap">
+                        <img src="../imgs/ic_18_up_02.svg" alt="ic_18_up_02.svg" /> <img src="../imgs/ic_18_down_02.svg" alt="ic_18_down_02.svg" />
+                     </i>
+                  </div>
+                  <div class="columns">
+                     <div class="column">
+                        <p>상태</p>
+                        <i class="imageWrap">
+                           <img src="../imgs/ic_18_up_02.svg" alt="ic_18_up_02.svg" /> <img src="../imgs/ic_18_down_02.svg" alt="ic_18_down_02.svg" />
+                        </i>
+                     </div>
+                     <div class="column">
+                        <p>만료일</p>
+                        <i class="imageWrap">
+                           <img src="../imgs/ic_18_up_02.svg" alt="ic_18_up_02.svg" /> <img src="../imgs/ic_18_down_02.svg" alt="ic_18_down_02.svg" />
+                        </i>
+                     </div>
+                  </div>
+               </section>
+               <main class="row_wrap">
+                  <section class="row_bar">
+                     <div class="columns">
+                        <div class="checkbox_wrap">
+                           <input type="checkbox" id="check_5" class="normal check_orign" name="checkName" />
+                           <label for="check_5"></label>
+                        </div>
+                        <p>박민수외 3명</p>
+                        <i class="clipIco"><img src="../imgs/ic_24_file_g.svg" alt="ic_24_file_g.svg" /></i>
+                        <i class="dorpDownBtn"><img src="../imgs/ic_18_down.svg" alt="ic_18_down.svg" /></i>
+                     </div>
+                     <div class="columns">
+                        <div class="column">
+                           <p>계약완료</p>
+                        </div>
+                        <div class="column">
+                           <p></p>
+                        </div>
+                     </div>
+                  </section>
+                  <section class="row_bar dropLists">
+                     <article class="dropLists_sec">
+                        <div class="columns">
+                           <div class="checkbox_wrap">
+                              <input type="checkbox" id="check_4" class="normal check_orign" name="checkName" />
+                              <label for="check_4"></label>
+                           </div>
+                           <p>이정현</p>
+                        </div>
+                        <div class="columns">
+                           <div class="column">
+                              <p>서명완료</p>
+                           </div>
+                           <div class="column">
+                              <p>3일 남음</p>
+                           </div>
+                        </div>
+                     </article>
+                     <article class="dropLists_sec">
+                        <div class="columns">
+                           <div class="checkbox_wrap">
+                              <input type="checkbox" id="check_4" class="normal check_orign" name="checkName" />
+                              <label for="check_4"></label>
+                           </div>
+                           <p>이소연</p>
+                        </div>
+                        <div class="columns">
+                           <div class="column">
+                              <p>서명거절</p>
+                           </div>
+                           <div class="column">
+                              <p></p>
+                           </div>
+                        </div>
+                     </article>
+                  </section>
+               </main>
+            </div>
+            <script>
+               let dropBtn = document.querySelectorAll(".row_bar .columns .dorpDownBtn")
+               dropBtn.forEach((elem) => {
+                  elem.addEventListener("click", (e) => {
+                     let dropLis = elem.parentElement.parentElement.nextElementSibling
+                     dropLis.classList.toggle("on")
+                     elem.classList.toggle("on")
+                  })
+               })
+            </script>
+         </div>
+         <div class="pagination pgn">
+            <button>
+               <img src="../../imgs/btn_page_numbers_left.svg" alt="btn_page_numbers_left.svg" />
+            </button>
+            <button active>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>
+               <img src="../../imgs/btn_page_numbers_right.svg" alt="btn_page_numbers_right.svg" />
+            </button>
+         </div>
+      </div>
+
+      <script>
+         document.querySelector(".popup_wrap").style.display = "none"
+         document.querySelector(".popup_close_btn").addEventListener("click", function () {
+            document.querySelector(".popup_wrap").style.display = "none"
+         })
+         document.querySelector(".restorationBtn").addEventListener("click", function () {
+            document.querySelector(".popup_wrap").style.display = "block"
+         })
+      </script>
+
+      <script src="../script/settingsMyTemplate.js"></script>
+      <script src="../script/selectBox.js"></script>
+      <script src="../script/modal.js"></script>
+      <script src="../script/lnbTree.js"></script>
+   </section>
+</div>
+
+<div class="date_change_pop">
+   <div class="modal_welcome3">
+      <div class="modal_welcome_contain" style="background: linear-gradient(to top, var(--violet_P) 52px, white 5%)">
+         <section class="modal_wrap">
+            <img class="close_btn" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="dateChange()" />
+            <h1>기간 변경</h1>
+            <div class="temp_input_wrap">
+               <label for="temp_name">만료일</label>
+               <div class="date_input_wrap input_date_box1">
+                  <input id="date1" type="date" name="" id="" />
+               </div>
+            </div>
+         </section>
+         <section class="start_btn">
+            <a href="javascript:void(0)">확인</a>
+         </section>
+      </div>
+   </div>
+</div>
+<script>
+   function dateChange() {
+      let dateChangePop = document.querySelector(".date_change_pop")
+      dateChangePop.classList.toggle("on")
+   }
+</script>

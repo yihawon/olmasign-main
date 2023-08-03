@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>template_write</title>
+   </head>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+   <body>
+      <header class="header">
+         <div class="">
+            <input onclick="history.back()" class="btn_exit" type="button" value="나가기" />
+         </div>
+
+         <div class="stepper_contain h3">주소 추가</div>
+      </header>
+      <div style="height: 60px"></div>
+      <div class="addr_add py48 flx fldc gap36">
+         <section class="add_box">
+            <section class="add_box_inn m0a lg borr">
+               <article class="popup_contain_inner">
+                  <h1 class="h2 mb10">한명씩 추가하기</h1>
+                  <div class="flx">
+                     <div class="flx fldc alc">
+                        <div class="flx fldc gap10" id="input_create">
+                           <section class="add_box_hd_tit">
+                              <span>이름</span>
+                              <span>이메일</span>
+                              <span>전화번호</span>
+                              <span>그룹</span>
+                           </section>
+                           <section class="flx alc gap10">
+                              <div class="flex">
+                                 <input type="text" placeholder="홍길동" />
+                                 <input type="text" placeholder="ex@mail.com" />
+                              </div>
+                              <div class="flex adrs_m_inp gap10">
+                                 <input type="text" placeholder="010-" />
+                                 <div class="add_team_btn_wrap" style="width: 100%" onclick="Modalpop('temaSelect')">
+                                    <span class="add_team_btn selectBtn2">1팀</span>
+                                 </div>
+                              </div>
+                              <div class="close_icon">
+                                 <img src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" />
+                              </div>
+                           </section>
+                           <div class="create_div"></div>
+                        </div>
+                        <section class="attachfile">
+                           <img onclick="createDIV()" src="../../imgs/ic_plus.svg" alt="ic_plus.svg" class="ic_plus" />
+                        </section>
+                     </div>
+                  </div>
+               </article>
+            </section>
+         </section>
+         <section class="add_box m0a lg borr ov">
+            <div class="add_box_inn">
+               <section class="">
+                  <div class="">
+                     <section class="my_file_box">
+                        <div class="my_com">
+                           <h2 class="h2 mb10 flx jussb">여러명 추가하기 <span class="fw40 mc fz14 tdu" style="cursor: pointer">설정용 엑셀 다운로드</span></h2>
+                           <div class="drop_file_wrap add_box_file">
+                              <p class="flx jusfs mb10 fz14">내컴퓨터</p>
+                              <div class="add_box_file_inn pt48 drop-zone">
+                                 <img src="../../imgs/ic_24_form_02_n.svg" alt="ic_24_form_02_n.svg" />
+                                 <p class="mt10">이곳에 파일을 놓아 주세요.</p>
+                                 <div class="or_comment">
+                                    <span class="dib mt36">또는</span>
+                                 </div>
+                              </div>
+                              <form class="add_box_file_inn">
+                                 <label for="file" class="file_upload">파일찾기</label>
+                                 <input type="file" id="file" multiple />
+                              </form>
+                           </div>
+                        </div>
+                     </section>
+                     <div class="flx fldc gap10 pt24">
+                        <p>지원 파일 : DOCX, PDF, HWP, ....</p>
+                        <p>업로드 가능 용량 : 최대 2MB</p>
+                     </div>
+                  </div>
+               </section>
+            </div>
+         </section>
+      </div>
+      <div style="height: 78px"></div>
+      <footer class="footer">
+         <div class="btn_wrap">
+            <input class="btn_violet" type="button" value="확인" onclick="history.back()" />
+         </div>
+      </footer>
+      <div class="modal_welcome">
+         <div class="modal_welcome_contain">
+            <section class="modal_wrap">
+               <img class="close_btn" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal()" />
+               <h1>그룹 선택</h1>
+               <div class="input_wrap"><input type="text" placeholder="새 그룹명" /><input class="folder_add" type="button" value="추가" /></div>
+               <div class="tree_wrap">
+                  <ul class="tree" id="tree">
+                     <li>
+                        <span> 가가상사 </span>
+                     </li>
+
+                     <li class="folder_tree_li">
+                        <span> 근로계약 </span>
+                     </li>
+                  </ul>
+               </div>
+            </section>
+            <section class="start_btn">
+               <a href="javascript:void(0)">선택</a>
+            </section>
+         </div>
+      </div>
+
+      <script src="../script/popupAddressCreate.js"></script>
+      <script src="../script/fileDrop.js"></script>
+      <script src="../script/templateWrite.js"></script>
+      <script src="../script/selectBox.js"></script>
+      <script src="../script/modal.js"></script>
+   </body>
+</html>

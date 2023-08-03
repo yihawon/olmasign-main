@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>template_write</title>
+   </head>
+
+   <body class="body">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script>
+         $(document).ready(function () {
+            $.ajax({
+               url: "../include/csslink.html",
+               success: function (result) {
+                  $(".csslink").html(result)
+               },
+            })
+         })
+      </script>
+      <div class="csslink"></div>
+
+      <header class="header">
+         <input type="button" value="나가기" class="btn_exit" onclick="window.location.href='./settings_my_template.html'" />
+
+         <div class="stepper_contain">
+            <!-- <div class="stepper_tit">
+               <img src="../../imgs/stepper_icon_on.svg" alt="stepper_icon_on.svg" />
+               내 파일 업로드
+            </div>
+            <span class="line_el line_el_select"></span> -->
+            <div class="stepper_tit_wrap">
+               <div class="stepper_tit" style="font-weight: 500; font-size: 20px">미리보기</div>
+            </div>
+         </div>
+
+         <div class="right_btns">
+            <input type="button" value="편집" class="btn_violet_edit" id="" />
+            <input type="button" value="공유" class="btn_violet" id="btn_link_pop" />
+            <a href="javascript:void(0)" class="help_ic_wrap"><img src="../../imgs/ic_help.svg" alt="ic_help.svg" /></a>
+         </div>
+      </header>
+      <div style="height: 60px"></div>
+      <main class="main">
+         <section class="docu_wrap">
+            <article class="docu_area">
+               <div class="tool_bar temp_detail_page">
+                  <!-- <section>
+                     <a href="javascript:void(0)" style="margin-right: 10px">
+                        <img src="../../imgs/ic_24_back.svg" alt="ic_24_back.svg" />
+                     </a>
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_next.svg" alt="ic_24_next.svg" />
+                     </a>
+                  </section>
+                  <span class="div_line">|</span> -->
+
+                  <div class="dropdown_wrap" style="margin-right: 2rem">
+                     <div class="dropdown">
+                        <div class="dropdown-btn">
+                           <p>100%</p>
+                           <i class="bi bi-caret-down-fill"></i>
+                        </div>
+                        <div class="dropdown-content" style="border: 1px solid #eee">
+                           <div class="dropdown-item" data-value="1">85%</div>
+                           <div class="dropdown-item" data-value="2">50%</div>
+                           <div class="dropdown-item" data-value="3">25%</div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="icons_btns">
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_plus.svg" alt="ic_24_plus.svg" />
+                     </a>
+                     <button class="add_sign">
+                        <img src="../../imgs/ic_24_minus.svg" alt="ic_24_minus.svg" />
+                     </button>
+                  </div>
+                  <!-- <span class="div_line">|</span>
+                  <div>
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_bubble_add.svg" alt="ic_24_bubble_add.svg" />
+                     </a>
+                  </div> -->
+               </div>
+            </article>
+            <div class="docu_bg">
+               <div class="docu_board_wrap">
+                  <p>단시간 근로자 표준근로계약서 (파트타임, 아르바이트) <img src="../../imgs/ic_20_edit.svg" alt="ic_20_edit.svg" /></p>
+                  <div class="docu_board"></div>
+               </div>
+            </div>
+         </section>
+         <section class="docu_page_area">
+            <p>Pages : 3</p>
+            <article class="slide_thum_wrap">
+               <div class="slide_thum">
+                  <div class="thum_view"></div>
+                  <div class="thum_foot">
+                     <div class="num">1</div>
+                     <div class="icons_wrap">
+                        <img src="../../imgs/ic_18_rotation.svg" alt="ic_18_rotation.svg" />
+                        <img src="../../imgs/ic_18_delete.svg" alt="ic_18_delete.svg" />
+                     </div>
+                  </div>
+               </div>
+            </article>
+            <article class="slide_thum_wrap">
+               <div class="slide_thum">
+                  <div class="thum_view"></div>
+                  <div class="thum_foot">
+                     <div class="num">2</div>
+                     <div class="icons_wrap">
+                        <img src="../../imgs/ic_18_rotation.svg" alt="ic_18_rotation.svg" />
+                        <img src="../../imgs/ic_18_delete.svg" alt="ic_18_delete.svg" />
+                     </div>
+                  </div>
+               </div>
+            </article>
+            <input type="button" value="+ 페이지 추가" class="btn_add_page" />
+         </section>
+      </main>
+
+      <div id="img_link_pop" class="img_link_pop">
+         <div class="img_link_pop_contain pop_sharing_contain">
+            <h1>공유</h1>
+            <div class="pop_body pop_sharing_wrap">
+               <div class="pop_sharing">
+                  <div class="selectBox_wrap">
+                     <article class="cont_select_1" style="width: 104px">
+                        <button class="" id="selec_1">사용자추가</button>
+                        <ul class="list_item_doble" id="selec_1_li" style="">
+                           <li>
+                              <button type="button" class="user_list_add">홍길동(1팀) hgd@naver.com</button>
+                           </li>
+                           <li>
+                              <button type="button" class="user_list_add">홍길동(1팀) hgd@naver.com</button>
+                           </li>
+                        </ul>
+                     </article>
+
+                     <article class="cont_select_2" style="width: 104px">
+                        <button class="" id="selec_2">편집</button>
+                        <ul class="list_item_doble" id="selec_2_li" style="">
+                           <li><button type="button">편집</button></li>
+                           <li><button type="button">열람</button></li>
+                           <li><button type="button">권한삭제</button></li>
+                        </ul>
+                     </article>
+                  </div>
+                  <button class="pop_sharing_add_btn">추가</button>
+               </div>
+
+               <input type="button" class="btn_confirm btn_violet" value="확인" />
+               <div class="btn_close_pop"><img src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" /></div>
+
+               <h2 class="tit_authority">권한이 있는 사용자</h2>
+               <table class="tit_authority_table">
+                  <tr class="authority_table_tr">
+                     <td>홍길동</td>
+                     <td>
+                        <span>1팀</span>
+                        <span>hgd@naver.com</span>
+                        <div class="select_auth_wrap">
+                           <article class="cont_select" style="width: 104px">
+                              <button class="btn_select">편집</button>
+                              <ul class="list_item" style="height: 134px">
+                                 <li><button type="button">편집</button></li>
+                                 <li><button type="button">열람</button></li>
+                                 <li><button type="button">권한삭제</button></li>
+                              </ul>
+                           </article>
+                        </div>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+      </div>
+
+      <footer class="footer">
+         <div class="btn_wrap">
+            <input class="btn_violet" type="button" value="다음" onclick="window.location.href='./template_contract_setting.html'" />
+         </div>
+      </footer>
+      <script src="../script/settingsMyTemplateDetail.js"></script>
+   </body>
+</html>

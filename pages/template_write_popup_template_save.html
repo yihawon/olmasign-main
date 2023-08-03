@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>template_write</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body>
+      <header class="header">
+         <div class="stepper_contain">
+            <div class="stepper_tit">
+               <img src="../../imgs/ic_img_done.svg" alt="ic_img_done.svg.svg" />
+               내 파일 업로드
+            </div>
+            <span class="line_el line_el_select_solid"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/ic_img_done.svg" alt="ic_img_done.svg.svg" />
+               계약설정
+            </div>
+            <span class="line_el line_el_select_solid"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/ic_img_done.svg" alt="ic_img_done.svg.svg" />
+               템플릿 편집
+            </div>
+            <span class="line_el line_el_select_solid"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/stepper_icon_on.svg" alt="stepper_icon_on.svg" />
+               저장
+            </div>
+         </div>
+      </header>
+
+      <div class="popup_Progress">
+         <div class="popup_Progress_done">
+            <img src="../../imgs/ic_img_done.svg" alt="ic_img_done.svg" />
+            <h1 style="padding: 1rem 0 0">템플릿으로 저장완료!</h1>
+            <p style="color: #16191c; padding: 10px 0 1rem">계약 시작을 원하시면 아래버튼을 눌러주세요.</p>
+            <input
+               onclick="window.location.href='./template_contract_setting.html'"
+               class="btn_violet"
+               type="button"
+               value="계약 시작"
+               style="margin-bottom: 10px"
+            />
+         </div>
+      </div>
+
+      <div class="add_sign"></div>
+      <div class="item_list_wrap"></div>
+
+      <footer class="footer">
+         <div class="btn_wrap">
+            <input class="btn_violet" type="button" value="확인" />
+         </div>
+      </footer>
+   </body>
+</html>

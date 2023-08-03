@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>얼마싸인</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <div class="coaching_bg" onclick="bgfadeOut()">
+         <p>
+            새로운 템플릿을 추가하여 <br />
+            간편한게 이용해보세요!
+         </p>
+         <div class="temp_btn_prev">템플릿 만들기</div>
+      </div>
+      <script>
+         function bgfadeOut() {
+            $(".coaching_bg").fadeOut("fast")
+         }
+      </script>
+      <div class="wrapper">
+         <script>
+            $(document).ready(function () {
+               $.ajax({
+                  url: "../include/head.html",
+                  success: function (result) {
+                     $(".header").html(result)
+                  },
+               })
+            })
+         </script>
+
+         <div class="header hd"></div>
+         <main class="main">
+            <section class="lnb_wrap">
+               <div class="lnb">
+                  <input class="btn_violet" type="button" value="템플릿 만들기" onclick="window.location.href='./template_write.html'" />
+                  <div class="menu_wrap">
+                     <h1 class="selected">
+                        <div class="img_wrap"><img src="../../imgs/ic_24_open_s.svg" alt="ic_24_open_s.svg" />My 템플릿</div>
+
+                        <div id="depth_arrow_btn">
+                           <img src="../../imgs/ic_18_more.svg" alt="ic_18_more.svg" />
+                           <div class="lnb_depth_content" style="padding-bottom: 150px">
+                              <section>
+                                 <article style="margin-top: 100px">
+                                    <h2>인사/고용</h2>
+                                    <ul>
+                                       <li>
+                                          <a href="">면접평가서</a>
+                                          <ul class="depth2">
+                                             <li class="">
+                                                <a href="">최근 열어본 파일</a>
+                                                <img src="../../imgs/ic_18_more-1.svg" alt="ic_18_more-1.svg" id="menu_pop_btn" />
+                                                <div class="menu_pop" id="menu_pop">
+                                                   <ul>
+                                                      <li>추가</li>
+                                                      <li>공유</li>
+                                                      <li>삭제</li>
+                                                   </ul>
+                                                </div>
+                                             </li>
+                                             <li>
+                                                <a href="">개발</a>
+                                             </li>
+                                          </ul>
+                                       </li>
+                                       <li>
+                                          <a href="">사용기간 평가서</a>
+                                          <ul class="depth2">
+                                             <li class="">
+                                                <a href="">최근 열어본 파일</a>
+                                             </li>
+                                             <li>
+                                                <a href="">디자인</a>
+                                             </li>
+                                             <li>
+                                                <a href="">개발</a>
+                                             </li>
+                                          </ul>
+                                       </li>
+                                    </ul>
+                                 </article>
+                                 <article>
+                                    <h2>용역/제휴</h2>
+                                    <ul>
+                                       <li>
+                                          <a href="">면접평가서</a>
+                                          <ul class="depth2">
+                                             <li class="">
+                                                <a href="">최근 열어본 파일</a>
+                                             </li>
+                                             <li>
+                                                <a href="">개발</a>
+                                             </li>
+                                          </ul>
+                                       </li>
+                                       <li>
+                                          <a href="">사용기간 평가서</a>
+                                          <ul class="depth2">
+                                             <li class="">
+                                                <a href="">최근 열어본 파일</a>
+                                             </li>
+                                             <li>
+                                                <a href="">디자인</a>
+                                             </li>
+                                             <li>
+                                                <a href="">개발</a>
+                                             </li>
+                                          </ul>
+                                       </li>
+                                    </ul>
+                                 </article>
+                              </section>
+                              <section class="add_folder_btn">
+                                 <img src="../../imgs/ic_24_add_simple.svg" alt="ic_24_add_simple.svg" />
+                                 <input class="btn_default" type="button" value="폴더추가" />
+                              </section>
+                           </div>
+                        </div>
+                     </h1>
+                     <li><a href="./settings_my_template_bookmark_start.html">즐겨찾기</a></li>
+                     <li><a href="">최근 열어본 파일</a></li>
+                  </div>
+                  <div class="menu_wrap">
+                     <h1>
+                        <a href="./settings_form_law_find.html" class="img_wrap"
+                           ><img src="../../imgs/ic_24_sample.svg" alt="ic_24_sample.svg" />법률 양식 찾기</a
+                        >
+                        <span><img src="../../imgs/ic_18_more.svg" alt="" /></span>
+                     </h1>
+                  </div>
+                  <div class="menu_wrap">
+                     <h1>
+                        <a href="./settings_my_template_trash.html" class="img_wrap"><img src="../../imgs/ic_24_del.svg" alt="ic_24_del.svg" />휴지통</a>
+                     </h1>
+                  </div>
+               </div>
+            </section>
+            <script>
+               $(document).ready(function () {
+                  $.ajax({
+                     url: "../include/lnb_m.html",
+                     success: function (result) {
+                        $(".lnb_m").html(result)
+                     },
+                  })
+               })
+            </script>
+
+            <div class="lnb_m"></div>
+            <section class="content_wrap">
+               <div class="location">
+                  <a href=""><img src="../../imgs/home-2.svg" alt="home-2.svg" /></a>
+                  <a href="">서식관리</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href=""><b>My 템플릿</b></a>
+               </div>
+               <div class="tac">
+                  <img width="300px" src="../../imgs/img_nocontent_01.png" alt="img_nocontent_01.png" />
+                  <div class="flx gap16 fldc">
+                     <h1>My 템플릿 양식을 시작해 보세요.</h1>
+                     <p class="mb24">내 컴퓨터에 양식을 업로드해 주세요.</p>
+                     <button class="btn_violet m0a" style="width: 220px" onclick="window.location.href='./template_write.html'">My 템플릿 양식에 추가</button>
+                  </div>
+               </div>
+            </section>
+         </main>
+      </div>
+
+      <script src="../script/settingsLnb.js"></script>
+      <script src="../script/settingsMyTemplateStart.js"></script>
+   </body>
+</html>

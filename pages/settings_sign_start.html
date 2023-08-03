@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>sign_setting</title>
+      <link rel="stylesheet" href="../../css/common.css" />
+      <link rel="stylesheet" href="../../css/settings.css" />
+      <link rel="stylesheet" href="../css/popup.css" />
+   </head>
+   <body>
+      <div class="wrapper">
+         <header class="header">
+            <section class="gnb_wrap">
+               <div class="logo">
+                  <a href="./main.html"><img src="../../imgs/amsign_logo.svg" alt="amsign_logo.svg" /></a>
+               </div>
+               <div class="gnb_menu">
+                  <a href="javascript:void(0)" class="gnb_btn">
+                     <img src="../../imgs/ic_24_contract.svg" alt="ic_24_contract" />
+                     <b>계약관리</b>
+                  </a>
+                  <a href="./settings_form.html" class="gnb_btn">
+                     <img src="../../imgs/ic_24_form_01.svg" alt="ic_24_form_01" />
+                     <b>서식관리</b>
+                  </a>
+                  <a href="./settings_user_info.html" class="gnb_btn gnb_btn_selected">
+                     <img src="../../imgs/ic_24_setting_s.svg" alt="ic_24_setting_s" />
+                     <b>설정하기</b>
+                  </a>
+               </div>
+            </section>
+            <section class="icon_menu">
+               <a href="javscript:void(0)">사용중 요금제</a>
+               <a href="javscript:void(0)"><img src="../../imgs/ic_client.svg" alt="ic_client" /></a>
+               <a href="javscript:void(0)"><img src="../../imgs/ic_help.svg" alt="ic_help" /></a>
+               <a href="javscript:void(0)"><img src="../../imgs/ic_logout.svg" alt="ic_logout" /></a>
+            </section>
+         </header>
+         <main class="main">
+            <section class="lnb_wrap">
+               <div class="lnb">
+                  <ul>
+                     <h1 class="selected">
+                        <div class="img_wrap"><img src="../../imgs/ic_24_my_n.svg" alt="ic_24_my_n" />내 계정</div>
+                     </h1>
+                     <li><a href="./settings_user_info.html">사용자정보</a></li>
+                     <li><a href="" class="selected">서명관리</a></li>
+                     <li><a href="./settings_address_book.html">주소록</a></li>
+                  </ul>
+                  <ul>
+                     <h1>
+                        <div class="img_wrap"><img src="../../imgs/ic_24_company_n.svg" alt="ic_24_company_n" />회사설정</div>
+                     </h1>
+                     <li><a href="settings_co_info.html">회사정보</a></li>
+                     <li><a href="./settings_team_admin.html">팀 관리</a></li>
+                     <li><a class="customSet" onclick="window.location.href='./settings_customize.html'">맞춤설정</a></li>
+                     <script>
+                        if (matchMedia("screen and (max-width: 768px)").matches) {
+                           let customSet = document.querySelector(".customSet")
+                           customSet.setAttribute("onclick", "alert('PC에서만 가능합니다.')")
+                        } else {
+                           customSet.setAttribute("onclick", "window.location.href='./settings_customize.html'")
+                        }
+                     </script>
+                  </ul>
+                  <ul>
+                     <h1>
+                        <div class="img_wrap"><img src="../../imgs/ic_24_cost_n.svg" alt="ic_24_cost_n" />요금제관리</div>
+                     </h1>
+
+                     <li><a href="settings_pay_sys.html">사용중인 요금제</a></li>
+                     <li><a href="settings_pay_info.html">결제정보</a></li>
+                  </ul>
+               </div>
+            </section>
+            <section class="content_wrap">
+               <div class="location">
+                  <a href=""><img src="../../imgs/home-2.svg" alt="home-2.svg" /></a>
+                  <a href="">설정하기</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href="">내 계정</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href=""><b>서명관리</b></a>
+               </div>
+               <div class="content_area">
+                  <div class="content_inner">
+                     <div class="item_btn_setting">
+                        <!-- <div class="create_sign">
+                           <button class="btn_default add_sign">사인만들기</button>
+                           <button class="btn_default add_stamp">도장만들기</button>
+                        </div> -->
+                        <div class="sign_sort_wrap">
+                           <div class="sign_sort"></div>
+
+                           <!-- <article class="cont_select">
+                              <button class="btn_select">10개보기</button>
+                              <ul class="list_item">
+                                 <li><button type="button">10개보기</button></li>
+                                 <li><button type="button">Java</button></li>
+                                 <li><button type="button">JavaScript</button></li>
+                                 <li><button type="button">C#</button></li>
+                                 <li><button type="button">C/C++</button></li>
+                              </ul>
+                           </article> -->
+                        </div>
+                     </div>
+                     <ul>
+                        <li class="item_list_wrap">
+                           <div class="item_list_start">
+                              <img src="../../imgs/sign_start.png" alt="sign_start.png" />
+                              <h1>서명관리를 시작해 보세요.</h1>
+                              <p>사인, 도장을 등록하시면 편리하게 이용 가능해요.</p>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </section>
+         </main>
+      </div>
+   </body>
+</html>

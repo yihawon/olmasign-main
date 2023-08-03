@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>template_write</title>
+   </head>
+   <body class="body">
+      <script src="../script/jquery-3.6.1.min.js"></script>
+      <script>
+         $(document).ready(function () {
+            $.ajax({
+               url: "../include/csslink.html",
+               success: function (result) {
+                  $(".csslink").html(result)
+               },
+            })
+         })
+      </script>
+      <div class="csslink"></div>
+
+      <style>
+         [data-tooltip50]:hover:before {
+            position: absolute;
+            z-index: 999;
+            left: 146px;
+            top: 0;
+            border: 1px solid #ccc;
+            background-color: white;
+            padding: 10px;
+            width: 160px;
+            border-radius: 5px;
+            font-size: 12px;
+            text-align: left;
+            line-height: 1.5;
+            content: attr(data-tooltip50);
+            box-shadow: 0 0 14px rgba(100, 100, 100, 0.1);
+         }
+         [data-tooltip10]:hover:before {
+            position: absolute;
+            z-index: 999;
+            left: 106px;
+            top: 0;
+            border: 1px solid #ccc;
+            background-color: white;
+            padding: 10px;
+            width: 160px;
+            border-radius: 5px;
+            font-size: 12px;
+            text-align: left;
+            line-height: 1.5;
+            content: attr(data-tooltip10);
+            box-shadow: 0 0 14px rgba(100, 100, 100, 0.1);
+         }
+         [data-tooltip20]:hover:before {
+            position: absolute;
+            z-index: 999;
+            left: 106px;
+            top: 0;
+            border: 1px solid #ccc;
+            background-color: white;
+            padding: 10px;
+            width: 160px;
+            border-radius: 5px;
+            font-size: 12px;
+            text-align: left;
+            line-height: 1.5;
+            content: attr(data-tooltip20);
+            box-shadow: 0 0 14px rgba(100, 100, 100, 0.1);
+         }
+         [data-tooltip30]:hover:before {
+            position: absolute;
+            z-index: 999;
+            left: -96px;
+            top: 0;
+            border: 1px solid #ccc;
+            background-color: white;
+            padding: 10px;
+            width: 160px;
+            border-radius: 5px;
+            font-size: 12px;
+            text-align: left;
+            line-height: 1.5;
+            content: attr(data-tooltip30);
+            box-shadow: 0 0 14px rgba(100, 100, 100, 0.1);
+         }
+         [data-tooltip40]:hover:before {
+            position: absolute;
+            z-index: 999;
+            left: -96px;
+            top: 0;
+            border: 1px solid #ccc;
+            background-color: white;
+            padding: 10px;
+            width: 160px;
+            border-radius: 5px;
+            font-size: 12px;
+            text-align: left;
+            line-height: 1.5;
+            content: attr(data-tooltip40);
+            box-shadow: 0 0 14px rgba(100, 100, 100, 0.1);
+            color: black;
+         }
+      </style>
+      <header class="header">
+         <input type="button" value="나가기" class="btn_exit" onclick="history.back()" />
+         <div class="stepper_contain">
+            <div class="stepper_tit_wrap">
+               <div class="stepper_tit">
+                  <img src="../../imgs/stepper_icon_on.svg" alt="stepper_icon_on.svg" />
+                  계약설정
+               </div>
+               <span class="line_el line_el_select_dashed"></span>
+               <div class="stepper_tit">
+                  <img src="../../imgs/stepper_icon_off.svg" alt="stepper_icon_off.svg" />
+                  템플릿 편집
+               </div>
+               <span class="line_el"></span>
+               <div class="stepper_tit">
+                  <img src="../../imgs/stepper_icon_off.svg" alt="stepper_icon_off.svg" />
+                  문서 확인
+               </div>
+            </div>
+         </div>
+         <div class="right_btns">
+            <input type="button" value="임시저장" class="btn_violet" id="btn_link_pop" />
+            <a href="javascript:void(0)" class="help_ic_wrap"><img src="../../imgs/ic_help.svg" alt="ic_help.svg" /></a>
+         </div>
+      </header>
+      <div style="height: 60px"></div>
+      <main class="main docu_set_wrap">
+         <div class="docu_set">
+            <h1 class="">
+               문서설정
+               <div class="check_p_wrap">
+                  <div class="check_p">
+                     <style>
+                        [type="checkbox"]:not(:checked) + label,
+                        [type="checkbox"]:checked + label {
+                           position: relative;
+                           padding-left: 24px;
+                           font-size: 1.05em;
+                           cursor: pointer;
+                        }
+                     </style>
+                     <input type="checkbox" id="chk0" class="check_orign" />
+                     <label for="chk0" class="label_p">
+                        <div class="check_box_wrap check_icon_1">
+                           <span style="font-size: 15px"> 완료된 문서 잠금</span>
+                        </div>
+                     </label>
+                  </div>
+               </div>
+            </h1>
+            <div class="docu_input_wrap">
+               <div class="docu_tit col">
+                  <label for="docu_tit"><h2>문서명</h2></label>
+                  <input type="text" name="" id="docu_tit" />
+               </div>
+               <div class="sign_progress col">
+                  <h2>서명진행 방법</h2>
+                  <ul class="sign_progress_ul">
+                     <li>
+                        <a>
+                           <div class="">
+                              <div class="radio">
+                                 <input id="radio-1" name="radio" type="radio" checked />
+                                 <label for="radio-1" class="radio-label">서명요청 체험문서</label>
+                              </div>
+                           </div>
+                        </a>
+                     </li>
+                     <li>
+                        <a>
+                           <div class="">
+                              <div class="radio">
+                                 <input id="radio-2" name="radio" type="radio" />
+                                 <label for="radio-2" class="radio-label">표준 근로 계약서</label>
+                              </div>
+                           </div>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="docu_lock col">
+                  <h2>문서 잠금</h2>
+                  <input type="text" placeholder="비밀번호를 입력해 주세요." />
+               </div>
+            </div>
+         </div>
+
+         <div class="contain_docu_set">
+            <div class="tab_wrap">
+               <div class="tab">서명자</div>
+               <div class="tab">참조자</div>
+               <div class="tab">결재자</div>
+               <span class="highlight"></span>
+            </div>
+
+            <section class="cont_section">
+               <article class="cont">
+                  <div class="cont_inner">
+                     <div class="signer col_cont">
+                        <img class="close_signer" src="/imgs/ic_18_close.svg" alt="ic_18_close.svg" />
+                        <div class="heading_wrap">
+                           <img src="/imgs/ic_18_movement.svg" alt="ic_18_movement.svg" />
+                           <h1>첫번째 서명자</h1>
+                        </div>
+                        <div class="cont_input_wrap">
+                           <input type="text" placeholder="이름" />
+                           <input type="text" placeholder="휴대폰번호" />
+                           <input type="text" placeholder="이메일" />
+                        </div>
+                     </div>
+
+                     <div class="option_select_wrap col_cont">
+                        <h2>
+                           선택옵션
+                           <span style="position: relative"
+                              >옵션 일괄 적용
+                              <span data-tooltip40="간단하게 일괄적용해보세요.서명참여자들의 정보를 공통으로 설정할 수 있어요."
+                                 ><img src="/imgs/ic_18_inform_02.svg" alt="ic_18_inform_02.svg"
+                              /></span>
+                           </span>
+                        </h2>
+                        <div class="cont_input_wrap" style="gap: 30px 40px">
+                           <section class="option_select">
+                              <h3>전송방식</h3>
+                              <div class="check_p_wrap option_select_input_wrap">
+                                 <div class="check_p option_select_input">
+                                    <input type="checkbox" id="chk11" class="check_orign" />
+                                    <label for="chk11" class="label_p">
+                                       <div class="check_box_wrap check_icon_1">
+                                          <span>이메일</span>
+                                       </div>
+                                    </label>
+                                 </div>
+                                 <div class="check_p option_select_input">
+                                    <input type="checkbox" id="chk12" class="check_orign" />
+                                    <label for="chk12" class="label_p">
+                                       <div class="check_box_wrap check_icon_1">
+                                          <span>카카오톡</span>
+                                       </div>
+                                    </label>
+                                 </div>
+                              </div>
+                           </section>
+                           <section class="option_select">
+                              <h3>
+                                 <div style="position: relative">
+                                    서명 유효기간
+                                    <span data-tooltip10="서명자 개인별로 주어진 유효기간이에요.">
+                                       <img src="/imgs/ic_18_inform_02.svg" alt="ic_18_inform_02.svg" />
+                                    </span>
+                                 </div>
+                              </h3>
+                              <div class="signer_input"><input type="text" name="" id="" />일 이내 서명 완료</div>
+                           </section>
+                           <section class="option_select">
+                              <div class="certification">
+                                 <h3>본인 인증 <span>인증수단 추가</span></h3>
+                              </div>
+                              <input type="text" name="" id="" disabled />
+                           </section>
+                           <section class="option_select">
+                              <h3>메시지</h3>
+                              <input class="option_select_msg" type="text" name="" id="" />
+                           </section>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="cont_inner">
+                     <div class="signer col_cont">
+                        <img class="close_signer" src="/imgs/ic_18_close.svg" alt="ic_18_close.svg" />
+                        <div class="heading_wrap">
+                           <img src="/imgs/ic_18_movement.svg" alt="ic_18_movement.svg" />
+                           <h1>두번째 서명자</h1>
+                        </div>
+                        <div class="cont_input_wrap">
+                           <input type="text" placeholder="이름" />
+                           <input type="text" placeholder="휴대폰번호" />
+                           <input type="text" placeholder="이메일" />
+                           <input type="text" placeholder="접근암호" />
+                           <input type="text" placeholder="힌트" />
+                           <input type="text" placeholder="회사명" />
+                           <input type="text" placeholder="사업자 번호" />
+                        </div>
+                     </div>
+
+                     <div class="option_select_wrap col_cont">
+                        <h2>선택옵션</h2>
+                        <div class="cont_input_wrap" style="gap: 30px 40px">
+                           <section class="option_select">
+                              <h3>전송방식</h3>
+                              <div class="check_p_wrap option_select_input_wrap">
+                                 <div class="check_p option_select_input">
+                                    <input type="checkbox" id="chk9" class="check_orign" />
+                                    <label for="chk9" class="label_p">
+                                       <div class="check_box_wrap check_icon_1">
+                                          <span>이메일</span>
+                                       </div>
+                                    </label>
+                                 </div>
+                                 <div class="check_p option_select_input">
+                                    <input type="checkbox" id="chk10" class="check_orign" />
+                                    <label for="chk10" class="label_p">
+                                       <div class="check_box_wrap check_icon_1">
+                                          <span>카카오톡</span>
+                                       </div>
+                                    </label>
+                                 </div>
+                              </div>
+                           </section>
+                           <section class="option_select">
+                              <h3>
+                                 <div style="position: relative">
+                                    서명 유효기간
+                                    <span data-tooltip20="서명자 개인별로 주어진 유효기간입니다.">
+                                       <img src="/imgs/ic_18_inform_02.svg" alt="ic_18_inform_02.svg" />
+                                    </span>
+                                 </div>
+                              </h3>
+                              <div class="signer_input"><input type="text" name="" id="" />일 이내 서명 완료</div>
+                           </section>
+                           <section class="option_select">
+                              <div class="certification">
+                                 <h3>본인 인증 <span onclick="certificationPop()">인증수단 추가</span></h3>
+                              </div>
+
+                              <div class="certification_el" id="certificate">
+                                 <span class="pane">
+                                    SMS 인증
+                                    <img src="/imgs/ic_18_close_04.svg" alt="ic_18_close_04.svg" class="remove-button" />
+                                 </span>
+                                 <span class="pane">
+                                    이멜일 인증
+                                    <img src="/imgs/ic_18_close_04.svg" alt="ic_18_close_04.svg" class="remove-button" />
+                                 </span>
+                                 <span class="pane">
+                                    PASS 인증
+                                    <img src="/imgs/ic_18_close_04.svg" alt="ic_18_close_04.svg" class="remove-button" />
+                                 </span>
+                                 <span class="pane">
+                                    접근암호 인증
+                                    <img src="/imgs/ic_18_close_04.svg" alt="ic_18_close_04.svg" class="remove-button" />
+                                 </span>
+                                 <span class="pane">
+                                    법인 공동인증서 인증
+                                    <img src="/imgs/ic_18_close_04.svg" alt="ic_18_close_04.svg" class="remove-button" />
+                                 </span>
+                              </div>
+                           </section>
+
+                           <section class="option_select">
+                              <h3>메시지</h3>
+                              <input class="option_select_msg" type="text" name="" id="" />
+                              <div></div>
+                           </section>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="address_add">
+                     <img onclick="atOnceAddHandler()" src="/imgs/ic_plus.svg" alt="ic_plus.svg" />
+                     <p onclick="atOnceAddHandler()">주소록에서 여러명 불러오기</p>
+                  </div>
+
+                  <div class="cont_inner" style="margin-top: 50px">
+                     <div class="signer col_cont flex jussb">
+                        <div
+                           class="heading_wrap"
+                           id="my_contract"
+                           data-help="계약관련 서명자가 모두 서명 한 후, 서명 요청자가 최종적으로 계약완료 처리 하였을 때 계약이 완료되는 옵션이에요."
+                        >
+                           <h1 style="font-weight: 600">내계약 확인 <img src="../imgs/ic_18_inform_02.svg" alt="ic_18_inform_02" /></h1>
+                        </div>
+                        <div class="toggle_area">
+                           <section class="toggle_wrap">
+                              <span class="toggle_span">
+                                 <div class="flipBtn">
+                                    <div class="toggle_btn"></div>
+                                 </div>
+                              </span>
+                           </section>
+                        </div>
+                     </div>
+                  </div>
+
+                  <script>
+                     let photoimgsWrap = document.querySelectorAll(".photoimgs_wrap")
+
+                     for (var i = 0; i < photoimgsWrap.length; i++) {
+                        photoimgsWrap[i].addEventListener("click", clickHandler)
+                     }
+                     const toggleSpan = document.querySelectorAll(".toggle_span")
+                     toggleSpan.forEach((elem) => {
+                        elem.addEventListener("click", function () {
+                           elem.firstElementChild.firstElementChild.classList.toggle("move")
+                           elem.firstElementChild.classList.toggle("expand")
+                        })
+                     })
+                  </script>
+               </article>
+               <article class="cont">
+                  <div class="cont_inner">
+                     <div class="signer col_cont">
+                        <img class="close_signer" src="/imgs/ic_18_close.svg" alt="ic_18_close.svg" />
+                        <div class="heading_wrap">
+                           <h1>참조자</h1>
+                        </div>
+                        <div class="cont_input_wrap">
+                           <input type="text" placeholder="이름" />
+                           <input type="text" placeholder="휴대폰번호" />
+                           <input type="text" placeholder="이메일" />
+                        </div>
+                     </div>
+
+                     <div class="option_select_wrap col_cont">
+                        <div class="cont_input_wrap" style="gap: 30px 40px">
+                           <section class="option_select">
+                              <h3>전송방식</h3>
+                              <div class="check_p_wrap option_select_input_wrap">
+                                 <div class="check_p option_select_input">
+                                    <input type="checkbox" id="chk7" class="check_orign" />
+                                    <label for="chk7" class="label_p">
+                                       <div class="check_box_wrap check_icon_1">
+                                          <span>이메일</span>
+                                       </div>
+                                    </label>
+                                 </div>
+                                 <div class="check_p option_select_input">
+                                    <input type="checkbox" id="chk8" class="check_orign" />
+                                    <label for="chk8" class="label_p">
+                                       <div class="check_box_wrap check_icon_1">
+                                          <span>카카오톡</span>
+                                       </div>
+                                    </label>
+                                 </div>
+                              </div>
+                           </section>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="address_add">
+                     <img onclick="atOnceAddHandler()" src="/imgs/ic_plus.svg" alt="ic_plus.svg" />
+                     <p onclick="atOnceAddHandler()">주소록에서 여러명 불러오기</p>
+                  </div>
+               </article>
+               <article class="cont">
+                  <div class="cont_inner payment_person">
+                     <div class="signer col_cont payment_inn">
+                        <img class="close_signer" src="/imgs/ic_18_close.svg" alt="ic_18_close.svg" />
+
+                        <div class="heading_wrap payment_hd">
+                           <img src="/imgs/ic_18_movement.svg" alt="ic_18_movement.svg" />
+                           <h1>
+                              1차 결재
+                              <p>
+                                 <input type="checkbox" name="chk" id="chk1" />
+                                 <label for="chk1">결재 간소화</label>
+                              </p>
+                           </h1>
+                        </div>
+                        <ul>
+                           <li>
+                              <p>이길수 <span>hgd@naver.com</span></p>
+                              <img class="" src="/imgs/ic_18_close_02.svg" alt="ic_18_close_02.svg" />
+                           </li>
+                           <li>
+                              <p>이길수 <span>hgd@naver.com</span></p>
+                              <img class="" src="/imgs/ic_18_close_02.svg" alt="ic_18_close_02.svg" />
+                           </li>
+                        </ul>
+                        <article class="search_team_member">
+                           <input type="search" id="myInput" placeholder="이름을 검색하여 결재자를 추가해 주세요." />
+                           <div class="searchResults"></div>
+                        </article>
+                        <script>
+                           const inputElement = document.getElementById("myInput")
+                           const searchResults = document.querySelector(".searchResults")
+
+                           inputElement.addEventListener("keyup", function (event) {
+                              const inputText = event.target.value
+                              console.log(inputText)
+                              searchResults.innerHTML = inputText
+                              searchResults.classList.add("on")
+                           })
+
+                           document.querySelector("body").addEventListener("click", function () {
+                              searchResults.classList.remove("on")
+                              searchResults.innerHTML = null
+                           })
+                        </script>
+                        <div class="get_many">
+                           <a href="javascript:void(0)" onclick="atOnceAddHandler()">팀에서 여러명 불러오기</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="add_step_pay">
+                     <a href="javascript:void(0)">결재 단계 추가</a>
+                  </div>
+                  <div class="cont_inner msg_wrap">
+                     <h1>메시지</h1>
+                     <input type="text" />
+                  </div>
+               </article>
+            </section>
+            <div style="height: 200px"></div>
+         </div>
+      </main>
+      <script>
+         let tabWrap = document.querySelector(".tab_wrap")
+         window.addEventListener("scroll", () => {
+            let yOffset = window.pageYOffset
+            if (yOffset > 300) {
+               tabWrap.style.animation = "slide 1s ease forwards"
+            } else if (yOffset < 300) {
+               tabWrap.style.animation = "slideOut 1s ease forwards"
+            }
+         })
+      </script>
+
+      <div class="modal_welcome certification_pop">
+         <div class="modal_welcome_contain">
+            <div class="popheading">
+               <span></span>
+               <h1>인증수단 추가</h1>
+               <span></span>
+               <img class="close_pop" src="/imgs/ic_20_close.svg" alt="ic_20_close" />
+            </div>
+            <section class="stop_area">
+               <h2 class="certification_pop_p">중요 계약일 경우 본인 인증 수단을 추천해요.</h2>
+
+               <div class="certification_pop_chk_wrap">
+                  <div class="check_p_wrap">
+                     <div class="check_p">
+                        <input type="checkbox" id="chk4" class="check_orign" />
+                        <label for="chk4" class="label_p">
+                           <div class="check_box_wrap check_icon_1">
+                              <div class="auth_span">
+                                 접근 암호 인증
+                                 <span data-tooltip50="접근 암호를 서명자에게 미리 알려주시기 바래요."
+                                    ><img src="/imgs/ic_18_inform_02.svg" alt="ic_18_inform_02.svg"
+                                 /></span>
+                              </div>
+                           </div>
+                        </label>
+                     </div>
+                  </div>
+                  <div class="check_p_wrap">
+                     <div class="check_p">
+                        <input type="checkbox" id="chk1" class="check_orign" />
+                        <label for="chk1" class="label_p">
+                           <div class="check_box_wrap check_icon_1">
+                              <span class="auth_span"> 이메일 인증</span>
+                           </div>
+                        </label>
+                     </div>
+                  </div>
+                  <div class="check_p_wrap">
+                     <div class="check_p">
+                        <input type="checkbox" id="chk2" class="check_orign" />
+                        <label for="chk2" class="label_p">
+                           <div class="check_box_wrap check_icon_1">
+                              <span class="auth_span">SMS 인증</span>
+                           </div>
+                        </label>
+                     </div>
+                  </div>
+                  <div class="check_p_wrap">
+                     <div class="check_p">
+                        <input type="checkbox" id="chk3" class="check_orign" />
+                        <label for="chk3" class="label_p">
+                           <div class="check_box_wrap check_icon_1">
+                              <span class="auth_span"> PASS 인증</span>
+                           </div>
+                        </label>
+                     </div>
+                  </div>
+
+                  <div class="check_p_wrap">
+                     <div class="check_p">
+                        <input type="checkbox" id="chk5" class="check_orign" />
+                        <label for="chk5" class="label_p">
+                           <div class="check_box_wrap check_icon_1">
+                              <span class="auth_span">법인 공동 인증서 인증</span>
+                           </div>
+                        </label>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section class="confirm_btn">
+               <a href="javascript:void(0)">확인</a>
+            </section>
+         </div>
+      </div>
+
+      <footer class="footer">
+         <div class="btn_wrap">
+            <input
+               class="btn_default"
+               type="button"
+               value="이전"
+               style="color: var(--violet_P)"
+               onclick="window.location.href='./settings_my_template_detail.html'"
+            />
+            <input class="btn_violet" type="button" value="다음" onclick="window.location.href='./template_contract_setting_confirm.html'" />
+         </div>
+      </footer>
+
+      <div class="popup_wrap addr_add_wrap">
+         <div class="popup_contain add_contain xl">
+            <section class="add_contain_inn">
+               <img class="popup_close_btn" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="atOnceAddHandler('cancel')" />
+               <h1 class="popup_title">주소록에서 추가</h1>
+
+               <div class="popup_content">
+                  <div class="popup_content_inn flx jussb p24">
+                     <section class="tab_wrap_add">
+                        <div class="tab_hd flx alc jussb">
+                           <h1>그룹 구성원</h1>
+                           <span class="addr_add_search">
+                              <input type="search" name="search" id="search" placeholder="그룹, 주소록 검색" />
+                              <button class=""></button>
+                           </span>
+                        </div>
+                        <div class="tab_box_wrap">
+                           <ul>
+                              <div class="tab_subject">
+                                 <li class="subject_btn">가가상사 <span>4</span></li>
+                                 <li class="subject_btn">링크디자인 <span>14</span></li>
+                                 <li class="subject_btn">다다유통 <span>34</span></li>
+                                 <li class="subject_btn">다다유통 <span>34</span></li>
+                                 <li class="subject_btn">다다유통 <span>34</span></li>
+                                 <li class="subject_btn">다다유통 <span>34</span></li>
+                                 <li class="subject_btn">다다유통 <span>34</span></li>
+                                 <li class="subject_btn">다다유통 <span>34</span></li>
+                                 <li class="subject_btn">다다유통 <span>34</span></li>
+                                 <li class="subject_btn">다다유통 <span>34</span></li>
+                                 <li class="subject_btn">다다유통 <span>34</span></li>
+                                 <li class="subject_btn">다다유통 <span>34</span></li>
+                                 <li class="subject_btn">다다유통 <span>34</span></li>
+                                 <li class="subject_btn">다다유통 <span>34</span></li>
+                                 <li class="subject_btn">다다유통 <span>34</span></li>
+                                 <li class="subject_btn">다다유통 <span>34</span></li>
+                                 <li class="subject_btn">다다유통 <span>34</span></li>
+                                 <li class="subject_btn">다다유통 <span>34</span></li>
+                                 <li class="subject_btn">다다유통 <span>34</span></li>
+                                 <span class="addHL"></span>
+                              </div>
+                           </ul>
+                           <div class="tab_content">
+                              <ul>
+                                 <li>
+                                    <p class="">
+                                       <input type="checkbox" name="chk" id="chk" />
+                                       <label for="chk" class="">전체</label>
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p class="">
+                                       <input type="checkbox" name="chk" id="chk1" />
+                                       <label for="chk1" class="">홍길동</label>
+                                    </p>
+                                    <p class="">
+                                       <span>hgd@naver.com</span>
+                                       <span>010-1234-1234</span>
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p class="">
+                                       <input type="checkbox" name="chk" id="chk1" />
+                                       <label for="chk1" class="">홍길동</label>
+                                    </p>
+                                    <p class="">
+                                       <span>hgd@naver.com</span>
+                                       <span>010-1234-1234</span>
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p class="">
+                                       <input type="checkbox" name="chk" id="chk1" />
+                                       <label for="chk1" class="">홍길동</label>
+                                    </p>
+                                    <p class="">
+                                       <span>hgd@naver.com</span>
+                                       <span>010-1234-1234</span>
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p class="">
+                                       <input type="checkbox" name="chk" id="chk1" />
+                                       <label for="chk1" class="">홍길동</label>
+                                    </p>
+                                    <p class="">
+                                       <span>hgd@naver.com</span>
+                                       <span>010-1234-1234</span>
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p class="">
+                                       <input type="checkbox" name="chk" id="chk1" />
+                                       <label for="chk1" class="">홍길동</label>
+                                    </p>
+                                    <p class="">
+                                       <span>hgd@naver.com</span>
+                                       <span>010-1234-1234</span>
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p class="">
+                                       <input type="checkbox" name="chk" id="chk1" />
+                                       <label for="chk1" class="">홍길동</label>
+                                    </p>
+                                    <p class="">
+                                       <span>hgd@naver.com</span>
+                                       <span>010-1234-1234</span>
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p class="">
+                                       <input type="checkbox" name="chk" id="chk1" />
+                                       <label for="chk1" class="">홍길동</label>
+                                    </p>
+                                    <p class="">
+                                       <span>hgd@naver.com</span>
+                                       <span>010-1234-1234</span>
+                                    </p>
+                                 </li>
+                              </ul>
+                              <ol class="m0 p0">
+                                 <a href=""><img src="../../imgs/btn_page_numbers_left.svg" alt="btn_page_numbers_left.svg" /></a>
+                                 <li>1</li>
+                                 <li>2</li>
+                                 <li>3</li>
+                                 <a href=""><img src="../../imgs/btn_page_numbers_right.svg" alt="btn_page_numbers_right.svg" /></a>
+                              </ol>
+                           </div>
+                           <div class="tab_content">22</div>
+                           <div class="tab_content">33</div>
+                        </div>
+                     </section>
+                     <div class="move_arow">
+                        <img src="../../imgs/ic_18_right.svg" alt="ic_18_right.svg" />
+                     </div>
+
+                     <section class="tab_wrap_add">
+                        <div class="tab_hd flx alc jussb">
+                           <h1 style="height: 40px" class="flx alc">서명자</h1>
+                        </div>
+                        <div class="tab_box_wrap flx">
+                           <div class="tab_content_result w100 p24">
+                              <ul>
+                                 <li>
+                                    <p class="">
+                                       <label for="chk1" class="">홍길동</label>
+                                    </p>
+                                    <p class="">
+                                       <span>hgd@naver.com</span>
+                                       <span>010-1234-1234</span>
+                                    </p>
+                                    <img src="../../imgs/ic_18_close_02.svg" alt="ic_18_close_02.svg" />
+                                 </li>
+                                 <li>
+                                    <p class="">
+                                       <label for="chk1" class="">홍길동</label>
+                                    </p>
+                                    <p class="">
+                                       <span>hgd@naver.com</span>
+                                       <span>010-1234-1234</span>
+                                    </p>
+                                    <img src="../../imgs/ic_18_close_02.svg" alt="ic_18_close_02.svg" />
+                                 </li>
+                                 <li>
+                                    <p class="">
+                                       <label for="chk1" class="">홍길동</label>
+                                    </p>
+                                    <p class="">
+                                       <span>hgd@naver.com</span>
+                                       <span>010-1234-1234</span>
+                                    </p>
+                                    <img src="../../imgs/ic_18_close_02.svg" alt="ic_18_close_02.svg" />
+                                 </li>
+                                 <li>
+                                    <p class="">
+                                       <label for="chk1" class="">홍길동</label>
+                                    </p>
+                                    <p class="">
+                                       <span>hgd@naver.com</span>
+                                       <span>010-1234-1234</span>
+                                    </p>
+                                    <img src="../../imgs/ic_18_close_02.svg" alt="ic_18_close_02.svg" />
+                                 </li>
+                                 <li>
+                                    <p class="">
+                                       <label for="chk1" class="">홍길동</label>
+                                    </p>
+                                    <p class="">
+                                       <span>hgd@naver.com</span>
+                                       <span>010-1234-1234</span>
+                                    </p>
+                                    <img src="../../imgs/ic_18_close_02.svg" alt="ic_18_close_02.svg" />
+                                 </li>
+                                 <li>
+                                    <p class="">
+                                       <label for="chk1" class="">홍길동</label>
+                                    </p>
+                                    <p class="">
+                                       <span>hgd@naver.com</span>
+                                       <span>010-1234-1234</span>
+                                    </p>
+                                    <img src="../../imgs/ic_18_close_02.svg" alt="ic_18_close_02.svg" />
+                                 </li>
+                                 <li>
+                                    <p class="">
+                                       <label for="chk1" class="">홍길동</label>
+                                    </p>
+                                    <p class="">
+                                       <span>hgd@naver.com</span>
+                                       <span>010-1234-1234</span>
+                                    </p>
+                                    <img src="../../imgs/ic_18_close_02.svg" alt="ic_18_close_02.svg" />
+                                 </li>
+                                 <li>
+                                    <p class="">
+                                       <label for="chk1" class="">홍길동</label>
+                                    </p>
+                                    <p class="">
+                                       <span>hgd@naver.com</span>
+                                       <span>010-1234-1234</span>
+                                    </p>
+                                    <img src="../../imgs/ic_18_close_02.svg" alt="ic_18_close_02.svg" />
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </section>
+                  </div>
+               </div>
+            </section>
+            <section class="popup_confirm_btn addr_add_btn">
+               <a href="javascript:void(0)">등록</a>
+            </section>
+         </div>
+      </div>
+
+      <script src="../script/templateContractSetting.js"></script>
+      <script src="../script/selectBox.js"></script>
+      <script>
+         let atOnceAdd = document.querySelector(".atOnceAdd")
+         function atOnceAddHandler(elem) {
+            console.log(atOnceAdd)
+            let addrAddWrap = document.querySelector(".addr_add_wrap")
+            addrAddWrap.classList.add("on")
+            if (elem == "cancel") {
+               addrAddWrap.classList.remove("on")
+            }
+         }
+
+         let subjectBtn = document.querySelectorAll(".subject_btn")
+         let tabContent = document.querySelectorAll(".tab_content")
+
+         function contentShow2(num) {
+            tabContent.forEach((item, idx) => {
+               item.classList.remove("on")
+            })
+            tabContent[num].classList.add("on")
+         }
+         subjectBtn.forEach((item, idx) => {
+            item.addEventListener("click", () => {
+               contentShow2(idx)
+               highLight2(idx)
+            })
+         })
+
+         function highLight2(num) {
+            let highLight = document.querySelector(".addHL")
+            const newLeft = subjectBtn[num].offsetTop
+            const newWidth = subjectBtn[num].offsetHeight
+            highLight.style.top = newLeft + "px"
+            highLight.style.height = newWidth + "px"
+         }
+         contentShow2(0)
+      </script>
+   </body>
+</html>

@@ -1,0 +1,31 @@
+<section class="toast__container">
+   <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast__content">
+         <div class="toast_pop">
+            <p>필수 입력란이 2개 남았습니다. <span>(5초후 사라짐)</span></p>
+            <span> <img src="../../imgs/ic_18_close_white.svg" alt="ic_18_close_white.svg" /> </span>
+         </div>
+      </div>
+   </div>
+</section>
+<script>
+   const toasts = document.querySelectorAll(".toast")
+   const toastTriggers = document.querySelectorAll(".toast__trigger")
+
+   toastTriggers.forEach((trigger, index) => {
+      let toastTimeout
+
+      trigger.addEventListener("click", () => {
+         console.log(0)
+         toasts[index].classList.add("toast--active")
+         toastTimeout = setTimeout(() => {
+            toasts[index].classList.remove("toast--active")
+         }, 5000)
+      })
+
+      toasts[index].addEventListener("click", () => {
+         toasts[index].classList.remove("toast--active")
+         clearTimeout(toastTimeout)
+      })
+   })
+</script>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="-ms-" lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>sign_setting</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <div class="sign_draw_wrap">
+         <div class="sign_draw_contain">
+            <div class="sign_draw_contain_inner">
+               <section class="sign_draw_content">
+                  <h1 style="text-align: center; padding: 10px 0 1rem">엑셀 업로드</h1>
+                  <div class="add_sign_step3">
+                     <div class="my_file_box">
+                        <div class="my_com">
+                           <h2 class="file_title">내 컴퓨터</h2>
+                           <div class="drop_file_wrap">
+                              <div class="my_com_file_drop drop-zone">
+                                 <img src="../../imgs/ic_24_form_02.svg" alt="ic_24_form_02.svg" />
+                                 <p class="">이곳에 파일을 놓아 주세요.</p>
+                                 <div class="or_comment">
+                                    <hr />
+                                    <span>또는</span>
+                                 </div>
+                              </div>
+                              <form class="drop_file">
+                                 <label for="file" class="file_upload">파일찾기</label>
+                                 <input type="file" id="file" multiple />
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="file_desc">
+                        <p>지원 파일 : DOCX, PDF, HWP, ...</p>
+                        <p>업로드 가능 용량 : 최대 5MB</p>
+                     </div>
+                  </div>
+               </section>
+            </div>
+            <div class="btn_close">
+               <img src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" />
+            </div>
+         </div>
+      </div>
+
+      <div class="wrapper">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function () {
+               $.ajax({
+                  url: "../include/head.html",
+                  success: function (result) {
+                     $(".header").html(result)
+                  },
+               })
+            })
+         </script>
+
+         <div class="header hd"></div>
+         <main class="main">
+            <script>
+               $(document).ready(function () {
+                  $.ajax({
+                     url: "../include/aside_set.html",
+                     success: function (result) {
+                        $(".lnb_wrap").html(result)
+                     },
+                  })
+                  $.ajax({
+                     url: "../include/lnb_m.html",
+                     success: function (result) {
+                        $(".lnb_m").html(result)
+                     },
+                  })
+               })
+            </script>
+
+            <section class="lnb_wrap"></section>
+
+            <div class="lnb_m"></div>
+            <section class="content_wrap">
+               <div class="location">
+                  <a href=""><img src="../../imgs/home-2.svg" alt="home-2.svg" /></a>
+                  <a href="">설정하기</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href="">내 계정</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href=""><b>주소록</b></a>
+               </div>
+               <div class="content_area">
+                  <div class="content_inner">
+                     <div class="adress_wrap">
+                        <div class="whole_group">
+                           <div class="whole_group_title">
+                              <h1>전체 그룹</h1>
+                              <input type="button" value="그룹추가" class="btn_default" />
+                           </div>
+                           <div class="table">
+                              <section class="lis_wrap lis_wrap_r">
+                                 <div class="tr_left">
+                                    <div class="th">그룹이름</div>
+                                    <div class="th">주소</div>
+                                    <div class="th"></div>
+                                 </div>
+                              </section>
+
+                              <div class="dd_contain">
+                                 <section class="draggable draggable_m" draggable="true">
+                                    <article class="el">
+                                       <div class="th">
+                                          <img src="../../imgs/ic_18_group.svg" alt="ic_18_group.svg" />
+                                          가가상사
+                                       </div>
+                                       <div class="th">
+                                          <img src="../../imgs/ic_18_my.svg" alt="ic_18_my.svg" />
+                                          50
+                                       </div>
+                                       <span class="th_move moreBtn"
+                                          ><div class="moreBtn_pop_wrap" style="width: 68px">
+                                             <p>수정</p>
+                                             <p>삭제</p>
+                                          </div></span
+                                       >
+                                    </article>
+                                 </section>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="whole_address">
+                           <div class="whole_address_title">
+                              <h1>전체 주소록 <span>: 102</span></h1>
+                              <div class="item_btn_setting">
+                                 <div class="btns_wrap">
+                                    <input type="button" value="주소추가" class="btn_default" onclick="location.href='./settings_address_add.html'" />
+                                    <button class="btn_default" onclick="Modalpop('groupMove')">그룹이동</button>
+                                    <button class="btn_default">삭제</button>
+                                 </div>
+                                 <div class="sign_sort_wrap">
+                                    <div class="sign_sort">
+                                       <input class="search_input" type="search" placeholder="그룹, 주소록 검색" />
+                                       <span class="search_icon"><img src="../../imgs/ic_20_search.svg" alt="ic_20_search.svg" /></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div class="table_wrap_r">
+                              <div class="table">
+                                 <section class="lis_wrap">
+                                    <div class="tr_right tr_right_m">
+                                       <div class="th">
+                                          <input type="checkbox" name="" id="chk0" />
+                                          <label for="chk0">이름</label>
+                                          <img class="updown_icon" src="../../imgs/ic_18_updown.svg" alt="ic_18_updown.svg" />
+                                       </div>
+                                       <div class="th">이메일</div>
+                                       <div class="th">전화번호</div>
+                                       <img class="th_move" src="../../imgs/" alt="" />
+                                    </div>
+
+                                    <div class="dd_contain dd_contain_right">
+                                       <div class="draggable" draggable="true">
+                                          <section class="el el2">
+                                             <div class="th">
+                                                <input type="checkbox" name="" id="chk1" />
+                                                <label for="chk1"><img src="../../imgs/ic_18_my.svg" alt="ic_18_my.svg" />정지인</label>
+                                             </div>
+                                             <div class="th th_m">jji@naver.com</div>
+                                             <div class="th th_m">010-1234-5678</div>
+                                             <span class="th_move adrs_drag_ico"></span>
+                                          </section>
+                                       </div>
+                                       <div class="draggable" draggable="true">
+                                          <section class="el el2">
+                                             <div class="th">
+                                                <input type="checkbox" name="" id="chk2" />
+                                                <label for="chk2"><img src="../../imgs/ic_18_my.svg" alt="ic_18_my.svg" />정지인</label>
+                                             </div>
+                                             <div class="th th_m">jji@naver.com</div>
+                                             <div class="th th_m">010-1234-5678</div>
+                                             <span class="th_move adrs_drag_ico"></span>
+                                          </section>
+                                       </div>
+                                    </div>
+                                 </section>
+                                 <div class="pagination">
+                                    <button>
+                                       <img src="../../imgs/btn_page_numbers_left.svg" alt="btn_page_numbers_left.svg" />
+                                    </button>
+                                    <button>1</button>
+                                    <button>2</button>
+                                    <button>3</button>
+                                    <button>
+                                       <img src="../../imgs/btn_page_numbers_right.svg" alt="btn_page_numbers_right.svg" />
+                                    </button>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </main>
+      </div>
+
+      <div class="modal_welcome">
+         <div class="modal_welcome_contain">
+            <section class="modal_wrap">
+               <img class="close_btn" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal()" />
+               <h1>그룹 이동</h1>
+               <div class="input_wrap"><input type="text" placeholder="새 그룹명" /><input class="folder_add" type="button" value="추가" /></div>
+               <div class="tree_wrap">
+                  <ul class="tree" id="tree">
+                     <li>
+                        <span> 가가상사 </span>
+                     </li>
+
+                     <li class="folder_tree_li">
+                        <span> 근로계약 </span>
+                     </li>
+                  </ul>
+               </div>
+            </section>
+            <section class="start_btn">
+               <a href="javascript:void(0)">이동</a>
+            </section>
+         </div>
+      </div>
+
+      <script src="../script/popupAddressCreate.js"></script>
+      <script src="../script/dragendrop.js"></script>
+      <script src="../script/fileDrop.js"></script>
+      <script src="../script/modal.js"></script>
+   </body>
+</html>

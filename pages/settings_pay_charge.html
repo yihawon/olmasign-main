@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>sign_setting</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   </head>
+
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+         $.ajax({
+            url: "../include/head.html",
+            success: function (result) {
+               $(".header").html(result)
+            },
+         })
+         $.ajax({
+            url: "../include/aside_set.html",
+            success: function (result) {
+               $(".lnb_wrap").html(result)
+            },
+         })
+
+         $.ajax({
+            url: "../include/lnb_m.html",
+            success: function (result) {
+               $(".lnb_m").html(result)
+            },
+         })
+      })
+   </script>
+
+   <div class="csslink"></div>
+
+   <body class="body">
+      <div class="wrapper">
+         <div class="header hd"></div>
+         <main class="main">
+            <section class="lnb_wrap"></section>
+
+            <div class="lnb_m"></div>
+
+            <section class="content_wrap">
+               <div class="location">
+                  <a href=""><img src="../../imgs/home-2.svg" alt="home-2.svg" /></a>
+                  <a href="">설정하기</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href="">요금제관리</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href=""><b>사용량</b></a>
+               </div>
+
+               <div class="paysystem_wrap" id="section1">
+                  <div class="pasys_tit">
+                     <h1>구독형 요금제</h1>
+                     <p>
+                        비즈니스에 맞는 요금제를 <br />
+                        선택하여 이용할 수 있어요
+                     </p>
+                  </div>
+                  <div class="profile_area paysystem">
+                     <div class="contain_docu_set charge_pay">
+                        <div class="tab_wrap paysystem_tabs charge_pay_tabbar" style="top: inherit">
+                           <div class="tab">월간</div>
+                           <div class="tab">연간</div>
+                           <span class="highlight emailcustom_tabs_HL"></span>
+                        </div>
+
+                        <section class="paysys_tabs charge_pay_tabs">
+                           <div class="cont paysys_tab">
+                              <section id="pay_panels" class="pay_panels">
+                                 <div class="pay_panel">
+                                    <h1 class="name_tit">
+                                       <p>Starter</p>
+                                       9,000원
+                                       <span>부가세 별도</span>
+                                    </h1>
+                                    <button class="btn_default payBtn" disabled>구독중</button>
+                                    <ul>
+                                       <li>계약건수 10건</li>
+                                       <li>사인/도장 제작</li>
+                                       <li>템플릿</li>
+                                    </ul>
+                                    <a class="pay_cancel" href="javascirpt:void(0)" onclick="Modalpop()">구독취소</a>
+                                 </div>
+                                 <div class="pay_panel">
+                                    <h1 class="name_tit">
+                                       <p>Basic</p>
+                                       34,900원
+                                       <span>부가세 별도</span>
+                                    </h1>
+                                    <button class="btn_violet payBtn" onclick="window.location.href='./settings_pay_add_starter.html'">구독하기</button>
+                                    <ul>
+                                       <li>계약건수 50건</li>
+                                       <li>사인/도장 제작</li>
+                                       <li>템플릿</li>
+                                       <li>문서편집기</li>
+                                       <li>법률양식</li>
+                                    </ul>
+                                 </div>
+                                 <div class="pay_panel">
+                                    <h1 class="name_tit">
+                                       <p>Premium</p>
+                                       54,900원
+                                       <span>부가세 별도</span>
+                                    </h1>
+                                    <button class="btn_violet payBtn">구독하기</button>
+                                    <ul>
+                                       <li>계약건수 10건</li>
+                                       <li>사인/도장 제작</li>
+                                       <li>템플릿</li>
+                                       <li>문서편집기</li>
+                                       <li>법률양식</li>
+                                       <li>팀관리</li>
+                                       <li>내부결재</li>
+                                       <li>외부문서-종이계약서관리</li>
+                                    </ul>
+                                 </div>
+                                 <div class="pay_panel">
+                                    <h1 class="name_tit">
+                                       <p>Enterprise</p>
+                                       맞춤형 /대량전송 <br />
+                                       별도문의
+                                    </h1>
+                                    <button class="btn_violet payBtn" onclick="window.location.href = 'https://www.iquest.co.kr'">상담 신청하기</button>
+                                    <div class="pay_consultation">
+                                       <div class="pay_consultation_phone"></div>
+                                       <ul>
+                                          <li>02-2025-4630</li>
+                                          <li>전화로도 요금제를 구독해 주세요.</li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </section>
+
+                              <section class="pay_detail_wrap">
+                                 <div class="" id="pay_detail">
+                                    <section>
+                                       <ul>
+                                          <li>이용료 <span>9,000원</span></li>
+                                          <li>부가세 <span>900원</span></li>
+                                       </ul>
+                                       <ul class="total">
+                                          <li>최종결제금액 <b>9,000원</b></li>
+                                       </ul>
+                                    </section>
+                                    <section class="agree">
+                                       <input type="checkbox" name="chk" id="chk" />
+                                       <label for="chk">[필수] 이용약관 동의</label>
+                                    </section>
+
+                                    <section class="pay_detail_btns">
+                                       <button class="btn_default" onclick="payHandler('prev')">이전</button>
+                                       <button class="btn_reverse" onclick="Modalpop('subscription')">구독하기</button>
+                                    </section>
+                                 </div>
+                              </section>
+                           </div>
+                           <div class="cont paysys_tab">
+                              <section id="pay_panels" class="pay_panels">
+                                 <div class="pay_panel">
+                                    <h1 class="name_tit">
+                                       <p>Starter</p>
+                                       ${val}원
+                                       <span>부가세 별도</span>
+                                    </h1>
+                                    <button class="btn_default payBtnY" disabled>구독중</button>
+                                    <ul>
+                                       <li>계약건수 10건</li>
+                                       <li>사인/도장 제작</li>
+                                       <li>템플릿</li>
+                                    </ul>
+                                    <a class="pay_cancel" href="javascirpt:void(0)" onclick="Modalpop()">구독취소</a>
+                                 </div>
+                                 <div class="pay_panel">
+                                    <h1 class="name_tit">
+                                       <p>Basic</p>
+                                       ${val}원
+                                       <span>부가세 별도</span>
+                                    </h1>
+                                    <button class="btn_violet payBtnY" onclick="window.location.href='./settings_pay_sys_qa.html'">구독하기</button>
+                                    <ul>
+                                       <li>계약건수 50건</li>
+                                       <li>사인/도장 제작</li>
+                                       <li>템플릿</li>
+                                       <li>문서편집기</li>
+                                       <li>법률양식</li>
+                                    </ul>
+                                 </div>
+                                 <div class="pay_panel">
+                                    <h1 class="name_tit">
+                                       <p>Premium</p>
+                                       ${val}원
+                                       <span>부가세 별도</span>
+                                    </h1>
+                                    <button class="btn_violet payBtnY">구독하기</button>
+                                    <ul>
+                                       <li>계약건수 10건</li>
+                                       <li>사인/도장 제작</li>
+                                       <li>템플릿</li>
+                                       <li>문서편집기</li>
+                                       <li>법률양식</li>
+                                       <li>팀관리</li>
+                                       <li>내부결재</li>
+                                       <li>외부문서-종이계약서관리</li>
+                                    </ul>
+                                 </div>
+
+                                 <div class="pay_panel">
+                                    <h1 class="name_tit">
+                                       <p>Enterprise</p>
+                                       맞춤형 /대량전송 <br />
+                                       별도문의
+                                    </h1>
+                                    <button class="btn_violet payBtnY" onclick="window.location.href = 'https://www.iquest.co.kr'">상담 신청하기</button>
+                                    <div class="pay_consultation">
+                                       <div class="pay_consultation_phone"></div>
+                                       <ul>
+                                          <li>02-2025-4630</li>
+                                          <li>전화로도 요금제를 구독해 주세요.</li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </section>
+                           </div>
+                           <div class="payft_quot">
+                              모든 구독 요금은 부가세가 포함되지 않은 가격이에요. <br />
+                              월마다 제공되는 계약건수는 이월되지 않고 초기화 되어요.
+                           </div>
+                        </section>
+                     </div>
+                  </div>
+               </div>
+               <hr />
+               <div class="paysystem_wrap" id="section2">
+                  <div class="pasys_tit">
+                     <h1>건별 요금제</h1>
+                     <p>
+                        월별 사용량이 정해지지 않은 경우 <br />
+                        충전하여 이용할 수 있어요.
+                     </p>
+                  </div>
+
+                  <section class="charge_pay_tabs">
+                     <ul class="oneby_boxes">
+                        <li class="oneby_box">
+                           <h4>10건 <span>할인율 0%</span></h4>
+                           <p>10,000원</p>
+                        </li>
+                        <li class="oneby_box">
+                           <h4>10건 <span>할인율 10%</span></h4>
+                           <p>10,000원</p>
+                        </li>
+                        <li class="oneby_box">
+                           <h4>10건 <span>할인율 20%</span></h4>
+                           <p>10,000원</p>
+                        </li>
+                        <li class="oneby_box">
+                           <h4>10건 <span>할인율 30%</span></h4>
+                           <p>10,000원</p>
+                        </li>
+                        <li class="oneby_box">
+                           <h4>10건 <span>할인율 40%</span></h4>
+                           <p>10,000원</p>
+                        </li>
+                     </ul>
+                  </section>
+               </div>
+               <div class="payft_quot flx fldc gap16 alc py24">
+                  모든 건별 요금은 부가세가 포함되지 않은 가격이에요. <br />
+                  충전된 발송건수는 1년간 사용 가능해요. <br />
+                  <button class="btn_violet" style="width: 120px">충전하기</button>
+               </div>
+
+               <hr />
+               <div class="paysystem_wrap" id="section3">
+                  <div class="pasys_tit">
+                     <h1>후불형 요금제</h1>
+                     <p>
+                        매번 발송건수를 충전하기 번거로운 경우 <br />
+                        신청하여 이용할 수 있어요.
+                     </p>
+                  </div>
+                  <section class="charge_pay_tabs">
+                     <ul class="after_pay_wrap">
+                        <li class="after_pay">
+                           <div>
+                              <p>건당금액</p>
+                              <p>1,300원 <span>+ 부가세 별도</span></p>
+                           </div>
+                           <button class="btn_violet" onclick="window.location.href='./settings_pay_add_afterpay.html'">신청하기</button>
+                        </li>
+                     </ul>
+                     <div class="payft_quot">
+                        후불형 건당 금액은 부가세가 포함되지 않은 가격이에요. <br />
+                        사용하신 발송건수에 대한 비용은 익월 7일에 청구 되어요. <br />
+                     </div>
+                  </section>
+               </div>
+            </section>
+         </main>
+         <script></script>
+      </div>
+
+      <div class="popup_wrap restorePop modal_welcome">
+         <div class="popup_contain">
+            <section class="cancel_pop">
+               <img class="popup_close_btn" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal()" />
+
+               <h1 class="cancel_tit">구독취소 유의사항</h1>
+
+               <h2>구독취소 전에 반드시 유의사항을 확인하고 진행해 주세요.</h2>
+               <p>
+                  얼마싸인은 구독취소한 고객의 데이터를 보관할 의무가 없으나, 구독 취소 후 데이터는 12개월 동안 열람 및 다운로드가 가능합니다. 얼마싸인은
+                  고객님이 구독 취소한 이후에도 편하게 문서를 가져가 고객님 PC에서 안전하게 계약서를 보관, 저장, 관리 하시길 권하고 있습니다. 단, 구독취소 시
+                  고객이 데이터 삭제를 원하는 경우 즉시 삭제합니다. 삭제 된 데이터는 복구가 불가능합니다.
+               </p>
+               <div class="cancel_chk">
+                  <input type="checkbox" name="" id="chk0" />
+                  <label for="chk0">구독취소 유의사항 동의</label>
+               </div>
+            </section>
+            <section class="popup_confirm_btn">
+               <a href="javascript:void(0)" onclick="popPlus()">확인</a>
+            </section>
+         </div>
+      </div>
+      <div class="modalplus">
+         <div class="modalplus_contain paycancel_contain">
+            <img class="modalplus_close" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal()" />
+            <h1 class="modalplus_tit">구독취소 사유</h1>
+            <div class="cancel_pop_radio">
+               <h3>무엇이 불편하셨나요?</h3>
+               <ol class="radio_contain">
+                  <li class="radio rdoBtn">
+                     <input id="rdo1" name="radio" type="radio" />
+                     <label for="rdo1" class="radio-label">1. 휴/폐업</label>
+                  </li>
+                  <li class="radio" onclick="rdoHandler()">
+                     <input id="rdo2" name="radio" type="radio" />
+                     <label for="rdo2" class="radio-label">2. 기능부족/사용불편함/사용방법 어려움</label>
+                     <ul class="radio_depth">
+                        <li>
+                           <input id="rdo2-1" name="radio" type="radio" />
+                           <label for="rdo2-1" class="radio-label">필요한 기능 없음</label>
+                        </li>
+                        <li>
+                           <input id="rdo2-2" name="radio" type="radio" />
+                           <label for="rdo2-2" class="radio-label">UI(화면, 조회, 입력)</label>
+                        </li>
+                        <li>
+                           <input id="rdo2-3" name="radio" type="radio" />
+                           <label for="rdo2-3" class="radio-label">사용 방법 어려움</label>
+                        </li>
+                        <li>
+                           <input id="rdo2-4" name="radio" type="radio" />
+                           <label for="rdo2-4" class="radio-label">AS불만</label>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="radio rdoBtn">
+                     <input id="rdo3" name="radio" type="radio" />
+                     <label for="rdo3" class="radio-label">3. 가격</label>
+                  </li>
+                  <li class="radio rdoBtn">
+                     <input id="rdo4" name="radio" type="radio" />
+                     <label for="rdo4" class="radio-label">4. 담당자 변경</label>
+                  </li>
+                  <li class="radio rdoBtn">
+                     <input id="rdo5" name="radio" type="radio" />
+                     <label for="rdo5" class="radio-label">5. 기타</label>
+                  </li>
+               </ol>
+            </div>
+            <section class="confirm_btn">
+               <a href="#" onclick="popPlusPlus()">확인 </a>
+            </section>
+         </div>
+      </div>
+      <div class="modalplusplus">
+         <div class="modalplusplus_contain">
+            <img class="modalplus_close" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="popPlusPlus('off')" />
+            <h1 class="modalplus_tit pycancelHead">구독취소</h1>
+            <div class="modalplus_body pycancelBody">
+               <h2>확실히 구독취소를 결정하신게 맞나요?</h2>
+               <p>맞다면 비밀번호를 입력 후 탈퇴를 눌러주세요.</p>
+               <section class="dropboxbtn pycancelinput">
+                  <input type="password" placeholder="비밀번호" />
+               </section>
+            </div>
+            <section class="confirm_btn">
+               <a href="javascript:void(0)" class="confrim_cancel" onclick="unsubscribe('ok')">탈퇴</a>
+            </section>
+         </div>
+      </div>
+
+      <div class="subscription_done_wrap">
+         <div class="modal_welcome_contain">
+            <section class="subscription_done">
+               <h1>구독이 완료되었습니다.</h1>
+               <img src="../imgs/ic_img_done.svg" alt="ic_img_done.svg" />
+               <h3>Starter</h3>
+            </section>
+            <section class="start_btn">
+               <a href="javascript:void(0)" onclick="closeModal('subscription')">시작하기</a>
+            </section>
+         </div>
+      </div>
+
+      <script>
+         function unsubscribe(elem) {
+            let confrimCancel = document.querySelector(".confrim_cancel")
+            let pycancelHead = document.querySelector(".pycancelHead")
+            let pycancelBodyH2 = document.querySelector(".pycancelBody h2")
+            let pycancelBodyP = document.querySelector(".pycancelBody p")
+            let pycancelinput = document.querySelector(".pycancelinput")
+            pycancelHead.innerHTML = "구독취소가 정상적으로 완료되었어요."
+            pycancelBodyH2.innerHTML = "그동안 얼마싸인을 이용해 주셔서 감사 드려요."
+            pycancelBodyP.innerHTML = "다음 기회에 얼마싸인을 다시 구독해 주시길 부탁드려요."
+            if (elem == "ok") {
+               confrimCancel.innerHTML = "확인"
+               pycancelinput.style.display = "none"
+
+               setTimeout(() => {
+                  confrimCancel.setAttribute("href", "./settings_pay_charge.html")
+               }, 300)
+               console.log(confrimCancel)
+            }
+         }
+
+         let radioDepth = document.querySelector(".radio_depth")
+         let rdoBtn = document.querySelectorAll(".rdoBtn")
+
+         for (let i = 0; i < rdoBtn.length; i++) {
+            rdoBtn[i].addEventListener("click", function () {
+               radioDepth.classList.remove("on")
+               radioDepth.style.border = "1px soldi red"
+               console.log(0)
+            })
+         }
+
+         function rdoHandler() {
+            radioDepth.classList.add("on")
+         }
+
+         function popPlus() {
+            closeModal()
+            const modalplus = document.querySelector(".modalplus")
+            modalplus.classList.add("on")
+         }
+         function popPlusPlus(elem) {
+            closeModal()
+            const modalplusplus = document.querySelector(".modalplusplus")
+            modalplusplus.classList.add("on")
+            if (elem == "off") {
+               modalplusplus.classList.remove("on")
+            }
+         }
+         let tab = document.querySelectorAll(".tab")
+         let cont = document.querySelectorAll(".cont")
+
+         function contentShow(num) {
+            cont.forEach((item, idx) => {
+               item.classList.add("active_tab")
+            })
+            cont[num].classList.remove("active_tab")
+         }
+         function highLight(num) {
+            let highLight = document.querySelector(".highlight")
+            const newLeft = tab[num].offsetLeft
+            const newWidth = tab[num].offsetWidth
+            highLight.style.left = newLeft + "px"
+            highLight.style.width = newWidth + "px"
+         }
+         contentShow(0)
+         tab.forEach((item, idx) => {
+            item.addEventListener("click", () => {
+               contentShow(idx)
+               highLight(idx)
+            })
+         })
+      </script>
+
+      <script>
+         window.onload = function () {
+            var currentUrl = window.location.href
+            var urlWithoutHash = location.origin + location.pathname + location.search
+            console.log(urlWithoutHash)
+
+            console.log(currentUrl)
+            var hash = window.location.hash
+
+            console.log(urlWithoutHash + hash)
+            let pasysTit = document.querySelector(".pasys_tit > h1")
+
+            if (currentUrl == urlWithoutHash + "#section1") {
+               let section1 = document.querySelector("#section1")
+               window.scroll({ top: section1.offsetTop - 50, behavior: "smooth" })
+            } else if (currentUrl == urlWithoutHash + "#section2") {
+               let section2 = document.querySelector("#section2")
+               window.scroll({ top: section2.offsetTop - 50, behavior: "smooth" })
+            } else if (currentUrl == urlWithoutHash + "#section3") {
+               let section3 = document.querySelector("#section3")
+
+               window.scroll({ top: section3.offsetTop - 0, behavior: "smooth" })
+            }
+         }
+      </script>
+      <script src="../script/modal.js"></script>
+      <script src="../script/selectBox.js"></script>
+   </body>
+</html>

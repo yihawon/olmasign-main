@@ -1,0 +1,191 @@
+<div class="lnb_ctr">
+   <section class="ctr_responsive" style="margin-bottom: 100px">
+      <div class="li_wrap ctr_start_btn">
+         <input class="btn_violet ctr_start_btn" type="button" value="계약 시작" onclick="ctrStartHandler()" />
+         <script>
+            function ctrStartHandler() {
+               let ctrStartBtn = document.querySelector(".ctr_start_btn")
+               if (matchMedia("screen and (max-width: 768px)").matches) {
+                  ctrStartBtn.setAttribute("onclick", "alert('PC에서만 가능합니다.')")
+               } else {
+                  ctrStartBtn.setAttribute("onclick", "window.location.href='./ctr_stepper.html'")
+               }
+            }
+         </script>
+      </div>
+      <div class="li_wrap pt24">
+         <section>
+            <div class="lnb_hd">
+               <div class="img_wrap">
+                  <img src="../../imgs/ic_24_folder_n.svg" alt="ic_24_folder_n.svg" />계약 보관함
+                  <img src="../../imgs/ic_18_down.svg" alt="ic_18_down.svg" class="lnb_arr on" />
+               </div>
+            </div>
+            <ul class="lnb_hd_child on">
+               <li><a href="./contract_main.html" class="">보낸 계약</a> <span>15</span></li>
+               <li><a href="./ctr_received.html">받은 계약</a></li>
+               <li><a href="./contract_temp_save.html">임시 저장</a></li>
+            </ul>
+         </section>
+         <section>
+            <div class="lnb_hd">
+               <div class="img_wrap">
+                  <img src="../../imgs/ic_24_send_n.svg" alt="ic_24_send_n.svg" />스마트 전송
+                  <img src="../../imgs/ic_18_down.svg" alt="ic_18_down.svg" class="lnb_arr" />
+               </div>
+            </div>
+            <ul class="lnb_hd_child">
+               <li><a href="./ctr_transfer.html">대량전송</a></li>
+            </ul>
+         </section>
+         <section>
+            <div class="lnb_hd">
+               <div class="img_wrap">
+                  <img src="../../imgs/ic_24_cloud_n.svg" alt="ic_24_cloud_n.svg" />외부 문서 보관
+                  <img src="../../imgs/ic_18_down.svg" alt="ic_18_down.svg" class="lnb_arr" />
+               </div>
+            </div>
+            <ul class="lnb_hd_child">
+               <li><a href="./contract_docu_storage.html">종이계약서</a></li>
+               <li><a href="./contract_docu_storage.html">PDF보관</a></li>
+            </ul>
+         </section>
+         <section>
+            <div class="lnb_hd_folder">
+               <div class="img_wrap">
+                  <img src="../../imgs/ic_24_open_n.svg" alt="ic_24_open_n.svg" style="margin-right: 0" />내 폴더함
+                  <img src="../../imgs/ic_18_down.svg" alt="ic_18_down.svg" class="arrow_right treelnbBtn" />
+               </div>
+            </div>
+            <ul class="lnb_hd_child">
+               <li><a href="./ctr_storage.html">노무/근로계약</a></li>
+               <li><a href="">동의서</a></li>
+            </ul>
+         </section>
+
+         <div class="lnb_hd">
+            <div class="img_wrap"><img src="../../imgs/ic_24_del_n.svg" alt="ic_24_del_n.svg" /> <a href="./ctr_trash.html">휴지통</a></div>
+         </div>
+      </div>
+
+      <style></style>
+      <script>
+         let treelnbBtn = document.querySelector(".treelnbBtn")
+         let treelnb = document.querySelector(".lnb_depth_content2")
+         treelnb.style.display = "none"
+         treelnbBtn.addEventListener("click", (event) => {
+            event.stopPropagation()
+            treelnb.style.display = "block"
+         })
+         treelnb.addEventListener("click", (event) => {
+            event.stopPropagation()
+         })
+         document.querySelector("body").addEventListener("click", () => {
+            treelnb.style.display = "none"
+         })
+      </script>
+      <div class="lnb_depth_content2" style="padding-bottom: 150px">
+         <section>
+            <ul class="my_templates" id="treelnb">
+               <li style="list-style: none">
+                  인사/고용
+                  <ul>
+                     <li>
+                        면접 평가서
+                        <ul>
+                           <li><a href="./settings_my_template.html">최근 열어본 파일</a></li>
+                           <li>
+                              <a href="./settings_my_template.html">개발</a>
+                              <img id="menu_pop_btn" class="moreview" src="../../imgs/ic_18_more-1.svg" alt="ic_18_more-1.svg"">
+                              <div class="menu_pop" id="menu_pop" style="display: none">
+                                 <p>
+                                    <span>추가</span>
+                                    <span>공유</span>
+                                    <span>삭제</span>
+                                 </p>
+                              </div>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        시용기간 평가서
+                        <ul>
+                           <li><a href="./settings_my_template.html">디자인</a></li>
+                           <li><a href="./settings_my_template.html">개발</a></li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li style="list-style: none">
+                  용역/제휴
+                  <ul>
+                     <li>
+                        외주 업체관리
+                        <ul>
+                           <li><a href="./settings_my_template.html">디자인</a></li>
+                           <li><a href="./settings_my_template.html">개발</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        프리랜서1
+                        <ul>
+                           <li><a href="./settings_my_template.html">디자인</a></li>
+                           <li><a href="./settings_my_template.html">개발</a></li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li style="list-style: none">
+                  용역/제휴
+                  <ul>
+                     <li>
+                        외주 업체관리
+                        <ul>
+                           <li><a href="./settings_my_template.html">디자인</a></li>
+                           <li><a href="./settings_my_template.html">개발</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        프리랜서1
+                        <ul>
+                           <li><a href="./settings_my_template.html">디자인</a></li>
+                           <li><a href="./settings_my_template.html">개발</a></li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li style="list-style: none">
+                  용역/제휴
+                  <ul>
+                     <li>
+                        외주 업체관리
+                        <ul>
+                           <li><a href="./settings_my_template.html">디자인</a></li>
+                           <li><a href="./settings_my_template.html">개발</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        프리랜서
+                        <ul>
+                           <li><a href="./settings_my_template.html">디자인</a></li>
+                           <li><a href="./settings_my_template.html">개발</a></li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </section>
+         <script></script>
+      </div>
+   </section>
+</div>
+
+<script>
+   const lnbHd = document.querySelectorAll(".lnb_hd")
+   for (let i = 0; i < lnbHd.length; i++) {
+      lnbHd[i].addEventListener("click", function () {
+         this.nextElementSibling.classList.toggle("on")
+         this.firstElementChild.lastElementChild.classList.toggle("on")
+      })
+   }
+</script>

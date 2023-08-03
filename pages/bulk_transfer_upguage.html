@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>template_write</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body>
+      <header class="header">
+         <input type="button" value="나가기" class="btn_exit" onclick="window.location.href='./settings_form.html'" />
+
+         <div class="stepper_contain">
+            <div class="stepper_tit">
+               <img src="../../imgs/ic_img_done.svg" alt="ic_img_done.svg" style="width: 20px" />
+               리스트 선택
+            </div>
+            <span class="line_el line_el_select_solid"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/ic_img_done.svg" alt="ic_img_done.svg" style="width: 20px" />
+               문서확인
+            </div>
+            <span class="line_el line_el_select_solid"></span>
+            <div class="stepper_tit"><img src="../../imgs/stepper_icon_on.svg" alt="stepper_icon_on.svg" style="width: 20px" /> 참여자 작성</div>
+            <span class="line_el line_el_select"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/stepper_icon_off.svg" alt="stepper_icon_off.svg" />
+               정보 확인
+            </div>
+         </div>
+      </header>
+
+      <div class="popup_Progress">
+         <h1>업로드 중입니다.</h1>
+         <p>잠시만 기다려주세요.</p>
+         <div class="Progressbar_wrap">
+            <div id="progressIndicator">0%</div>
+            <div id="Progressbar">
+               <div id="gradient"></div>
+               <div id="mask"></div>
+            </div>
+         </div>
+      </div>
+
+      <div class="add_sign"></div>
+      <div class="item_list_wrap"></div>
+
+      <footer class="footer">
+         <div class="btn_wrap">
+            <input class="btn_default" type="button" value="이전" style="color: var(--violet_P)" onclick="history.back()" />
+            <input class="btn_violet" type="button" value="다음" onclick="window.location.href='./bulk_transfer_confirm.html'" />
+         </div>
+      </footer>
+
+      <script src="../script/templateWritePopupConvert.js"></script>
+   </body>
+</html>

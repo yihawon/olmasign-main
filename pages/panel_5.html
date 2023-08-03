@@ -1,0 +1,49 @@
+<div class="panel_0_inn">
+   <section class="edit_subject">
+      <img src="../imgs/ic_24_img_c.svg" alt="ic_24_img_c" />
+      <h1>이미지</h1>
+   </section>
+   <hr />
+
+   <section class="section_wrap">
+      <p class="label_tit">입력필드값</p>
+      <input type="text" placeholder="이미지 1" />
+      <p class="ref_q">※ 대량전송 엑셀 다운로드시 제목값</p>
+   </section>
+
+   <section class="section_wrap">
+      <div class="label_tit">
+         필수 여부
+
+         <div class="toggle_area edit_toggle">
+            <section class="toggle_wrap">
+               <span class="toggle_span toggle_span_must6">
+                  <div class="flipBtn">
+                     <div class="toggle_btn"></div>
+                  </div>
+               </span>
+            </section>
+         </div>
+      </div>
+   </section>
+
+   <hr class="div_line" />
+   <section class="section_wrap">
+      <p class="ref_q">※ JPG, PNG 파일만 가능해요.</p>
+      <p class="ref_q">※ 파일크기는 최대 2MB까지 지원해요.</p>
+   </section>
+
+   <script>
+      const today = new Date().toISOString().substr(0, 10)
+      document.getElementById("today_date").value = today
+   </script>
+</div>
+<script>
+   let toggleSpanMust6 = document.querySelectorAll(".toggle_span_must6")
+   toggleSpanMust6.forEach((elem) => {
+      elem.addEventListener("click", function () {
+         elem.firstElementChild.firstElementChild.classList.toggle("move")
+         elem.firstElementChild.classList.toggle("expand")
+      })
+   })
+</script>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>template_write</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <header class="header">
+         <input type="button" value="나가기" class="btn_exit" onclick="window.location.href='./ctr_transfer.html'" />
+
+         <div class="stepper_contain">
+            <div class="stepper_tit">
+               <img src="../../imgs/ic_img_done.svg" alt="ic_img_done.svg" style="width: 20px" />
+               리스트 선택
+            </div>
+            <span class="line_el line_el_select_solid"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/stepper_icon_on.svg" alt="stepper_icon_on.svg" style="width: 20px" />
+               문서확인
+            </div>
+            <span class="line_el line_el_select"></span>
+            <div class="stepper_tit"><img src="../../imgs/stepper_icon_off.svg" alt="stepper_icon_off.svg style="width: 20px" /> 참여자 작성</div>
+            <span class="line_el"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/stepper_icon_off.svg" alt="stepper_icon_off.svg" />
+               정보 확인
+            </div>
+         </div>
+
+         <style>
+            .right_btns > a {
+               background-color: var(--violet_K);
+               border-radius: 3px;
+               padding: 10px 8px 6px 8px;
+            }
+         </style>
+         <div class="right_btns">
+            <a href="javscript:void(0)"><img src="../imgs/ic_help.svg" alt="ic_help" /></a>
+         </div>
+      </header>
+      <div style="height: 60px"></div>
+      <main class="main">
+         <style></style>
+         <section class="lnb_ctr" style="width: 220px">
+            <div class="subTit">발송인 작성</div>
+            <div class="li_wrap">
+               <section>
+                  <div class="lnb_hd">
+                     <div class="lnb_txt">
+                        텍스트
+                        <span>1개</span>
+                     </div>
+                  </div>
+                  <div class="lnb_hd">
+                     <div class="lnb_txt">
+                        체크박스
+                        <span>1개</span>
+                     </div>
+                  </div>
+                  <div class="lnb_hd">
+                     <div class="lnb_txt lnb_txt_tt">
+                        입력필드값
+                        <span>4개</span>
+                     </div>
+                  </div>
+               </section>
+            </div>
+            <div class="subTit">서명 참여자 입력란</div>
+            <div class="li_wrap">
+               <div class="lnb_hd">
+                  <div class="lnb_txt">
+                     사인 / 도장
+                     <span>1개</span>
+                  </div>
+               </div>
+               <div class="lnb_hd">
+                  <div class="lnb_txt">
+                     텍스트 입력란
+                     <span>1개</span>
+                  </div>
+               </div>
+               <div class="lnb_hd">
+                  <div class="lnb_txt">
+                     체크박스 입력란
+                     <span>1개</span>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <section class="docu_wrap">
+            <article class="docu_area">
+               <div class="tool_bar temp_detail_page">
+                  <div class="dropdown_wrap" style="margin-right: 2rem">
+                     <div class="dropdown">
+                        <div class="dropdown-btn">
+                           <p>100%</p>
+                           <i class="bi bi-caret-down-fill"></i>
+                        </div>
+                        <div class="dropdown-content" style="border: 1px solid #eee">
+                           <div class="dropdown-item" data-value="1">85%</div>
+                           <div class="dropdown-item" data-value="2">50%</div>
+                           <div class="dropdown-item" data-value="3">25%</div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="icons_btns">
+                     <a href="javascript:void(0)">
+                        <img src="../../imgs/ic_24_plus.svg" alt="ic_24_plus.svg" />
+                     </a>
+                     <button class="add_sign">
+                        <img src="../../imgs/ic_24_minus.svg" alt="ic_24_minus.svg" />
+                     </button>
+                  </div>
+               </div>
+            </article>
+            <div class="docu_bg">
+               <div class="docu_board_wrap">
+                  <p>표준 근로 계약서 <img src="../../imgs/ic_20_edit.svg" alt="ic_20_edit.svg" /></p>
+                  <div class="docu_board"></div>
+               </div>
+            </div>
+         </section>
+         <section class="docu_page_area">
+            <p>Pages : 3</p>
+            <article class="slide_thum_wrap">
+               <div class="slide_thum">
+                  <div class="thum_view"></div>
+                  <div class="thum_foot">
+                     <div class="num">1</div>
+                     <div class="icons_wrap">
+                        <img src="../../imgs/ic_18_rotation.svg" alt="ic_18_rotation.svg" />
+                        <img src="../../imgs/ic_18_delete.svg" alt="ic_18_delete.svg" />
+                     </div>
+                  </div>
+               </div>
+            </article>
+            <article class="slide_thum_wrap">
+               <div class="slide_thum">
+                  <div class="thum_view"></div>
+                  <div class="thum_foot">
+                     <div class="num">2</div>
+                     <div class="icons_wrap">
+                        <img src="../../imgs/ic_18_rotation.svg" alt="ic_18_rotation.svg" />
+                        <img src="../../imgs/ic_18_delete.svg" alt="ic_18_delete.svg" />
+                     </div>
+                  </div>
+               </div>
+            </article>
+            <input type="button" value="+ 페이지 추가" class="btn_add_page" />
+         </section>
+      </main>
+
+      <div id="img_link_pop" class="img_link_pop">
+         <div class="img_link_pop_contain pop_sharing_contain">
+            <h1>공유</h1>
+            <div class="pop_body pop_sharing_wrap">
+               <div class="pop_sharing">
+                  <div class="selectBox_wrap">
+                     <article class="cont_select_1" style="width: 104px">
+                        <button class="" id="selec_1">사용자추가</button>
+                        <ul class="list_item_doble" id="selec_1_li" style="">
+                           <li>
+                              <button type="button" class="user_list_add">
+                                 홍길동 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1팀 &nbsp; &nbsp; hgd@naver.com
+                              </button>
+                           </li>
+                           <li>
+                              <button type="button" class="user_list_add">
+                                 홍길동 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1팀 &nbsp; &nbsp; hgd@naver.com
+                              </button>
+                           </li>
+                        </ul>
+                     </article>
+
+                     <article class="cont_select_2" style="width: 104px">
+                        <button class="" id="selec_2">편집</button>
+                        <ul class="list_item_doble" id="selec_2_li" style="">
+                           <li><button type="button">편집</button></li>
+                           <li><button type="button">열람</button></li>
+                           <li><button type="button">권한삭제</button></li>
+                        </ul>
+                     </article>
+                  </div>
+                  <button class="pop_sharing_add_btn">추가</button>
+               </div>
+
+               <input type="button" class="btn_confirm btn_violet" value="확인" />
+               <div class="btn_close_pop"><img src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" /></div>
+
+               <h2 class="tit_authority">권한이 있는 사용자</h2>
+               <table class="tit_authority_table">
+                  <tr class="authority_table_tr">
+                     <td>홍길동</td>
+                     <td>
+                        <span>1팀</span>
+                        <span>hgd@naver.com</span>
+                        <div class="select_auth_wrap">
+                           <article class="cont_select" style="width: 104px">
+                              <button class="btn_select">편집</button>
+                              <ul class="list_item" style="height: 134px">
+                                 <li><button type="button">편집</button></li>
+                                 <li><button type="button">열람</button></li>
+                                 <li><button type="button">권한삭제</button></li>
+                              </ul>
+                           </article>
+                        </div>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+      </div>
+
+      <footer class="footer">
+         <div class="btn_wrap">
+            <input class="btn_default" type="button" value="이전" style="color: var(--violet_P)" onclick="history.back()" />
+            <input class="btn_violet" type="button" value="다음" onclick="window.location.href='./bulk_transfer_docu_select.html'" />
+         </div>
+      </footer>
+      <script src="../script/settingsMyTemplateDetail.js"></script>
+   </body>
+</html>

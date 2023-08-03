@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>template_write</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body>
+      <header class="header">
+         <div class="stepper_contain">
+            <input type="button" value="나가기" class="btn_exit" onclick="history.back()" />
+            <div class="stepper_tit">
+               <img src="../../imgs/stepper_icon_on.svg" alt="stepper_icon_on.svg" />
+               내 파일 업로드
+            </div>
+            <span class="line_el line_el_select"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/stepper_icon_off.svg" alt="stepper_icon_off.svg" />
+               계약설정
+            </div>
+            <span class="line_el"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/stepper_icon_off.svg" alt="stepper_icon_off.svg" />
+               템플릿 편집
+            </div>
+            <span class="line_el"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/stepper_icon_off.svg" alt="stepper_icon_off.svg" />
+               저장
+            </div>
+         </div>
+      </header>
+
+      <div class="popup_Progress">
+         <div class="popup_Progress_done">
+            <img src="../../imgs/ic_img_done.svg" alt="ic_img_done.svg" />
+            <h1>변환완료!</h1>
+            <hr />
+            <p>표준근로계약서</p>
+            <input type="button" value="미리보기" />
+         </div>
+      </div>
+
+      <div class="add_sign"></div>
+      <div class="item_list_wrap"></div>
+
+      <footer class="footer">
+         <div class="btn_wrap">
+            <input class="btn_default" type="button" value="이전" style="color: var(--violet_P)" onclick="window.location.href='./template_write.html'" />
+            <input class="btn_violet" type="button" value="다음" onclick="window.location.href='./template_write_popup_template_user_set.html'" />
+         </div>
+      </footer>
+   </body>
+</html>

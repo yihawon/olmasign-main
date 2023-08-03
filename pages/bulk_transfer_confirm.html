@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>template_write</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <header class="header">
+         <input type="button" value="나가기" class="btn_exit" onclick="window.location.href='./ctr_transfer.html'" />
+
+         <div class="stepper_contain">
+            <div class="stepper_tit">
+               <img src="../../imgs/ic_img_done.svg" alt="ic_img_done.svg" style="width: 20px" />
+               리스트 선택
+            </div>
+            <span class="line_el line_el_select_solid"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/ic_img_done.svg" alt="ic_img_done.svg" style="width: 20px" />
+               문서확인
+            </div>
+            <span class="line_el line_el_select_solid"></span>
+            <div class="stepper_tit"><img src="../../imgs/ic_img_done.svg" alt="ic_img_done.svg" style="width: 20px" /> 참여자 작성</div>
+            <span class="line_el line_el_select_solid"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/stepper_icon_on.svg" alt="stepper_icon_on.svg" style="width: 20px" />
+               정보 확인
+            </div>
+         </div>
+
+         <style>
+            .right_btns > a {
+               background-color: var(--violet_K);
+               border-radius: 3px;
+               padding: 10px 8px 6px 8px;
+            }
+         </style>
+         <div class="right_btns">
+            <a href="javscript:void(0)"><img src="../imgs/ic_help.svg" alt="ic_help" /></a>
+         </div>
+      </header>
+      <div style="height: 60px"></div>
+      <main class="main">
+         <section class="lnb_ctr" style="width: 220px">
+            <div class="subTit">템플릿</div>
+            <div class="li_wrap bulk_tr_confirm">
+               <section class="bulk_tr_confirm_sec">
+                  <div class="lnb_hd lnb_hd_bulk">
+                     <div class="lnb_txt">표준 근로 계약서</div>
+                     <a href="javascript:void(0)">템플릿 확인</a>
+                  </div>
+                  <hr />
+                  <div class="uploadbtns">
+                     <a href="javascript:void(0)">설정용 엑셀 다운로드</a>
+                     <a href="javascript:void(0)">엑설 재 업로드</a>
+                     <span class="ctr_dot_line"></span>
+                     <a href="javascript:void(0)">서명 유효기간 설정</a>
+                     <a href="javascript:void(0)">예약발송 설정</a>
+                  </div>
+               </section>
+            </div>
+         </section>
+         <script>
+            const btn1 = document.querySelector(".selectBtn"),
+               list1 = document.querySelector(".selectList")
+            btn1.addEventListener("click", () => {
+               btn1.classList.toggle("on")
+            })
+            list1.addEventListener("click", (event) => {
+               if (event.target.nodeName === "BUTTON") {
+                  btn1.innerText = event.target.innerText
+                  btn1.classList.remove("on")
+               }
+            })
+         </script>
+
+         <section class="">
+            <div class="fix_usr" style="margin-left: 220px">
+               <section class="smart_transfer_wrap">
+                  <h1>고정참여자</h1>
+                  <div class="smart_transfer">
+                     <table style="flex: 1">
+                        <tr>
+                           <th>no.</th>
+                           <th>문서명(필수)</th>
+                        </tr>
+                        <tr>
+                           <td>01</td>
+                           <td class="display:flex; gap: 10px;border:1px solid red;">
+                              <img src="../imgs/ic_18_message.svg" alt="ic_18_message.svg" />
+                              표준 근로 계약서
+                           </td>
+
+                           <td style="padding: 0; display: flex; gap: 10px">
+                              <a href="javascript:void(0)" style="border: 1px solid #ddd; padding: 6px 10px; border-radius: 4px; color: #aaa">미리보기</a>
+                              <a href="javascript:void(0)" style="border: 1px solid #ddd; padding: 6px 10px; border-radius: 4px; color: #aaa">테스트전송</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>01</td>
+                           <td>
+                              <img src="../imgs/ic_18_message.svg" alt="ic_18_message.svg" />
+                              표준 근로 계약서
+                           </td>
+
+                           <td style="padding: 0; display: flex; gap: 10px">
+                              <a href="javascript:void(0)" style="border: 1px solid #ddd; padding: 6px 10px; border-radius: 4px; color: #aaa">미리보기</a>
+                              <a href="javascript:void(0)" style="border: 1px solid #ddd; padding: 6px 10px; border-radius: 4px; color: #aaa">테스트전송</a>
+                           </td>
+                        </tr>
+                     </table>
+                     <div class="smart_transfer" style="flex: 3">
+                        <table>
+                           <tr>
+                              <th>서명자 이름(필수)</th>
+                              <th>이메일(필수)</th>
+                              <th>휴대전화번호(선택)</th>
+                              <th></th>
+                              <th></th>
+                           </tr>
+                           <tr>
+                              <td>박민수</td>
+                              <td>email@brand.com</td>
+                              <td>01012345678</td>
+                              <td></td>
+                              <td></td>
+                           </tr>
+                           <tr>
+                              <td>박민수</td>
+                              <td>email@brand.com</td>
+                              <td>01012345678</td>
+                              <td></td>
+                              <td></td>
+                           </tr>
+                        </table>
+                     </div>
+                  </div>
+               </section>
+               <section class="smart_transfer_wrap">
+                  <h1>서명자</h1>
+                  <div class="smart_transfer">
+                     <table style="flex: 1">
+                        <tr>
+                           <th>no.</th>
+                           <th>문서명(필수)</th>
+                        </tr>
+                        <tr>
+                           <td>01</td>
+                           <td class="display:flex; gap: 10px;border:1px solid red;">
+                              <img src="../imgs/ic_18_message.svg" alt="ic_18_message.svg" />
+                              표준 근로 계약서
+                           </td>
+
+                           <td style="padding: 0; display: flex; gap: 10px">
+                              <a href="javascript:void(0)" style="border: 1px solid #ddd; padding: 6px 10px; border-radius: 4px; color: #aaa">미리보기</a>
+                              <a href="javascript:void(0)" style="border: 1px solid #ddd; padding: 6px 10px; border-radius: 4px; color: #aaa">테스트전송</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>01</td>
+                           <td>
+                              <img src="../imgs/ic_18_message.svg" alt="ic_18_message.svg" />
+                              표준 근로 계약서 글자 늘어날 경우 가로 스크롤
+                           </td>
+
+                           <td style="padding: 0; display: flex; gap: 10px">
+                              <a href="javascript:void(0)" style="border: 1px solid #ddd; padding: 6px 10px; border-radius: 4px; color: #aaa">미리보기</a>
+                              <a href="javascript:void(0)" style="border: 1px solid #ddd; padding: 6px 10px; border-radius: 4px; color: #aaa">테스트전송</a>
+                           </td>
+                        </tr>
+                     </table>
+                     <div class="smart_transfer" style="flex: 3">
+                        <table>
+                           <tr>
+                              <th>서명자 이름(필수)</th>
+                              <th>이메일(필수)</th>
+                              <th>휴대전화번호(선택)</th>
+                              <th>개인메시지(선택)</th>
+                              <th>접근 암호(선택)</th>
+                           </tr>
+                           <tr>
+                              <td>박민수</td>
+                              <td>email@brand.com</td>
+                              <td>01012345678</td>
+                              <td>지급으로 서명 부탁드려요.</td>
+                              <td>88888888</td>
+                           </tr>
+                           <tr>
+                              <td>박민수</td>
+                              <td>email@brand.com</td>
+                              <td>01012345678</td>
+                              <td>지급으로 서명 부탁드려요.</td>
+                              <td>88888888</td>
+                           </tr>
+                        </table>
+                     </div>
+                  </div>
+               </section>
+            </div>
+            <div class="fix_usr" style="margin-left: 220px" class="m0a tac">
+               <div class="pagination" style="display: flex; justify-content: center">
+                  <button>
+                     <img src="../../imgs/btn_page_numbers_left.svg" alt="btn_page_numbers_left.svg" />
+                  </button>
+                  <button active>1</button>
+                  <button>2</button>
+                  <button>3</button>
+
+                  <button>
+                     <img src="../../imgs/btn_page_numbers_right.svg" alt="btn_page_numbers_right.svg" />
+                  </button>
+               </div>
+            </div>
+         </section>
+         <script>
+            let collapseBar = document.querySelectorAll(".collapseBar")
+            collapseBar.forEach((elem) => {
+               console.log(elem.nextElementSibling)
+               elem.addEventListener("click", () => {
+                  let collapseLi = document.querySelector(".collapseLi")
+                  elem.nextElementSibling.classList.toggle("on")
+                  elem.firstElementChild.firstElementChild.classList.toggle("rotate")
+               })
+            })
+         </script>
+      </main>
+
+      <footer class="footer">
+         <div class="btn_wrap">
+            <input class="btn_default" type="button" value="이전" style="color: var(--violet_P)" onclick="history.back()" />
+            <input class="btn_violet bulkTrasfer_btn" type="button" value="전송시작" onclick="popupHandler('open')" />
+         </div>
+      </footer>
+
+      <div class="popupBoxWrap" hidden>
+         <div class="popupBox">
+            <a href="javascirpt:void(0)" class="closePopup" onclick="popupHandler('close')"></a>
+            <h1>대량전송시작하기</h1>
+            <div class="popupBox_bd">
+               <p>아래 주의사항을 확인후 대량전송을 시작하세요.</p>
+               <div>
+                  <div class="checkbox_wrap">
+                     <input type="checkbox" name="checkText" id="checkText1" />
+                     <label for="checkText1">미리보기, 테스트 전송으로 충분히 검토해 주세요.</label>
+                  </div>
+                  <div class="checkbox_wrap">
+                     <input type="checkbox" name="checkText" id="checkText2" />
+                     <label for="checkText2">얼마싸인은 오입력 등으로 인한 정보 유출등의 계약 상의 문제에 대해 책임지지 않아요.</label>
+                  </div>
+                  <div class="checkbox_wrap">
+                     <input type="checkbox" name="checkText" id="checkText3" />
+                     <label for="checkText3">요청이후 문서 내용, 이름, 이메일 등을 수정할 수 없어요.</label>
+                  </div>
+                  <div class="checkbox_wrap">
+                     <input type="checkbox" name="checkText" id="checkText4" />
+                     <label for="checkText4">서명 요청 시 이용 중인 요금제에 포함된 제공 횟수가 차감되요.</label>
+                  </div>
+               </div>
+            </div>
+            <div class="bottom_btn">
+               <a href="javascript:void(0)" onclick="popupHandler('switch')">전송시작</a>
+            </div>
+         </div>
+      </div>
+      <div class="popupBoxWrap popupMoveStart" hidden>
+         <div class="popupBox">
+            <a href="javascirpt:void(0)" class="closePopup" onclick="popupHandler('close')"></a>
+            <h1>대량전송이 시작되었어요.</h1>
+            <div class="popupBox_bd">
+               <div>
+                  <p class="wait_q">잠시만 기다려주세요.</p>
+                  <span class="percentage">0%</span>
+                  <div class="gaugeWrap" data-q="브라우저 종료후에도 전송은 계속 진행되요.">
+                     <span class="gaugeBar"></span>
+                  </div>
+               </div>
+            </div>
+            <div class="bottom_btn">
+               <a href="javascript:void(0)" onclick="popupHandler('switch2')">확인</a>
+            </div>
+         </div>
+      </div>
+      <div class="popupBoxWrap popupMoveEnd" hidden>
+         <div class="popupBox">
+            <h1>대량전송 완료</h1>
+            <div class="transfer_done_wrap">
+               <img src="../imgs/done_alert.svg" alt="done_alert.svg" />
+               <div class="transfer_done_desc">
+                  <p>모든 전송을 완료했습니다.</p>
+                  <p>문서수에 따라 1분~10분 정도 문서가 처리 된후 서명요청 알림이 발송되요.</p>
+                  <div class="watching_box">
+                     <div>전송실패<small>0개</small></div>
+                     <div>전송완료<small>2개</small></div>
+                     <span></span>
+                  </div>
+               </div>
+               <div class="bottom_btn">
+                  <a href="javascript:void(0)" onclick="popupHandler('close')">확인</a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <script>
+         const percentage = document.querySelector(".percentage")
+         const gaugeBar = document.querySelector(".gaugeBar")
+
+         gaugeBar.addEventListener("animationstart", () => {
+            var count = 0
+            var interval = setInterval(function () {
+               if (count <= 100) {
+                  percentage.textContent = count++ + "%"
+               } else {
+                  clearInterval(interval)
+               }
+            }, 10)
+         })
+         gaugeBar.addEventListener("animationend", () => {
+            setTimeout(function () {}, 1000)
+         })
+
+         function popupHandler(elem) {
+            const closePopup = document.querySelector(".closePopup")
+            const popupBoxWrap = document.querySelector(".popupBoxWrap")
+            const popupMoveStart = document.querySelector(".popupMoveStart")
+            const popupMoveEnd = document.querySelector(".popupMoveEnd")
+            if (elem == "close") {
+               popupBoxWrap.style.display = "none"
+               popupMoveStart.style.display = "none"
+               popupMoveEnd.style.display = "none"
+            } else if (elem == "open") {
+               popupBoxWrap.style.display = "block"
+            } else if (elem == "switch") {
+               popupBoxWrap.style.display = "none"
+               popupMoveStart.style.display = "block"
+            } else if (elem == "switch2") {
+               popupMoveStart.style.display = "none"
+               popupMoveEnd.style.display = "block"
+            }
+         }
+      </script>
+   </body>
+</html>

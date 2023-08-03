@@ -1,0 +1,262 @@
+<div class="lnb_m_inn">
+   <p class="m_logo_wrap" onclick=" window.location.href='./main.html'"></p>
+   <div class="m_menu_wrap">
+      <a class="menu_trigger" href="#">
+         <span></span>
+         <span></span>
+         <span></span>
+      </a>
+   </div>
+</div>
+
+<link rel="stylesheet" href="../../css/settings.css" />
+<style>
+   .menu_pop {
+      position: absolute;
+      z-index: 500;
+      top: 20px;
+      right: 0px;
+      background-color: white;
+      border: 1px solid #ddd;
+      box-shadow: 0 0 14px rgb(0 0 0 / 10%);
+      border-radius: 5px;
+      padding: 4px;
+   }
+   .menu_pop p {
+      width: 36px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: 3px;
+   }
+   .menu_pop p span {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      flex-direction: column;
+   }
+   .menu_pop p span:hover {
+      background-color: var(--violet_bg);
+   }
+   .menu_wrap li {
+      margin-left: inherit;
+      position: relative;
+   }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<div class="all_menu">
+   <div class="gnb_m">
+      <div class="tapBtnM_wrap">
+         <div class="tapBtnM"><img src="../../imgs/ic_24_gontract_c.svg" alt="ic_24_gontract_c" /><b>계약관리</b></div>
+         <div class="tapBtnM"><img src="../../imgs/ic_24_form_01_g.svg" alt="ic_24_form_01_g" /><b>서식관리</b></div>
+         <div class="tapBtnM"><img src="../../imgs/ic_24_setting_g.svg" alt="ic_24_setting_g" /><b>설정하기</b></div>
+         <div class="tapBtnM"><img src="../../imgs/ic_24_proof_g.svg" alt="ic_24_proof_g" /><b>거래증빙</b></div>
+         <div class="tapBtnM"><img src="../../imgs/ic_24_approval_g.svg" alt="ic_24_approval_g" /><b>전자결재</b></div>
+         <span class="highlightM"></span>
+      </div>
+      <div class="contM_wrap">
+         <div class="contM">
+            <script>
+               $(document).ready(function () {
+                  $.ajax({
+                     url: "../include/aside_contract.html",
+                     success: function (result) {
+                        $(".aside_contract").html(result)
+                     },
+                  })
+               })
+            </script>
+            <div class="aside_contract" style="margin-bottom: 2rem"></div>
+         </div>
+
+         <div class="contM">
+            <section class="lnb_wrap_module">
+               <div class="lnb lnb_form">
+                  <input class="btn_violet temp_create" type="button" value="템플릿 만들기" onclick="window.location.href='./template_write.html'" />
+                  <script>
+                     if (matchMedia("screen and (max-width: 768px)").matches) {
+                        let tempCreate = document.querySelector(".temp_create")
+                        tempCreate.setAttribute("onclick", "alert('PC에서만 가능합니다.')")
+                     } else {
+                        tempCreate.setAttribute("onclick", "window.location.href='./template_write.html'")
+                     }
+                  </script>
+                  <div class="menu_wrap">
+                     <h1>
+                        <a href="./settings_my_template.html" class="img_wrap"> <img src="../../imgs/ic_24_open_n.svg" alt="ic_24_open_n.svg" />My 템플릿 </a>
+
+                        <div id="depth_arrow_btn">
+                           <img src="../../imgs/ic_18_more.svg" alt="ic_18_more.svg" />
+                           <div class="lnb_depth_content" style="padding-bottom: 150px">
+                              <section>
+                                 <ul class="my_templates" id="treelnb">
+                                    <li style="list-style: none">
+                                       인사/고용
+                                       <ul>
+                                          <li>
+                                             면접 평가서
+                                             <ul>
+                                                <li><a href="./settings_my_template.html">최근 파일</a></li>
+                                                <li style="display: flex; align-items: center">
+                                                   <a href="./settings_my_template.html">개발</a>
+                                                   <img style="margin-left:10px;" id="menu_pop_btn" class="moreview" src="../../imgs/ic_18_more-1.svg"
+                                                   alt="ic_18_more-1.svg"">
+                                                   <div class="menu_pop" id="menu_pop" style="display: none">
+                                                      <p>
+                                                         <span>추가</span>
+                                                         <span>공유</span>
+                                                         <span>삭제</span>
+                                                      </p>
+                                                   </div>
+                                                </li>
+                                             </ul>
+                                          </li>
+                                          <li>
+                                             시용기간 평가서
+                                             <ul>
+                                                <li><a href="./settings_my_template.html">디자인</a></li>
+                                                <li><a href="./settings_my_template.html">개발</a></li>
+                                             </ul>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li style="list-style: none">
+                                       용역/제휴
+                                       <ul>
+                                          <li>
+                                             외주 업체관리
+                                             <ul>
+                                                <li><a href="./settings_my_template.html">디자인</a></li>
+                                                <li><a href="./settings_my_template.html">개발</a></li>
+                                             </ul>
+                                          </li>
+                                          <li>
+                                             프리랜서
+                                             <ul>
+                                                <li><a href="./settings_my_template.html">디자인</a></li>
+                                                <li><a href="./settings_my_template.html">개발</a></li>
+                                                <li><a href="./settings_my_template.html">개발</a></li>
+                                             </ul>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </section>
+                              <script></script>
+
+                              <section class="add_folder_btn">
+                                 <img src="../../imgs/ic_24_add_simple.svg" alt="ic_24_add_simple.svg" />
+                                 <input class="btn_default" type="button" value="폴더추가" />
+                              </section>
+                           </div>
+                        </div>
+                     </h1>
+                     <li><a href="./settings_my_template_bookmark_start.html">즐겨찾기</a></li>
+                     <li><a href="">최근 파일</a></li>
+                  </div>
+                  <div class="menu_wrap">
+                     <h1>
+                        <a href="./settings_form_law_find.html" class="img_wrap"
+                           ><img src="../../imgs/ic_24_sample.svg" alt="ic_24_sample.svg" />법률 양식 찾기</a
+                        >
+                        <span><img src="../../imgs/ic_18_more.svg" alt="" /></span>
+                     </h1>
+                  </div>
+                  <div class="menu_wrap">
+                     <h1>
+                        <a href="././settings_my_template_trash.html" class="img_wrap"><img src="../../imgs/ic_24_del.svg" alt="ic_24_del.svg" />휴지통</a>
+                     </h1>
+                  </div>
+               </div>
+            </section>
+         </div>
+
+         <div class="contM">
+            <script>
+               $(document).ready(function () {
+                  $.ajax({
+                     url: "../include/aside_set.html",
+                     success: function (result) {
+                        $(".aside_set").html(result)
+                     },
+                  })
+               })
+            </script>
+            <div class="aside_set"></div>
+         </div>
+      </div>
+      <footer class="foot_m"></footer>
+   </div>
+</div>
+
+<script>
+   let tapBtnM = document.querySelectorAll(".tapBtnM")
+   let tapBtnMcolor = document.querySelectorAll(".tapBtnM b")
+   let contM = document.querySelectorAll(".contM")
+
+   function contMentShow(num) {
+      contM.forEach((item, idx) => {
+         item.classList.add("active")
+      })
+      contM[num].classList.remove("active")
+   }
+   tapBtnM.forEach((item, idx) => {
+      item.addEventListener("click", () => {
+         contMentShow(idx)
+         highLightM(idx)
+      })
+   })
+   function highLightM(num) {
+      let highLightM = document.querySelector(".highlightM")
+      const newLeft = tapBtnM[num].offsetLeft
+      const newWidth = tapBtnM[num].offsetWidth
+      highLightM.style.left = newLeft + "px"
+      highLightM.style.width = newWidth + "px"
+   }
+   contMentShow(0)
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+   let burger = $(".menu_trigger")
+   let allMenu = document.querySelector(".all_menu")
+
+   burger.each(function (index) {
+      let $this = $(this)
+
+      $this.on("click", function (e) {
+         e.preventDefault()
+         $(this).toggleClass("active-" + (index + 1))
+      })
+   })
+
+   let h = 0
+
+   $(burger).on("click", function () {
+      if (h == 0) {
+         $(".ham-con").animate(
+            {
+               right: "0",
+               opacity: 1,
+            },
+            500
+         )
+         $(this).addClass("active-1")
+         h++
+      } else if (h == 1) {
+         $(".ham-con").animate(
+            {
+               right: "-20%",
+               opacity: 0,
+            },
+            500
+         )
+         $(this).removeClass("active-1")
+         h--
+      }
+      allMenu.classList.toggle("on")
+   })
+</script>
+
+<script src="../script/settingsLnb.module.js"></script>
+<script src="../script/lnbTree.module.js"></script>

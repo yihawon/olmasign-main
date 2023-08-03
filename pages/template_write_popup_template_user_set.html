@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>template_write</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body>
+      <header class="header">
+         <input type="button" value="나가기" class="btn_exit" onclick="history.back()" />
+         <div class="stepper_contain">
+            <div class="stepper_tit">
+               <img src="../../imgs/ic_img_done.svg" alt="ic_img_done.svg" style="width: 20px" />
+               내 파일 업로드
+            </div>
+            <span class="line_el line_el_select_solid"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/stepper_icon_on.svg" alt="stepper_icon_on.svg" style="width: 20px" />
+               계약설정
+            </div>
+            <span class="line_el line_el_select"></span>
+            <div class="stepper_tit"><img src="../../imgs/stepper_icon_off.svg" alt="stepper_icon_off.svg style="width: 20px" /> 템플릿 편집</div>
+            <span class="line_el"></span>
+            <div class="stepper_tit">
+               <img src="../../imgs/stepper_icon_off.svg" alt="stepper_icon_off.svg" />
+               저장
+            </div>
+         </div>
+      </header>
+
+      <div class="popup_Progress">
+         <div class="popup_Progress_userset">
+            <h1>서명자 설정</h1>
+            <p class="">서명자 수를 지정하시겠습니까?</p>
+            <div class="sign_sort_wrap" style="padding: 1rem 2rem 3rem">
+               <article class="cont_select selectBtnWrap">
+                  <button class="btn_select selectBtn">2명</button>
+                  <ul class="list_item selectList" style="top: 60px">
+                     <li><button type="button">2명</button></li>
+                     <li><button type="button">folder2</button></li>
+                     <li><button type="button">folder3</button></li>
+                  </ul>
+               </article>
+            </div>
+         </div>
+      </div>
+
+      <div class="add_sign"></div>
+      <div class="item_list_wrap"></div>
+
+      <footer class="footer">
+         <div class="btn_wrap">
+            <input class="btn_default" type="button" value="이전" style="color: var(--violet_P)" onclick="window.location.href='./template_write.html'" />
+            <input class="btn_violet" type="button" value="다음" onclick="window.location.href='./editor.html'" />
+         </div>
+      </footer>
+
+      <script src="../script/selectBox.js"></script>
+   </body>
+</html>

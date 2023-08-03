@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>sign_setting</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <div class="wrapper">
+         <main class="main">
+            <div class="paysystem_wrap">
+               <div class="pasys_tit">
+                  <h1>10건</h1>
+                  <small>충전</small>
+                  <p>
+                     얼마싸인과 함께 <br />
+                     이제, 계약도 스마트하게 시작하세요!
+                  </p>
+               </div>
+               <div class="profile_area paysystem">
+                  <div class="contain_docu_set">
+                     <div class="pay_select_fix paysys_tabs starter_page">
+                        <div class="case_table_wrap">
+                           <table class="case_by_table">
+                              <tr>
+                                 <td>충전건수</td>
+                                 <td>할인율</td>
+                                 <td>결제금액</td>
+                                 <td>충전금액</td>
+                              </tr>
+                              <tr>
+                                 <td class="radio rdoBtn">
+                                    <input type="radio" id="rdo1" name="radio" checked />
+                                    <label for="rdo1" class="radio-label" style="margin: 0">10건</label>
+                                 </td>
+                                 <td>0%</td>
+                                 <td>10,000원</td>
+                                 <td>1,000원</td>
+                              </tr>
+                              <tr>
+                                 <td class="radio rdoBtn">
+                                    <input type="radio" id="rdo2" name="radio" />
+                                    <label for="rdo2" class="radio-label" style="margin: 0">50건</label>
+                                 </td>
+                                 <td>10%</td>
+                                 <td>45,000원</td>
+                                 <td>900원</td>
+                              </tr>
+                              <tr>
+                                 <td class="radio rdoBtn">
+                                    <input type="radio" id="rdo3" name="radio" />
+                                    <label for="rdo3" class="radio-label" style="margin: 0">100건</label>
+                                 </td>
+                                 <td>20%</td>
+                                 <td>80,000원</td>
+                                 <td>800원</td>
+                              </tr>
+                              <tr>
+                                 <td class="radio rdoBtn">
+                                    <input type="radio" id="rdo4" name="radio" />
+                                    <label for="rdo4" class="radio-label" style="margin: 0">500건</label>
+                                 </td>
+                                 <td>30%</td>
+                                 <td>350,000원</td>
+                                 <td>700원</td>
+                              </tr>
+                              <tr>
+                                 <td class="radio rdoBtn">
+                                    <input type="radio" id="rdo5" name="radio" />
+                                    <label for="rdo5" class="radio-label" style="margin: 0">1,000건</label>
+                                 </td>
+                                 <td>40%</td>
+                                 <td>600,000원</td>
+                                 <td>600원</td>
+                              </tr>
+                           </table>
+                        </div>
+                        <section class="starter_page_sec">
+                           <ul>
+                              <li>발송건수를 단독으로 충전할 경우 Basic 기능을 사용할 수 있어요.</li>
+                              <li>충전된 발송건수는 1년간 사용 가능해요.</li>
+                              <li>결제 이후에는 결제정보 메뉴에서 결제 내역을 확인 할 수 있어요.</li>
+                           </ul>
+                        </section>
+                        <section class="starter_page_sec">
+                           <input type="checkbox" name="chk" id="chk" />
+                           <label for="chk"> <u>[필수] 이용약관 동의</u></label>
+                        </section>
+                        <section class="starter_page_sec">
+                           <button class="btn_default" onclick="history.back()">이전</button>
+                           <button class="btn_reverse" onclick="Modalpop('subscription')">충전하기</button>
+                        </section>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </main>
+      </div>
+
+      <div class="subscription_done_wrap modal_welcome">
+         <div class="modal_welcome_contain">
+            <section class="subscription_done">
+               <h1>충전이 완료되었습니다.</h1>
+               <img src="../imgs/ic_img_done.svg" alt="ic_img_done.svg" />
+            </section>
+            <section class="start_btn">
+               <a href="javascript:void(0)" onclick="closeModal('subscription')">시작하기</a>
+            </section>
+         </div>
+      </div>
+      <script src="../script/modal.js"></script>
+   </body>
+</html>

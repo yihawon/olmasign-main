@@ -1,0 +1,18 @@
+<div class="ctr_pop_contain">
+   <div class="head_wrap">
+      <img class="ctr_close" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="ctrDetailClose()" />
+      <h1>아이퀘스트 근로계약서</h1>
+   </div>
+   <div class="ctr_view_bo"></div>
+</div>
+
+<script>
+   $(document).ready(function () {
+      $.ajax({
+         url: "./_ctr_view_bo.html",
+         success: function (result) {
+            $(".ctr_view_bo").html(result)
+         },
+      })
+   })
+</script>

@@ -1,0 +1,426 @@
+.modal_welcome {
+  position: fixed;
+  z-index: -1;
+  opacity: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.modal_welcome .modal_welcome_contain {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 450px;
+}
+@media (max-width: 480px) {
+  .modal_welcome .modal_welcome_contain {
+    width: 90%;
+  }
+}
+.modal_welcome .modal_welcome_contain .popheading {
+  padding: 2rem 2rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.modal_welcome .modal_welcome_contain .popheading .closeX {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.modal_welcome .modal_welcome_contain .popheading h1 {
+  font-size: 18px;
+}
+.modal_welcome .modal_welcome_contain .modal_pass_head {
+  padding: 2rem 0 1rem;
+}
+.modal_welcome .modal_welcome_contain .stop_area {
+  position: relative;
+  z-index: -1;
+  padding-bottom: 2rem;
+  max-height: 450px;
+  overflow-y: auto;
+}
+.modal_welcome .modal_welcome_contain .stop_area::-webkit-scrollbar {
+  width: 2px;
+}
+.modal_welcome .modal_welcome_contain .stop_area::-webkit-scrollbar-thumb {
+  background-color: var(--second_04);
+  border-radius: 5px;
+}
+.modal_welcome .modal_welcome_contain .stop_area::-webkit-scrollbar-track {
+  background-color: var(--second_03);
+  border-radius: 5px;
+}
+.modal_welcome .modal_welcome_contain .stop_area .alert_txt {
+  border-radius: 5px;
+  background-color: var(--second_01);
+  padding: 14px;
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+.modal_welcome .modal_welcome_contain .stop_area .alert_txt ul > li {
+  list-style-type: disc;
+  margin: 14px 24px;
+}
+.modal_welcome .modal_welcome_contain .stop_area .check_wrap {
+  text-align: left;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+.modal_welcome .modal_welcome_contain .stop_area .check_wrap .check_p .dont_msg .check_box_wrap {
+  display: flex;
+  align-items: center;
+}
+.modal_welcome .modal_welcome_contain .stop_area .check_wrap .check_p .dont_msg .check_box_wrap img {
+  margin-right: 8px;
+  height: 18px;
+}
+.modal_welcome .modal_welcome_contain .stop_area .pop_email {
+  line-height: 1.8;
+}
+.modal_welcome .modal_welcome_contain .stop_area .pop_email > span {
+  color: var(--violet_P);
+}
+.modal_welcome .modal_welcome_contain .stop_area p {
+  margin-bottom: 1rem;
+  color: var(--violet_K);
+}
+.modal_welcome .modal_welcome_contain > section {
+  padding: 2rem;
+  text-align: center;
+}
+.modal_welcome .modal_welcome_contain > section > img {
+  margin-bottom: 1rem;
+}
+.modal_welcome .modal_welcome_contain > section > h2 {
+  margin-bottom: 1rem;
+  font-size: 14px;
+}
+.modal_welcome .modal_welcome_contain > section > input:not(:last-child) {
+  margin-bottom: 14px;
+}
+.modal_welcome .modal_welcome_contain .confirm_btn {
+  text-align: center;
+  padding: inherit;
+  display: flex;
+  justify-content: space-around;
+}
+.modal_welcome .modal_welcome_contain .confirm_btn a {
+  display: block;
+  color: var(--white);
+  padding: 1rem;
+  width: 100%;
+  background-color: var(--violet_P);
+}
+.modal_welcome .modal_welcome_contain .confirm_btn a:not(:first-child) {
+  background-color: var(--violet_PL);
+}
+
+.modal_welcome.on {
+  transition: 0.3s ease;
+  z-index: 9999;
+  opacity: 1;
+}
+
+.pay_method_pop {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.pay_method_pop .modal_welcome_contain {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 450px;
+}
+@media (max-width: 480px) {
+  .pay_method_pop .modal_welcome_contain {
+    width: 90%;
+  }
+}
+.pay_method_pop .modal_welcome_contain .popheading {
+  padding: 2rem 2rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.pay_method_pop .modal_welcome_contain .popheading .closeX {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.pay_method_pop .modal_welcome_contain .popheading h1 {
+  font-size: 18px;
+}
+.pay_method_pop .modal_welcome_contain .modal_pass_head {
+  padding: 2rem 0 1rem;
+}
+.pay_method_pop .modal_welcome_contain .stop_area {
+  position: relative;
+  z-index: -1;
+  padding-bottom: 2rem;
+  max-height: 450px;
+  overflow-y: auto;
+}
+.pay_method_pop .modal_welcome_contain .stop_area::-webkit-scrollbar {
+  width: 2px;
+}
+.pay_method_pop .modal_welcome_contain .stop_area::-webkit-scrollbar-thumb {
+  background-color: var(--second_04);
+  border-radius: 5px;
+}
+.pay_method_pop .modal_welcome_contain .stop_area::-webkit-scrollbar-track {
+  background-color: var(--second_03);
+  border-radius: 5px;
+}
+.pay_method_pop .modal_welcome_contain .stop_area .alert_txt {
+  border-radius: 5px;
+  background-color: var(--second_01);
+  padding: 14px;
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+.pay_method_pop .modal_welcome_contain .stop_area .alert_txt ul > li {
+  list-style-type: disc;
+  margin: 14px 24px;
+}
+.pay_method_pop .modal_welcome_contain .stop_area .check_wrap {
+  text-align: left;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+.pay_method_pop .modal_welcome_contain .stop_area .check_wrap .check_p .dont_msg .check_box_wrap {
+  display: flex;
+  align-items: center;
+}
+.pay_method_pop .modal_welcome_contain .stop_area .check_wrap .check_p .dont_msg .check_box_wrap img {
+  margin-right: 8px;
+  height: 18px;
+}
+.pay_method_pop .modal_welcome_contain .stop_area .pop_email {
+  line-height: 1.8;
+}
+.pay_method_pop .modal_welcome_contain .stop_area .pop_email > span {
+  color: var(--violet_P);
+}
+.pay_method_pop .modal_welcome_contain .stop_area p {
+  margin-bottom: 1rem;
+  color: var(--violet_K);
+}
+.pay_method_pop .modal_welcome_contain > section {
+  padding: 2rem;
+  text-align: center;
+}
+.pay_method_pop .modal_welcome_contain > section > img {
+  margin-bottom: 1rem;
+}
+.pay_method_pop .modal_welcome_contain > section > h2 {
+  margin-bottom: 1rem;
+  font-size: 14px;
+}
+.pay_method_pop .modal_welcome_contain > section > input:not(:last-child) {
+  margin-bottom: 14px;
+}
+.pay_method_pop .modal_welcome_contain .confirm_btn {
+  text-align: center;
+  padding: inherit;
+  display: flex;
+  justify-content: space-around;
+}
+.pay_method_pop .modal_welcome_contain .confirm_btn a {
+  display: block;
+  color: var(--white);
+  padding: 1rem;
+  width: 100%;
+  background-color: var(--violet_P);
+}
+.pay_method_pop .modal_welcome_contain .confirm_btn a:not(:first-child) {
+  background-color: var(--violet_PL);
+}
+
+.pay_method_pop.on {
+  transition: 0.3s ease;
+  z-index: 999;
+  opacity: 1;
+}
+
+.pay_method_pop_contain {
+  height: 95%;
+}
+.pay_method_pop_contain .closebtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px;
+}
+.pay_method_pop_contain .pay_method_tit {
+  font-size: 20px;
+  text-align: center;
+  padding: 2rem 0 12px;
+}
+.pay_method_pop_contain .pay_method_pop_body {
+  overflow-y: auto;
+  height: 95%;
+  padding: 0 !important;
+  text-align: left !important;
+}
+.pay_method_pop_contain .pay_method_pop_body::-webkit-scrollbar {
+  width: 2px;
+}
+.pay_method_pop_contain .pay_method_pop_body::-webkit-scrollbar-thumb {
+  background-color: var(--second_04);
+  border-radius: 5px;
+}
+.pay_method_pop_contain .pay_method_pop_body::-webkit-scrollbar-track {
+  background-color: var(--second_03);
+  border-radius: 5px;
+}
+.pay_method_pop_contain .pay_method_pop_body ul.input_li {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: 1.5rem;
+}
+.pay_method_pop_contain .pay_method_pop_body ul.input_li li {
+  font-size: 14px;
+  color: var(--second_06);
+  font-weight: 600;
+}
+.pay_method_pop_contain .pay_method_pop_body ul.input_li li span {
+  float: right;
+  font-size: 13px;
+  font-weight: 400;
+}
+.pay_method_pop_contain .pay_method_pop_body ul.input_li li:nth-of-type(5) span {
+  color: var(--violet_P);
+}
+.pay_method_pop_contain .pay_method_pop_body ul.input_li li .radios {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 10px;
+}
+.pay_method_pop_contain .pay_method_pop_body ul.input_li li .radios .radio {
+  display: flex;
+  align-items: center;
+}
+.pay_method_pop_contain .pay_method_pop_body ul.input_li li .radios .radio > label {
+  margin: 0;
+}
+.pay_method_pop_contain .pay_method_pop_body ul.input_li li .radios .radio:not(:last-child) {
+  margin-bottom: inherit;
+}
+.pay_method_pop_contain .pay_method_pop_body ul.input_li li input {
+  width: 100%;
+  height: 38px;
+  margin-top: 10px;
+}
+.pay_method_pop_contain .pay_method_pop_body ul.input_li li input[type=date] {
+  min-height: inherit;
+}
+.pay_method_pop_contain .pay_method_pop_body ul.input_li li article {
+  width: 100%;
+  margin-top: 10px;
+}
+.pay_method_pop_contain .pay_method_pop_body .agree_chk {
+  padding: 1.5rem;
+}
+.pay_method_pop_contain .pay_method_pop_body .addsection {
+  padding: 1.5rem;
+  padding-bottom: 110px;
+}
+.pay_method_pop_contain .pay_method_pop_body .addsection > p {
+  color: var(--violet_P);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.pay_method_pop_contain .pay_method_pop_body .addsection ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+.pay_method_pop_contain .pay_method_pop_body .addsection ul li {
+  color: var(--second_06);
+  font-size: 14px;
+}
+.pay_method_pop_contain .pay_method_pop_body .addsection ul li input {
+  height: 38px;
+  margin-top: 10px;
+}
+.pay_method_pop_contain .confirm_btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.sign_ctr_done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sign_ctr_done img {
+  width: 30px;
+  height: 30px;
+}
+.sign_ctr_done p {
+  padding: 1rem;
+}
+.sign_ctr_done .ctr_btns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 20px;
+  gap: 10px;
+}
+.sign_ctr_done .ctr_btns button {
+  border: 1px solid #ddd;
+  padding: 0 1rem;
+  border-radius: 5px;
+}
+
+.img_wrap_close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.modal_welcome.off {
+  display: none;
+}
+
+.sign_ctr_done {
+  display: none;
+}
+
+.sign_ctr_done.on {
+  display: flex;
+}
+
+.sign_ctr_agree.off {
+  display: none !important;
+}
+
+.modal_pass .modal_pass_contain {
+  max-height: 95%;
+}

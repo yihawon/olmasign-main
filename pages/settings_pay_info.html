@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>sign_setting</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <div class="wrapper">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function () {
+               $.ajax({
+                  url: "../include/head.html",
+                  success: function (result) {
+                     $(".header").html(result)
+                  },
+               })
+            })
+         </script>
+
+         <div class="header hd"></div>
+         <main class="main">
+            <script>
+               $(document).ready(function () {
+                  $.ajax({
+                     url: "../include/aside_set.html",
+                     success: function (result) {
+                        $(".lnb_wrap").html(result)
+                     },
+                  })
+               })
+               $(document).ready(function () {
+                  $.ajax({
+                     url: "../include/lnb_m.html",
+                     success: function (result) {
+                        $(".lnb_m").html(result)
+                     },
+                  })
+               })
+            </script>
+
+            <section class="lnb_wrap"></section>
+
+            <div class="lnb_m"></div>
+
+            <section class="content_wrap">
+               <div class="location">
+                  <a href=""><img src="../../imgs/home-2.svg" alt="home-2.svg" /></a>
+                  <a href="">설정하기</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href="">요금제관리</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href=""><b>결제정보</b></a>
+               </div>
+
+               <div class="pay_means">
+                  <h1>결제수단</h1>
+                  <div class="pay_means_box">
+                     <h2>계좌</h2>
+                     <hr class="hr_paymeans" />
+                     <p class="bank_account">
+                        국민은행/5528******** <a href="javascript:void(0)" onclick="location.href='settings_pay_crud.html'">계좌 추가/변경</a>
+                     </p>
+                  </div>
+               </div>
+
+               <div class="content_area payhistory">
+                  <div class="item_btn_setting payhistory_hd">
+                     <h1>결제내역</h1>
+                     <div class="sign_sort_wrap_module payhistory_filter">
+                        <div class="sign_sort">
+                           <input class="search_input" type="search" placeholder="search..." />
+                           <span class="search_icon"><img src="../../imgs/ic_20_search.svg" alt="ic_20_search.svg" /></span>
+                        </div>
+                        <div class="flex">
+                           <button class="btn_default filterSearch" id="filterBtn" data-action="filterSearch"></button>
+                           <article class="cont_select">
+                              <button class="btn_select selectBtn btn_select_mod">10개보기</button>
+                              <ul class="list_item selectList">
+                                 <li><button type="button">10개보기</button></li>
+                                 <li><button type="button">Java</button></li>
+                                 <li><button type="button">JavaScript</button></li>
+                                 <li><button type="button">C#</button></li>
+                                 <li><button type="button">C/C++</button></li>
+                              </ul>
+                           </article>
+                        </div>
+                     </div>
+                  </div>
+
+                  <table class="temp_bo_table">
+                     <tbody>
+                        <tr class="pay_info_tr">
+                           <td class="td_left pay_info_td">
+                              <div class="temp_name">
+                                 <p class="subject_tit">
+                                    <span class="subject_tit_p th_tit"> 요금제</span>
+                                    <span class="updown_sort">
+                                       <img src="../../imgs/ic_18_up_02.svg" alt="ic_18_up_02.svg" />
+                                       <img src="../../imgs/ic_18_down_02.svg" alt="ic_18_down_02.svg" />
+                                    </span>
+                                 </p>
+                              </div>
+                           </td>
+                           <td class="td_right pay_info_td_r">
+                              <p class="th_tit">
+                                 결제일
+                                 <span class="updown_sort">
+                                    <img src="../../imgs/ic_18_up_02.svg" alt="ic_18_up_02.svg" />
+                                    <img src="../../imgs/ic_18_down_02.svg" alt="ic_18_down_02.svg" />
+                                 </span>
+                              </p>
+                              <p class="th_tit">
+                                 결제금액
+                                 <span class="updown_sort">
+                                    <img src="../../imgs/ic_18_up_02.svg" alt="ic_18_up_02.svg" />
+                                    <img src="../../imgs/ic_18_down_02.svg" alt="ic_18_down_02.svg" />
+                                 </span>
+                              </p>
+                              <p class="th_tit">결제방법</p>
+                              <p class="th_tit">세금계산서</p>
+                           </td>
+                        </tr>
+
+                        <tr class="pay_info_tr">
+                           <td class="td_left pay_info_td">
+                              <div class="temp_name">
+                                 <a class="subject_tit" href="./settings_my_template_detail.html">
+                                    <span class="subject_tit_p prefix_tit1" data-text="요금제:">Starter</span>
+                                 </a>
+                              </div>
+                           </td>
+                           <td class="td_right pay_info_td_r">
+                              <p class="prefix_tit2" data-text="결제일:">2022-08-28 14:30</p>
+                              <p class="prefix_tit3" data-text="결제금액:">3,000원</p>
+                              <p class="prefix_tit4" data-text="결제방법:">카드</p>
+                              <p class="prefix_tit5" data-text="세금계산서:">발행</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+
+                  <div class="pagination">
+                     <button><img src="../../imgs/btn_page_numbers_left.svg" alt="btn_page_numbers_left.svg" /></button>
+                     <button active>1</button>
+                     <button>2</button>
+                     <button>3</button>
+                     <button><img src="../../imgs/btn_page_numbers_right.svg" alt="btn_page_numbers_right.svg" /></button>
+                  </div>
+               </div>
+            </section>
+         </main>
+      </div>
+
+      <div class="popup_wrap restorePop modal_welcome">
+         <div class="popup_contain">
+            <section class="kakao_pop">
+               <img class="popup_close_btn" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal()" />
+
+               <h1 class="popup_title">카카오톡 채널 연동</h1>
+
+               <div class="ctn_wrap">
+                  <p class="ka_pop_hd_tit">카카오톡 채널 (플러스친구) 안내</p>
+                  <ul class="ka_pop_desc">
+                     <li>카카오톡 맞춤설정을 하기 위해서는 카카오톡 채널이 개설이 필요해요.( 관리자센터 바로가기 ) 카카오톡 채널을 만드신 후, 카카오톡 채널</li>
+                     <li>관리자센터에서 비즈니스 채널로 전환 신청해 주세요.</li>
+                  </ul>
+                  <div class="ka_pop_seletes">
+                     <section class="ka_pop_selete">
+                        <p>카카오톡 채널(플러스 친구) 안내</p>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">@hkd3334</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                     </section>
+                     <section class="ka_pop_selete">
+                        <p>관리자 연락처</p>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">010553132</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                     </section>
+                     <section class="ka_pop_selete">
+                        <p>사업 카테고리</p>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">전문서비스</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">법률서비스</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">법률서비스</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                     </section>
+                  </div>
+                  <a href="" class="ka_pop_more">카카오톡 비즈니스 채널 자세히 보기</a>
+               </div>
+            </section>
+            <section class="popup_confirm_btn">
+               <a href="javascript:void(0)" onclick="popPlus()">연동하기</a>
+            </section>
+         </div>
+      </div>
+      <div class="modalplus">
+         <div class="modalplus_contain">
+            <img class="modalplus_close" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal()" />
+            <h1 class="modalplus_tit">카카오톡 채널 연동</h1>
+            <div class="modalplus_body">
+               <h2>관리자 연락처로 전송된 인정번호를 입력해 주세요.</h2>
+
+               <section class="dropboxbtn">
+                  <span>인증번호</span>
+                  <input type="text" placeholder="1111" />
+               </section>
+
+               <p>인증번호를 받지 못하셨나요? <a href="">재전송</a></p>
+            </div>
+            <section class="confirm_btn">
+               <a href="#" onclick="closeModal()">연동하기</a>
+            </section>
+         </div>
+      </div>
+
+      <!-- <div class="pay_method_pop">
+         <div class="modal_welcome_contain pay_method_pop_contain">
+            <img class="closebtn" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal('payclose')" />
+            <h1 class="pay_method_tit">결제수단 계좌 추가/변경</h1>
+            <section class="pay_method_pop_body">
+               <ul class="input_li">
+                  <li>수납기관 <span>(주)아이퀘스트</span></li>
+                  <li>결제일 <span>월납은 사용 후 익월부터 매월 7일에 출금되요.</span></li>
+                  <li>
+                     결제은행선택
+                     <article class="cont_select">
+                        <button class="btn_select selectBtn2 btn_select_mod">우리은행</button>
+                        <ul class="list_item selectList2">
+                           <li><button type="button">하나은행</button></li>
+                           <li><button type="button">국민은행</button></li>
+                        </ul>
+                     </article>
+                  </li>
+                  <li>
+                     카드 별칭
+                     <div class="radios">
+                        <div class="radio">
+                           <input type="radio" name="radio" id="radio-1" />
+                           <label for="radio-1" class="radio-label">개인 통장/사업자통장</label>
+                        </div>
+                        <div class="radio">
+                           <input type="radio" name="radio" id="radio-2" />
+                           <label for="radio-2" class="radio-label">법인통장</label>
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     예금주 생년월일 <span>개인통징일 경우 입력해 주세요.</span>
+                     <input type="date" name="" id="" />
+                  </li>
+                  <li>
+                     사업자번호
+                     <input type="text" name="" id="" placeholder="123-12-12345" />
+                  </li>
+                  <li>
+                     계좌번호
+                     <input type="text" name="" id="" placeholder="123-12-12345" />
+                  </li>
+                  <li>
+                     예금주
+                     <input type="text" name="" id="" placeholder="이정현" />
+                  </li>
+                  <li>
+                     <input type="checkbox" name="chk" id="chk" style="display: none" />
+                     <label for="chk">[필수] 출금이체신청 동의</label>
+                  </li>
+               </ul>
+               <hr />
+               <div class="addsection">
+                  <p>세금계산서 발행이 필요하시면 입력해 주세요.</p>
+                  <ul>
+                     <li>
+                        사업자등록번호(필수)
+                        <input type="text" name="" id="" placeholder="123-12-12345" />
+                     </li>
+                     <li>
+                        회사명(필수)
+                        <input type="text" name="" id="" placeholder="아이퀘스트" />
+                     </li>
+                     <li>
+                        대표자명(필수)
+                        <input type="text" name="" id="" placeholder="김순모" />
+                     </li>
+                     <li>
+                        사업자번호
+                        <input type="text" name="" id="" placeholder="서울 구로구 디지털로 34길 55 코오롱사이언스밸리2차 407호 (주)아이퀘스트" />
+                     </li>
+                  </ul>
+               </div>
+            </section>
+            <section class="confirm_btn">
+               <a href="#" onclick="closeModal()">확인</a>
+            </section>
+         </div>
+      </div> -->
+
+      <script>
+         function popPlus() {
+            closeModal()
+            const modalplus = document.querySelector(".modalplus")
+            modalplus.classList.add("on")
+         }
+
+         function payMethodPop() {
+            const payMethodPop = document.querySelector(".pay_method_pop")
+            payMethodPop.classList.add("on")
+         }
+         let tab = document.querySelectorAll(".tab")
+         let cont = document.querySelectorAll(".cont")
+         console.log(tab)
+
+         function contentShow(num) {
+            cont.forEach((item, idx) => {
+               item.classList.add("active_tab")
+            })
+            cont[num].classList.remove("active_tab")
+         }
+         function highLight(num) {
+            let highLight = document.querySelector(".highlight")
+            const newLeft = tab[num].offsetLeft
+            const newWidth = tab[num].offsetWidth
+            highLight.style.left = newLeft + "px"
+            highLight.style.width = newWidth + "px"
+         }
+
+         contentShow(0)
+
+         tab.forEach((item, idx) => {
+            item.addEventListener("click", () => {
+               contentShow(idx)
+               highLight(idx)
+            })
+         })
+         console.log(tab)
+      </script>
+      <script src="../script/settingCustom.js"></script>
+      <script src="../script/modal.js"></script>
+      <script src="../script/selectBox.js"></script>
+   </body>
+</html>

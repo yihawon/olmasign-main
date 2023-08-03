@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>sign_setting</title>
+   </head>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $.ajax({
+            url: "../include/csslink.html",
+            success: function (result) {
+               $(".csslink").html(result)
+            },
+         })
+         $.ajax({
+            url: "../include/head.html",
+            success: function (result) {
+               $(".header").html(result)
+            },
+         })
+         $.ajax({
+            url: "../include/aside_set.html",
+            success: function (result) {
+               $(".lnb_wrap").html(result)
+            },
+         })
+
+         $.ajax({
+            url: "../include/lnb_m.html",
+            success: function (result) {
+               $(".lnb_m").html(result)
+            },
+         })
+      })
+   </script>
+   <div class="csslink"></div>
+
+   <body class="body">
+      <div class="wrapper">
+         <div class="header hd"></div>
+         <main class="main">
+            <section class="lnb_wrap"></section>
+
+            <div class="lnb_m"></div>
+
+            <section class="content_wrap">
+               <div class="location">
+                  <a href=""><img src="../../imgs/home-2.svg" alt="home-2.svg" /></a>
+                  <a href="">설정하기</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href="">요금제관리</a>
+                  <img src="../../imgs/ic_18_more2.svg" alt="ic_18_more2.svg" />
+                  <a href=""><b>사용량</b></a>
+               </div>
+               <div class="paysystem_wrap">
+                  <div class="pasys_tit">
+                     <p>현재 사용 가능한 건수</p>
+                     <h1>0건</h1>
+                  </div>
+                  <div class="profile_area paysystem">
+                     <section class="contain_docu_set pay_box">
+                        <div class="contain_docu_set_tit">
+                           <h2>구독형</h2>
+                        </div>
+                        <div class="paysys_tabs">
+                           <div class="subscription_pay">
+                              <h3>구독형 요금제</h3>
+                              <p>더 많은 기능이 필요하신가요?</p>
+                              <a href="./settings_pay_charge.html#section1">요금제 알아보기</a>
+                           </div>
+                        </div>
+                     </section>
+
+                     <section class="contain_docu_set pay_box">
+                        <div class="contain_docu_set_tit">
+                           <h2>건별</h2>
+                           <u>추가 충전하기</u>
+                        </div>
+                        <div class="paysys_tabs">
+                           <div class="subscription_pay">
+                              <h3>건별 요금제</h3>
+                              <p>더 많은 발송건수가 필요하신가요?</p>
+                              <a href="./settings_pay_charge.html#section2">요금제 알아보기</a>
+                           </div>
+                        </div>
+                     </section>
+                  </div>
+               </div>
+               <hr style="max-width: 690px; margin: 3rem auto 3.3rem" />
+               <div class="paysystem_wrap">
+                  <div class="pasys_tit">
+                     <p>추가 과금될 건수</p>
+                     <h1>0건</h1>
+                  </div>
+                  <div class="profile_area paysystem">
+                     <section class="contain_docu_set pay_box">
+                        <div class="contain_docu_set_tit">
+                           <h2>후불형</h2>
+                        </div>
+                        <div class="paysys_tabs">
+                           <div class="subscription_pay">
+                              <h3>후불형 요금제</h3>
+                              <p>매번 충전하기가 번거로우신가요?</p>
+                              <a href="./settings_pay_charge.html#section3">요금제 알아보기</a>
+                           </div>
+
+                           <div class="paysys_tab">
+                              <div class="paysys_tab_subtit">
+                                 <h3>사용건수</h3>
+                                 <span><strong>50</strong> 건</span>
+                              </div>
+                              <hr />
+                              <ul class="afterpay">
+                                 <li>건당단가<span>1,300원</span></li>
+                                 <li data-quote="부가세 별도">청구예상금액<span>65,000원</span></li>
+                                 <li>청구예정일<span>2023-04-13</span></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </section>
+
+                     <p class="pay_caution">※ 후불형 요금은 익월 7일에 청구 되어요.</p>
+
+                     <hr class="pay_caution_div" />
+                     <section class="contain_docu_set pay_box">
+                        <div class="paysys_tabs">
+                           <div class="paysys_tab custom_set">
+                              <h3>Custom</h3>
+                              <p>
+                                 월 1,000건 이상의 계약 사용 시 클릭 해주세요 업계 최저가로 제공해드립니다.
+                                 <a href="">상담 신청하기</a>
+                              </p>
+                           </div>
+                        </div>
+                     </section>
+                     <section style="height: 50px"></section>
+                  </div>
+               </div>
+            </section>
+         </main>
+      </div>
+
+      <div class="popup_wrap restorePop modal_welcome">
+         <div class="popup_contain">
+            <section class="kakao_pop">
+               <img class="popup_close_btn" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal()" />
+
+               <h1 class="popup_title">카카오톡 채널 연동</h1>
+
+               <div class="ctn_wrap">
+                  <p class="ka_pop_hd_tit">카카오톡 채널 (플러스친구) 안내</p>
+                  <ul class="ka_pop_desc">
+                     <li>카카오톡 맞춤설정을 하기 위해서는 카카오톡 채널이 개설이 필요해요.( 관리자센터 바로가기 ) 카카오톡 채널을 만드신 후, 카카오톡 채널</li>
+                     <li>관리자센터에서 비즈니스 채널로 전환 신청해 주세요.</li>
+                  </ul>
+                  <div class="ka_pop_seletes">
+                     <section class="ka_pop_selete">
+                        <p>카카오톡 채널(플러스 친구) 안내</p>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">@hkd3334</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                     </section>
+                     <section class="ka_pop_selete">
+                        <p>관리자 연락처</p>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">010553132</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                     </section>
+                     <section class="ka_pop_selete">
+                        <p>사업 카테고리</p>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">전문서비스</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">법률서비스</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                        <article class="cont_select">
+                           <button class="btn_select selectBtn">법률서비스</button>
+                           <ul class="list_item selectList">
+                              <li><button type="button">folder2</button></li>
+                              <li><button type="button">folder3</button></li>
+                           </ul>
+                        </article>
+                     </section>
+                  </div>
+                  <a href="" class="ka_pop_more">카카오톡 비즈니스 채널 자세히 보기</a>
+               </div>
+            </section>
+            <section class="popup_confirm_btn">
+               <a href="javascript:void(0)" onclick="popPlus()">연동하기</a>
+            </section>
+         </div>
+      </div>
+      <div class="modalplus">
+         <div class="modalplus_contain">
+            <img class="modalplus_close" src="../../imgs/ic_18_close.svg" alt="ic_18_close.svg" onclick="closeModal()" />
+            <h1 class="modalplus_tit">카카오톡 채널 연동</h1>
+            <div class="modalplus_body">
+               <h2>관리자 연락처로 전송된 인정번호를 입력해 주세요.</h2>
+
+               <section class="dropboxbtn">
+                  <span>인증번호</span>
+                  <input type="text" placeholder="1111" />
+               </section>
+
+               <p>인증번호를 받지 못하셨나요? <a href="">재전송</a></p>
+            </div>
+            <section class="confirm_btn">
+               <a href="#" onclick="closeModal()">연동하기</a>
+            </section>
+         </div>
+      </div>
+
+      <script>
+         function popPlus() {
+            closeModal()
+            const modalplus = document.querySelector(".modalplus")
+            modalplus.classList.add("on")
+         }
+         let tab = document.querySelectorAll(".tab")
+         let cont = document.querySelectorAll(".cont")
+         console.log(tab)
+
+         function contentShow(num) {
+            cont.forEach((item, idx) => {
+               item.classList.add("active_tab")
+            })
+            cont[num].classList.remove("active_tab")
+         }
+         function highLight(num) {
+            let highLight = document.querySelector(".highlight")
+            const newLeft = tab[num].offsetLeft
+            const newWidth = tab[num].offsetWidth
+            highLight.style.left = newLeft + "px"
+            highLight.style.width = newWidth + "px"
+         }
+
+         contentShow(0)
+
+         tab.forEach((item, idx) => {
+            item.addEventListener("click", () => {
+               contentShow(idx)
+               highLight(idx)
+            })
+         })
+         console.log(tab)
+      </script>
+      <script>
+         const toggleSpan = document.querySelectorAll(".toggle_span")
+
+         toggleSpan.forEach((elem) => {
+            elem.addEventListener("click", function () {
+               elem.firstElementChild.firstElementChild.classList.toggle("move")
+               elem.firstElementChild.classList.toggle("expand")
+            })
+         })
+      </script>
+      <script src="../script/settingCustom.js"></script>
+      <script src="../script/modal.js"></script>
+      <script src="../script/selectBox.js"></script>
+   </body>
+</html>

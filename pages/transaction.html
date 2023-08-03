@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>얼마싸인</title>
+   </head>
+
+   <div class="csslink"></div>
+
+   <body class="body">
+      <div class="wrapper">
+         <div class="header hd"></div>
+         <main class="main">
+            <section class="lnb_wrap"></section>
+
+            <div class="lnb_m"></div>
+
+            <div class="main_area">
+               <div class="main_contain">
+                  <div class="main_inner">
+                     <div class="main_content">
+                        <div class="main_content_inner transaction pt36">
+                           <h1 class="tac py48">이제, 계약도 스마트하게 시작하세요!</h1>
+                           <div class="main_left pt36">
+                              <section class="start_cards transaction_wrap">
+                                 <article class="start_card">
+                                    <div class="start_card_inn">
+                                       <div class="img_wrapper"><img src="../../imgs/transaction/transaction_01.png" alt="transaction_01" /></div>
+                                       <div class="img_wrapper2">
+                                          <img src="../../imgs/transaction/img_proof_contracting.png" alt="img_proof_contracting" />
+                                       </div>
+                                       <h2>세금계산서</h2>
+                                       <p>
+                                          나만의 템플릿으로<br />
+                                          계약 시작하기
+                                       </p>
+                                    </div>
+                                    <div class="start_card_hei"></div>
+                                    <a href="javascript:void(0)">Start</a>
+                                 </article>
+                                 <article class="start_card">
+                                    <div class="start_card_inn">
+                                       <div class="img_wrapper"><img src="../../imgs/transaction/transaction_02.png" alt="transaction_02.png" /></div>
+                                       <div class="img_wrapper2"><img src="../../imgs/transaction/img_proof_estimate.png" alt="img_proof_estimate" /></div>
+                                       <h2>거래명세표</h2>
+                                       <p>
+                                          내 파일로<br />
+                                          계약 시작하기
+                                       </p>
+                                    </div>
+                                    <div class="start_card_hei"></div>
+                                    <a href="javascript:void(0)">Start</a>
+                                 </article>
+                                 <article class="start_card">
+                                    <div class="start_card_inn">
+                                       <div class="img_wrapper"><img src="../../imgs/transaction/transaction_03.png" alt="transaction_02" /></div>
+                                       <div class="img_wrapper2"><img src="../../imgs/transaction/img_proof_order.png" alt="img_proof_order" /></div>
+                                       <h2>발주서</h2>
+                                       <p>
+                                          샘플로 제공하는<br />
+                                          양식으로 시작하기
+                                       </p>
+                                    </div>
+                                    <div class="start_card_hei"></div>
+                                    <a href="javascript:void(0)">Start</a>
+                                 </article>
+                                 <article class="start_card">
+                                    <div class="start_card_inn">
+                                       <div class="img_wrapper"><img src="../../imgs/transaction/transaction_04.png" alt="transaction_04" /></div>
+                                       <div class="img_wrapper2">
+                                          <img src="../../imgs/transaction/img_proof_specifications.png" alt="img_proof_specifications" />
+                                       </div>
+                                       <h2>견적서</h2>
+                                       <p>
+                                          샘플로 제공하는<br />
+                                          양식으로 시작하기
+                                       </p>
+                                    </div>
+                                    <div class="start_card_hei"></div>
+                                    <a href="javascript:void(0)">Start</a>
+                                 </article>
+                              </section>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </main>
+      </div>
+      <div class="ctr_view"></div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script>
+         $(document).ready(function () {
+            $.ajax({
+               url: "../include/csslink.html",
+               success: function (result) {
+                  $(".csslink").html(result)
+               },
+            })
+            $.ajax({
+               url: "../include/head.html",
+               success: function (result) {
+                  $(".header").html(result)
+               },
+            })
+
+            if (matchMedia("screen and (max-width: 768px)").matches) {
+               $.ajax({
+                  url: "../include/lnb_m.html",
+                  success: function (result) {
+                     $(".lnb_m").html(result)
+                  },
+               })
+            } else {
+               $.ajax({
+                  url: "../include/aside_contract.html",
+                  success: function (result) {
+                     $(".lnb_wrap").html(result)
+                  },
+               })
+            }
+         })
+      </script>
+   </body>
+</html>

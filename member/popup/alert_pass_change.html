@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>modal</title>
+      <link rel="stylesheet" href="../../css/common.css" />
+      <link rel="stylesheet" href="../../css/modal.css" />
+   </head>
+   <body>
+      <section class="modal_welcome modal_pass on">
+         <div class="modal_welcome_contain none_gradient modal_pass_contain">
+            <div class="popheading modal_pass_head">
+               <span></span>
+               <h1>비밀번호를 변경해 주세요.</h1>
+               <span></span>
+            </div>
+            <section class="stop_area">
+               <h2 style="text-align: left; line-height: 1.8; font-weight: 500">
+                  안녕하세요. <b>이정현</b> 회원님. <br />
+                  회원님은 <b>6개월 동안 비밀번호를 변경하지 않으셨어요.</b>
+               </h2>
+               <div class="alert_txt" style="line-height: 1.5">
+                  아이퀘스트에서는 안전한 개인정보보호와 개인정보도용 피해를 예방하기 위해
+                  <b>6개월마다 주기적으로 비밀번호 변경을 안내</b>해 드리고 있어요.
+                  <ul>
+                     <li>
+                        <b>쉬운 비밀번호나 자주 쓰는 사이트의 비밀번호가 같을 경우,</b> 도용되기
+                        쉬우므로 <b>주기적으로 변경하셔서 사용</b>하는 것이 좋아요.
+                     </li>
+                     <li>
+                        아이디, 주민등록번호, 생일, 전화번호 등 개인정보와 관련된 숫자, 연속된 숫자,
+                        반복된 문자 등의 비밀번호는 개인정보 유출의 위험이 높아, 다른 사람이 알기
+                        어려운 비밀번호로 설정하시길 권장드려요.
+                     </li>
+                  </ul>
+               </div>
+               <input type="password" placeholder="현재 비밀번호" style="margin-top: 0.5rem" />
+               <input
+                  type="password"
+                  placeholder="비밀번호 (영문, 숫자, 특수문자 6~12자로 입력하세요.)"
+               />
+               <input
+                  type="password"
+                  placeholder="비밀번호 확인 (비밀번호를 다시 한번 입력해 주세요.)"
+               />
+               <article class="check_wrap">
+                  <div class="check_p">
+                     <input type="checkbox" id="dont_msg" class="normal check_orign" />
+                     <label for="dont_msg" class="dont_msg">
+                        <span style="font-weight: 500">90일 동안 메시지를 안볼래요.</span>
+                     </label>
+                  </div>
+               </article>
+            </section>
+            <section class="confirm_btn">
+               <a href="javascript:void(0)">확인</a>
+               <a href="javascript:void(0)">다음에 변경</a>
+            </section>
+         </div>
+      </section>
+   </body>
+</html>
