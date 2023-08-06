@@ -177,21 +177,7 @@
          display: none;
       }
    }
-   .docu_page_area_mod {
-      width: 220px;
-      height: 100%;
-      background-color: white;
-      padding: 2rem;
-      position: fixed;
-      right: 0;
-      top: 108px;
-      border-left: 1px solid var(--second_03);
-
-      @media (max-width: 768px) {
-         display: none;
-      }
-   }
-}
+   
 
 .tool_bar {
    display: flex;
@@ -708,9 +694,9 @@
       }
    }
 }
-
-.report_add {
-   color: var(--violet_P);
+// 230804 수정 / 연동 적용 파일 editor.html, contract_sign_step.html
+.section_wrap.report_add {
+   color: #d93838;
    display: flex;
    flex-direction: column;
    gap: 10px;
@@ -729,8 +715,8 @@
    }
 }
 
-$attachColor1: red;
-$attachColor2: blue;
+$attachColor1: var(--violet_P);
+$attachColor2:#d93838;
 .attachment_file_name {
    display: flex;
    align-items: center;
@@ -767,3 +753,5 @@ $attachColor2: blue;
       }
    }
 }
+}
+// 230804 수정 / 연동 적용 파일 editor.html, contract_sign_step.html
